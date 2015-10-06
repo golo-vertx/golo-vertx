@@ -1,0 +1,8 @@
+{
+  "name": "Golo",
+  "generators": [ {
+    "kind": "class",
+    "fileName": "'HelloWorld.golo'",
+    "templateFileName": "templates/hello.templ"
+  } ]
+}
