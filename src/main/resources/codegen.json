@@ -2,7 +2,7 @@
   "name": "Golo",
   "generators": [ {
     "kind": "class",
-    "fileName": "'HelloWorld.golo'",
-    "templateFileName": "templates/hello.templ"
+    "fileName": "'golo/' + fqn.replace('io.vertx', 'io.vertx.golo').replace('.', '/') + '.golo'",
+    "templateFileName": "templates/golo.templ"
   } ]
 }

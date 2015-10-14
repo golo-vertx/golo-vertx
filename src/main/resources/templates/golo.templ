@@ -1,0 +1,21 @@
+@comment{"Templating! The next row outputs all interfaces annotated with VertxGen-annotation."}
+
+@code{
+
+  def genGoloModuleName(type) {
+    var body = type.raw.translatePackageName("golo");
+    for (int i = body.length()-2; i >= 0 ; i--) {
+               if(body.substring(i, i+1).equals(".")) {
+                     return body.substring(0,i+1) + body.substring(i+1,i+2).toUpperCase() + body.substring(i+2);
+               }
+
+     }
+    return body;
+    }
+}
+
+module @{genGoloModuleName(type)}
+\n\n
+@foreach{referencedType : referencedTypes}
+import @{referencedType}\n
+@end{}
