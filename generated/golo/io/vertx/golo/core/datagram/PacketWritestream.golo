@@ -7,18 +7,18 @@ function writeQueueFull ={
         return boolean.writeQueueFull()
 }
     # io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.datagram.PacketWritestream.exceptionHandler()
 }
     # io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data) 
-function writeByData =| data |{
+function write =| data |{
         return io.vertx.core.datagram.PacketWritestream.write()
 }
     # io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize) 
-function setWriteQueueMaxSizeByMaxSize =| maxSize |{
+function setWriteQueueMaxSize =| maxSize |{
         return io.vertx.core.datagram.PacketWritestream.setWriteQueueMaxSize()
 }
     # io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function drainHandlerByHandler =| handler |{
+function drainHandler =| handler |{
         return io.vertx.core.datagram.PacketWritestream.drainHandler()
 }

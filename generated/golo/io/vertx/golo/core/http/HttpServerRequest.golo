@@ -9,11 +9,11 @@ import io.vertx.core.streams.ReadStream
 import io.vertx.core.net.SocketAddress
 import io.vertx.core.net.NetSocket
     # io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.http.HttpServerRequest.exceptionHandler()
 }
     # io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.http.HttpServerRequest.handler()
 }
     # io.vertx.core.http.HttpServerRequest pause() 
@@ -25,7 +25,7 @@ function resume ={
         return io.vertx.core.http.HttpServerRequest.resume()
 }
     # io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.http.HttpServerRequest.endHandler()
 }
     # io.vertx.core.http.HttpVersion version() 
@@ -57,7 +57,7 @@ function headers ={
         return io.vertx.core.MultiMap.headers()
 }
     # java.lang.String getHeader(java.lang.String headerName) 
-function getHeaderByHeaderName =| headerName |{
+function getHeader =| headerName |{
         return java.lang.String.getHeader()
 }
     # io.vertx.core.MultiMap params() 
@@ -65,7 +65,7 @@ function params ={
         return io.vertx.core.MultiMap.params()
 }
     # java.lang.String getParam(java.lang.String paramName) 
-function getParamByParamName =| paramName |{
+function getParam =| paramName |{
         return java.lang.String.getParam()
 }
     # io.vertx.core.net.SocketAddress remoteAddress() 
@@ -81,7 +81,7 @@ function absoluteURI ={
         return java.lang.String.absoluteURI()
 }
     # io.vertx.core.http.HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) 
-function bodyHandlerByBodyHandler =| bodyHandler |{
+function bodyHandler =| bodyHandler |{
         return io.vertx.core.http.HttpServerRequest.bodyHandler()
 }
     # io.vertx.core.net.NetSocket netSocket() 
@@ -89,7 +89,7 @@ function netSocket ={
         return io.vertx.core.net.NetSocket.netSocket()
 }
     # io.vertx.core.http.HttpServerRequest setExpectMultipart(boolean expect) 
-function setExpectMultipartByExpect =| expect |{
+function setExpectMultipart =| expect |{
         return io.vertx.core.http.HttpServerRequest.setExpectMultipart()
 }
     # boolean isExpectMultipart() 
@@ -97,7 +97,7 @@ function isExpectMultipart ={
         return boolean.isExpectMultipart()
 }
     # io.vertx.core.http.HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler) 
-function uploadHandlerByUploadHandler =| uploadHandler |{
+function uploadHandler =| uploadHandler |{
         return io.vertx.core.http.HttpServerRequest.uploadHandler()
 }
     # io.vertx.core.MultiMap formAttributes() 
@@ -105,7 +105,7 @@ function formAttributes ={
         return io.vertx.core.MultiMap.formAttributes()
 }
     # java.lang.String getFormAttribute(java.lang.String attributeName) 
-function getFormAttributeByAttributeName =| attributeName |{
+function getFormAttribute =| attributeName |{
         return java.lang.String.getFormAttribute()
 }
     # io.vertx.core.http.ServerWebSocket upgrade() 

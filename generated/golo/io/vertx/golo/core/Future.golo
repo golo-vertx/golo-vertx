@@ -13,7 +13,7 @@ function succeededFutureByResult =| result |{
         return <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]>.succeededFuture()
 }
     # <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage) 
-function failedFutureByFailureMessage =| failureMessage |{
+function failedFuture =| failureMessage |{
         return <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]>.failedFuture()
 }
     # boolean isComplete() 
@@ -21,11 +21,11 @@ function isComplete ={
         return boolean.isComplete()
 }
     # void setHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> handler) 
-function setHandlerByHandler =| handler |{
+function setHandler =| handler |{
         return void.setHandler()
 }
     # void complete(T result) 
-function completeByResult =| result |{
+function complete =| result |{
         return void.complete()
 }
     # void complete() 
@@ -33,6 +33,6 @@ function complete ={
         return void.complete()
 }
     # void fail(java.lang.String failureMessage) 
-function failByFailureMessage =| failureMessage |{
+function fail =| failureMessage |{
         return void.fail()
 }

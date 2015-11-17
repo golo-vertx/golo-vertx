@@ -15,11 +15,11 @@ function isOnVertxThread ={
         return boolean.isOnVertxThread()
 }
     # void runOnContext(io.vertx.core.Handler<java.lang.Void> action) 
-function runOnContextByAction =| action |{
+function runOnContext =| action |{
         return void.runOnContext()
 }
     # <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-function executeBlockingByBlockingCodeHandlerAndOrderedAndResultHandler =| blockingCodeHandler , ordered , resultHandler |{
+function executeBlocking =| blockingCodeHandler , ordered , resultHandler |{
         return <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]>.executeBlocking()
 }
     # <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
@@ -51,15 +51,15 @@ function isMultiThreadedWorkerContext ={
         return boolean.isMultiThreadedWorkerContext()
 }
     # <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameget]> T get(java.lang.String key) 
-function getByKey =| key |{
+function get =| key |{
         return <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameget]>.get()
 }
     # void put(java.lang.String key, java.lang.Object value) 
-function putByKeyAndValue =| key , value |{
+function put =| key , value |{
         return void.put()
 }
     # boolean remove(java.lang.String key) 
-function removeByKey =| key |{
+function remove =| key |{
         return boolean.remove()
 }
     # io.vertx.core.Vertx owner() 

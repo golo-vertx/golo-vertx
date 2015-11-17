@@ -6,23 +6,23 @@ function writeQueueFull ={
         return boolean.writeQueueFull()
 }
     # io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.eventbus.MessageProducer<T>.exceptionHandler()
 }
     # io.vertx.core.eventbus.MessageProducer<T> write(T data) 
-function writeByData =| data |{
+function write =| data |{
         return io.vertx.core.eventbus.MessageProducer<T>.write()
 }
     # io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize) 
-function setWriteQueueMaxSizeByMaxSize =| maxSize |{
+function setWriteQueueMaxSize =| maxSize |{
         return io.vertx.core.eventbus.MessageProducer<T>.setWriteQueueMaxSize()
 }
     # io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function drainHandlerByHandler =| handler |{
+function drainHandler =| handler |{
         return io.vertx.core.eventbus.MessageProducer<T>.drainHandler()
 }
     # io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options) 
-function deliveryOptionsByOptions =| options |{
+function deliveryOptions =| options |{
         return io.vertx.core.eventbus.MessageProducer<T>.deliveryOptions()
 }
     # java.lang.String address() 

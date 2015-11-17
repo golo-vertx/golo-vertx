@@ -10,11 +10,11 @@ function writeQueueFull ={
         return boolean.writeQueueFull()
 }
     # io.vertx.core.http.WebSocketBase exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.http.WebSocketBase.exceptionHandler()
 }
     # io.vertx.core.http.WebSocketBase handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.http.WebSocketBase.handler()
 }
     # io.vertx.core.http.WebSocketBase pause() 
@@ -26,19 +26,19 @@ function resume ={
         return io.vertx.core.http.WebSocketBase.resume()
 }
     # io.vertx.core.http.WebSocketBase endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.http.WebSocketBase.endHandler()
 }
     # io.vertx.core.http.WebSocketBase write(io.vertx.core.buffer.Buffer data) 
-function writeByData =| data |{
+function write =| data |{
         return io.vertx.core.http.WebSocketBase.write()
 }
     # io.vertx.core.http.WebSocketBase setWriteQueueMaxSize(int maxSize) 
-function setWriteQueueMaxSizeByMaxSize =| maxSize |{
+function setWriteQueueMaxSize =| maxSize |{
         return io.vertx.core.http.WebSocketBase.setWriteQueueMaxSize()
 }
     # io.vertx.core.http.WebSocketBase drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function drainHandlerByHandler =| handler |{
+function drainHandler =| handler |{
         return io.vertx.core.http.WebSocketBase.drainHandler()
 }
     # java.lang.String binaryHandlerID() 
@@ -50,27 +50,27 @@ function textHandlerID ={
         return java.lang.String.textHandlerID()
 }
     # io.vertx.core.http.WebSocketBase writeFrame(io.vertx.core.http.WebSocketFrame frame) 
-function writeFrameByFrame =| frame |{
+function writeFrame =| frame |{
         return io.vertx.core.http.WebSocketBase.writeFrame()
 }
     # io.vertx.core.http.WebSocketBase writeFinalTextFrame(java.lang.String text) 
-function writeFinalTextFrameByText =| text |{
+function writeFinalTextFrame =| text |{
         return io.vertx.core.http.WebSocketBase.writeFinalTextFrame()
 }
     # io.vertx.core.http.WebSocketBase writeFinalBinaryFrame(io.vertx.core.buffer.Buffer data) 
-function writeFinalBinaryFrameByData =| data |{
+function writeFinalBinaryFrame =| data |{
         return io.vertx.core.http.WebSocketBase.writeFinalBinaryFrame()
 }
     # io.vertx.core.http.WebSocketBase writeBinaryMessage(io.vertx.core.buffer.Buffer data) 
-function writeBinaryMessageByData =| data |{
+function writeBinaryMessage =| data |{
         return io.vertx.core.http.WebSocketBase.writeBinaryMessage()
 }
     # io.vertx.core.http.WebSocketBase closeHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function closeHandlerByHandler =| handler |{
+function closeHandler =| handler |{
         return io.vertx.core.http.WebSocketBase.closeHandler()
 }
     # io.vertx.core.http.WebSocketBase frameHandler(io.vertx.core.Handler<io.vertx.core.http.WebSocketFrame> handler) 
-function frameHandlerByHandler =| handler |{
+function frameHandler =| handler |{
         return io.vertx.core.http.WebSocketBase.frameHandler()
 }
     # void close() 

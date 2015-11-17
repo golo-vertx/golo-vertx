@@ -12,7 +12,7 @@ function connectStream ={
         return io.vertx.core.net.NetSocketStream.connectStream()
 }
     # io.vertx.core.net.NetServer connectHandler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler) 
-function connectHandlerByHandler =| handler |{
+function connectHandler =| handler |{
         return io.vertx.core.net.NetServer.connectHandler()
 }
     # io.vertx.core.net.NetServer listen() 

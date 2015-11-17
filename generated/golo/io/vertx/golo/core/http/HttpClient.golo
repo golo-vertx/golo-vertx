@@ -11,7 +11,7 @@ function isMetricsEnabled ={
         return boolean.isMetricsEnabled()
 }
     # io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, int port, java.lang.String host, java.lang.String requestURI) 
-function requestByMethodAndPortAndHostAndRequestURI =| method , port , host , requestURI |{
+function request =| method , port , host , requestURI |{
         return io.vertx.core.http.HttpClientRequest.request()
 }
     # io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, java.lang.String host, java.lang.String requestURI) 
@@ -35,7 +35,7 @@ function requestByMethodAndRequestURIAndResponseHandler =| method , requestURI ,
         return io.vertx.core.http.HttpClientRequest.request()
 }
     # io.vertx.core.http.HttpClientRequest requestAbs(io.vertx.core.http.HttpMethod method, java.lang.String absoluteURI) 
-function requestAbsByMethodAndAbsoluteURI =| method , absoluteURI |{
+function requestAbs =| method , absoluteURI |{
         return io.vertx.core.http.HttpClientRequest.requestAbs()
 }
     # io.vertx.core.http.HttpClientRequest requestAbs(io.vertx.core.http.HttpMethod method, java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -43,7 +43,7 @@ function requestAbsByMethodAndAbsoluteURIAndResponseHandler =| method , absolute
         return io.vertx.core.http.HttpClientRequest.requestAbs()
 }
     # io.vertx.core.http.HttpClientRequest get(int port, java.lang.String host, java.lang.String requestURI) 
-function getByPortAndHostAndRequestURI =| port , host , requestURI |{
+function get =| port , host , requestURI |{
         return io.vertx.core.http.HttpClientRequest.get()
 }
     # io.vertx.core.http.HttpClientRequest get(java.lang.String host, java.lang.String requestURI) 
@@ -67,7 +67,7 @@ function getByRequestURIAndResponseHandler =| requestURI , responseHandler |{
         return io.vertx.core.http.HttpClientRequest.get()
 }
     # io.vertx.core.http.HttpClientRequest getAbs(java.lang.String absoluteURI) 
-function getAbsByAbsoluteURI =| absoluteURI |{
+function getAbs =| absoluteURI |{
         return io.vertx.core.http.HttpClientRequest.getAbs()
 }
     # io.vertx.core.http.HttpClientRequest getAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -75,7 +75,7 @@ function getAbsByAbsoluteURIAndResponseHandler =| absoluteURI , responseHandler 
         return io.vertx.core.http.HttpClientRequest.getAbs()
 }
     # io.vertx.core.http.HttpClient getNow(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
-function getNowByPortAndHostAndRequestURIAndResponseHandler =| port , host , requestURI , responseHandler |{
+function getNow =| port , host , requestURI , responseHandler |{
         return io.vertx.core.http.HttpClient.getNow()
 }
     # io.vertx.core.http.HttpClient getNow(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -87,7 +87,7 @@ function getNowByRequestURIAndResponseHandler =| requestURI , responseHandler |{
         return io.vertx.core.http.HttpClient.getNow()
 }
     # io.vertx.core.http.HttpClientRequest post(int port, java.lang.String host, java.lang.String requestURI) 
-function postByPortAndHostAndRequestURI =| port , host , requestURI |{
+function post =| port , host , requestURI |{
         return io.vertx.core.http.HttpClientRequest.post()
 }
     # io.vertx.core.http.HttpClientRequest post(java.lang.String host, java.lang.String requestURI) 
@@ -111,7 +111,7 @@ function postByRequestURIAndResponseHandler =| requestURI , responseHandler |{
         return io.vertx.core.http.HttpClientRequest.post()
 }
     # io.vertx.core.http.HttpClientRequest postAbs(java.lang.String absoluteURI) 
-function postAbsByAbsoluteURI =| absoluteURI |{
+function postAbs =| absoluteURI |{
         return io.vertx.core.http.HttpClientRequest.postAbs()
 }
     # io.vertx.core.http.HttpClientRequest postAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -119,7 +119,7 @@ function postAbsByAbsoluteURIAndResponseHandler =| absoluteURI , responseHandler
         return io.vertx.core.http.HttpClientRequest.postAbs()
 }
     # io.vertx.core.http.HttpClientRequest head(int port, java.lang.String host, java.lang.String requestURI) 
-function headByPortAndHostAndRequestURI =| port , host , requestURI |{
+function head =| port , host , requestURI |{
         return io.vertx.core.http.HttpClientRequest.head()
 }
     # io.vertx.core.http.HttpClientRequest head(java.lang.String host, java.lang.String requestURI) 
@@ -143,7 +143,7 @@ function headByRequestURIAndResponseHandler =| requestURI , responseHandler |{
         return io.vertx.core.http.HttpClientRequest.head()
 }
     # io.vertx.core.http.HttpClientRequest headAbs(java.lang.String absoluteURI) 
-function headAbsByAbsoluteURI =| absoluteURI |{
+function headAbs =| absoluteURI |{
         return io.vertx.core.http.HttpClientRequest.headAbs()
 }
     # io.vertx.core.http.HttpClientRequest headAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -151,7 +151,7 @@ function headAbsByAbsoluteURIAndResponseHandler =| absoluteURI , responseHandler
         return io.vertx.core.http.HttpClientRequest.headAbs()
 }
     # io.vertx.core.http.HttpClient headNow(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
-function headNowByPortAndHostAndRequestURIAndResponseHandler =| port , host , requestURI , responseHandler |{
+function headNow =| port , host , requestURI , responseHandler |{
         return io.vertx.core.http.HttpClient.headNow()
 }
     # io.vertx.core.http.HttpClient headNow(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -163,7 +163,7 @@ function headNowByRequestURIAndResponseHandler =| requestURI , responseHandler |
         return io.vertx.core.http.HttpClient.headNow()
 }
     # io.vertx.core.http.HttpClientRequest options(int port, java.lang.String host, java.lang.String requestURI) 
-function optionsByPortAndHostAndRequestURI =| port , host , requestURI |{
+function options =| port , host , requestURI |{
         return io.vertx.core.http.HttpClientRequest.options()
 }
     # io.vertx.core.http.HttpClientRequest options(java.lang.String host, java.lang.String requestURI) 
@@ -187,7 +187,7 @@ function optionsByRequestURIAndResponseHandler =| requestURI , responseHandler |
         return io.vertx.core.http.HttpClientRequest.options()
 }
     # io.vertx.core.http.HttpClientRequest optionsAbs(java.lang.String absoluteURI) 
-function optionsAbsByAbsoluteURI =| absoluteURI |{
+function optionsAbs =| absoluteURI |{
         return io.vertx.core.http.HttpClientRequest.optionsAbs()
 }
     # io.vertx.core.http.HttpClientRequest optionsAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -195,7 +195,7 @@ function optionsAbsByAbsoluteURIAndResponseHandler =| absoluteURI , responseHand
         return io.vertx.core.http.HttpClientRequest.optionsAbs()
 }
     # io.vertx.core.http.HttpClient optionsNow(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
-function optionsNowByPortAndHostAndRequestURIAndResponseHandler =| port , host , requestURI , responseHandler |{
+function optionsNow =| port , host , requestURI , responseHandler |{
         return io.vertx.core.http.HttpClient.optionsNow()
 }
     # io.vertx.core.http.HttpClient optionsNow(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -207,7 +207,7 @@ function optionsNowByRequestURIAndResponseHandler =| requestURI , responseHandle
         return io.vertx.core.http.HttpClient.optionsNow()
 }
     # io.vertx.core.http.HttpClientRequest put(int port, java.lang.String host, java.lang.String requestURI) 
-function putByPortAndHostAndRequestURI =| port , host , requestURI |{
+function put =| port , host , requestURI |{
         return io.vertx.core.http.HttpClientRequest.put()
 }
     # io.vertx.core.http.HttpClientRequest put(java.lang.String host, java.lang.String requestURI) 
@@ -231,7 +231,7 @@ function putByRequestURIAndResponseHandler =| requestURI , responseHandler |{
         return io.vertx.core.http.HttpClientRequest.put()
 }
     # io.vertx.core.http.HttpClientRequest putAbs(java.lang.String absoluteURI) 
-function putAbsByAbsoluteURI =| absoluteURI |{
+function putAbs =| absoluteURI |{
         return io.vertx.core.http.HttpClientRequest.putAbs()
 }
     # io.vertx.core.http.HttpClientRequest putAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -239,7 +239,7 @@ function putAbsByAbsoluteURIAndResponseHandler =| absoluteURI , responseHandler 
         return io.vertx.core.http.HttpClientRequest.putAbs()
 }
     # io.vertx.core.http.HttpClientRequest delete(int port, java.lang.String host, java.lang.String requestURI) 
-function deleteByPortAndHostAndRequestURI =| port , host , requestURI |{
+function delete =| port , host , requestURI |{
         return io.vertx.core.http.HttpClientRequest.delete()
 }
     # io.vertx.core.http.HttpClientRequest delete(java.lang.String host, java.lang.String requestURI) 
@@ -263,7 +263,7 @@ function deleteByRequestURIAndResponseHandler =| requestURI , responseHandler |{
         return io.vertx.core.http.HttpClientRequest.delete()
 }
     # io.vertx.core.http.HttpClientRequest deleteAbs(java.lang.String absoluteURI) 
-function deleteAbsByAbsoluteURI =| absoluteURI |{
+function deleteAbs =| absoluteURI |{
         return io.vertx.core.http.HttpClientRequest.deleteAbs()
 }
     # io.vertx.core.http.HttpClientRequest deleteAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler) 
@@ -271,7 +271,7 @@ function deleteAbsByAbsoluteURIAndResponseHandler =| absoluteURI , responseHandl
         return io.vertx.core.http.HttpClientRequest.deleteAbs()
 }
     # io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect) 
-function websocketByPortAndHostAndRequestURIAndWsConnect =| port , host , requestURI , wsConnect |{
+function websocket =| port , host , requestURI , wsConnect |{
         return io.vertx.core.http.HttpClient.websocket()
 }
     # io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler) 
@@ -367,7 +367,7 @@ function websocketByRequestURIAndHeadersAndVersionAndSubProtocolsAndWsConnectAnd
         return io.vertx.core.http.HttpClient.websocket()
 }
     # io.vertx.core.http.WebSocketStream websocketStream(int port, java.lang.String host, java.lang.String requestURI) 
-function websocketStreamByPortAndHostAndRequestURI =| port , host , requestURI |{
+function websocketStream =| port , host , requestURI |{
         return io.vertx.core.http.WebSocketStream.websocketStream()
 }
     # io.vertx.core.http.WebSocketStream websocketStream(java.lang.String host, java.lang.String requestURI) 

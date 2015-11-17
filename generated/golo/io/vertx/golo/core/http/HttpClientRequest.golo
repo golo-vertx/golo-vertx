@@ -10,23 +10,23 @@ function writeQueueFull ={
         return boolean.writeQueueFull()
 }
     # io.vertx.core.http.HttpClientRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.http.HttpClientRequest.exceptionHandler()
 }
     # io.vertx.core.http.HttpClientRequest write(io.vertx.core.buffer.Buffer data) 
-function writeByData =| data |{
+function write =| data |{
         return io.vertx.core.http.HttpClientRequest.write()
 }
     # io.vertx.core.http.HttpClientRequest setWriteQueueMaxSize(int maxSize) 
-function setWriteQueueMaxSizeByMaxSize =| maxSize |{
+function setWriteQueueMaxSize =| maxSize |{
         return io.vertx.core.http.HttpClientRequest.setWriteQueueMaxSize()
 }
     # io.vertx.core.http.HttpClientRequest drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function drainHandlerByHandler =| handler |{
+function drainHandler =| handler |{
         return io.vertx.core.http.HttpClientRequest.drainHandler()
 }
     # io.vertx.core.http.HttpClientRequest handler(io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.http.HttpClientRequest.handler()
 }
     # io.vertx.core.http.HttpClientRequest pause() 
@@ -38,11 +38,11 @@ function resume ={
         return io.vertx.core.http.HttpClientRequest.resume()
 }
     # io.vertx.core.http.HttpClientRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.http.HttpClientRequest.endHandler()
 }
     # io.vertx.core.http.HttpClientRequest setChunked(boolean chunked) 
-function setChunkedByChunked =| chunked |{
+function setChunked =| chunked |{
         return io.vertx.core.http.HttpClientRequest.setChunked()
 }
     # boolean isChunked() 
@@ -62,7 +62,7 @@ function headers ={
         return io.vertx.core.MultiMap.headers()
 }
     # io.vertx.core.http.HttpClientRequest putHeader(java.lang.String name, java.lang.String value) 
-function putHeaderByNameAndValue =| name , value |{
+function putHeader =| name , value |{
         return io.vertx.core.http.HttpClientRequest.putHeader()
 }
     # io.vertx.core.http.HttpClientRequest write(java.lang.String chunk) 
@@ -74,7 +74,7 @@ function writeByChunkAndEnc =| chunk , enc |{
         return io.vertx.core.http.HttpClientRequest.write()
 }
     # io.vertx.core.http.HttpClientRequest continueHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function continueHandlerByHandler =| handler |{
+function continueHandler =| handler |{
         return io.vertx.core.http.HttpClientRequest.continueHandler()
 }
     # io.vertx.core.http.HttpClientRequest sendHead() 
@@ -82,7 +82,7 @@ function sendHead ={
         return io.vertx.core.http.HttpClientRequest.sendHead()
 }
     # void end(java.lang.String chunk) 
-function endByChunk =| chunk |{
+function end =| chunk |{
         return void.end()
 }
     # void end(java.lang.String chunk, java.lang.String enc) 
@@ -98,6 +98,6 @@ function end ={
         return void.end()
 }
     # io.vertx.core.http.HttpClientRequest setTimeout(long timeoutMs) 
-function setTimeoutByTimeoutMs =| timeoutMs |{
+function setTimeout =| timeoutMs |{
         return io.vertx.core.http.HttpClientRequest.setTimeout()
 }

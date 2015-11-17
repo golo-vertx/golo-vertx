@@ -8,19 +8,19 @@ function writeQueueFull ={
         return boolean.writeQueueFull()
 }
     # io.vertx.core.http.HttpServerResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.http.HttpServerResponse.exceptionHandler()
 }
     # io.vertx.core.http.HttpServerResponse write(io.vertx.core.buffer.Buffer data) 
-function writeByData =| data |{
+function write =| data |{
         return io.vertx.core.http.HttpServerResponse.write()
 }
     # io.vertx.core.http.HttpServerResponse setWriteQueueMaxSize(int maxSize) 
-function setWriteQueueMaxSizeByMaxSize =| maxSize |{
+function setWriteQueueMaxSize =| maxSize |{
         return io.vertx.core.http.HttpServerResponse.setWriteQueueMaxSize()
 }
     # io.vertx.core.http.HttpServerResponse drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function drainHandlerByHandler =| handler |{
+function drainHandler =| handler |{
         return io.vertx.core.http.HttpServerResponse.drainHandler()
 }
     # int getStatusCode() 
@@ -28,7 +28,7 @@ function getStatusCode ={
         return int.getStatusCode()
 }
     # io.vertx.core.http.HttpServerResponse setStatusCode(int statusCode) 
-function setStatusCodeByStatusCode =| statusCode |{
+function setStatusCode =| statusCode |{
         return io.vertx.core.http.HttpServerResponse.setStatusCode()
 }
     # java.lang.String getStatusMessage() 
@@ -36,11 +36,11 @@ function getStatusMessage ={
         return java.lang.String.getStatusMessage()
 }
     # io.vertx.core.http.HttpServerResponse setStatusMessage(java.lang.String statusMessage) 
-function setStatusMessageByStatusMessage =| statusMessage |{
+function setStatusMessage =| statusMessage |{
         return io.vertx.core.http.HttpServerResponse.setStatusMessage()
 }
     # io.vertx.core.http.HttpServerResponse setChunked(boolean chunked) 
-function setChunkedByChunked =| chunked |{
+function setChunked =| chunked |{
         return io.vertx.core.http.HttpServerResponse.setChunked()
 }
     # boolean isChunked() 
@@ -52,7 +52,7 @@ function headers ={
         return io.vertx.core.MultiMap.headers()
 }
     # io.vertx.core.http.HttpServerResponse putHeader(java.lang.String name, java.lang.String value) 
-function putHeaderByNameAndValue =| name , value |{
+function putHeader =| name , value |{
         return io.vertx.core.http.HttpServerResponse.putHeader()
 }
     # io.vertx.core.MultiMap trailers() 
@@ -60,11 +60,11 @@ function trailers ={
         return io.vertx.core.MultiMap.trailers()
 }
     # io.vertx.core.http.HttpServerResponse putTrailer(java.lang.String name, java.lang.String value) 
-function putTrailerByNameAndValue =| name , value |{
+function putTrailer =| name , value |{
         return io.vertx.core.http.HttpServerResponse.putTrailer()
 }
     # io.vertx.core.http.HttpServerResponse closeHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function closeHandlerByHandler =| handler |{
+function closeHandler =| handler |{
         return io.vertx.core.http.HttpServerResponse.closeHandler()
 }
     # io.vertx.core.http.HttpServerResponse write(java.lang.String chunk, java.lang.String enc) 
@@ -80,7 +80,7 @@ function writeContinue ={
         return io.vertx.core.http.HttpServerResponse.writeContinue()
 }
     # void end(java.lang.String chunk) 
-function endByChunk =| chunk |{
+function end =| chunk |{
         return void.end()
 }
     # void end(java.lang.String chunk, java.lang.String enc) 
@@ -96,7 +96,7 @@ function end ={
         return void.end()
 }
     # io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename) 
-function sendFileByFilename =| filename |{
+function sendFile =| filename |{
         return io.vertx.core.http.HttpServerResponse.sendFile()
 }
     # io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename, long offset) 
@@ -136,10 +136,10 @@ function headWritten ={
         return boolean.headWritten()
 }
     # io.vertx.core.http.HttpServerResponse headersEndHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function headersEndHandlerByHandler =| handler |{
+function headersEndHandler =| handler |{
         return io.vertx.core.http.HttpServerResponse.headersEndHandler()
 }
     # io.vertx.core.http.HttpServerResponse bodyEndHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function bodyEndHandlerByHandler =| handler |{
+function bodyEndHandler =| handler |{
         return io.vertx.core.http.HttpServerResponse.bodyEndHandler()
 }

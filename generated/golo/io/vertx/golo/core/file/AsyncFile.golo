@@ -8,7 +8,7 @@ function writeQueueFull ={
         return boolean.writeQueueFull()
 }
     # io.vertx.core.file.AsyncFile handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.file.AsyncFile.handler()
 }
     # io.vertx.core.file.AsyncFile pause() 
@@ -20,23 +20,23 @@ function resume ={
         return io.vertx.core.file.AsyncFile.resume()
 }
     # io.vertx.core.file.AsyncFile endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.file.AsyncFile.endHandler()
 }
     # io.vertx.core.file.AsyncFile write(io.vertx.core.buffer.Buffer data) 
-function writeByData =| data |{
+function write =| data |{
         return io.vertx.core.file.AsyncFile.write()
 }
     # io.vertx.core.file.AsyncFile setWriteQueueMaxSize(int maxSize) 
-function setWriteQueueMaxSizeByMaxSize =| maxSize |{
+function setWriteQueueMaxSize =| maxSize |{
         return io.vertx.core.file.AsyncFile.setWriteQueueMaxSize()
 }
     # io.vertx.core.file.AsyncFile drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function drainHandlerByHandler =| handler |{
+function drainHandler =| handler |{
         return io.vertx.core.file.AsyncFile.drainHandler()
 }
     # io.vertx.core.file.AsyncFile exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.file.AsyncFile.exceptionHandler()
 }
     # void close() 
@@ -52,7 +52,7 @@ function writeByBufferAndPositionAndHandler =| buffer , position , handler |{
         return io.vertx.core.file.AsyncFile.write()
 }
     # io.vertx.core.file.AsyncFile read(io.vertx.core.buffer.Buffer buffer, int offset, long position, int length, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.buffer.Buffer>> handler) 
-function readByBufferAndOffsetAndPositionAndLengthAndHandler =| buffer , offset , position , length , handler |{
+function read =| buffer , offset , position , length , handler |{
         return io.vertx.core.file.AsyncFile.read()
 }
     # io.vertx.core.file.AsyncFile flush() 
@@ -64,14 +64,14 @@ function flushByHandler =| handler |{
         return io.vertx.core.file.AsyncFile.flush()
 }
     # io.vertx.core.file.AsyncFile setReadPos(long readPos) 
-function setReadPosByReadPos =| readPos |{
+function setReadPos =| readPos |{
         return io.vertx.core.file.AsyncFile.setReadPos()
 }
     # io.vertx.core.file.AsyncFile setWritePos(long writePos) 
-function setWritePosByWritePos =| writePos |{
+function setWritePos =| writePos |{
         return io.vertx.core.file.AsyncFile.setWritePos()
 }
     # io.vertx.core.file.AsyncFile setReadBufferSize(int readBufferSize) 
-function setReadBufferSizeByReadBufferSize =| readBufferSize |{
+function setReadBufferSize =| readBufferSize |{
         return io.vertx.core.file.AsyncFile.setReadBufferSize()
 }

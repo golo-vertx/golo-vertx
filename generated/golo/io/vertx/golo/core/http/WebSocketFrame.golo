@@ -2,15 +2,15 @@ module io.vertx.golo.core.Http
 
 import io.vertx.core.buffer.Buffer
     # io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
-function binaryFrameByDataAndIsFinal =| data , isFinal |{
+function binaryFrame =| data , isFinal |{
         return io.vertx.core.http.WebSocketFrame.binaryFrame()
 }
     # io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal) 
-function textFrameByStrAndIsFinal =| str , isFinal |{
+function textFrame =| str , isFinal |{
         return io.vertx.core.http.WebSocketFrame.textFrame()
 }
     # io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
-function continuationFrameByDataAndIsFinal =| data , isFinal |{
+function continuationFrame =| data , isFinal |{
         return io.vertx.core.http.WebSocketFrame.continuationFrame()
 }
     # boolean isText() 

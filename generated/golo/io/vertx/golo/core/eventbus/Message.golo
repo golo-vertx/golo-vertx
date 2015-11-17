@@ -18,7 +18,7 @@ function replyAddress ={
         return java.lang.String.replyAddress()
 }
     # void reply(java.lang.Object message) 
-function replyByMessage =| message |{
+function reply =| message |{
         return void.reply()
 }
     # <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) 
@@ -34,6 +34,6 @@ function replyByMessageAndOptionsAndReplyHandler =| message , options , replyHan
         return <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]>.reply()
 }
     # void fail(int failureCode, java.lang.String message) 
-function failByFailureCodeAndMessage =| failureCode , message |{
+function fail =| failureCode , message |{
         return void.fail()
 }

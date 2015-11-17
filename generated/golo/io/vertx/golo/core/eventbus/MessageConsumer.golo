@@ -3,11 +3,11 @@ module io.vertx.golo.core.Eventbus
 import io.vertx.core.streams.ReadStream
 import io.vertx.core.eventbus.Message
     # io.vertx.core.eventbus.MessageConsumer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.eventbus.MessageConsumer<T>.exceptionHandler()
 }
     # io.vertx.core.eventbus.MessageConsumer<T> handler(io.vertx.core.Handler<io.vertx.core.eventbus.Message<T>> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.eventbus.MessageConsumer<T>.handler()
 }
     # io.vertx.core.eventbus.MessageConsumer<T> pause() 
@@ -19,7 +19,7 @@ function resume ={
         return io.vertx.core.eventbus.MessageConsumer<T>.resume()
 }
     # io.vertx.core.eventbus.MessageConsumer<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.eventbus.MessageConsumer<T>.endHandler()
 }
     # io.vertx.core.streams.ReadStream<T> bodyStream() 
@@ -35,7 +35,7 @@ function address ={
         return java.lang.String.address()
 }
     # io.vertx.core.eventbus.MessageConsumer<T> setMaxBufferedMessages(int maxBufferedMessages) 
-function setMaxBufferedMessagesByMaxBufferedMessages =| maxBufferedMessages |{
+function setMaxBufferedMessages =| maxBufferedMessages |{
         return io.vertx.core.eventbus.MessageConsumer<T>.setMaxBufferedMessages()
 }
     # int getMaxBufferedMessages() 
@@ -43,7 +43,7 @@ function getMaxBufferedMessages ={
         return int.getMaxBufferedMessages()
 }
     # void completionHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) 
-function completionHandlerByCompletionHandler =| completionHandler |{
+function completionHandler =| completionHandler |{
         return void.completionHandler()
 }
     # void unregister() 

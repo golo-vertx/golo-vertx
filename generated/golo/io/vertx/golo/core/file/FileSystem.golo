@@ -5,131 +5,131 @@ import io.vertx.core.buffer.Buffer
 import io.vertx.core.file.FileSystemProps
 import io.vertx.core.file.FileProps
     # io.vertx.core.file.FileSystem copy(java.lang.String from, java.lang.String to, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function copyByFromAndToAndHandler =| from , to , handler |{
+function copy =| from , to , handler |{
         return io.vertx.core.file.FileSystem.copy()
 }
     # io.vertx.core.file.FileSystem copyBlocking(java.lang.String from, java.lang.String to) 
-function copyBlockingByFromAndTo =| from , to |{
+function copyBlocking =| from , to |{
         return io.vertx.core.file.FileSystem.copyBlocking()
 }
     # io.vertx.core.file.FileSystem copyRecursive(java.lang.String from, java.lang.String to, boolean recursive, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function copyRecursiveByFromAndToAndRecursiveAndHandler =| from , to , recursive , handler |{
+function copyRecursive =| from , to , recursive , handler |{
         return io.vertx.core.file.FileSystem.copyRecursive()
 }
     # io.vertx.core.file.FileSystem copyRecursiveBlocking(java.lang.String from, java.lang.String to, boolean recursive) 
-function copyRecursiveBlockingByFromAndToAndRecursive =| from , to , recursive |{
+function copyRecursiveBlocking =| from , to , recursive |{
         return io.vertx.core.file.FileSystem.copyRecursiveBlocking()
 }
     # io.vertx.core.file.FileSystem move(java.lang.String from, java.lang.String to, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function moveByFromAndToAndHandler =| from , to , handler |{
+function move =| from , to , handler |{
         return io.vertx.core.file.FileSystem.move()
 }
     # io.vertx.core.file.FileSystem moveBlocking(java.lang.String from, java.lang.String to) 
-function moveBlockingByFromAndTo =| from , to |{
+function moveBlocking =| from , to |{
         return io.vertx.core.file.FileSystem.moveBlocking()
 }
     # io.vertx.core.file.FileSystem truncate(java.lang.String path, long len, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function truncateByPathAndLenAndHandler =| path , len , handler |{
+function truncate =| path , len , handler |{
         return io.vertx.core.file.FileSystem.truncate()
 }
     # io.vertx.core.file.FileSystem truncateBlocking(java.lang.String path, long len) 
-function truncateBlockingByPathAndLen =| path , len |{
+function truncateBlocking =| path , len |{
         return io.vertx.core.file.FileSystem.truncateBlocking()
 }
     # io.vertx.core.file.FileSystem chmod(java.lang.String path, java.lang.String perms, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function chmodByPathAndPermsAndHandler =| path , perms , handler |{
+function chmod =| path , perms , handler |{
         return io.vertx.core.file.FileSystem.chmod()
 }
     # io.vertx.core.file.FileSystem chmodBlocking(java.lang.String path, java.lang.String perms) 
-function chmodBlockingByPathAndPerms =| path , perms |{
+function chmodBlocking =| path , perms |{
         return io.vertx.core.file.FileSystem.chmodBlocking()
 }
     # io.vertx.core.file.FileSystem chmodRecursive(java.lang.String path, java.lang.String perms, java.lang.String dirPerms, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function chmodRecursiveByPathAndPermsAndDirPermsAndHandler =| path , perms , dirPerms , handler |{
+function chmodRecursive =| path , perms , dirPerms , handler |{
         return io.vertx.core.file.FileSystem.chmodRecursive()
 }
     # io.vertx.core.file.FileSystem chmodRecursiveBlocking(java.lang.String path, java.lang.String perms, java.lang.String dirPerms) 
-function chmodRecursiveBlockingByPathAndPermsAndDirPerms =| path , perms , dirPerms |{
+function chmodRecursiveBlocking =| path , perms , dirPerms |{
         return io.vertx.core.file.FileSystem.chmodRecursiveBlocking()
 }
     # io.vertx.core.file.FileSystem chown(java.lang.String path, java.lang.String user, java.lang.String group, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function chownByPathAndUserAndGroupAndHandler =| path , user , group , handler |{
+function chown =| path , user , group , handler |{
         return io.vertx.core.file.FileSystem.chown()
 }
     # io.vertx.core.file.FileSystem chownBlocking(java.lang.String path, java.lang.String user, java.lang.String group) 
-function chownBlockingByPathAndUserAndGroup =| path , user , group |{
+function chownBlocking =| path , user , group |{
         return io.vertx.core.file.FileSystem.chownBlocking()
 }
     # io.vertx.core.file.FileSystem props(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.file.FileProps>> handler) 
-function propsByPathAndHandler =| path , handler |{
+function props =| path , handler |{
         return io.vertx.core.file.FileSystem.props()
 }
     # io.vertx.core.file.FileProps propsBlocking(java.lang.String path) 
-function propsBlockingByPath =| path |{
+function propsBlocking =| path |{
         return io.vertx.core.file.FileProps.propsBlocking()
 }
     # io.vertx.core.file.FileSystem lprops(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.file.FileProps>> handler) 
-function lpropsByPathAndHandler =| path , handler |{
+function lprops =| path , handler |{
         return io.vertx.core.file.FileSystem.lprops()
 }
     # io.vertx.core.file.FileProps lpropsBlocking(java.lang.String path) 
-function lpropsBlockingByPath =| path |{
+function lpropsBlocking =| path |{
         return io.vertx.core.file.FileProps.lpropsBlocking()
 }
     # io.vertx.core.file.FileSystem link(java.lang.String link, java.lang.String existing, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function linkByLinkAndExistingAndHandler =| link , existing , handler |{
+function link =| link , existing , handler |{
         return io.vertx.core.file.FileSystem.link()
 }
     # io.vertx.core.file.FileSystem linkBlocking(java.lang.String link, java.lang.String existing) 
-function linkBlockingByLinkAndExisting =| link , existing |{
+function linkBlocking =| link , existing |{
         return io.vertx.core.file.FileSystem.linkBlocking()
 }
     # io.vertx.core.file.FileSystem symlink(java.lang.String link, java.lang.String existing, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function symlinkByLinkAndExistingAndHandler =| link , existing , handler |{
+function symlink =| link , existing , handler |{
         return io.vertx.core.file.FileSystem.symlink()
 }
     # io.vertx.core.file.FileSystem symlinkBlocking(java.lang.String link, java.lang.String existing) 
-function symlinkBlockingByLinkAndExisting =| link , existing |{
+function symlinkBlocking =| link , existing |{
         return io.vertx.core.file.FileSystem.symlinkBlocking()
 }
     # io.vertx.core.file.FileSystem unlink(java.lang.String link, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function unlinkByLinkAndHandler =| link , handler |{
+function unlink =| link , handler |{
         return io.vertx.core.file.FileSystem.unlink()
 }
     # io.vertx.core.file.FileSystem unlinkBlocking(java.lang.String link) 
-function unlinkBlockingByLink =| link |{
+function unlinkBlocking =| link |{
         return io.vertx.core.file.FileSystem.unlinkBlocking()
 }
     # io.vertx.core.file.FileSystem readSymlink(java.lang.String link, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> handler) 
-function readSymlinkByLinkAndHandler =| link , handler |{
+function readSymlink =| link , handler |{
         return io.vertx.core.file.FileSystem.readSymlink()
 }
     # java.lang.String readSymlinkBlocking(java.lang.String link) 
-function readSymlinkBlockingByLink =| link |{
+function readSymlinkBlocking =| link |{
         return java.lang.String.readSymlinkBlocking()
 }
     # io.vertx.core.file.FileSystem delete(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function deleteByPathAndHandler =| path , handler |{
+function delete =| path , handler |{
         return io.vertx.core.file.FileSystem.delete()
 }
     # io.vertx.core.file.FileSystem deleteBlocking(java.lang.String path) 
-function deleteBlockingByPath =| path |{
+function deleteBlocking =| path |{
         return io.vertx.core.file.FileSystem.deleteBlocking()
 }
     # io.vertx.core.file.FileSystem deleteRecursive(java.lang.String path, boolean recursive, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function deleteRecursiveByPathAndRecursiveAndHandler =| path , recursive , handler |{
+function deleteRecursive =| path , recursive , handler |{
         return io.vertx.core.file.FileSystem.deleteRecursive()
 }
     # io.vertx.core.file.FileSystem deleteRecursiveBlocking(java.lang.String path, boolean recursive) 
-function deleteRecursiveBlockingByPathAndRecursive =| path , recursive |{
+function deleteRecursiveBlocking =| path , recursive |{
         return io.vertx.core.file.FileSystem.deleteRecursiveBlocking()
 }
     # io.vertx.core.file.FileSystem mkdir(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function mkdirByPathAndHandler =| path , handler |{
+function mkdir =| path , handler |{
         return io.vertx.core.file.FileSystem.mkdir()
 }
     # io.vertx.core.file.FileSystem mkdirBlocking(java.lang.String path) 
-function mkdirBlockingByPath =| path |{
+function mkdirBlocking =| path |{
         return io.vertx.core.file.FileSystem.mkdirBlocking()
 }
     # io.vertx.core.file.FileSystem mkdir(java.lang.String path, java.lang.String perms, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
@@ -141,11 +141,11 @@ function mkdirBlockingByPathAndPerms =| path , perms |{
         return io.vertx.core.file.FileSystem.mkdirBlocking()
 }
     # io.vertx.core.file.FileSystem mkdirs(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function mkdirsByPathAndHandler =| path , handler |{
+function mkdirs =| path , handler |{
         return io.vertx.core.file.FileSystem.mkdirs()
 }
     # io.vertx.core.file.FileSystem mkdirsBlocking(java.lang.String path) 
-function mkdirsBlockingByPath =| path |{
+function mkdirsBlocking =| path |{
         return io.vertx.core.file.FileSystem.mkdirsBlocking()
 }
     # io.vertx.core.file.FileSystem mkdirs(java.lang.String path, java.lang.String perms, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
@@ -157,11 +157,11 @@ function mkdirsBlockingByPathAndPerms =| path , perms |{
         return io.vertx.core.file.FileSystem.mkdirsBlocking()
 }
     # io.vertx.core.file.FileSystem readDir(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler) 
-function readDirByPathAndHandler =| path , handler |{
+function readDir =| path , handler |{
         return io.vertx.core.file.FileSystem.readDir()
 }
     # java.util.List<java.lang.String> readDirBlocking(java.lang.String path) 
-function readDirBlockingByPath =| path |{
+function readDirBlocking =| path |{
         return java.util.List<java.lang.String>.readDirBlocking()
 }
     # io.vertx.core.file.FileSystem readDir(java.lang.String path, java.lang.String filter, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler) 
@@ -173,35 +173,35 @@ function readDirBlockingByPathAndFilter =| path , filter |{
         return java.util.List<java.lang.String>.readDirBlocking()
 }
     # io.vertx.core.file.FileSystem readFile(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.buffer.Buffer>> handler) 
-function readFileByPathAndHandler =| path , handler |{
+function readFile =| path , handler |{
         return io.vertx.core.file.FileSystem.readFile()
 }
     # io.vertx.core.buffer.Buffer readFileBlocking(java.lang.String path) 
-function readFileBlockingByPath =| path |{
+function readFileBlocking =| path |{
         return io.vertx.core.buffer.Buffer.readFileBlocking()
 }
     # io.vertx.core.file.FileSystem writeFile(java.lang.String path, io.vertx.core.buffer.Buffer data, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function writeFileByPathAndDataAndHandler =| path , data , handler |{
+function writeFile =| path , data , handler |{
         return io.vertx.core.file.FileSystem.writeFile()
 }
     # io.vertx.core.file.FileSystem writeFileBlocking(java.lang.String path, io.vertx.core.buffer.Buffer data) 
-function writeFileBlockingByPathAndData =| path , data |{
+function writeFileBlocking =| path , data |{
         return io.vertx.core.file.FileSystem.writeFileBlocking()
 }
     # io.vertx.core.file.FileSystem open(java.lang.String path, io.vertx.core.file.OpenOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.file.AsyncFile>> handler) 
-function openByPathAndOptionsAndHandler =| path , options , handler |{
+function open =| path , options , handler |{
         return io.vertx.core.file.FileSystem.open()
 }
     # io.vertx.core.file.AsyncFile openBlocking(java.lang.String path, io.vertx.core.file.OpenOptions options) 
-function openBlockingByPathAndOptions =| path , options |{
+function openBlocking =| path , options |{
         return io.vertx.core.file.AsyncFile.openBlocking()
 }
     # io.vertx.core.file.FileSystem createFile(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function createFileByPathAndHandler =| path , handler |{
+function createFile =| path , handler |{
         return io.vertx.core.file.FileSystem.createFile()
 }
     # io.vertx.core.file.FileSystem createFileBlocking(java.lang.String path) 
-function createFileBlockingByPath =| path |{
+function createFileBlocking =| path |{
         return io.vertx.core.file.FileSystem.createFileBlocking()
 }
     # io.vertx.core.file.FileSystem createFile(java.lang.String path, java.lang.String perms, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
@@ -213,18 +213,18 @@ function createFileBlockingByPathAndPerms =| path , perms |{
         return io.vertx.core.file.FileSystem.createFileBlocking()
 }
     # io.vertx.core.file.FileSystem exists(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Boolean>> handler) 
-function existsByPathAndHandler =| path , handler |{
+function exists =| path , handler |{
         return io.vertx.core.file.FileSystem.exists()
 }
     # boolean existsBlocking(java.lang.String path) 
-function existsBlockingByPath =| path |{
+function existsBlocking =| path |{
         return boolean.existsBlocking()
 }
     # io.vertx.core.file.FileSystem fsProps(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.file.FileSystemProps>> handler) 
-function fsPropsByPathAndHandler =| path , handler |{
+function fsProps =| path , handler |{
         return io.vertx.core.file.FileSystem.fsProps()
 }
     # io.vertx.core.file.FileSystemProps fsPropsBlocking(java.lang.String path) 
-function fsPropsBlockingByPath =| path |{
+function fsPropsBlocking =| path |{
         return io.vertx.core.file.FileSystemProps.fsPropsBlocking()
 }

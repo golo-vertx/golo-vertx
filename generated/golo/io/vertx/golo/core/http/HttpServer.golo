@@ -14,7 +14,7 @@ function requestStream ={
         return io.vertx.core.http.HttpServerRequestStream.requestStream()
 }
     # io.vertx.core.http.HttpServer requestHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerRequest> handler) 
-function requestHandlerByHandler =| handler |{
+function requestHandler =| handler |{
         return io.vertx.core.http.HttpServer.requestHandler()
 }
     # io.vertx.core.http.ServerWebSocketStream websocketStream() 
@@ -22,7 +22,7 @@ function websocketStream ={
         return io.vertx.core.http.ServerWebSocketStream.websocketStream()
 }
     # io.vertx.core.http.HttpServer websocketHandler(io.vertx.core.Handler<io.vertx.core.http.ServerWebSocket> handler) 
-function websocketHandlerByHandler =| handler |{
+function websocketHandler =| handler |{
         return io.vertx.core.http.HttpServer.websocketHandler()
 }
     # io.vertx.core.http.HttpServer listen() 

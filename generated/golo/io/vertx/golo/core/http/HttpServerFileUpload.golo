@@ -3,15 +3,15 @@ module io.vertx.golo.core.Http
 import io.vertx.core.buffer.Buffer
 import io.vertx.core.streams.ReadStream
     # io.vertx.core.http.HttpServerFileUpload exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.http.HttpServerFileUpload.exceptionHandler()
 }
     # io.vertx.core.http.HttpServerFileUpload handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.http.HttpServerFileUpload.handler()
 }
     # io.vertx.core.http.HttpServerFileUpload endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.http.HttpServerFileUpload.endHandler()
 }
     # io.vertx.core.http.HttpServerFileUpload pause() 
@@ -23,7 +23,7 @@ function resume ={
         return io.vertx.core.http.HttpServerFileUpload.resume()
 }
     # io.vertx.core.http.HttpServerFileUpload streamToFileSystem(java.lang.String filename) 
-function streamToFileSystemByFilename =| filename |{
+function streamToFileSystem =| filename |{
         return io.vertx.core.http.HttpServerFileUpload.streamToFileSystem()
 }
     # java.lang.String filename() 

@@ -11,11 +11,11 @@ function isMetricsEnabled ={
         return boolean.isMetricsEnabled()
 }
     # io.vertx.core.datagram.DatagramSocket send(io.vertx.core.buffer.Buffer packet, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
-function sendByPacketAndPortAndHostAndHandler =| packet , port , host , handler |{
+function send =| packet , port , host , handler |{
         return io.vertx.core.datagram.DatagramSocket.send()
 }
     # io.vertx.core.datagram.PacketWritestream sender(int port, java.lang.String host) 
-function senderByPortAndHost =| port , host |{
+function sender =| port , host |{
         return io.vertx.core.datagram.PacketWritestream.sender()
 }
     # io.vertx.core.datagram.DatagramSocket send(java.lang.String str, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
@@ -27,7 +27,7 @@ function sendByStrAndEncAndPortAndHostAndHandler =| str , enc , port , host , ha
         return io.vertx.core.datagram.DatagramSocket.send()
 }
     # void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
-function closeByHandler =| handler |{
+function close =| handler |{
         return void.close()
 }
     # void close() 
@@ -39,7 +39,7 @@ function localAddress ={
         return io.vertx.core.net.SocketAddress.localAddress()
 }
     # io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
-function listenMulticastGroupByMulticastAddressAndHandler =| multicastAddress , handler |{
+function listenMulticastGroup =| multicastAddress , handler |{
         return io.vertx.core.datagram.DatagramSocket.listenMulticastGroup()
 }
     # io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
@@ -47,7 +47,7 @@ function listenMulticastGroupByMulticastAddressAndNetworkInterfaceAndSourceAndHa
         return io.vertx.core.datagram.DatagramSocket.listenMulticastGroup()
 }
     # io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
-function unlistenMulticastGroupByMulticastAddressAndHandler =| multicastAddress , handler |{
+function unlistenMulticastGroup =| multicastAddress , handler |{
         return io.vertx.core.datagram.DatagramSocket.unlistenMulticastGroup()
 }
     # io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
@@ -55,7 +55,7 @@ function unlistenMulticastGroupByMulticastAddressAndNetworkInterfaceAndSourceAnd
         return io.vertx.core.datagram.DatagramSocket.unlistenMulticastGroup()
 }
     # io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
-function blockMulticastGroupByMulticastAddressAndSourceToBlockAndHandler =| multicastAddress , sourceToBlock , handler |{
+function blockMulticastGroup =| multicastAddress , sourceToBlock , handler |{
         return io.vertx.core.datagram.DatagramSocket.blockMulticastGroup()
 }
     # io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
@@ -63,7 +63,7 @@ function blockMulticastGroupByMulticastAddressAndNetworkInterfaceAndSourceToBloc
         return io.vertx.core.datagram.DatagramSocket.blockMulticastGroup()
 }
     # io.vertx.core.datagram.DatagramSocket listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
-function listenByPortAndHostAndHandler =| port , host , handler |{
+function listen =| port , host , handler |{
         return io.vertx.core.datagram.DatagramSocket.listen()
 }
     # io.vertx.core.datagram.DatagramSocket pause() 
@@ -75,14 +75,14 @@ function resume ={
         return io.vertx.core.datagram.DatagramSocket.resume()
 }
     # io.vertx.core.datagram.DatagramSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.datagram.DatagramSocket.endHandler()
 }
     # io.vertx.core.datagram.DatagramSocket handler(io.vertx.core.Handler<io.vertx.core.datagram.DatagramPacket> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.datagram.DatagramSocket.handler()
 }
     # io.vertx.core.datagram.DatagramSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.datagram.DatagramSocket.exceptionHandler()
 }

@@ -9,11 +9,11 @@ function writeQueueFull ={
         return boolean.writeQueueFull()
 }
     # io.vertx.core.net.NetSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-function exceptionHandlerByHandler =| handler |{
+function exceptionHandler =| handler |{
         return io.vertx.core.net.NetSocket.exceptionHandler()
 }
     # io.vertx.core.net.NetSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
-function handlerByHandler =| handler |{
+function handler =| handler |{
         return io.vertx.core.net.NetSocket.handler()
 }
     # io.vertx.core.net.NetSocket pause() 
@@ -25,19 +25,19 @@ function resume ={
         return io.vertx.core.net.NetSocket.resume()
 }
     # io.vertx.core.net.NetSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-function endHandlerByEndHandler =| endHandler |{
+function endHandler =| endHandler |{
         return io.vertx.core.net.NetSocket.endHandler()
 }
     # io.vertx.core.net.NetSocket write(io.vertx.core.buffer.Buffer data) 
-function writeByData =| data |{
+function write =| data |{
         return io.vertx.core.net.NetSocket.write()
 }
     # io.vertx.core.net.NetSocket setWriteQueueMaxSize(int maxSize) 
-function setWriteQueueMaxSizeByMaxSize =| maxSize |{
+function setWriteQueueMaxSize =| maxSize |{
         return io.vertx.core.net.NetSocket.setWriteQueueMaxSize()
 }
     # io.vertx.core.net.NetSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function drainHandlerByHandler =| handler |{
+function drainHandler =| handler |{
         return io.vertx.core.net.NetSocket.drainHandler()
 }
     # java.lang.String writeHandlerID() 
@@ -53,7 +53,7 @@ function writeByStrAndEnc =| str , enc |{
         return io.vertx.core.net.NetSocket.write()
 }
     # io.vertx.core.net.NetSocket sendFile(java.lang.String filename) 
-function sendFileByFilename =| filename |{
+function sendFile =| filename |{
         return io.vertx.core.net.NetSocket.sendFile()
 }
     # io.vertx.core.net.NetSocket sendFile(java.lang.String filename, long offset) 
@@ -89,11 +89,11 @@ function close ={
         return void.close()
 }
     # io.vertx.core.net.NetSocket closeHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-function closeHandlerByHandler =| handler |{
+function closeHandler =| handler |{
         return io.vertx.core.net.NetSocket.closeHandler()
 }
     # io.vertx.core.net.NetSocket upgradeToSsl(io.vertx.core.Handler<java.lang.Void> handler) 
-function upgradeToSslByHandler =| handler |{
+function upgradeToSsl =| handler |{
         return io.vertx.core.net.NetSocket.upgradeToSsl()
 }
     # boolean isSsl() 

@@ -26,7 +26,7 @@ function vertxByOptions =| options |{
         return io.vertx.core.Vertx.vertx()
 }
     # void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) 
-function clusteredVertxByOptionsAndResultHandler =| options , resultHandler |{
+function clusteredVertx =| options , resultHandler |{
         return void.clusteredVertx()
 }
     # io.vertx.core.Context currentContext() 
@@ -38,7 +38,7 @@ function getOrCreateContext ={
         return io.vertx.core.Context.getOrCreateContext()
 }
     # io.vertx.core.net.NetServer createNetServer(io.vertx.core.net.NetServerOptions options) 
-function createNetServerByOptions =| options |{
+function createNetServer =| options |{
         return io.vertx.core.net.NetServer.createNetServer()
 }
     # io.vertx.core.net.NetServer createNetServer() 
@@ -46,7 +46,7 @@ function createNetServer ={
         return io.vertx.core.net.NetServer.createNetServer()
 }
     # io.vertx.core.net.NetClient createNetClient(io.vertx.core.net.NetClientOptions options) 
-function createNetClientByOptions =| options |{
+function createNetClient =| options |{
         return io.vertx.core.net.NetClient.createNetClient()
 }
     # io.vertx.core.net.NetClient createNetClient() 
@@ -54,7 +54,7 @@ function createNetClient ={
         return io.vertx.core.net.NetClient.createNetClient()
 }
     # io.vertx.core.http.HttpServer createHttpServer(io.vertx.core.http.HttpServerOptions options) 
-function createHttpServerByOptions =| options |{
+function createHttpServer =| options |{
         return io.vertx.core.http.HttpServer.createHttpServer()
 }
     # io.vertx.core.http.HttpServer createHttpServer() 
@@ -62,7 +62,7 @@ function createHttpServer ={
         return io.vertx.core.http.HttpServer.createHttpServer()
 }
     # io.vertx.core.http.HttpClient createHttpClient(io.vertx.core.http.HttpClientOptions options) 
-function createHttpClientByOptions =| options |{
+function createHttpClient =| options |{
         return io.vertx.core.http.HttpClient.createHttpClient()
 }
     # io.vertx.core.http.HttpClient createHttpClient() 
@@ -70,7 +70,7 @@ function createHttpClient ={
         return io.vertx.core.http.HttpClient.createHttpClient()
 }
     # io.vertx.core.datagram.DatagramSocket createDatagramSocket(io.vertx.core.datagram.DatagramSocketOptions options) 
-function createDatagramSocketByOptions =| options |{
+function createDatagramSocket =| options |{
         return io.vertx.core.datagram.DatagramSocket.createDatagramSocket()
 }
     # io.vertx.core.datagram.DatagramSocket createDatagramSocket() 
@@ -86,7 +86,7 @@ function eventBus ={
         return io.vertx.core.eventbus.EventBus.eventBus()
 }
     # io.vertx.core.dns.DnsClient createDnsClient(int port, java.lang.String host) 
-function createDnsClientByPortAndHost =| port , host |{
+function createDnsClient =| port , host |{
         return io.vertx.core.dns.DnsClient.createDnsClient()
 }
     # io.vertx.core.shareddata.SharedData sharedData() 
@@ -94,27 +94,27 @@ function sharedData ={
         return io.vertx.core.shareddata.SharedData.sharedData()
 }
     # long setTimer(long delay, io.vertx.core.Handler<java.lang.Long> handler) 
-function setTimerByDelayAndHandler =| delay , handler |{
+function setTimer =| delay , handler |{
         return long.setTimer()
 }
     # io.vertx.core.TimeoutStream timerStream(long delay) 
-function timerStreamByDelay =| delay |{
+function timerStream =| delay |{
         return io.vertx.core.TimeoutStream.timerStream()
 }
     # long setPeriodic(long delay, io.vertx.core.Handler<java.lang.Long> handler) 
-function setPeriodicByDelayAndHandler =| delay , handler |{
+function setPeriodic =| delay , handler |{
         return long.setPeriodic()
 }
     # io.vertx.core.TimeoutStream periodicStream(long delay) 
-function periodicStreamByDelay =| delay |{
+function periodicStream =| delay |{
         return io.vertx.core.TimeoutStream.periodicStream()
 }
     # boolean cancelTimer(long id) 
-function cancelTimerById =| id |{
+function cancelTimer =| id |{
         return boolean.cancelTimer()
 }
     # void runOnContext(io.vertx.core.Handler<java.lang.Void> action) 
-function runOnContextByAction =| action |{
+function runOnContext =| action |{
         return void.runOnContext()
 }
     # void close() 
@@ -126,7 +126,7 @@ function closeByCompletionHandler =| completionHandler |{
         return void.close()
 }
     # void deployVerticle(java.lang.String name) 
-function deployVerticleByName =| name |{
+function deployVerticle =| name |{
         return void.deployVerticle()
 }
     # void deployVerticle(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler) 
@@ -142,7 +142,7 @@ function deployVerticleByNameAndOptionsAndCompletionHandler =| name , options , 
         return void.deployVerticle()
 }
     # void undeploy(java.lang.String deploymentID) 
-function undeployByDeploymentID =| deploymentID |{
+function undeploy =| deploymentID |{
         return void.undeploy()
 }
     # void undeploy(java.lang.String deploymentID, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) 
@@ -158,7 +158,7 @@ function isClustered ={
         return boolean.isClustered()
 }
     # <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-function executeBlockingByBlockingCodeHandlerAndOrderedAndResultHandler =| blockingCodeHandler , ordered , resultHandler |{
+function executeBlocking =| blockingCodeHandler , ordered , resultHandler |{
         return <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]>.executeBlocking()
 }
     # <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
