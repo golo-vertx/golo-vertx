@@ -1,21 +1,61 @@
 @comment{"Templating! The next row outputs all interfaces annotated with VertxGen-annotation."}
 
 @code{
-
   def genGoloModuleName(type) {
     var body = type.raw.translatePackageName("golo");
     for (int i = body.length()-2; i >= 0 ; i--) {
                if(body.substring(i, i+1).equals(".")) {
                      return body.substring(0,i+1) + body.substring(i+1,i+2).toUpperCase() + body.substring(i+2);
                }
-
      }
     return body;
     }
-}
+   def createJavaCall(method) {
+        var split = method.toString().split(" ");
+        return split[0] + "."  + method.name + "()";
+   }
 
+   def findUniqueFunctionName(functionNames, method) {
+        if(method.params == empty) {
+            functionNames.add(method.name);
+            return method.name;
+        }
+        var name = method.name + "By";
+        var mini = "";
+        for (int i =0; i < method.params.size(); i++) {
+           mini = method.params.get(i).name;
+           name += mini.substring(0,1).toUpperCase() + mini.substring(1,mini.length());
+           if(i != method.params.size() -1) {
+                name += "And";
+           }
+        }
+        return name;
+
+   }
+}
 module @{genGoloModuleName(type)}
 \n\n
 @foreach{referencedType : referencedTypes}
 import @{referencedType}\n
 @end{}
+
+@comment{"Generate the method dispatch (i.e the body of the method) for the current `methods` list"}
+@declare{'genMethodDispatch'}
+	@foreach{method:methods}
+	    @code{counter=1}
+# @{method} \n
+@code{methodName = findUniqueFunctionName(functionNames, method)}
+function @{methodName} =
+@if{method.params != empty}
+@comment{"NEXT ROW IS INJECTING THE PARAMS"}
+|@foreach{param: method.params} @{param.name} @if{counter < method.params.size()},@end{}@code{counter=counter+1}@end{}|
+@end{}
+{\n
+    @code{javaCall=createJavaCall(method)}
+    return @{javaCall}
+\n
+}\n
+	@end{}
+@end{}
+
+@includeNamed{'genMethodDispatch';functionNames=new java.util.ArrayList()}
