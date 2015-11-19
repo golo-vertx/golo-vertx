@@ -10,9 +10,20 @@
      }
     return body;
     }
-   def createJavaCall(method) {
+
+   def className(type) {
+        var absName = type.raw.toString();
+        for(int i = absName.length()-1; i >= 0 ; i--) {
+            if(absName.substring(i, i+1).equals(".")) {
+                return absName.substring(i+1, absName.length());
+            }
+        }
+        return "ERROR";
+   }
+
+   def callForOriginalAPI(method) {
         var split = method.toString().split(" ");
-        return split[0] + "."  + method.name + "()";
+        return "originalInstance."  + method.name + "()";
    }
 
    def findUniqueFunctionName(functionNames, method) {
@@ -42,33 +53,30 @@
            }
         }
         return name;
-
    }
 }
 
-module @{genGoloModuleName(type)}
-\n\n
+package @{genGoloModuleName(type)};\n\n
+
 @foreach{referencedType : referencedTypes}
-import @{referencedType}\n
+import @{referencedType};\n
 @end{}
 
-@comment{"Generate the method dispatch (i.e the body of the method) for the current `methods` list"}
+
+@code{className = className(type)}
+public class @{className} { \n\n
+
+private @{type} originalInstance;
+
 @declare{'genMethodDispatch'}
 	@foreach{method:methods}
-	    @code{counter=1}
-# @{method} \n
-@code{methodName = findUniqueFunctionName(functionNames, method)}
-function @{methodName} =
-@if{method.params != empty}
-@comment{"NEXT ROW IS INJECTING THE PARAMS"}
-|@foreach{param: method.params} @{param.name} @if{counter < method.params.size()},@end{}@code{counter=counter+1}@end{}|
-@end{}
-{\n
-    @code{javaCall=createJavaCall(method)}
-    return @{javaCall}
-\n
+// @{method} \n
+public @{method} {\n
+    @code{callOrgAPI = callForOriginalAPI(method)}
+    return @{callOrgAPI}; \n
 }\n
-	@end{}
+@end{}
+}\n
 @end{}
 
 @includeNamed{'genMethodDispatch';functionNames=new java.util.ArrayList()}
