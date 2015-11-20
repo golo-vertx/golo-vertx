@@ -2,17 +2,18 @@ package io.vertx.golo.core.Shareddata;
 
 public class LocalMap { 
 
-private io.vertx.core.shareddata.LocalMap<K,V> originalInstance;// V get(K key) 
+private io.vertx.core.shareddata.LocalMap<K,V> originalInstance; 
+// V get(K key) 
 public V get(K key) {
-        return originalInstance.get(); 
+        return originalInstance.get(key); 
 }
 // V put(K key, V value) 
 public V put(K key, V value) {
-        return originalInstance.put(); 
+        return originalInstance.put(key, value); 
 }
 // V remove(K key) 
 public V remove(K key) {
-        return originalInstance.remove(); 
+        return originalInstance.remove(key); 
 }
 // void clear() 
 public void clear() {
@@ -28,19 +29,19 @@ public boolean isEmpty() {
 }
 // V putIfAbsent(K key, V value) 
 public V putIfAbsent(K key, V value) {
-        return originalInstance.putIfAbsent(); 
+        return originalInstance.putIfAbsent(key, value); 
 }
 // boolean removeIfPresent(K key, V value) 
 public boolean removeIfPresent(K key, V value) {
-        return originalInstance.removeIfPresent(); 
+        return originalInstance.removeIfPresent(key, value); 
 }
 // boolean replaceIfPresent(K key, V oldValue, V newValue) 
 public boolean replaceIfPresent(K key, V oldValue, V newValue) {
-        return originalInstance.replaceIfPresent(); 
+        return originalInstance.replaceIfPresent(key, oldValue, newValue); 
 }
 // V replace(K key, V value) 
 public V replace(K key, V value) {
-        return originalInstance.replace(); 
+        return originalInstance.replace(key, value); 
 }
 // void close() 
 public void close() {

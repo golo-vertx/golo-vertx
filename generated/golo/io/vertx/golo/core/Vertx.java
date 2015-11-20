@@ -15,7 +15,8 @@ import io.vertx.core.net.NetClient;
 import io.vertx.core.http.HttpClient;
 public class Vertx { 
 
-private io.vertx.core.Vertx originalInstance;// boolean isMetricsEnabled() 
+private io.vertx.core.Vertx originalInstance; 
+// boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
         return originalInstance.isMetricsEnabled(); 
 }
@@ -25,11 +26,11 @@ public io.vertx.core.Vertx vertx() {
 }
 // io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) 
 public io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) {
-        return originalInstance.vertx(); 
+        return originalInstance.vertx(options); 
 }
 // void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) 
 public void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) {
-        return originalInstance.clusteredVertx(); 
+        return originalInstance.clusteredVertx(options, resultHandler); 
 }
 // io.vertx.core.Context currentContext() 
 public io.vertx.core.Context currentContext() {
@@ -41,7 +42,7 @@ public io.vertx.core.Context getOrCreateContext() {
 }
 // io.vertx.core.net.NetServer createNetServer(io.vertx.core.net.NetServerOptions options) 
 public io.vertx.core.net.NetServer createNetServer(io.vertx.core.net.NetServerOptions options) {
-        return originalInstance.createNetServer(); 
+        return originalInstance.createNetServer(options); 
 }
 // io.vertx.core.net.NetServer createNetServer() 
 public io.vertx.core.net.NetServer createNetServer() {
@@ -49,7 +50,7 @@ public io.vertx.core.net.NetServer createNetServer() {
 }
 // io.vertx.core.net.NetClient createNetClient(io.vertx.core.net.NetClientOptions options) 
 public io.vertx.core.net.NetClient createNetClient(io.vertx.core.net.NetClientOptions options) {
-        return originalInstance.createNetClient(); 
+        return originalInstance.createNetClient(options); 
 }
 // io.vertx.core.net.NetClient createNetClient() 
 public io.vertx.core.net.NetClient createNetClient() {
@@ -57,7 +58,7 @@ public io.vertx.core.net.NetClient createNetClient() {
 }
 // io.vertx.core.http.HttpServer createHttpServer(io.vertx.core.http.HttpServerOptions options) 
 public io.vertx.core.http.HttpServer createHttpServer(io.vertx.core.http.HttpServerOptions options) {
-        return originalInstance.createHttpServer(); 
+        return originalInstance.createHttpServer(options); 
 }
 // io.vertx.core.http.HttpServer createHttpServer() 
 public io.vertx.core.http.HttpServer createHttpServer() {
@@ -65,7 +66,7 @@ public io.vertx.core.http.HttpServer createHttpServer() {
 }
 // io.vertx.core.http.HttpClient createHttpClient(io.vertx.core.http.HttpClientOptions options) 
 public io.vertx.core.http.HttpClient createHttpClient(io.vertx.core.http.HttpClientOptions options) {
-        return originalInstance.createHttpClient(); 
+        return originalInstance.createHttpClient(options); 
 }
 // io.vertx.core.http.HttpClient createHttpClient() 
 public io.vertx.core.http.HttpClient createHttpClient() {
@@ -73,7 +74,7 @@ public io.vertx.core.http.HttpClient createHttpClient() {
 }
 // io.vertx.core.datagram.DatagramSocket createDatagramSocket(io.vertx.core.datagram.DatagramSocketOptions options) 
 public io.vertx.core.datagram.DatagramSocket createDatagramSocket(io.vertx.core.datagram.DatagramSocketOptions options) {
-        return originalInstance.createDatagramSocket(); 
+        return originalInstance.createDatagramSocket(options); 
 }
 // io.vertx.core.datagram.DatagramSocket createDatagramSocket() 
 public io.vertx.core.datagram.DatagramSocket createDatagramSocket() {
@@ -89,7 +90,7 @@ public io.vertx.core.eventbus.EventBus eventBus() {
 }
 // io.vertx.core.dns.DnsClient createDnsClient(int port, java.lang.String host) 
 public io.vertx.core.dns.DnsClient createDnsClient(int port, java.lang.String host) {
-        return originalInstance.createDnsClient(); 
+        return originalInstance.createDnsClient(port, host); 
 }
 // io.vertx.core.shareddata.SharedData sharedData() 
 public io.vertx.core.shareddata.SharedData sharedData() {
@@ -97,27 +98,27 @@ public io.vertx.core.shareddata.SharedData sharedData() {
 }
 // long setTimer(long delay, io.vertx.core.Handler<java.lang.Long> handler) 
 public long setTimer(long delay, io.vertx.core.Handler<java.lang.Long> handler) {
-        return originalInstance.setTimer(); 
+        return originalInstance.setTimer(delay, handler); 
 }
 // io.vertx.core.TimeoutStream timerStream(long delay) 
 public io.vertx.core.TimeoutStream timerStream(long delay) {
-        return originalInstance.timerStream(); 
+        return originalInstance.timerStream(delay); 
 }
 // long setPeriodic(long delay, io.vertx.core.Handler<java.lang.Long> handler) 
 public long setPeriodic(long delay, io.vertx.core.Handler<java.lang.Long> handler) {
-        return originalInstance.setPeriodic(); 
+        return originalInstance.setPeriodic(delay, handler); 
 }
 // io.vertx.core.TimeoutStream periodicStream(long delay) 
 public io.vertx.core.TimeoutStream periodicStream(long delay) {
-        return originalInstance.periodicStream(); 
+        return originalInstance.periodicStream(delay); 
 }
 // boolean cancelTimer(long id) 
 public boolean cancelTimer(long id) {
-        return originalInstance.cancelTimer(); 
+        return originalInstance.cancelTimer(id); 
 }
 // void runOnContext(io.vertx.core.Handler<java.lang.Void> action) 
 public void runOnContext(io.vertx.core.Handler<java.lang.Void> action) {
-        return originalInstance.runOnContext(); 
+        return originalInstance.runOnContext(action); 
 }
 // void close() 
 public void close() {
@@ -125,31 +126,31 @@ public void close() {
 }
 // void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) 
 public void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) {
-        return originalInstance.close(); 
+        return originalInstance.close(completionHandler); 
 }
 // void deployVerticle(java.lang.String name) 
 public void deployVerticle(java.lang.String name) {
-        return originalInstance.deployVerticle(); 
+        return originalInstance.deployVerticle(name); 
 }
 // void deployVerticle(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler) 
 public void deployVerticle(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler) {
-        return originalInstance.deployVerticle(); 
+        return originalInstance.deployVerticle(name, completionHandler); 
 }
 // void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options) 
 public void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options) {
-        return originalInstance.deployVerticle(); 
+        return originalInstance.deployVerticle(name, options); 
 }
 // void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler) 
 public void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler) {
-        return originalInstance.deployVerticle(); 
+        return originalInstance.deployVerticle(name, options, completionHandler); 
 }
 // void undeploy(java.lang.String deploymentID) 
 public void undeploy(java.lang.String deploymentID) {
-        return originalInstance.undeploy(); 
+        return originalInstance.undeploy(deploymentID); 
 }
 // void undeploy(java.lang.String deploymentID, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) 
 public void undeploy(java.lang.String deploymentID, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) {
-        return originalInstance.undeploy(); 
+        return originalInstance.undeploy(deploymentID, completionHandler); 
 }
 // java.util.Set<java.lang.String> deploymentIDs() 
 public java.util.Set<java.lang.String> deploymentIDs() {
@@ -161,10 +162,10 @@ public boolean isClustered() {
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
 public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
-        return originalInstance.executeBlocking(); 
+        return originalInstance.executeBlocking(blockingCodeHandler, ordered, resultHandler); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
 public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
-        return originalInstance.executeBlocking(); 
+        return originalInstance.executeBlocking(blockingCodeHandler, resultHandler); 
 }
 }

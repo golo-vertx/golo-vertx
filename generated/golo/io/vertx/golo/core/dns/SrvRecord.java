@@ -2,7 +2,8 @@ package io.vertx.golo.core.Dns;
 
 public class SrvRecord { 
 
-private io.vertx.core.dns.SrvRecord originalInstance;// int priority() 
+private io.vertx.core.dns.SrvRecord originalInstance; 
+// int priority() 
 public int priority() {
         return originalInstance.priority(); 
 }

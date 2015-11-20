@@ -4,17 +4,18 @@ import io.vertx.core.buffer.Buffer;
 import io.vertx.core.streams.ReadStream;
 public class HttpServerFileUpload { 
 
-private io.vertx.core.http.HttpServerFileUpload originalInstance;// io.vertx.core.http.HttpServerFileUpload exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
+private io.vertx.core.http.HttpServerFileUpload originalInstance; 
+// io.vertx.core.http.HttpServerFileUpload exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.http.HttpServerFileUpload exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return originalInstance.exceptionHandler(); 
+        return originalInstance.exceptionHandler(handler); 
 }
 // io.vertx.core.http.HttpServerFileUpload handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
 public io.vertx.core.http.HttpServerFileUpload handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
-        return originalInstance.handler(); 
+        return originalInstance.handler(handler); 
 }
 // io.vertx.core.http.HttpServerFileUpload endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.http.HttpServerFileUpload endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return originalInstance.endHandler(); 
+        return originalInstance.endHandler(endHandler); 
 }
 // io.vertx.core.http.HttpServerFileUpload pause() 
 public io.vertx.core.http.HttpServerFileUpload pause() {
@@ -26,7 +27,7 @@ public io.vertx.core.http.HttpServerFileUpload resume() {
 }
 // io.vertx.core.http.HttpServerFileUpload streamToFileSystem(java.lang.String filename) 
 public io.vertx.core.http.HttpServerFileUpload streamToFileSystem(java.lang.String filename) {
-        return originalInstance.streamToFileSystem(); 
+        return originalInstance.streamToFileSystem(filename); 
 }
 // java.lang.String filename() 
 public java.lang.String filename() {

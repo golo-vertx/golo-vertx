@@ -8,29 +8,30 @@ import io.vertx.core.streams.ReadStream;
 import io.vertx.core.net.SocketAddress;
 public class DatagramSocket { 
 
-private io.vertx.core.datagram.DatagramSocket originalInstance;// boolean isMetricsEnabled() 
+private io.vertx.core.datagram.DatagramSocket originalInstance; 
+// boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
         return originalInstance.isMetricsEnabled(); 
 }
 // io.vertx.core.datagram.DatagramSocket send(io.vertx.core.buffer.Buffer packet, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket send(io.vertx.core.buffer.Buffer packet, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.send(); 
+        return originalInstance.send(packet, port, host, handler); 
 }
 // io.vertx.core.datagram.PacketWritestream sender(int port, java.lang.String host) 
 public io.vertx.core.datagram.PacketWritestream sender(int port, java.lang.String host) {
-        return originalInstance.sender(); 
+        return originalInstance.sender(port, host); 
 }
 // io.vertx.core.datagram.DatagramSocket send(java.lang.String str, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket send(java.lang.String str, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.send(); 
+        return originalInstance.send(str, port, host, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket send(java.lang.String str, java.lang.String enc, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket send(java.lang.String str, java.lang.String enc, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.send(); 
+        return originalInstance.send(str, enc, port, host, handler); 
 }
 // void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) 
 public void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler) {
-        return originalInstance.close(); 
+        return originalInstance.close(handler); 
 }
 // void close() 
 public void close() {
@@ -42,31 +43,31 @@ public io.vertx.core.net.SocketAddress localAddress() {
 }
 // io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.listenMulticastGroup(); 
+        return originalInstance.listenMulticastGroup(multicastAddress, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.listenMulticastGroup(); 
+        return originalInstance.listenMulticastGroup(multicastAddress, networkInterface, source, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.unlistenMulticastGroup(); 
+        return originalInstance.unlistenMulticastGroup(multicastAddress, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.unlistenMulticastGroup(); 
+        return originalInstance.unlistenMulticastGroup(multicastAddress, networkInterface, source, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.blockMulticastGroup(); 
+        return originalInstance.blockMulticastGroup(multicastAddress, sourceToBlock, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.blockMulticastGroup(); 
+        return originalInstance.blockMulticastGroup(multicastAddress, networkInterface, sourceToBlock, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) 
 public io.vertx.core.datagram.DatagramSocket listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler) {
-        return originalInstance.listen(); 
+        return originalInstance.listen(port, host, handler); 
 }
 // io.vertx.core.datagram.DatagramSocket pause() 
 public io.vertx.core.datagram.DatagramSocket pause() {
@@ -78,14 +79,14 @@ public io.vertx.core.datagram.DatagramSocket resume() {
 }
 // io.vertx.core.datagram.DatagramSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.datagram.DatagramSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return originalInstance.endHandler(); 
+        return originalInstance.endHandler(endHandler); 
 }
 // io.vertx.core.datagram.DatagramSocket handler(io.vertx.core.Handler<io.vertx.core.datagram.DatagramPacket> handler) 
 public io.vertx.core.datagram.DatagramSocket handler(io.vertx.core.Handler<io.vertx.core.datagram.DatagramPacket> handler) {
-        return originalInstance.handler(); 
+        return originalInstance.handler(handler); 
 }
 // io.vertx.core.datagram.DatagramSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.datagram.DatagramSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return originalInstance.exceptionHandler(); 
+        return originalInstance.exceptionHandler(handler); 
 }
 }

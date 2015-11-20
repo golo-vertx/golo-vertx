@@ -1,6 +1,20 @@
 @comment{"Templating! The next row outputs all interfaces annotated with VertxGen-annotation."}
 
 @code{
+
+  def splitHelper(toSplit, splitter) {
+    var array = [];
+    var start = 0;
+    for(int i = 0; i<toSplit.length(); i++) {
+        if(toSplit.substring(i, i+1).equals(splitter)) {
+            array.add(toSplit.substring(start, i));
+            start = i + 1;
+        }
+    }
+    array.add(toSplit.substring(start, toSplit.length()));
+    return array;
+  }
+
   def genGoloModuleName(type) {
     var body = type.raw.translatePackageName("golo");
     for (int i = body.length()-2; i >= 0 ; i--) {
@@ -13,17 +27,22 @@
 
    def className(type) {
         var absName = type.raw.toString();
-        for(int i = absName.length()-1; i >= 0 ; i--) {
-            if(absName.substring(i, i+1).equals(".")) {
-                return absName.substring(i+1, absName.length());
-            }
-        }
-        return "ERROR";
+        var split = splitHelper(absName, ".");
+        return split[split.size() - 1];
    }
 
    def callForOriginalAPI(method) {
-        var split = method.toString().split(" ");
-        return "originalInstance."  + method.name + "()";
+        var call = "originalInstance."  + method.name + "(";
+        var params = method.params;
+        var p;
+        for(int i = 0; i < params.size(); i++) {
+            p = splitHelper(params.get(i).name, " ");
+            call = call + p[0];
+            if(i < params.size() - 1) {
+                call = call + ", ";
+            }
+        }
+        return call + ")";
    }
 
    def findUniqueFunctionName(functionNames, method) {
@@ -66,7 +85,7 @@ import @{referencedType};\n
 @code{className = className(type)}
 public class @{className} { \n\n
 
-private @{type} originalInstance;
+private @{type} originalInstance; \n
 
 @declare{'genMethodDispatch'}
 	@foreach{method:methods}

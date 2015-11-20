@@ -10,13 +10,14 @@ import io.vertx.core.net.SocketAddress;
 import io.vertx.core.net.NetSocket;
 public class HttpServerRequest { 
 
-private io.vertx.core.http.HttpServerRequest originalInstance;// io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
+private io.vertx.core.http.HttpServerRequest originalInstance; 
+// io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return originalInstance.exceptionHandler(); 
+        return originalInstance.exceptionHandler(handler); 
 }
 // io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
 public io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
-        return originalInstance.handler(); 
+        return originalInstance.handler(handler); 
 }
 // io.vertx.core.http.HttpServerRequest pause() 
 public io.vertx.core.http.HttpServerRequest pause() {
@@ -28,7 +29,7 @@ public io.vertx.core.http.HttpServerRequest resume() {
 }
 // io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return originalInstance.endHandler(); 
+        return originalInstance.endHandler(endHandler); 
 }
 // io.vertx.core.http.HttpVersion version() 
 public io.vertx.core.http.HttpVersion version() {
@@ -60,7 +61,7 @@ public io.vertx.core.MultiMap headers() {
 }
 // java.lang.String getHeader(java.lang.String headerName) 
 public java.lang.String getHeader(java.lang.String headerName) {
-        return originalInstance.getHeader(); 
+        return originalInstance.getHeader(headerName); 
 }
 // io.vertx.core.MultiMap params() 
 public io.vertx.core.MultiMap params() {
@@ -68,7 +69,7 @@ public io.vertx.core.MultiMap params() {
 }
 // java.lang.String getParam(java.lang.String paramName) 
 public java.lang.String getParam(java.lang.String paramName) {
-        return originalInstance.getParam(); 
+        return originalInstance.getParam(paramName); 
 }
 // io.vertx.core.net.SocketAddress remoteAddress() 
 public io.vertx.core.net.SocketAddress remoteAddress() {
@@ -84,7 +85,7 @@ public java.lang.String absoluteURI() {
 }
 // io.vertx.core.http.HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) 
 public io.vertx.core.http.HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) {
-        return originalInstance.bodyHandler(); 
+        return originalInstance.bodyHandler(bodyHandler); 
 }
 // io.vertx.core.net.NetSocket netSocket() 
 public io.vertx.core.net.NetSocket netSocket() {
@@ -92,7 +93,7 @@ public io.vertx.core.net.NetSocket netSocket() {
 }
 // io.vertx.core.http.HttpServerRequest setExpectMultipart(boolean expect) 
 public io.vertx.core.http.HttpServerRequest setExpectMultipart(boolean expect) {
-        return originalInstance.setExpectMultipart(); 
+        return originalInstance.setExpectMultipart(expect); 
 }
 // boolean isExpectMultipart() 
 public boolean isExpectMultipart() {
@@ -100,7 +101,7 @@ public boolean isExpectMultipart() {
 }
 // io.vertx.core.http.HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler) 
 public io.vertx.core.http.HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler) {
-        return originalInstance.uploadHandler(); 
+        return originalInstance.uploadHandler(uploadHandler); 
 }
 // io.vertx.core.MultiMap formAttributes() 
 public io.vertx.core.MultiMap formAttributes() {
@@ -108,7 +109,7 @@ public io.vertx.core.MultiMap formAttributes() {
 }
 // java.lang.String getFormAttribute(java.lang.String attributeName) 
 public java.lang.String getFormAttribute(java.lang.String attributeName) {
-        return originalInstance.getFormAttribute(); 
+        return originalInstance.getFormAttribute(attributeName); 
 }
 // io.vertx.core.http.ServerWebSocket upgrade() 
 public io.vertx.core.http.ServerWebSocket upgrade() {

@@ -4,7 +4,8 @@ import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.SocketAddress;
 public class DatagramPacket { 
 
-private io.vertx.core.datagram.DatagramPacket originalInstance;// io.vertx.core.net.SocketAddress sender() 
+private io.vertx.core.datagram.DatagramPacket originalInstance; 
+// io.vertx.core.net.SocketAddress sender() 
 public io.vertx.core.net.SocketAddress sender() {
         return originalInstance.sender(); 
 }

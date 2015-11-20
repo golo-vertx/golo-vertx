@@ -6,7 +6,8 @@ import io.vertx.core.http.WebSocketFrame;
 import io.vertx.core.net.SocketAddress;
 public class WebSocket { 
 
-private io.vertx.core.http.WebSocket originalInstance;// boolean writeQueueFull() 
+private io.vertx.core.http.WebSocket originalInstance; 
+// boolean writeQueueFull() 
 public boolean writeQueueFull() {
         return originalInstance.writeQueueFull(); 
 }
@@ -32,11 +33,11 @@ public io.vertx.core.net.SocketAddress localAddress() {
 }
 // io.vertx.core.http.WebSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.http.WebSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return originalInstance.exceptionHandler(); 
+        return originalInstance.exceptionHandler(handler); 
 }
 // io.vertx.core.http.WebSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
 public io.vertx.core.http.WebSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
-        return originalInstance.handler(); 
+        return originalInstance.handler(handler); 
 }
 // io.vertx.core.http.WebSocket pause() 
 public io.vertx.core.http.WebSocket pause() {
@@ -48,42 +49,42 @@ public io.vertx.core.http.WebSocket resume() {
 }
 // io.vertx.core.http.WebSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.http.WebSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return originalInstance.endHandler(); 
+        return originalInstance.endHandler(endHandler); 
 }
 // io.vertx.core.http.WebSocket write(io.vertx.core.buffer.Buffer data) 
 public io.vertx.core.http.WebSocket write(io.vertx.core.buffer.Buffer data) {
-        return originalInstance.write(); 
+        return originalInstance.write(data); 
 }
 // io.vertx.core.http.WebSocket setWriteQueueMaxSize(int maxSize) 
 public io.vertx.core.http.WebSocket setWriteQueueMaxSize(int maxSize) {
-        return originalInstance.setWriteQueueMaxSize(); 
+        return originalInstance.setWriteQueueMaxSize(maxSize); 
 }
 // io.vertx.core.http.WebSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
 public io.vertx.core.http.WebSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler) {
-        return originalInstance.drainHandler(); 
+        return originalInstance.drainHandler(handler); 
 }
 // io.vertx.core.http.WebSocket writeFrame(io.vertx.core.http.WebSocketFrame frame) 
 public io.vertx.core.http.WebSocket writeFrame(io.vertx.core.http.WebSocketFrame frame) {
-        return originalInstance.writeFrame(); 
+        return originalInstance.writeFrame(frame); 
 }
 // io.vertx.core.http.WebSocket writeFinalTextFrame(java.lang.String text) 
 public io.vertx.core.http.WebSocket writeFinalTextFrame(java.lang.String text) {
-        return originalInstance.writeFinalTextFrame(); 
+        return originalInstance.writeFinalTextFrame(text); 
 }
 // io.vertx.core.http.WebSocket writeFinalBinaryFrame(io.vertx.core.buffer.Buffer data) 
 public io.vertx.core.http.WebSocket writeFinalBinaryFrame(io.vertx.core.buffer.Buffer data) {
-        return originalInstance.writeFinalBinaryFrame(); 
+        return originalInstance.writeFinalBinaryFrame(data); 
 }
 // io.vertx.core.http.WebSocket writeBinaryMessage(io.vertx.core.buffer.Buffer data) 
 public io.vertx.core.http.WebSocket writeBinaryMessage(io.vertx.core.buffer.Buffer data) {
-        return originalInstance.writeBinaryMessage(); 
+        return originalInstance.writeBinaryMessage(data); 
 }
 // io.vertx.core.http.WebSocket closeHandler(io.vertx.core.Handler<java.lang.Void> handler) 
 public io.vertx.core.http.WebSocket closeHandler(io.vertx.core.Handler<java.lang.Void> handler) {
-        return originalInstance.closeHandler(); 
+        return originalInstance.closeHandler(handler); 
 }
 // io.vertx.core.http.WebSocket frameHandler(io.vertx.core.Handler<io.vertx.core.http.WebSocketFrame> handler) 
 public io.vertx.core.http.WebSocket frameHandler(io.vertx.core.Handler<io.vertx.core.http.WebSocketFrame> handler) {
-        return originalInstance.frameHandler(); 
+        return originalInstance.frameHandler(handler); 
 }
 }

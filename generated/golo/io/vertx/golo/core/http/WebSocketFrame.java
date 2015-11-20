@@ -3,17 +3,18 @@ package io.vertx.golo.core.Http;
 import io.vertx.core.buffer.Buffer;
 public class WebSocketFrame { 
 
-private io.vertx.core.http.WebSocketFrame originalInstance;// io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
+private io.vertx.core.http.WebSocketFrame originalInstance; 
+// io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
 public io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) {
-        return originalInstance.binaryFrame(); 
+        return originalInstance.binaryFrame(data, isFinal); 
 }
 // io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal) 
 public io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal) {
-        return originalInstance.textFrame(); 
+        return originalInstance.textFrame(str, isFinal); 
 }
 // io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
 public io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) {
-        return originalInstance.continuationFrame(); 
+        return originalInstance.continuationFrame(data, isFinal); 
 }
 // boolean isText() 
 public boolean isText() {

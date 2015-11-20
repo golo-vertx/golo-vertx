@@ -2,7 +2,8 @@ package io.vertx.golo.core.File;
 
 public class FileProps { 
 
-private io.vertx.core.file.FileProps originalInstance;// long creationTime() 
+private io.vertx.core.file.FileProps originalInstance; 
+// long creationTime() 
 public long creationTime() {
         return originalInstance.creationTime(); 
 }

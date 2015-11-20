@@ -2,7 +2,8 @@ package io.vertx.golo.core.File;
 
 public class FileSystemProps { 
 
-private io.vertx.core.file.FileSystemProps originalInstance;// long totalSpace() 
+private io.vertx.core.file.FileSystemProps originalInstance; 
+// long totalSpace() 
 public long totalSpace() {
         return originalInstance.totalSpace(); 
 }

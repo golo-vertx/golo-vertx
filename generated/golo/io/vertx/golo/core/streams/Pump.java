@@ -4,17 +4,18 @@ import io.vertx.core.streams.WriteStream;
 import io.vertx.core.streams.ReadStream;
 public class Pump { 
 
-private io.vertx.core.streams.Pump originalInstance;// <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws) 
+private io.vertx.core.streams.Pump originalInstance; 
+// <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws) 
 public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws) {
-        return originalInstance.pump(); 
+        return originalInstance.pump(rs, ws); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws, int writeQueueMaxSize) 
 public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws, int writeQueueMaxSize) {
-        return originalInstance.pump(); 
+        return originalInstance.pump(rs, ws, writeQueueMaxSize); 
 }
 // io.vertx.core.streams.Pump setWriteQueueMaxSize(int maxSize) 
 public io.vertx.core.streams.Pump setWriteQueueMaxSize(int maxSize) {
-        return originalInstance.setWriteQueueMaxSize(); 
+        return originalInstance.setWriteQueueMaxSize(maxSize); 
 }
 // io.vertx.core.streams.Pump start() 
 public io.vertx.core.streams.Pump start() {
