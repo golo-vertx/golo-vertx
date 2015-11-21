@@ -1,10 +1,18 @@
-package io.vertx.golo.core.Streams;
+package io.vertx.golo.core.streams;
+
+import io.vertx.lang.golo.InternalHelper;
 
 public class StreamBase { 
 
-private io.vertx.core.streams.StreamBase originalInstance; 
+private io.vertx.core.streams.StreamBase delegate; 
+public StreamBase(Object delegate) { 
+    this.delegate = (io.vertx.core.streams.StreamBase)delegate; 
+}
+public Object getDelegate() { 
+    return delegate; 
+}
 // io.vertx.core.streams.StreamBase exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.streams.StreamBase exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return originalInstance.exceptionHandler(handler); 
+        return delegate.exceptionHandler(handler); 
 }
 }

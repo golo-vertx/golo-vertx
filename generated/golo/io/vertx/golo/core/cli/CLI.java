@@ -1,103 +1,111 @@
-package io.vertx.golo.core.Cli;
+package io.vertx.golo.core.cli;
+
+import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.cli.CommandLine;
 public class CLI { 
 
-private io.vertx.core.cli.CLI originalInstance; 
+private io.vertx.core.cli.CLI delegate; 
+public CLI(Object delegate) { 
+    this.delegate = (io.vertx.core.cli.CLI)delegate; 
+}
+public Object getDelegate() { 
+    return delegate; 
+}
 // io.vertx.core.cli.CLI create(java.lang.String name) 
-public io.vertx.core.cli.CLI create(java.lang.String name) {
-        return originalInstance.create(name); 
+public static io.vertx.core.cli.CLI create(java.lang.String name) {
+        return InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx.golo.core.cli.CLI.class); 
 }
 // io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments) 
 public io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments) {
-        return originalInstance.parse(arguments); 
+        return delegate.parse(arguments); 
 }
 // io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments, boolean validate) 
 public io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments, boolean validate) {
-        return originalInstance.parse(arguments, validate); 
+        return delegate.parse(arguments, validate); 
 }
 // java.lang.String getName() 
 public java.lang.String getName() {
-        return originalInstance.getName(); 
+        return delegate.getName(); 
 }
 // io.vertx.core.cli.CLI setName(java.lang.String name) 
 public io.vertx.core.cli.CLI setName(java.lang.String name) {
-        return originalInstance.setName(name); 
+        return delegate.setName(name); 
 }
 // java.lang.String getDescription() 
 public java.lang.String getDescription() {
-        return originalInstance.getDescription(); 
+        return delegate.getDescription(); 
 }
 // io.vertx.core.cli.CLI setDescription(java.lang.String desc) 
 public io.vertx.core.cli.CLI setDescription(java.lang.String desc) {
-        return originalInstance.setDescription(desc); 
+        return delegate.setDescription(desc); 
 }
 // java.lang.String getSummary() 
 public java.lang.String getSummary() {
-        return originalInstance.getSummary(); 
+        return delegate.getSummary(); 
 }
 // io.vertx.core.cli.CLI setSummary(java.lang.String summary) 
 public io.vertx.core.cli.CLI setSummary(java.lang.String summary) {
-        return originalInstance.setSummary(summary); 
+        return delegate.setSummary(summary); 
 }
 // boolean isHidden() 
 public boolean isHidden() {
-        return originalInstance.isHidden(); 
+        return delegate.isHidden(); 
 }
 // io.vertx.core.cli.CLI setHidden(boolean hidden) 
 public io.vertx.core.cli.CLI setHidden(boolean hidden) {
-        return originalInstance.setHidden(hidden); 
+        return delegate.setHidden(hidden); 
 }
 // java.util.List<io.vertx.core.cli.Option> getOptions() 
 public java.util.List<io.vertx.core.cli.Option> getOptions() {
-        return originalInstance.getOptions(); 
+        return delegate.getOptions(); 
 }
 // io.vertx.core.cli.CLI addOption(io.vertx.core.cli.Option option) 
 public io.vertx.core.cli.CLI addOption(io.vertx.core.cli.Option option) {
-        return originalInstance.addOption(option); 
+        return delegate.addOption(option); 
 }
 // io.vertx.core.cli.CLI addOptions(java.util.List<io.vertx.core.cli.Option> options) 
 public io.vertx.core.cli.CLI addOptions(java.util.List<io.vertx.core.cli.Option> options) {
-        return originalInstance.addOptions(options); 
+        return delegate.addOptions(options); 
 }
 // io.vertx.core.cli.CLI setOptions(java.util.List<io.vertx.core.cli.Option> options) 
 public io.vertx.core.cli.CLI setOptions(java.util.List<io.vertx.core.cli.Option> options) {
-        return originalInstance.setOptions(options); 
+        return delegate.setOptions(options); 
 }
 // java.util.List<io.vertx.core.cli.Argument> getArguments() 
 public java.util.List<io.vertx.core.cli.Argument> getArguments() {
-        return originalInstance.getArguments(); 
+        return delegate.getArguments(); 
 }
 // io.vertx.core.cli.CLI addArgument(io.vertx.core.cli.Argument arg) 
 public io.vertx.core.cli.CLI addArgument(io.vertx.core.cli.Argument arg) {
-        return originalInstance.addArgument(arg); 
+        return delegate.addArgument(arg); 
 }
 // io.vertx.core.cli.CLI addArguments(java.util.List<io.vertx.core.cli.Argument> args) 
 public io.vertx.core.cli.CLI addArguments(java.util.List<io.vertx.core.cli.Argument> args) {
-        return originalInstance.addArguments(args); 
+        return delegate.addArguments(args); 
 }
 // io.vertx.core.cli.CLI setArguments(java.util.List<io.vertx.core.cli.Argument> args) 
 public io.vertx.core.cli.CLI setArguments(java.util.List<io.vertx.core.cli.Argument> args) {
-        return originalInstance.setArguments(args); 
+        return delegate.setArguments(args); 
 }
 // io.vertx.core.cli.Option getOption(java.lang.String name) 
 public io.vertx.core.cli.Option getOption(java.lang.String name) {
-        return originalInstance.getOption(name); 
+        return delegate.getOption(name); 
 }
 // io.vertx.core.cli.Argument getArgument(java.lang.String name) 
 public io.vertx.core.cli.Argument getArgument(java.lang.String name) {
-        return originalInstance.getArgument(name); 
+        return delegate.getArgument(name); 
 }
 // io.vertx.core.cli.Argument getArgument(int index) 
 public io.vertx.core.cli.Argument getArgument(int index) {
-        return originalInstance.getArgument(index); 
+        return delegate.getArgument(index); 
 }
 // io.vertx.core.cli.CLI removeOption(java.lang.String name) 
 public io.vertx.core.cli.CLI removeOption(java.lang.String name) {
-        return originalInstance.removeOption(name); 
+        return delegate.removeOption(name); 
 }
 // io.vertx.core.cli.CLI removeArgument(int index) 
 public io.vertx.core.cli.CLI removeArgument(int index) {
-        return originalInstance.removeArgument(index); 
+        return delegate.removeArgument(index); 
 }
 }

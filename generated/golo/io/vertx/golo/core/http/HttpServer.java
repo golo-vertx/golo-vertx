@@ -1,4 +1,6 @@
-package io.vertx.golo.core.Http;
+package io.vertx.golo.core.http;
+
+import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.http.ServerWebSocket;
@@ -7,57 +9,63 @@ import io.vertx.core.http.HttpServerRequestStream;
 import io.vertx.core.http.ServerWebSocketStream;
 public class HttpServer { 
 
-private io.vertx.core.http.HttpServer originalInstance; 
+private io.vertx.core.http.HttpServer delegate; 
+public HttpServer(Object delegate) { 
+    this.delegate = (io.vertx.core.http.HttpServer)delegate; 
+}
+public Object getDelegate() { 
+    return delegate; 
+}
 // boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
-        return originalInstance.isMetricsEnabled(); 
+        return delegate.isMetricsEnabled(); 
 }
 // io.vertx.core.http.HttpServerRequestStream requestStream() 
 public io.vertx.core.http.HttpServerRequestStream requestStream() {
-        return originalInstance.requestStream(); 
+        return delegate.requestStream(); 
 }
 // io.vertx.core.http.HttpServer requestHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerRequest> handler) 
 public io.vertx.core.http.HttpServer requestHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerRequest> handler) {
-        return originalInstance.requestHandler(handler); 
+        return delegate.requestHandler(handler); 
 }
 // io.vertx.core.http.ServerWebSocketStream websocketStream() 
 public io.vertx.core.http.ServerWebSocketStream websocketStream() {
-        return originalInstance.websocketStream(); 
+        return delegate.websocketStream(); 
 }
 // io.vertx.core.http.HttpServer websocketHandler(io.vertx.core.Handler<io.vertx.core.http.ServerWebSocket> handler) 
 public io.vertx.core.http.HttpServer websocketHandler(io.vertx.core.Handler<io.vertx.core.http.ServerWebSocket> handler) {
-        return originalInstance.websocketHandler(handler); 
+        return delegate.websocketHandler(handler); 
 }
 // io.vertx.core.http.HttpServer listen() 
 public io.vertx.core.http.HttpServer listen() {
-        return originalInstance.listen(); 
+        return delegate.listen(); 
 }
 // io.vertx.core.http.HttpServer listen(int port, java.lang.String host) 
 public io.vertx.core.http.HttpServer listen(int port, java.lang.String host) {
-        return originalInstance.listen(port, host); 
+        return delegate.listen(port, host); 
 }
 // io.vertx.core.http.HttpServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) 
 public io.vertx.core.http.HttpServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) {
-        return originalInstance.listen(port, host, listenHandler); 
+        return delegate.listen(port, host, listenHandler); 
 }
 // io.vertx.core.http.HttpServer listen(int port) 
 public io.vertx.core.http.HttpServer listen(int port) {
-        return originalInstance.listen(port); 
+        return delegate.listen(port); 
 }
 // io.vertx.core.http.HttpServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) 
 public io.vertx.core.http.HttpServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) {
-        return originalInstance.listen(port, listenHandler); 
+        return delegate.listen(port, listenHandler); 
 }
 // io.vertx.core.http.HttpServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) 
 public io.vertx.core.http.HttpServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) {
-        return originalInstance.listen(listenHandler); 
+        return delegate.listen(listenHandler); 
 }
 // void close() 
 public void close() {
-        return originalInstance.close(); 
+        delegate.close(); 
 }
 // void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) 
 public void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) {
-        return originalInstance.close(completionHandler); 
+        delegate.close(completionHandler); 
 }
 }

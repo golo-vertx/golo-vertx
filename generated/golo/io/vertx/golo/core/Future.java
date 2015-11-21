@@ -1,42 +1,50 @@
-package io.vertx.golo.Core;
+package io.vertx.golo.core;
+
+import io.vertx.lang.golo.InternalHelper;
 
 public class Future { 
 
-private io.vertx.core.Future<T> originalInstance; 
+private io.vertx.core.Future<T> delegate; 
+public Future(Object delegate) { 
+    this.delegate = (io.vertx.core.Future<T>)delegate; 
+}
+public Object getDelegate() { 
+    return delegate; 
+}
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]> io.vertx.core.Future<T> future() 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]> io.vertx.core.Future<T> future() {
-        return originalInstance.future(); 
+public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]> io.vertx.core.Future<T> future() {
+        return InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]>.future(), io.vertx.golo.core.Future.class); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture() 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture() {
-        return originalInstance.succeededFuture(); 
+public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture() {
+        return InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]>.succeededFuture(), io.vertx.golo.core.Future.class); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture(T result) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture(T result) {
-        return originalInstance.succeededFuture(result); 
+public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture(T result) {
+        return InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]>.succeededFuture(result), io.vertx.golo.core.Future.class); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage) {
-        return originalInstance.failedFuture(failureMessage); 
+public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage) {
+        return InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]>.failedFuture(failureMessage), io.vertx.golo.core.Future.class); 
 }
 // boolean isComplete() 
 public boolean isComplete() {
-        return originalInstance.isComplete(); 
+        return delegate.isComplete(); 
 }
 // void setHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> handler) 
 public void setHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> handler) {
-        return originalInstance.setHandler(handler); 
+        delegate.setHandler(handler); 
 }
 // void complete(T result) 
 public void complete(T result) {
-        return originalInstance.complete(result); 
+        delegate.complete(result); 
 }
 // void complete() 
 public void complete() {
-        return originalInstance.complete(); 
+        delegate.complete(); 
 }
 // void fail(java.lang.String failureMessage) 
 public void fail(java.lang.String failureMessage) {
-        return originalInstance.fail(failureMessage); 
+        delegate.fail(failureMessage); 
 }
 }

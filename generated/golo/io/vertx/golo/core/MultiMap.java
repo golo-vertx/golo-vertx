@@ -1,58 +1,66 @@
-package io.vertx.golo.Core;
+package io.vertx.golo.core;
+
+import io.vertx.lang.golo.InternalHelper;
 
 public class MultiMap { 
 
-private io.vertx.core.MultiMap originalInstance; 
+private io.vertx.core.MultiMap delegate; 
+public MultiMap(Object delegate) { 
+    this.delegate = (io.vertx.core.MultiMap)delegate; 
+}
+public Object getDelegate() { 
+    return delegate; 
+}
 // io.vertx.core.MultiMap caseInsensitiveMultiMap() 
-public io.vertx.core.MultiMap caseInsensitiveMultiMap() {
-        return originalInstance.caseInsensitiveMultiMap(); 
+public static io.vertx.core.MultiMap caseInsensitiveMultiMap() {
+        return InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiMap(), io.vertx.golo.core.MultiMap.class); 
 }
 // java.lang.String get(java.lang.String name) 
 public java.lang.String get(java.lang.String name) {
-        return originalInstance.get(name); 
+        return delegate.get(name); 
 }
 // java.util.List<java.lang.String> getAll(java.lang.String name) 
 public java.util.List<java.lang.String> getAll(java.lang.String name) {
-        return originalInstance.getAll(name); 
+        return delegate.getAll(name); 
 }
 // boolean contains(java.lang.String name) 
 public boolean contains(java.lang.String name) {
-        return originalInstance.contains(name); 
+        return delegate.contains(name); 
 }
 // boolean isEmpty() 
 public boolean isEmpty() {
-        return originalInstance.isEmpty(); 
+        return delegate.isEmpty(); 
 }
 // java.util.Set<java.lang.String> names() 
 public java.util.Set<java.lang.String> names() {
-        return originalInstance.names(); 
+        return delegate.names(); 
 }
 // io.vertx.core.MultiMap add(java.lang.String name, java.lang.String value) 
 public io.vertx.core.MultiMap add(java.lang.String name, java.lang.String value) {
-        return originalInstance.add(name, value); 
+        return delegate.add(name, value); 
 }
 // io.vertx.core.MultiMap addAll(io.vertx.core.MultiMap map) 
 public io.vertx.core.MultiMap addAll(io.vertx.core.MultiMap map) {
-        return originalInstance.addAll(map); 
+        return delegate.addAll(map); 
 }
 // io.vertx.core.MultiMap set(java.lang.String name, java.lang.String value) 
 public io.vertx.core.MultiMap set(java.lang.String name, java.lang.String value) {
-        return originalInstance.set(name, value); 
+        return delegate.set(name, value); 
 }
 // io.vertx.core.MultiMap setAll(io.vertx.core.MultiMap map) 
 public io.vertx.core.MultiMap setAll(io.vertx.core.MultiMap map) {
-        return originalInstance.setAll(map); 
+        return delegate.setAll(map); 
 }
 // io.vertx.core.MultiMap remove(java.lang.String name) 
 public io.vertx.core.MultiMap remove(java.lang.String name) {
-        return originalInstance.remove(name); 
+        return delegate.remove(name); 
 }
 // io.vertx.core.MultiMap clear() 
 public io.vertx.core.MultiMap clear() {
-        return originalInstance.clear(); 
+        return delegate.clear(); 
 }
 // int size() 
 public int size() {
-        return originalInstance.size(); 
+        return delegate.size(); 
 }
 }

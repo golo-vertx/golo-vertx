@@ -1,11 +1,14 @@
 package io.vertx.golo;
 
-import io.vertx.core.buffer.Buffer;
+import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.*;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,7 +31,15 @@ public class BufferTest {
 
     @Test
     public void canCompileBufferFile() throws Exception {
-        String command = "golo compile generated/golo/io/vertx/golo/core/buffer/Buffer.golo";
-        Assert.assertThat(invokeGoloFromCommandLine(command).toString(), CoreMatchers.is("[]"));
+        String path = "/generated/golo/io/vertx/golo/core/buffer/Buffer.java";
+        File file = new File(System.getProperty("user.dir") + path);
+        try {
+            MyClassLoader loader = new MyClassLoader(MyClassLoader.class.getClassLoader());
+            Class buffer = loader.loadClass();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("error: "+e.getMessage());
+        }
+        //io.vertx.golo.core.buffer.Buffer buffer = new io.vertx.golo.buffer.Buffer();
     }
 }

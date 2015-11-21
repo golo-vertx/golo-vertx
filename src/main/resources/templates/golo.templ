@@ -16,14 +16,8 @@
   }
 
   def genGoloModuleName(type) {
-    var body = type.raw.translatePackageName("golo");
-    for (int i = body.length()-2; i >= 0 ; i--) {
-               if(body.substring(i, i+1).equals(".")) {
-                     return body.substring(0,i+1) + body.substring(i+1,i+2).toUpperCase() + body.substring(i+2);
-               }
-     }
-    return body;
-    }
+    return type.raw.translatePackageName("golo");
+  }
 
    def className(type) {
         var absName = type.raw.toString();
@@ -31,8 +25,16 @@
         return split[split.size() - 1];
    }
 
-   def callForOriginalAPI(method) {
-        var call = "originalInstance."  + method.name + "(";
+   def constructorMethod(className, type, method) {
+        var delegateCall = splitHelper(method.toString(), " ")[0] + "." + injectParamsToMethodCall(method);
+        var currentClass = genGoloModuleName(type) + "." + className + ".class";
+        var call = "return InternalHelper.safeCreate("+delegateCall+", "+ currentClass+")";
+        return call;
+   }
+
+   def injectParamsToMethodCall(method) {
+        var call = "";
+        call = method.name + "(";
         var params = method.params;
         var p;
         for(int i = 0; i < params.size(); i++) {
@@ -43,6 +45,26 @@
             }
         }
         return call + ")";
+   }
+
+   def callForOriginalAPI(className, type, method) {
+        if(method.staticMethod) {
+            return constructorMethod(className, type, method);
+        }
+        var call = "return ";
+        if(splitHelper(method.toString(), " ")[0].equals("void")) {
+            call = "";
+        }
+        call = call + "delegate."  + injectParamsToMethodCall(method);
+        return call;
+   }
+
+   def createMethodDefinition(type, method) {
+        var returnValue = splitHelper(method.toString(), " ")[0];
+        if(method.staticMethod) {
+            return "static " + method;
+        }
+        return method;
    }
 
    def findUniqueFunctionName(functionNames, method) {
@@ -77,6 +99,7 @@
 
 package @{genGoloModuleName(type)};\n\n
 
+import io.vertx.lang.golo.InternalHelper;\n\n
 @foreach{referencedType : referencedTypes}
 import @{referencedType};\n
 @end{}
@@ -85,14 +108,22 @@ import @{referencedType};\n
 @code{className = className(type)}
 public class @{className} { \n\n
 
-private @{type} originalInstance; \n
+private @{type} delegate; \n
+@comment{"Next rows defines the constructor"}
+public @{className}(Object delegate) { \n
+    this.delegate = (@{type})delegate; \n
+}\n
+public Object getDelegate() { \n
+    return delegate; \n
+}\n
 
 @declare{'genMethodDispatch'}
 	@foreach{method:methods}
 // @{method} \n
-public @{method} {\n
-    @code{callOrgAPI = callForOriginalAPI(method)}
-    return @{callOrgAPI}; \n
+@code{methodDefinition = createMethodDefinition(type, method)}
+public @{methodDefinition} {\n
+    @code{callOrgAPI = callForOriginalAPI(className, type, method)}
+    @{callOrgAPI}; \n
 }\n
 @end{}
 }\n
