@@ -8,7 +8,7 @@ public class InternalHelper {
     public static <T, D> Object safeCreate(D delegate, Class<T> type) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         if(delegate != null) {
             Constructor ctor = type.getConstructor(new Class[]{Object.class});
-            return ctor.newInstance(new Object[]{delegate});
+            return ctor.newInstance(delegate);
         }
         return null;
     }

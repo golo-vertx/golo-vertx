@@ -14,15 +14,15 @@ public Object getDelegate() {
 }
 // io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
 public static io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) {
-        return InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFrame(data, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
+        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFrame(data, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
 }
 // io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal) 
 public static io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal) {
-        return InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(str, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
+        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(str, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
 }
 // io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
 public static io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) {
-        return InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.continuationFrame(data, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
+        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.continuationFrame(data, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
 }
 // boolean isText() 
 public boolean isText() {

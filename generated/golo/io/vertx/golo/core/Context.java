@@ -15,15 +15,15 @@ public Object getDelegate() {
 }
 // boolean isOnWorkerThread() 
 public static boolean isOnWorkerThread() {
-        return InternalHelper.safeCreate(boolean.isOnWorkerThread(), io.vertx.golo.core.Context.class); 
+        return (boolean)InternalHelper.safeCreate(boolean.isOnWorkerThread(), io.vertx.golo.core.Context.class); 
 }
 // boolean isOnEventLoopThread() 
 public static boolean isOnEventLoopThread() {
-        return InternalHelper.safeCreate(boolean.isOnEventLoopThread(), io.vertx.golo.core.Context.class); 
+        return (boolean)InternalHelper.safeCreate(boolean.isOnEventLoopThread(), io.vertx.golo.core.Context.class); 
 }
 // boolean isOnVertxThread() 
 public static boolean isOnVertxThread() {
-        return InternalHelper.safeCreate(boolean.isOnVertxThread(), io.vertx.golo.core.Context.class); 
+        return (boolean)InternalHelper.safeCreate(boolean.isOnVertxThread(), io.vertx.golo.core.Context.class); 
 }
 // void runOnContext(io.vertx.core.Handler<java.lang.Void> action) 
 public void runOnContext(io.vertx.core.Handler<java.lang.Void> action) {

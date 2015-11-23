@@ -28,7 +28,8 @@
    def constructorMethod(className, type, method) {
         var delegateCall = splitHelper(method.toString(), " ")[0] + "." + injectParamsToMethodCall(method);
         var currentClass = genGoloModuleName(type) + "." + className + ".class";
-        var call = "return InternalHelper.safeCreate("+delegateCall+", "+ currentClass+")";
+        var castObjectTo = splitHelper(method.toString(), " ")[0];
+        var call = "return (" + castObjectTo + ")InternalHelper.safeCreate("+delegateCall+", "+ currentClass+")";
         return call;
    }
 

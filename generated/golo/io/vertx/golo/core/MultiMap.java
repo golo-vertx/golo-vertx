@@ -13,7 +13,7 @@ public Object getDelegate() {
 }
 // io.vertx.core.MultiMap caseInsensitiveMultiMap() 
 public static io.vertx.core.MultiMap caseInsensitiveMultiMap() {
-        return InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiMap(), io.vertx.golo.core.MultiMap.class); 
+        return (io.vertx.core.MultiMap)InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiMap(), io.vertx.golo.core.MultiMap.class); 
 }
 // java.lang.String get(java.lang.String name) 
 public java.lang.String get(java.lang.String name) {

@@ -30,19 +30,19 @@ public boolean isMetricsEnabled() {
 }
 // io.vertx.core.Vertx vertx() 
 public static io.vertx.core.Vertx vertx() {
-        return InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(), io.vertx.golo.core.Vertx.class); 
+        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(), io.vertx.golo.core.Vertx.class); 
 }
 // io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) 
 public static io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) {
-        return InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options), io.vertx.golo.core.Vertx.class); 
+        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options), io.vertx.golo.core.Vertx.class); 
 }
 // void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) 
 public static void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) {
-        return InternalHelper.safeCreate(void.clusteredVertx(options, resultHandler), io.vertx.golo.core.Vertx.class); 
+        return (void)InternalHelper.safeCreate(void.clusteredVertx(options, resultHandler), io.vertx.golo.core.Vertx.class); 
 }
 // io.vertx.core.Context currentContext() 
 public static io.vertx.core.Context currentContext() {
-        return InternalHelper.safeCreate(io.vertx.core.Context.currentContext(), io.vertx.golo.core.Vertx.class); 
+        return (io.vertx.core.Context)InternalHelper.safeCreate(io.vertx.core.Context.currentContext(), io.vertx.golo.core.Vertx.class); 
 }
 // io.vertx.core.Context getOrCreateContext() 
 public io.vertx.core.Context getOrCreateContext() {

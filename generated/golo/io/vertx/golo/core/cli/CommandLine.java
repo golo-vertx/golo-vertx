@@ -14,7 +14,7 @@ public Object getDelegate() {
 }
 // io.vertx.core.cli.CommandLine create(io.vertx.core.cli.CLI cli) 
 public static io.vertx.core.cli.CommandLine create(io.vertx.core.cli.CLI cli) {
-        return InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create(cli), io.vertx.golo.core.cli.CommandLine.class); 
+        return (io.vertx.core.cli.CommandLine)InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create(cli), io.vertx.golo.core.cli.CommandLine.class); 
 }
 // io.vertx.core.cli.CLI cli() 
 public io.vertx.core.cli.CLI cli() {

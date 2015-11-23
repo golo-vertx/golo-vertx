@@ -6,10 +6,16 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 
+import javax.tools.JavaCompiler;
+import javax.tools.JavaFileObject;
+import javax.tools.StandardJavaFileManager;
+import javax.tools.ToolProvider;
 import java.io.*;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.Arrays;
 import java.util.List;
+import java.util.jar.JarFile;
 import java.util.stream.Collectors;
 
 
@@ -31,15 +37,22 @@ public class BufferTest {
 
     @Test
     public void canCompileBufferFile() throws Exception {
-        String path = "/generated/golo/io/vertx/golo/core/buffer/Buffer.java";
+        String path = "/generated/golo/io/vertx/golo/core/cli/CLI.java";
         File file = new File(System.getProperty("user.dir") + path);
-        try {
-            MyClassLoader loader = new MyClassLoader(MyClassLoader.class.getClassLoader());
-            Class buffer = loader.loadClass();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("error: "+e.getMessage());
-        }
-        //io.vertx.golo.core.buffer.Buffer buffer = new io.vertx.golo.buffer.Buffer();
+        File[] files1 = new File[]{file};
+
+        String jarPath = "/extractedClass/vertx-core.jar/";
+        JarFile vertxFiles = new JarFile(System.getProperty("user.dir") + jarPath);
+        JarFile[] files2 = new JarFile[]{vertxFiles};
+
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, null);
+
+       // fileManager.getJavaFileObjects(vertxFiles);
+        Iterable<? extends JavaFileObject> compilationUnits1 =
+                fileManager.getJavaFileObjectsFromFiles(Arrays.asList(files1));
+        compiler.getTask(null, fileManager, null, null, null, compilationUnits1).call();
+
+        fileManager.close();
     }
 }

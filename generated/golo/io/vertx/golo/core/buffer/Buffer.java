@@ -13,19 +13,19 @@ public Object getDelegate() {
 }
 // io.vertx.core.buffer.Buffer buffer() 
 public static io.vertx.core.buffer.Buffer buffer() {
-        return InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(), io.vertx.golo.core.buffer.Buffer.class); 
+        return (io.vertx.core.buffer.Buffer)InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(), io.vertx.golo.core.buffer.Buffer.class); 
 }
 // io.vertx.core.buffer.Buffer buffer(int initialSizeHint) 
 public static io.vertx.core.buffer.Buffer buffer(int initialSizeHint) {
-        return InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(initialSizeHint), io.vertx.golo.core.buffer.Buffer.class); 
+        return (io.vertx.core.buffer.Buffer)InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(initialSizeHint), io.vertx.golo.core.buffer.Buffer.class); 
 }
 // io.vertx.core.buffer.Buffer buffer(java.lang.String string) 
 public static io.vertx.core.buffer.Buffer buffer(java.lang.String string) {
-        return InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string), io.vertx.golo.core.buffer.Buffer.class); 
+        return (io.vertx.core.buffer.Buffer)InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string), io.vertx.golo.core.buffer.Buffer.class); 
 }
 // io.vertx.core.buffer.Buffer buffer(java.lang.String string, java.lang.String enc) 
 public static io.vertx.core.buffer.Buffer buffer(java.lang.String string, java.lang.String enc) {
-        return InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string, enc), io.vertx.golo.core.buffer.Buffer.class); 
+        return (io.vertx.core.buffer.Buffer)InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string, enc), io.vertx.golo.core.buffer.Buffer.class); 
 }
 // java.lang.String toString(java.lang.String enc) 
 public java.lang.String toString(java.lang.String enc) {
