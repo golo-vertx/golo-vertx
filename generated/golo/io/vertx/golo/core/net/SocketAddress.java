@@ -2,6 +2,7 @@ package io.vertx.golo.core.net;
 
 import io.vertx.lang.golo.InternalHelper;
 
+// io.vertx.core.net.SocketAddress 
 public class SocketAddress { 
 
 private io.vertx.core.net.SocketAddress delegate; 

@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.dns.MxRecord;
 import io.vertx.core.dns.SrvRecord;
+// io.vertx.core.dns.DnsClient 
 public class DnsClient { 
 
 private io.vertx.core.dns.DnsClient delegate; 

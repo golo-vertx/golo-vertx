@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.streams.ReadStream;
+// io.vertx.core.http.HttpServerRequestStream 
 public class HttpServerRequestStream { 
 
 private io.vertx.core.http.HttpServerRequestStream delegate; 

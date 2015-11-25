@@ -3,6 +3,7 @@ package io.vertx.golo.core;
 import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.streams.ReadStream;
+// io.vertx.core.TimeoutStream 
 public class TimeoutStream { 
 
 private io.vertx.core.TimeoutStream delegate; 

@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.SocketAddress;
+// io.vertx.core.datagram.DatagramPacket 
 public class DatagramPacket { 
 
 private io.vertx.core.datagram.DatagramPacket delegate; 

@@ -2,11 +2,12 @@ package io.vertx.golo.core.shareddata;
 
 import io.vertx.lang.golo.InternalHelper;
 
-public class AsyncMap { 
+// io.vertx.core.shareddata.AsyncMap<K,V> 
+public class AsyncMap<K,V> { 
 
-private io.vertx.core.shareddata.AsyncMap<K,V> delegate; 
+private io.vertx.core.shareddata.AsyncMap delegate; 
 public AsyncMap(Object delegate) { 
-    this.delegate = (io.vertx.core.shareddata.AsyncMap<K,V>)delegate; 
+    this.delegate = (io.vertx.core.shareddata.AsyncMap)delegate; 
 }
 public Object getDelegate() { 
     return delegate; 

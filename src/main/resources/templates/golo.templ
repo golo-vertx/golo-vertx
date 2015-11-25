@@ -15,18 +15,37 @@
     return array;
   }
 
+  def parseGenericName(method) {
+    var retType = splitHelper(method.toString(), " ")[0];
+    var identifier = "name=";
+    var startIndex = retType.indexOf(identifier);
+    return retType.substring(startIndex+identifier.length(),startIndex+identifier.length()+1);
+  }
+
+  def typeCheck(method) {
+     var gen = "";
+     var str = method.toString();
+     for(int i = 0; i<str.length()-1; i++) {
+        if(str.substring(i, i+2).equals("]>")) {
+            gen = parseGenericName(method);
+            return "<"+gen+">" + str.substring(i+2, str.length());
+        }
+     }
+     return method.toString();
+  }
+
   def genGoloModuleName(type) {
     return type.raw.translatePackageName("golo");
   }
 
    def className(type) {
-        var absName = type.raw.toString();
+        var absName = type.toString();
         var split = splitHelper(absName, ".");
         return split[split.size() - 1];
    }
 
    def constructorMethod(className, type, method) {
-        var delegateCall = splitHelper(method.toString(), " ")[0] + "." + injectParamsToMethodCall(method);
+        var delegateCall = type + "." + injectParamsToMethodCall(method);
         var currentClass = genGoloModuleName(type) + "." + className + ".class";
         var castObjectTo = splitHelper(method.toString(), " ")[0];
         var call = "return (" + castObjectTo + ")InternalHelper.safeCreate("+delegateCall+", "+ currentClass+")";
@@ -48,24 +67,40 @@
         return call + ")";
    }
 
-   def callForOriginalAPI(className, type, method) {
+   def isConstructorMethod(type, method) {
         if(method.staticMethod) {
+            var cp = splitHelper(method.toString(), " ");
+            var class = cp[0];
+            if(class.equals(type.toString())) {
+                return true;
+            }
+        }
+        return false;
+   }
+
+   def callForOriginalAPI(className, type, method) {
+        if(isConstructorMethod(type, method)) {
             return constructorMethod(className, type, method);
         }
         var call = "return ";
-        if(splitHelper(method.toString(), " ")[0].equals("void")) {
+        var returnTypes = splitHelper(method.toString(), " ");
+        if(returnTypes[0].equals("void") || returnTypes[1].equals("void")) {
             call = "";
         }
-        call = call + "delegate."  + injectParamsToMethodCall(method);
+        if(method.staticMethod) {
+            call = call + type.toString() + ".";
+        } else {
+            call = call + "delegate.";
+        }
+        call = call + injectParamsToMethodCall(method);
         return call;
    }
 
    def createMethodDefinition(type, method) {
-        var returnValue = splitHelper(method.toString(), " ")[0];
         if(method.staticMethod) {
             return "static " + method;
         }
-        return method;
+        return typeCheck(method);
    }
 
    def findUniqueFunctionName(functionNames, method) {
@@ -105,14 +140,14 @@ import io.vertx.lang.golo.InternalHelper;\n\n
 import @{referencedType};\n
 @end{}
 
+// @{type} \n
 
-@code{className = className(type)}
-public class @{className} { \n\n
+public class @{className(type)} { \n\n
 
-private @{type} delegate; \n
+private @{type.raw} delegate; \n
 @comment{"Next rows defines the constructor"}
-public @{className}(Object delegate) { \n
-    this.delegate = (@{type})delegate; \n
+public @{className(type.raw)}(Object delegate) { \n
+    this.delegate = (@{type.raw})delegate; \n
 }\n
 public Object getDelegate() { \n
     return delegate; \n

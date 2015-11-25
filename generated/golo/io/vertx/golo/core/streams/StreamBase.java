@@ -2,6 +2,7 @@ package io.vertx.golo.core.streams;
 
 import io.vertx.lang.golo.InternalHelper;
 
+// io.vertx.core.streams.StreamBase 
 public class StreamBase { 
 
 private io.vertx.core.streams.StreamBase delegate; 

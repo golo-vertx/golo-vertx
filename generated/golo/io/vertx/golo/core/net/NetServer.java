@@ -5,6 +5,7 @@ import io.vertx.lang.golo.InternalHelper;
 import io.vertx.core.net.NetSocketStream;
 import io.vertx.core.metrics.Measured;
 import io.vertx.core.net.NetSocket;
+// io.vertx.core.net.NetServer 
 public class NetServer { 
 
 private io.vertx.core.net.NetServer delegate; 

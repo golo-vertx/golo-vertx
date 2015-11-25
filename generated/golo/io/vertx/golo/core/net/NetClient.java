@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.metrics.Measured;
 import io.vertx.core.net.NetSocket;
+// io.vertx.core.net.NetClient 
 public class NetClient { 
 
 private io.vertx.core.net.NetClient delegate; 

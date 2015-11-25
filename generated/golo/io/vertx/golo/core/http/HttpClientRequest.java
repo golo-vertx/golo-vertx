@@ -7,6 +7,7 @@ import io.vertx.core.buffer.Buffer;
 import io.vertx.core.streams.WriteStream;
 import io.vertx.core.streams.ReadStream;
 import io.vertx.core.MultiMap;
+// io.vertx.core.http.HttpClientRequest 
 public class HttpClientRequest { 
 
 private io.vertx.core.http.HttpClientRequest delegate; 

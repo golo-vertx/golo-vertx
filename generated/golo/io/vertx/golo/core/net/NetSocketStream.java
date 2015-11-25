@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.streams.ReadStream;
 import io.vertx.core.net.NetSocket;
+// io.vertx.core.net.NetSocketStream 
 public class NetSocketStream { 
 
 private io.vertx.core.net.NetSocketStream delegate; 

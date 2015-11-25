@@ -2,6 +2,7 @@ package io.vertx.golo.core.dns;
 
 import io.vertx.lang.golo.InternalHelper;
 
+// io.vertx.core.dns.SrvRecord 
 public class SrvRecord { 
 
 private io.vertx.core.dns.SrvRecord delegate; 

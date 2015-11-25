@@ -5,6 +5,7 @@ import io.vertx.lang.golo.InternalHelper;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.streams.WriteStream;
 import io.vertx.core.MultiMap;
+// io.vertx.core.http.HttpServerResponse 
 public class HttpServerResponse { 
 
 private io.vertx.core.http.HttpServerResponse delegate; 

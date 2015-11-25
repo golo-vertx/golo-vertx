@@ -4,11 +4,12 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.streams.ReadStream;
 import io.vertx.core.eventbus.Message;
-public class MessageConsumer { 
+// io.vertx.core.eventbus.MessageConsumer<T> 
+public class MessageConsumer<T> { 
 
-private io.vertx.core.eventbus.MessageConsumer<T> delegate; 
+private io.vertx.core.eventbus.MessageConsumer delegate; 
 public MessageConsumer(Object delegate) { 
-    this.delegate = (io.vertx.core.eventbus.MessageConsumer<T>)delegate; 
+    this.delegate = (io.vertx.core.eventbus.MessageConsumer)delegate; 
 }
 public Object getDelegate() { 
     return delegate; 

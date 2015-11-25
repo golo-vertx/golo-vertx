@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.Vertx;
 import io.vertx.core.Future;
+// io.vertx.core.Context 
 public class Context { 
 
 private io.vertx.core.Context delegate; 
@@ -15,27 +16,27 @@ public Object getDelegate() {
 }
 // boolean isOnWorkerThread() 
 public static boolean isOnWorkerThread() {
-        return (boolean)InternalHelper.safeCreate(boolean.isOnWorkerThread(), io.vertx.golo.core.Context.class); 
+        return io.vertx.core.Context.isOnWorkerThread(); 
 }
 // boolean isOnEventLoopThread() 
 public static boolean isOnEventLoopThread() {
-        return (boolean)InternalHelper.safeCreate(boolean.isOnEventLoopThread(), io.vertx.golo.core.Context.class); 
+        return io.vertx.core.Context.isOnEventLoopThread(); 
 }
 // boolean isOnVertxThread() 
 public static boolean isOnVertxThread() {
-        return (boolean)InternalHelper.safeCreate(boolean.isOnVertxThread(), io.vertx.golo.core.Context.class); 
+        return io.vertx.core.Context.isOnVertxThread(); 
 }
 // void runOnContext(io.vertx.core.Handler<java.lang.Void> action) 
 public void runOnContext(io.vertx.core.Handler<java.lang.Void> action) {
         delegate.runOnContext(action); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
-        return delegate.executeBlocking(blockingCodeHandler, ordered, resultHandler); 
+public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
+        delegate.executeBlocking(blockingCodeHandler, ordered, resultHandler); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
-        return delegate.executeBlocking(blockingCodeHandler, resultHandler); 
+public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
+        delegate.executeBlocking(blockingCodeHandler, resultHandler); 
 }
 // java.lang.String deploymentID() 
 public java.lang.String deploymentID() {
@@ -62,7 +63,7 @@ public boolean isMultiThreadedWorkerContext() {
         return delegate.isMultiThreadedWorkerContext(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameget]> T get(java.lang.String key) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameget]> T get(java.lang.String key) {
+public <T> T get(java.lang.String key) {
         return delegate.get(key); 
 }
 // void put(java.lang.String key, java.lang.Object value) 

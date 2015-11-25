@@ -3,11 +3,12 @@ package io.vertx.golo.core.streams;
 import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.streams.StreamBase;
-public class WriteStream { 
+// io.vertx.core.streams.WriteStream<T> 
+public class WriteStream<T> { 
 
-private io.vertx.core.streams.WriteStream<T> delegate; 
+private io.vertx.core.streams.WriteStream delegate; 
 public WriteStream(Object delegate) { 
-    this.delegate = (io.vertx.core.streams.WriteStream<T>)delegate; 
+    this.delegate = (io.vertx.core.streams.WriteStream)delegate; 
 }
 public Object getDelegate() { 
     return delegate; 

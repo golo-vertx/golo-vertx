@@ -3,11 +3,12 @@ package io.vertx.golo.core.eventbus;
 import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.streams.WriteStream;
-public class MessageProducer { 
+// io.vertx.core.eventbus.MessageProducer<T> 
+public class MessageProducer<T> { 
 
-private io.vertx.core.eventbus.MessageProducer<T> delegate; 
+private io.vertx.core.eventbus.MessageProducer delegate; 
 public MessageProducer(Object delegate) { 
-    this.delegate = (io.vertx.core.eventbus.MessageProducer<T>)delegate; 
+    this.delegate = (io.vertx.core.eventbus.MessageProducer)delegate; 
 }
 public Object getDelegate() { 
     return delegate; 

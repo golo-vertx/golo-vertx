@@ -16,7 +16,7 @@ public class Compiler {
     public String classPath = "/extractedClass/fatjar/destinationFolder/";
     public String destinationFolder = System.getProperty("user.dir") + "/src/test/java/compiledFiles/";
 
-    public void compile(String pathToFile, String jarPath) throws IOException {
+    public boolean compile(String pathToFile, String jarPath) throws IOException {
         File[] files1 = asFileArray(pathToFile);
         List<String> optionList = createOptions(jarPath);
 
@@ -25,9 +25,9 @@ public class Compiler {
 
         Iterable<? extends JavaFileObject> compilationUnits1 =
                 fileManager.getJavaFileObjectsFromFiles(Arrays.asList(files1));
-        compiler.getTask(null, fileManager, null, optionList, null, compilationUnits1).call();
-
+        boolean error = compiler.getTask(null, fileManager, null, optionList, null, compilationUnits1).call();
         fileManager.close();
+        return error;
     }
 
     private List<String> createOptions(String jarPath) {

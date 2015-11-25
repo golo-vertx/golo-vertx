@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.streams.ReadStream;
 import io.vertx.core.http.WebSocket;
+// io.vertx.core.http.WebSocketStream 
 public class WebSocketStream { 
 
 private io.vertx.core.http.WebSocketStream delegate; 

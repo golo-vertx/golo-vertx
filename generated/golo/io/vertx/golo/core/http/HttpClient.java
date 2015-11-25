@@ -8,6 +8,7 @@ import io.vertx.core.metrics.Measured;
 import io.vertx.core.http.WebSocketStream;
 import io.vertx.core.MultiMap;
 import io.vertx.core.http.WebSocket;
+// io.vertx.core.http.HttpClient 
 public class HttpClient { 
 
 private io.vertx.core.http.HttpClient delegate; 

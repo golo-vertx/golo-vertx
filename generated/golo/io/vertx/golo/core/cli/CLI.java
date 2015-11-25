@@ -3,6 +3,7 @@ package io.vertx.golo.core.cli;
 import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.cli.CommandLine;
+// io.vertx.core.cli.CLI 
 public class CLI { 
 
 private io.vertx.core.cli.CLI delegate; 
@@ -14,7 +15,7 @@ public Object getDelegate() {
 }
 // io.vertx.core.cli.CLI create(java.lang.String name) 
 public static io.vertx.core.cli.CLI create(java.lang.String name) {
-        return (io.vertx.core.cli.CLI)InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx.golo.core.cli.CLI.class); 
+        return (io.vertx.core.cli.CLI)InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx.golo.core.cli.function_prototype:className.class); 
 }
 // io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments) 
 public io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments) {

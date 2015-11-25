@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.streams.ReadStream;
+// io.vertx.core.http.HttpServerFileUpload 
 public class HttpServerFileUpload { 
 
 private io.vertx.core.http.HttpServerFileUpload delegate; 

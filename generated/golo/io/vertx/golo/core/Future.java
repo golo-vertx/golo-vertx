@@ -2,30 +2,31 @@ package io.vertx.golo.core;
 
 import io.vertx.lang.golo.InternalHelper;
 
-public class Future { 
+// io.vertx.core.Future<T> 
+public class Future<T> { 
 
-private io.vertx.core.Future<T> delegate; 
+private io.vertx.core.Future delegate; 
 public Future(Object delegate) { 
-    this.delegate = (io.vertx.core.Future<T>)delegate; 
+    this.delegate = (io.vertx.core.Future)delegate; 
 }
 public Object getDelegate() { 
     return delegate; 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]> io.vertx.core.Future<T> future() 
 public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]> io.vertx.core.Future<T> future() {
-        return (<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]>)InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]>.future(), io.vertx.golo.core.Future.class); 
+        return io.vertx.core.Future<T>.future(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture() 
 public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture() {
-        return (<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]>)InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]>.succeededFuture(), io.vertx.golo.core.Future.class); 
+        return io.vertx.core.Future<T>.succeededFuture(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture(T result) 
 public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture(T result) {
-        return (<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]>)InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]>.succeededFuture(result), io.vertx.golo.core.Future.class); 
+        return io.vertx.core.Future<T>.succeededFuture(result); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage) 
 public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage) {
-        return (<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]>)InternalHelper.safeCreate(<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]>.failedFuture(failureMessage), io.vertx.golo.core.Future.class); 
+        return io.vertx.core.Future<T>.failedFuture(failureMessage); 
 }
 // boolean isComplete() 
 public boolean isComplete() {

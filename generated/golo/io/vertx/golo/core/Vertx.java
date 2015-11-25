@@ -15,6 +15,7 @@ import io.vertx.core.net.NetServer;
 import io.vertx.core.file.FileSystem;
 import io.vertx.core.net.NetClient;
 import io.vertx.core.http.HttpClient;
+// io.vertx.core.Vertx 
 public class Vertx { 
 
 private io.vertx.core.Vertx delegate; 
@@ -30,19 +31,19 @@ public boolean isMetricsEnabled() {
 }
 // io.vertx.core.Vertx vertx() 
 public static io.vertx.core.Vertx vertx() {
-        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(), io.vertx.golo.core.Vertx.class); 
+        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(), io.vertx.golo.core.function_prototype:className.class); 
 }
 // io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) 
 public static io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) {
-        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options), io.vertx.golo.core.Vertx.class); 
+        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options), io.vertx.golo.core.function_prototype:className.class); 
 }
 // void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) 
 public static void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) {
-        return (void)InternalHelper.safeCreate(void.clusteredVertx(options, resultHandler), io.vertx.golo.core.Vertx.class); 
+        io.vertx.core.Vertx.clusteredVertx(options, resultHandler); 
 }
 // io.vertx.core.Context currentContext() 
 public static io.vertx.core.Context currentContext() {
-        return (io.vertx.core.Context)InternalHelper.safeCreate(io.vertx.core.Context.currentContext(), io.vertx.golo.core.Vertx.class); 
+        return io.vertx.core.Vertx.currentContext(); 
 }
 // io.vertx.core.Context getOrCreateContext() 
 public io.vertx.core.Context getOrCreateContext() {
@@ -169,11 +170,11 @@ public boolean isClustered() {
         return delegate.isClustered(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
-        return delegate.executeBlocking(blockingCodeHandler, ordered, resultHandler); 
+public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
+        delegate.executeBlocking(blockingCodeHandler, ordered, resultHandler); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
-        return delegate.executeBlocking(blockingCodeHandler, resultHandler); 
+public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
+        delegate.executeBlocking(blockingCodeHandler, resultHandler); 
 }
 }

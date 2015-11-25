@@ -5,6 +5,7 @@ import io.vertx.lang.golo.InternalHelper;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.streams.WriteStream;
 import io.vertx.core.streams.ReadStream;
+// io.vertx.core.file.AsyncFile 
 public class AsyncFile { 
 
 private io.vertx.core.file.AsyncFile delegate; 

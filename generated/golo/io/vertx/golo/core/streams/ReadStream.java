@@ -3,11 +3,12 @@ package io.vertx.golo.core.streams;
 import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.streams.StreamBase;
-public class ReadStream { 
+// io.vertx.core.streams.ReadStream<T> 
+public class ReadStream<T> { 
 
-private io.vertx.core.streams.ReadStream<T> delegate; 
+private io.vertx.core.streams.ReadStream delegate; 
 public ReadStream(Object delegate) { 
-    this.delegate = (io.vertx.core.streams.ReadStream<T>)delegate; 
+    this.delegate = (io.vertx.core.streams.ReadStream)delegate; 
 }
 public Object getDelegate() { 
     return delegate; 

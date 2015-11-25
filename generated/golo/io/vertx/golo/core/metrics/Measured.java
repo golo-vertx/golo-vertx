@@ -2,6 +2,7 @@ package io.vertx.golo.core.metrics;
 
 import io.vertx.lang.golo.InternalHelper;
 
+// io.vertx.core.metrics.Measured 
 public class Measured { 
 
 private io.vertx.core.metrics.Measured delegate; 

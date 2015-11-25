@@ -2,6 +2,7 @@ package io.vertx.golo.core.shareddata;
 
 import io.vertx.lang.golo.InternalHelper;
 
+// io.vertx.core.shareddata.Counter 
 public class Counter { 
 
 private io.vertx.core.shareddata.Counter delegate; 

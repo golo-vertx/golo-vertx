@@ -2,6 +2,7 @@ package io.vertx.golo.core;
 
 import io.vertx.lang.golo.InternalHelper;
 
+// io.vertx.core.MultiMap 
 public class MultiMap { 
 
 private io.vertx.core.MultiMap delegate; 
@@ -13,7 +14,7 @@ public Object getDelegate() {
 }
 // io.vertx.core.MultiMap caseInsensitiveMultiMap() 
 public static io.vertx.core.MultiMap caseInsensitiveMultiMap() {
-        return (io.vertx.core.MultiMap)InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiMap(), io.vertx.golo.core.MultiMap.class); 
+        return (io.vertx.core.MultiMap)InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiMap(), io.vertx.golo.core.function_prototype:className.class); 
 }
 // java.lang.String get(java.lang.String name) 
 public java.lang.String get(java.lang.String name) {

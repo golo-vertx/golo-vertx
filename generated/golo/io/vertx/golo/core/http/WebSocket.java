@@ -6,6 +6,7 @@ import io.vertx.core.http.WebSocketBase;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.WebSocketFrame;
 import io.vertx.core.net.SocketAddress;
+// io.vertx.core.http.WebSocket 
 public class WebSocket { 
 
 private io.vertx.core.http.WebSocket delegate; 

@@ -2,11 +2,12 @@ package io.vertx.golo.core.shareddata;
 
 import io.vertx.lang.golo.InternalHelper;
 
-public class LocalMap { 
+// io.vertx.core.shareddata.LocalMap<K,V> 
+public class LocalMap<K,V> { 
 
-private io.vertx.core.shareddata.LocalMap<K,V> delegate; 
+private io.vertx.core.shareddata.LocalMap delegate; 
 public LocalMap(Object delegate) { 
-    this.delegate = (io.vertx.core.shareddata.LocalMap<K,V>)delegate; 
+    this.delegate = (io.vertx.core.shareddata.LocalMap)delegate; 
 }
 public Object getDelegate() { 
     return delegate; 

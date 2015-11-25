@@ -3,6 +3,7 @@ package io.vertx.golo.core.cli;
 import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.cli.CLI;
+// io.vertx.core.cli.CommandLine 
 public class CommandLine { 
 
 private io.vertx.core.cli.CommandLine delegate; 
@@ -14,7 +15,7 @@ public Object getDelegate() {
 }
 // io.vertx.core.cli.CommandLine create(io.vertx.core.cli.CLI cli) 
 public static io.vertx.core.cli.CommandLine create(io.vertx.core.cli.CLI cli) {
-        return (io.vertx.core.cli.CommandLine)InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create(cli), io.vertx.golo.core.cli.CommandLine.class); 
+        return (io.vertx.core.cli.CommandLine)InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create(cli), io.vertx.golo.core.cli.function_prototype:className.class); 
 }
 // io.vertx.core.cli.CLI cli() 
 public io.vertx.core.cli.CLI cli() {
@@ -25,15 +26,15 @@ public java.util.List<java.lang.String> allArguments() {
         return delegate.allArguments(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetOptionValue]> T getOptionValue(java.lang.String name) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetOptionValue]> T getOptionValue(java.lang.String name) {
+public <T> T getOptionValue(java.lang.String name) {
         return delegate.getOptionValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(java.lang.String name) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(java.lang.String name) {
+public <T> T getArgumentValue(java.lang.String name) {
         return delegate.getArgumentValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(int index) 
-public <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(int index) {
+public <T> T getArgumentValue(int index) {
         return delegate.getArgumentValue(index); 
 }
 // boolean isFlagEnabled(java.lang.String name) 

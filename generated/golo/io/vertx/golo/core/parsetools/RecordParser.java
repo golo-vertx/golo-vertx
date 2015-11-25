@@ -3,6 +3,7 @@ package io.vertx.golo.core.parsetools;
 import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.buffer.Buffer;
+// io.vertx.core.parsetools.RecordParser 
 public class RecordParser { 
 
 private io.vertx.core.parsetools.RecordParser delegate; 
@@ -18,15 +19,15 @@ public void setOutput(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output)
 }
 // io.vertx.core.parsetools.RecordParser newDelimited(java.lang.String delim, io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output) 
 public static io.vertx.core.parsetools.RecordParser newDelimited(java.lang.String delim, io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output) {
-        return (io.vertx.core.parsetools.RecordParser)InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited(delim, output), io.vertx.golo.core.parsetools.RecordParser.class); 
+        return (io.vertx.core.parsetools.RecordParser)InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited(delim, output), io.vertx.golo.core.parsetools.function_prototype:className.class); 
 }
 // io.vertx.core.parsetools.RecordParser newDelimited(io.vertx.core.buffer.Buffer delim, io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output) 
 public static io.vertx.core.parsetools.RecordParser newDelimited(io.vertx.core.buffer.Buffer delim, io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output) {
-        return (io.vertx.core.parsetools.RecordParser)InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited(delim, output), io.vertx.golo.core.parsetools.RecordParser.class); 
+        return (io.vertx.core.parsetools.RecordParser)InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited(delim, output), io.vertx.golo.core.parsetools.function_prototype:className.class); 
 }
 // io.vertx.core.parsetools.RecordParser newFixed(int size, io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output) 
 public static io.vertx.core.parsetools.RecordParser newFixed(int size, io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output) {
-        return (io.vertx.core.parsetools.RecordParser)InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newFixed(size, output), io.vertx.golo.core.parsetools.RecordParser.class); 
+        return (io.vertx.core.parsetools.RecordParser)InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newFixed(size, output), io.vertx.golo.core.parsetools.function_prototype:className.class); 
 }
 // void delimitedMode(java.lang.String delim) 
 public void delimitedMode(java.lang.String delim) {

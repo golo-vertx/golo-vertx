@@ -1,17 +1,15 @@
 package io.vertx.golo;
 
 import helpers.Compiler;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
-public class CompilingVertxCoreTest {
+public class CompileAllTest {
 
     @Test
     public void compileAllClasses() throws IOException{
@@ -19,7 +17,7 @@ public class CompilingVertxCoreTest {
         Consumer<Path> compile = (path)-> {
             try {
                 if(path.toString().endsWith(".java")) {
-                    compiler.compile(path.toString(), compiler.classPath);
+                    Assert.assertTrue(compiler.compile(path.toString(), compiler.classPath));
                 }
             } catch (IOException e) {
                 e.printStackTrace();

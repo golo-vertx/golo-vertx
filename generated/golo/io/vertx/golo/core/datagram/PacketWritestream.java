@@ -4,6 +4,7 @@ import io.vertx.lang.golo.InternalHelper;
 
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.streams.WriteStream;
+// io.vertx.core.datagram.PacketWritestream 
 public class PacketWritestream { 
 
 private io.vertx.core.datagram.PacketWritestream delegate; 
