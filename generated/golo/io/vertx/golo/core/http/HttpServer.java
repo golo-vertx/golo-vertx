@@ -19,47 +19,47 @@ public Object getDelegate() {
 }
 // boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
-        return delegate.isMetricsEnabled(); 
+        return (boolean)delegate.isMetricsEnabled(); 
 }
 // io.vertx.core.http.HttpServerRequestStream requestStream() 
 public io.vertx.core.http.HttpServerRequestStream requestStream() {
-        return delegate.requestStream(); 
+        return (io.vertx.core.http.HttpServerRequestStream)delegate.requestStream(); 
 }
 // io.vertx.core.http.HttpServer requestHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerRequest> handler) 
 public io.vertx.core.http.HttpServer requestHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerRequest> handler) {
-        return delegate.requestHandler(handler); 
+        return (io.vertx.core.http.HttpServer)delegate.requestHandler(handler); 
 }
 // io.vertx.core.http.ServerWebSocketStream websocketStream() 
 public io.vertx.core.http.ServerWebSocketStream websocketStream() {
-        return delegate.websocketStream(); 
+        return (io.vertx.core.http.ServerWebSocketStream)delegate.websocketStream(); 
 }
 // io.vertx.core.http.HttpServer websocketHandler(io.vertx.core.Handler<io.vertx.core.http.ServerWebSocket> handler) 
 public io.vertx.core.http.HttpServer websocketHandler(io.vertx.core.Handler<io.vertx.core.http.ServerWebSocket> handler) {
-        return delegate.websocketHandler(handler); 
+        return (io.vertx.core.http.HttpServer)delegate.websocketHandler(handler); 
 }
 // io.vertx.core.http.HttpServer listen() 
 public io.vertx.core.http.HttpServer listen() {
-        return delegate.listen(); 
+        return (io.vertx.core.http.HttpServer)delegate.listen(); 
 }
 // io.vertx.core.http.HttpServer listen(int port, java.lang.String host) 
 public io.vertx.core.http.HttpServer listen(int port, java.lang.String host) {
-        return delegate.listen(port, host); 
+        return (io.vertx.core.http.HttpServer)delegate.listen(port, host); 
 }
 // io.vertx.core.http.HttpServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) 
 public io.vertx.core.http.HttpServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) {
-        return delegate.listen(port, host, listenHandler); 
+        return (io.vertx.core.http.HttpServer)delegate.listen(port, host, listenHandler); 
 }
 // io.vertx.core.http.HttpServer listen(int port) 
 public io.vertx.core.http.HttpServer listen(int port) {
-        return delegate.listen(port); 
+        return (io.vertx.core.http.HttpServer)delegate.listen(port); 
 }
 // io.vertx.core.http.HttpServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) 
 public io.vertx.core.http.HttpServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) {
-        return delegate.listen(port, listenHandler); 
+        return (io.vertx.core.http.HttpServer)delegate.listen(port, listenHandler); 
 }
 // io.vertx.core.http.HttpServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) 
 public io.vertx.core.http.HttpServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.http.HttpServer>> listenHandler) {
-        return delegate.listen(listenHandler); 
+        return (io.vertx.core.http.HttpServer)delegate.listen(listenHandler); 
 }
 // void close() 
 public void close() {

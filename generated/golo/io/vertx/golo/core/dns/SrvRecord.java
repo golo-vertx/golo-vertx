@@ -14,30 +14,30 @@ public Object getDelegate() {
 }
 // int priority() 
 public int priority() {
-        return delegate.priority(); 
+        return (int)delegate.priority(); 
 }
 // int weight() 
 public int weight() {
-        return delegate.weight(); 
+        return (int)delegate.weight(); 
 }
 // int port() 
 public int port() {
-        return delegate.port(); 
+        return (int)delegate.port(); 
 }
 // java.lang.String name() 
 public java.lang.String name() {
-        return delegate.name(); 
+        return (java.lang.String)delegate.name(); 
 }
 // java.lang.String protocol() 
 public java.lang.String protocol() {
-        return delegate.protocol(); 
+        return (java.lang.String)delegate.protocol(); 
 }
 // java.lang.String service() 
 public java.lang.String service() {
-        return delegate.service(); 
+        return (java.lang.String)delegate.service(); 
 }
 // java.lang.String target() 
 public java.lang.String target() {
-        return delegate.target(); 
+        return (java.lang.String)delegate.target(); 
 }
 }

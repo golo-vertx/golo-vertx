@@ -18,58 +18,58 @@ public Object getDelegate() {
 }
 // io.vertx.core.http.HttpClientResponse resume() 
 public io.vertx.core.http.HttpClientResponse resume() {
-        return delegate.resume(); 
+        return (io.vertx.core.http.HttpClientResponse)delegate.resume(); 
 }
 // io.vertx.core.http.HttpClientResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.http.HttpClientResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return delegate.exceptionHandler(handler); 
+        return (io.vertx.core.http.HttpClientResponse)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.http.HttpClientResponse handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
 public io.vertx.core.http.HttpClientResponse handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
-        return delegate.handler(handler); 
+        return (io.vertx.core.http.HttpClientResponse)delegate.handler(handler); 
 }
 // io.vertx.core.http.HttpClientResponse pause() 
 public io.vertx.core.http.HttpClientResponse pause() {
-        return delegate.pause(); 
+        return (io.vertx.core.http.HttpClientResponse)delegate.pause(); 
 }
 // io.vertx.core.http.HttpClientResponse endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.http.HttpClientResponse endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return delegate.endHandler(endHandler); 
+        return (io.vertx.core.http.HttpClientResponse)delegate.endHandler(endHandler); 
 }
 // int statusCode() 
 public int statusCode() {
-        return delegate.statusCode(); 
+        return (int)delegate.statusCode(); 
 }
 // java.lang.String statusMessage() 
 public java.lang.String statusMessage() {
-        return delegate.statusMessage(); 
+        return (java.lang.String)delegate.statusMessage(); 
 }
 // io.vertx.core.MultiMap headers() 
 public io.vertx.core.MultiMap headers() {
-        return delegate.headers(); 
+        return (io.vertx.core.MultiMap)delegate.headers(); 
 }
 // java.lang.String getHeader(java.lang.String headerName) 
 public java.lang.String getHeader(java.lang.String headerName) {
-        return delegate.getHeader(headerName); 
+        return (java.lang.String)delegate.getHeader(headerName); 
 }
 // java.lang.String getTrailer(java.lang.String trailerName) 
 public java.lang.String getTrailer(java.lang.String trailerName) {
-        return delegate.getTrailer(trailerName); 
+        return (java.lang.String)delegate.getTrailer(trailerName); 
 }
 // io.vertx.core.MultiMap trailers() 
 public io.vertx.core.MultiMap trailers() {
-        return delegate.trailers(); 
+        return (io.vertx.core.MultiMap)delegate.trailers(); 
 }
 // java.util.List<java.lang.String> cookies() 
 public java.util.List<java.lang.String> cookies() {
-        return delegate.cookies(); 
+        return (java.util.List<java.lang.String>)delegate.cookies(); 
 }
 // io.vertx.core.http.HttpClientResponse bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) 
 public io.vertx.core.http.HttpClientResponse bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) {
-        return delegate.bodyHandler(bodyHandler); 
+        return (io.vertx.core.http.HttpClientResponse)delegate.bodyHandler(bodyHandler); 
 }
 // io.vertx.core.net.NetSocket netSocket() 
 public io.vertx.core.net.NetSocket netSocket() {
-        return delegate.netSocket(); 
+        return (io.vertx.core.net.NetSocket)delegate.netSocket(); 
 }
 }

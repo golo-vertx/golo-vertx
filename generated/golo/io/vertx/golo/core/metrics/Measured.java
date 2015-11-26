@@ -14,6 +14,6 @@ public Object getDelegate() {
 }
 // boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
-        return delegate.isMetricsEnabled(); 
+        return (boolean)delegate.isMetricsEnabled(); 
 }
 }

@@ -16,54 +16,54 @@ public Object getDelegate() {
 }
 // io.vertx.core.http.HttpServerFileUpload exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.http.HttpServerFileUpload exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return delegate.exceptionHandler(handler); 
+        return (io.vertx.core.http.HttpServerFileUpload)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.http.HttpServerFileUpload handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
 public io.vertx.core.http.HttpServerFileUpload handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
-        return delegate.handler(handler); 
+        return (io.vertx.core.http.HttpServerFileUpload)delegate.handler(handler); 
 }
 // io.vertx.core.http.HttpServerFileUpload endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.http.HttpServerFileUpload endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return delegate.endHandler(endHandler); 
+        return (io.vertx.core.http.HttpServerFileUpload)delegate.endHandler(endHandler); 
 }
 // io.vertx.core.http.HttpServerFileUpload pause() 
 public io.vertx.core.http.HttpServerFileUpload pause() {
-        return delegate.pause(); 
+        return (io.vertx.core.http.HttpServerFileUpload)delegate.pause(); 
 }
 // io.vertx.core.http.HttpServerFileUpload resume() 
 public io.vertx.core.http.HttpServerFileUpload resume() {
-        return delegate.resume(); 
+        return (io.vertx.core.http.HttpServerFileUpload)delegate.resume(); 
 }
 // io.vertx.core.http.HttpServerFileUpload streamToFileSystem(java.lang.String filename) 
 public io.vertx.core.http.HttpServerFileUpload streamToFileSystem(java.lang.String filename) {
-        return delegate.streamToFileSystem(filename); 
+        return (io.vertx.core.http.HttpServerFileUpload)delegate.streamToFileSystem(filename); 
 }
 // java.lang.String filename() 
 public java.lang.String filename() {
-        return delegate.filename(); 
+        return (java.lang.String)delegate.filename(); 
 }
 // java.lang.String name() 
 public java.lang.String name() {
-        return delegate.name(); 
+        return (java.lang.String)delegate.name(); 
 }
 // java.lang.String contentType() 
 public java.lang.String contentType() {
-        return delegate.contentType(); 
+        return (java.lang.String)delegate.contentType(); 
 }
 // java.lang.String contentTransferEncoding() 
 public java.lang.String contentTransferEncoding() {
-        return delegate.contentTransferEncoding(); 
+        return (java.lang.String)delegate.contentTransferEncoding(); 
 }
 // java.lang.String charset() 
 public java.lang.String charset() {
-        return delegate.charset(); 
+        return (java.lang.String)delegate.charset(); 
 }
 // long size() 
 public long size() {
-        return delegate.size(); 
+        return (long)delegate.size(); 
 }
 // boolean isSizeAvailable() 
 public boolean isSizeAvailable() {
-        return delegate.isSizeAvailable(); 
+        return (boolean)delegate.isSizeAvailable(); 
 }
 }

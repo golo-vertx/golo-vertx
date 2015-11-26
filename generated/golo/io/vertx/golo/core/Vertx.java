@@ -27,15 +27,15 @@ public Object getDelegate() {
 }
 // boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
-        return delegate.isMetricsEnabled(); 
+        return (boolean)delegate.isMetricsEnabled(); 
 }
 // io.vertx.core.Vertx vertx() 
 public static io.vertx.core.Vertx vertx() {
-        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(), io.vertx.golo.core.function_prototype:className.class); 
+        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(), io.vertx.golo.core.Vertx.class); 
 }
 // io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) 
 public static io.vertx.core.Vertx vertx(io.vertx.core.VertxOptions options) {
-        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options), io.vertx.golo.core.function_prototype:className.class); 
+        return (io.vertx.core.Vertx)InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options), io.vertx.golo.core.Vertx.class); 
 }
 // void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) 
 public static void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler) {
@@ -43,87 +43,87 @@ public static void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.c
 }
 // io.vertx.core.Context currentContext() 
 public static io.vertx.core.Context currentContext() {
-        return io.vertx.core.Vertx.currentContext(); 
+        return (io.vertx.core.Context)io.vertx.core.Vertx.currentContext(); 
 }
 // io.vertx.core.Context getOrCreateContext() 
 public io.vertx.core.Context getOrCreateContext() {
-        return delegate.getOrCreateContext(); 
+        return (io.vertx.core.Context)delegate.getOrCreateContext(); 
 }
 // io.vertx.core.net.NetServer createNetServer(io.vertx.core.net.NetServerOptions options) 
 public io.vertx.core.net.NetServer createNetServer(io.vertx.core.net.NetServerOptions options) {
-        return delegate.createNetServer(options); 
+        return (io.vertx.core.net.NetServer)delegate.createNetServer(options); 
 }
 // io.vertx.core.net.NetServer createNetServer() 
 public io.vertx.core.net.NetServer createNetServer() {
-        return delegate.createNetServer(); 
+        return (io.vertx.core.net.NetServer)delegate.createNetServer(); 
 }
 // io.vertx.core.net.NetClient createNetClient(io.vertx.core.net.NetClientOptions options) 
 public io.vertx.core.net.NetClient createNetClient(io.vertx.core.net.NetClientOptions options) {
-        return delegate.createNetClient(options); 
+        return (io.vertx.core.net.NetClient)delegate.createNetClient(options); 
 }
 // io.vertx.core.net.NetClient createNetClient() 
 public io.vertx.core.net.NetClient createNetClient() {
-        return delegate.createNetClient(); 
+        return (io.vertx.core.net.NetClient)delegate.createNetClient(); 
 }
 // io.vertx.core.http.HttpServer createHttpServer(io.vertx.core.http.HttpServerOptions options) 
 public io.vertx.core.http.HttpServer createHttpServer(io.vertx.core.http.HttpServerOptions options) {
-        return delegate.createHttpServer(options); 
+        return (io.vertx.core.http.HttpServer)delegate.createHttpServer(options); 
 }
 // io.vertx.core.http.HttpServer createHttpServer() 
 public io.vertx.core.http.HttpServer createHttpServer() {
-        return delegate.createHttpServer(); 
+        return (io.vertx.core.http.HttpServer)delegate.createHttpServer(); 
 }
 // io.vertx.core.http.HttpClient createHttpClient(io.vertx.core.http.HttpClientOptions options) 
 public io.vertx.core.http.HttpClient createHttpClient(io.vertx.core.http.HttpClientOptions options) {
-        return delegate.createHttpClient(options); 
+        return (io.vertx.core.http.HttpClient)delegate.createHttpClient(options); 
 }
 // io.vertx.core.http.HttpClient createHttpClient() 
 public io.vertx.core.http.HttpClient createHttpClient() {
-        return delegate.createHttpClient(); 
+        return (io.vertx.core.http.HttpClient)delegate.createHttpClient(); 
 }
 // io.vertx.core.datagram.DatagramSocket createDatagramSocket(io.vertx.core.datagram.DatagramSocketOptions options) 
 public io.vertx.core.datagram.DatagramSocket createDatagramSocket(io.vertx.core.datagram.DatagramSocketOptions options) {
-        return delegate.createDatagramSocket(options); 
+        return (io.vertx.core.datagram.DatagramSocket)delegate.createDatagramSocket(options); 
 }
 // io.vertx.core.datagram.DatagramSocket createDatagramSocket() 
 public io.vertx.core.datagram.DatagramSocket createDatagramSocket() {
-        return delegate.createDatagramSocket(); 
+        return (io.vertx.core.datagram.DatagramSocket)delegate.createDatagramSocket(); 
 }
 // io.vertx.core.file.FileSystem fileSystem() 
 public io.vertx.core.file.FileSystem fileSystem() {
-        return delegate.fileSystem(); 
+        return (io.vertx.core.file.FileSystem)delegate.fileSystem(); 
 }
 // io.vertx.core.eventbus.EventBus eventBus() 
 public io.vertx.core.eventbus.EventBus eventBus() {
-        return delegate.eventBus(); 
+        return (io.vertx.core.eventbus.EventBus)delegate.eventBus(); 
 }
 // io.vertx.core.dns.DnsClient createDnsClient(int port, java.lang.String host) 
 public io.vertx.core.dns.DnsClient createDnsClient(int port, java.lang.String host) {
-        return delegate.createDnsClient(port, host); 
+        return (io.vertx.core.dns.DnsClient)delegate.createDnsClient(port, host); 
 }
 // io.vertx.core.shareddata.SharedData sharedData() 
 public io.vertx.core.shareddata.SharedData sharedData() {
-        return delegate.sharedData(); 
+        return (io.vertx.core.shareddata.SharedData)delegate.sharedData(); 
 }
 // long setTimer(long delay, io.vertx.core.Handler<java.lang.Long> handler) 
 public long setTimer(long delay, io.vertx.core.Handler<java.lang.Long> handler) {
-        return delegate.setTimer(delay, handler); 
+        return (long)delegate.setTimer(delay, handler); 
 }
 // io.vertx.core.TimeoutStream timerStream(long delay) 
 public io.vertx.core.TimeoutStream timerStream(long delay) {
-        return delegate.timerStream(delay); 
+        return (io.vertx.core.TimeoutStream)delegate.timerStream(delay); 
 }
 // long setPeriodic(long delay, io.vertx.core.Handler<java.lang.Long> handler) 
 public long setPeriodic(long delay, io.vertx.core.Handler<java.lang.Long> handler) {
-        return delegate.setPeriodic(delay, handler); 
+        return (long)delegate.setPeriodic(delay, handler); 
 }
 // io.vertx.core.TimeoutStream periodicStream(long delay) 
 public io.vertx.core.TimeoutStream periodicStream(long delay) {
-        return delegate.periodicStream(delay); 
+        return (io.vertx.core.TimeoutStream)delegate.periodicStream(delay); 
 }
 // boolean cancelTimer(long id) 
 public boolean cancelTimer(long id) {
-        return delegate.cancelTimer(id); 
+        return (boolean)delegate.cancelTimer(id); 
 }
 // void runOnContext(io.vertx.core.Handler<java.lang.Void> action) 
 public void runOnContext(io.vertx.core.Handler<java.lang.Void> action) {
@@ -163,18 +163,18 @@ public void undeploy(java.lang.String deploymentID, io.vertx.core.Handler<io.ver
 }
 // java.util.Set<java.lang.String> deploymentIDs() 
 public java.util.Set<java.lang.String> deploymentIDs() {
-        return delegate.deploymentIDs(); 
+        return (java.util.Set<java.lang.String>)delegate.deploymentIDs(); 
 }
 // boolean isClustered() 
 public boolean isClustered() {
-        return delegate.isClustered(); 
+        return (boolean)delegate.isClustered(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
+public <T>void {
         delegate.executeBlocking(blockingCodeHandler, ordered, resultHandler); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Vertx,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
+public <T>void {
         delegate.executeBlocking(blockingCodeHandler, resultHandler); 
 }
 }

@@ -13,16 +13,18 @@ public class InternalHelper {
         if (obj instanceof JsonObject) {
             JsonObject json = (JsonObject) obj;
             json.getMap().forEach((k, v) -> {
-                json.put(k, wrapObject(v))
+                json.put(k, wrapObject(v));
             });
             return json;
         } else if(obj instanceof JsonArray) {
             JsonArray array = (JsonArray) obj;
             JsonArray ret = new JsonArray();
-            array.stream().forEach(ret::add);
+            array.stream().forEach((it) -> {
+                ret.add(wrapObject(it));
+            });
             return ret;
         } else if (obj instanceof io.vertx.core.buffer.Buffer) {
-            return new io.vertx.golo.core.buffer.Buffer((io.vertx.core.buffer.Buffer) obj);
+            //return new io.vertx.golo.core.buffer.Buffer((io.vertx.core.buffer.Buffer) obj);
         }
         return obj;
     }

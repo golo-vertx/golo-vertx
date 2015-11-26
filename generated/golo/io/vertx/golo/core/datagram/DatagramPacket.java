@@ -16,10 +16,10 @@ public Object getDelegate() {
 }
 // io.vertx.core.net.SocketAddress sender() 
 public io.vertx.core.net.SocketAddress sender() {
-        return delegate.sender(); 
+        return (io.vertx.core.net.SocketAddress)delegate.sender(); 
 }
 // io.vertx.core.buffer.Buffer data() 
 public io.vertx.core.buffer.Buffer data() {
-        return delegate.data(); 
+        return (io.vertx.core.buffer.Buffer)delegate.data(); 
 }
 }

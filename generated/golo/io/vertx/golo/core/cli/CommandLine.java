@@ -15,58 +15,58 @@ public Object getDelegate() {
 }
 // io.vertx.core.cli.CommandLine create(io.vertx.core.cli.CLI cli) 
 public static io.vertx.core.cli.CommandLine create(io.vertx.core.cli.CLI cli) {
-        return (io.vertx.core.cli.CommandLine)InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create(cli), io.vertx.golo.core.cli.function_prototype:className.class); 
+        return (io.vertx.core.cli.CommandLine)InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create(cli), io.vertx.golo.core.cli.CommandLine.class); 
 }
 // io.vertx.core.cli.CLI cli() 
 public io.vertx.core.cli.CLI cli() {
-        return delegate.cli(); 
+        return (io.vertx.core.cli.CLI)delegate.cli(); 
 }
 // java.util.List<java.lang.String> allArguments() 
 public java.util.List<java.lang.String> allArguments() {
-        return delegate.allArguments(); 
+        return (java.util.List<java.lang.String>)delegate.allArguments(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetOptionValue]> T getOptionValue(java.lang.String name) 
-public <T> T getOptionValue(java.lang.String name) {
-        return delegate.getOptionValue(name); 
+public <T>T {
+        return (T)delegate.getOptionValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(java.lang.String name) 
-public <T> T getArgumentValue(java.lang.String name) {
-        return delegate.getArgumentValue(name); 
+public <T>T {
+        return (T)delegate.getArgumentValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(int index) 
-public <T> T getArgumentValue(int index) {
-        return delegate.getArgumentValue(index); 
+public <T>T {
+        return (T)delegate.getArgumentValue(index); 
 }
 // boolean isFlagEnabled(java.lang.String name) 
 public boolean isFlagEnabled(java.lang.String name) {
-        return delegate.isFlagEnabled(name); 
+        return (boolean)delegate.isFlagEnabled(name); 
 }
 // boolean isOptionAssigned(io.vertx.core.cli.Option option) 
 public boolean isOptionAssigned(io.vertx.core.cli.Option option) {
-        return delegate.isOptionAssigned(option); 
+        return (boolean)delegate.isOptionAssigned(option); 
 }
 // java.util.List<java.lang.String> getRawValues(io.vertx.core.cli.Option option) 
 public java.util.List<java.lang.String> getRawValues(io.vertx.core.cli.Option option) {
-        return delegate.getRawValues(option); 
+        return (java.util.List<java.lang.String>)delegate.getRawValues(option); 
 }
 // java.lang.String getRawValueForOption(io.vertx.core.cli.Option option) 
 public java.lang.String getRawValueForOption(io.vertx.core.cli.Option option) {
-        return delegate.getRawValueForOption(option); 
+        return (java.lang.String)delegate.getRawValueForOption(option); 
 }
 // boolean acceptMoreValues(io.vertx.core.cli.Option option) 
 public boolean acceptMoreValues(io.vertx.core.cli.Option option) {
-        return delegate.acceptMoreValues(option); 
+        return (boolean)delegate.acceptMoreValues(option); 
 }
 // java.lang.String getRawValueForArgument(io.vertx.core.cli.Argument arg) 
 public java.lang.String getRawValueForArgument(io.vertx.core.cli.Argument arg) {
-        return delegate.getRawValueForArgument(arg); 
+        return (java.lang.String)delegate.getRawValueForArgument(arg); 
 }
 // boolean isArgumentAssigned(io.vertx.core.cli.Argument arg) 
 public boolean isArgumentAssigned(io.vertx.core.cli.Argument arg) {
-        return delegate.isArgumentAssigned(arg); 
+        return (boolean)delegate.isArgumentAssigned(arg); 
 }
 // boolean isSeenInCommandLine(io.vertx.core.cli.Option option) 
 public boolean isSeenInCommandLine(io.vertx.core.cli.Option option) {
-        return delegate.isSeenInCommandLine(option); 
+        return (boolean)delegate.isSeenInCommandLine(option); 
 }
 }

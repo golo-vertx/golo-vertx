@@ -14,34 +14,34 @@ public Object getDelegate() {
 }
 // long creationTime() 
 public long creationTime() {
-        return delegate.creationTime(); 
+        return (long)delegate.creationTime(); 
 }
 // long lastAccessTime() 
 public long lastAccessTime() {
-        return delegate.lastAccessTime(); 
+        return (long)delegate.lastAccessTime(); 
 }
 // long lastModifiedTime() 
 public long lastModifiedTime() {
-        return delegate.lastModifiedTime(); 
+        return (long)delegate.lastModifiedTime(); 
 }
 // boolean isDirectory() 
 public boolean isDirectory() {
-        return delegate.isDirectory(); 
+        return (boolean)delegate.isDirectory(); 
 }
 // boolean isOther() 
 public boolean isOther() {
-        return delegate.isOther(); 
+        return (boolean)delegate.isOther(); 
 }
 // boolean isRegularFile() 
 public boolean isRegularFile() {
-        return delegate.isRegularFile(); 
+        return (boolean)delegate.isRegularFile(); 
 }
 // boolean isSymbolicLink() 
 public boolean isSymbolicLink() {
-        return delegate.isSymbolicLink(); 
+        return (boolean)delegate.isSymbolicLink(); 
 }
 // long size() 
 public long size() {
-        return delegate.size(); 
+        return (long)delegate.size(); 
 }
 }

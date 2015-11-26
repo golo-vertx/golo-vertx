@@ -23,4 +23,8 @@ public class CompileTest {
     public void canCompileContext() throws Exception{
         Assert.assertTrue(compiler.compile(path+"Context.java", compiler.classPath));
     }
+    @Test
+    public void message() throws Exception{
+        Assert.assertTrue(compiler.compile(path+"eventbus/Message.java", compiler.classPath));
+    }
 }

@@ -17,7 +17,7 @@ public Object getDelegate() {
     return delegate; 
 }
 // <TypeParamInfo.Method[name=K,typeName=io.vertx.core.shareddata.SharedData,methodNamegetClusterWideMap], TypeParamInfo.Method[name=V,typeName=io.vertx.core.shareddata.SharedData,methodNamegetClusterWideMap]> void getClusterWideMap(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.AsyncMap<K,V>>> resultHandler) 
-public <K> void getClusterWideMap(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.AsyncMap<K,V>>> resultHandler) {
+public <K>TypeParamInfo.Method[name=V,typeName=io.vertx.core.shareddata.SharedData,methodNamegetClusterWideMap]> {
         return delegate.getClusterWideMap(name, resultHandler); 
 }
 // void getLock(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.Lock>> resultHandler) 
@@ -33,7 +33,7 @@ public void getCounter(java.lang.String name, io.vertx.core.Handler<io.vertx.cor
         delegate.getCounter(name, resultHandler); 
 }
 // <TypeParamInfo.Method[name=K,typeName=io.vertx.core.shareddata.SharedData,methodNamegetLocalMap], TypeParamInfo.Method[name=V,typeName=io.vertx.core.shareddata.SharedData,methodNamegetLocalMap]> io.vertx.core.shareddata.LocalMap<K,V> getLocalMap(java.lang.String name) 
-public <K> io.vertx.core.shareddata.LocalMap<K,V> getLocalMap(java.lang.String name) {
-        return delegate.getLocalMap(name); 
+public <K>TypeParamInfo.Method[name=V,typeName=io.vertx.core.shareddata.SharedData,methodNamegetLocalMap]> {
+        return (io.vertx.core.shareddata.LocalMap<K,V>)delegate.getLocalMap(name); 
 }
 }

@@ -22,110 +22,110 @@ public Object getDelegate() {
 }
 // io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return delegate.exceptionHandler(handler); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
 public io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
-        return delegate.handler(handler); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.handler(handler); 
 }
 // io.vertx.core.http.HttpServerRequest pause() 
 public io.vertx.core.http.HttpServerRequest pause() {
-        return delegate.pause(); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.pause(); 
 }
 // io.vertx.core.http.HttpServerRequest resume() 
 public io.vertx.core.http.HttpServerRequest resume() {
-        return delegate.resume(); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.resume(); 
 }
 // io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return delegate.endHandler(endHandler); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.endHandler(endHandler); 
 }
 // io.vertx.core.http.HttpVersion version() 
 public io.vertx.core.http.HttpVersion version() {
-        return delegate.version(); 
+        return (io.vertx.core.http.HttpVersion)delegate.version(); 
 }
 // io.vertx.core.http.HttpMethod method() 
 public io.vertx.core.http.HttpMethod method() {
-        return delegate.method(); 
+        return (io.vertx.core.http.HttpMethod)delegate.method(); 
 }
 // java.lang.String uri() 
 public java.lang.String uri() {
-        return delegate.uri(); 
+        return (java.lang.String)delegate.uri(); 
 }
 // java.lang.String path() 
 public java.lang.String path() {
-        return delegate.path(); 
+        return (java.lang.String)delegate.path(); 
 }
 // java.lang.String query() 
 public java.lang.String query() {
-        return delegate.query(); 
+        return (java.lang.String)delegate.query(); 
 }
 // io.vertx.core.http.HttpServerResponse response() 
 public io.vertx.core.http.HttpServerResponse response() {
-        return delegate.response(); 
+        return (io.vertx.core.http.HttpServerResponse)delegate.response(); 
 }
 // io.vertx.core.MultiMap headers() 
 public io.vertx.core.MultiMap headers() {
-        return delegate.headers(); 
+        return (io.vertx.core.MultiMap)delegate.headers(); 
 }
 // java.lang.String getHeader(java.lang.String headerName) 
 public java.lang.String getHeader(java.lang.String headerName) {
-        return delegate.getHeader(headerName); 
+        return (java.lang.String)delegate.getHeader(headerName); 
 }
 // io.vertx.core.MultiMap params() 
 public io.vertx.core.MultiMap params() {
-        return delegate.params(); 
+        return (io.vertx.core.MultiMap)delegate.params(); 
 }
 // java.lang.String getParam(java.lang.String paramName) 
 public java.lang.String getParam(java.lang.String paramName) {
-        return delegate.getParam(paramName); 
+        return (java.lang.String)delegate.getParam(paramName); 
 }
 // io.vertx.core.net.SocketAddress remoteAddress() 
 public io.vertx.core.net.SocketAddress remoteAddress() {
-        return delegate.remoteAddress(); 
+        return (io.vertx.core.net.SocketAddress)delegate.remoteAddress(); 
 }
 // io.vertx.core.net.SocketAddress localAddress() 
 public io.vertx.core.net.SocketAddress localAddress() {
-        return delegate.localAddress(); 
+        return (io.vertx.core.net.SocketAddress)delegate.localAddress(); 
 }
 // java.lang.String absoluteURI() 
 public java.lang.String absoluteURI() {
-        return delegate.absoluteURI(); 
+        return (java.lang.String)delegate.absoluteURI(); 
 }
 // io.vertx.core.http.HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) 
 public io.vertx.core.http.HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) {
-        return delegate.bodyHandler(bodyHandler); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.bodyHandler(bodyHandler); 
 }
 // io.vertx.core.net.NetSocket netSocket() 
 public io.vertx.core.net.NetSocket netSocket() {
-        return delegate.netSocket(); 
+        return (io.vertx.core.net.NetSocket)delegate.netSocket(); 
 }
 // io.vertx.core.http.HttpServerRequest setExpectMultipart(boolean expect) 
 public io.vertx.core.http.HttpServerRequest setExpectMultipart(boolean expect) {
-        return delegate.setExpectMultipart(expect); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.setExpectMultipart(expect); 
 }
 // boolean isExpectMultipart() 
 public boolean isExpectMultipart() {
-        return delegate.isExpectMultipart(); 
+        return (boolean)delegate.isExpectMultipart(); 
 }
 // io.vertx.core.http.HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler) 
 public io.vertx.core.http.HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler) {
-        return delegate.uploadHandler(uploadHandler); 
+        return (io.vertx.core.http.HttpServerRequest)delegate.uploadHandler(uploadHandler); 
 }
 // io.vertx.core.MultiMap formAttributes() 
 public io.vertx.core.MultiMap formAttributes() {
-        return delegate.formAttributes(); 
+        return (io.vertx.core.MultiMap)delegate.formAttributes(); 
 }
 // java.lang.String getFormAttribute(java.lang.String attributeName) 
 public java.lang.String getFormAttribute(java.lang.String attributeName) {
-        return delegate.getFormAttribute(attributeName); 
+        return (java.lang.String)delegate.getFormAttribute(attributeName); 
 }
 // io.vertx.core.http.ServerWebSocket upgrade() 
 public io.vertx.core.http.ServerWebSocket upgrade() {
-        return delegate.upgrade(); 
+        return (io.vertx.core.http.ServerWebSocket)delegate.upgrade(); 
 }
 // boolean isEnded() 
 public boolean isEnded() {
-        return delegate.isEnded(); 
+        return (boolean)delegate.isEnded(); 
 }
 }

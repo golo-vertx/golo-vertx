@@ -14,14 +14,14 @@ public Object getDelegate() {
 }
 // long totalSpace() 
 public long totalSpace() {
-        return delegate.totalSpace(); 
+        return (long)delegate.totalSpace(); 
 }
 // long unallocatedSpace() 
 public long unallocatedSpace() {
-        return delegate.unallocatedSpace(); 
+        return (long)delegate.unallocatedSpace(); 
 }
 // long usableSpace() 
 public long usableSpace() {
-        return delegate.usableSpace(); 
+        return (long)delegate.usableSpace(); 
 }
 }

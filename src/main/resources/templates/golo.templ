@@ -22,16 +22,37 @@
     return retType.substring(startIndex+identifier.length(),startIndex+identifier.length()+1);
   }
 
+  def countGenerics(method) {
+    var count = 0;
+    for(int i = 0; i<method.toString() -3 ; i++) {
+        if(method.toString().substring(i, i+4).equals("Type")) {
+            count = count + 1;
+        }
+    }
+    return count;
+  }
+
   def typeCheck(method) {
      var gen = "";
      var str = method.toString();
-     for(int i = 0; i<str.length()-1; i++) {
-        if(str.substring(i, i+2).equals("]>")) {
-            gen = parseGenericName(method);
-            return "<"+gen+">" + str.substring(i+2, str.length());
-        }
+     var generics = "";
+     var genCount = countGenerics(method);
+     if(genCount > 0) {
+        return genCount;
      }
-     return method.toString();
+     // THIS DOES NOT WORK YET
+     for(int i = 0; i<str.length()-1; i++) {
+             if(str.substring(i, i+2).equals("]>")) {
+                 gen = parseGenericName(method);
+                 generics = generics + gen +",";
+             }
+          }
+          if(generics.length() > 0) {
+             generics = generics.substring(0, generics.length() -1);
+             return "<"+generics+">" + splitHelper(method.toString(), " ")[0];
+          }
+
+     return str;
   }
 
   def genGoloModuleName(type) {
@@ -82,10 +103,14 @@
         if(isConstructorMethod(type, method)) {
             return constructorMethod(className, type, method);
         }
-        var call = "return ";
+        var call;
         var returnTypes = splitHelper(method.toString(), " ");
         if(returnTypes[0].equals("void") || returnTypes[1].equals("void")) {
             call = "";
+        } else  if(returnTypes.size() > 2 && returnTypes[2].equals("void")){
+            call = "return ";
+        } else {
+            call = "return (" + method.returnType + ")";
         }
         if(method.staticMethod) {
             call = call + type.toString() + ".";
@@ -158,7 +183,10 @@ public Object getDelegate() { \n
 // @{method} \n
 @code{methodDefinition = createMethodDefinition(type, method)}
 public @{methodDefinition} {\n
-    @code{callOrgAPI = callForOriginalAPI(className, type, method)}
+    @code{
+        var cName = className(type);
+        callOrgAPI = callForOriginalAPI(cName, type, method);
+    }
     @{callOrgAPI}; \n
 }\n
 @end{}

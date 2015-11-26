@@ -15,38 +15,38 @@ public Object getDelegate() {
 }
 // io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
 public static io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) {
-        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFrame(data, isFinal), io.vertx.golo.core.http.function_prototype:className.class); 
+        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFrame(data, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
 }
 // io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal) 
 public static io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal) {
-        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(str, isFinal), io.vertx.golo.core.http.function_prototype:className.class); 
+        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(str, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
 }
 // io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) 
 public static io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal) {
-        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.continuationFrame(data, isFinal), io.vertx.golo.core.http.function_prototype:className.class); 
+        return (io.vertx.core.http.WebSocketFrame)InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.continuationFrame(data, isFinal), io.vertx.golo.core.http.WebSocketFrame.class); 
 }
 // boolean isText() 
 public boolean isText() {
-        return delegate.isText(); 
+        return (boolean)delegate.isText(); 
 }
 // boolean isBinary() 
 public boolean isBinary() {
-        return delegate.isBinary(); 
+        return (boolean)delegate.isBinary(); 
 }
 // boolean isContinuation() 
 public boolean isContinuation() {
-        return delegate.isContinuation(); 
+        return (boolean)delegate.isContinuation(); 
 }
 // java.lang.String textData() 
 public java.lang.String textData() {
-        return delegate.textData(); 
+        return (java.lang.String)delegate.textData(); 
 }
 // io.vertx.core.buffer.Buffer binaryData() 
 public io.vertx.core.buffer.Buffer binaryData() {
-        return delegate.binaryData(); 
+        return (io.vertx.core.buffer.Buffer)delegate.binaryData(); 
 }
 // boolean isFinal() 
 public boolean isFinal() {
-        return delegate.isFinal(); 
+        return (boolean)delegate.isFinal(); 
 }
 }

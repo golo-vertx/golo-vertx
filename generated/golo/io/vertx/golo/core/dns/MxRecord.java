@@ -14,10 +14,10 @@ public Object getDelegate() {
 }
 // int priority() 
 public int priority() {
-        return delegate.priority(); 
+        return (int)delegate.priority(); 
 }
 // java.lang.String name() 
 public java.lang.String name() {
-        return delegate.name(); 
+        return (java.lang.String)delegate.name(); 
 }
 }

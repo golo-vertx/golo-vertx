@@ -15,23 +15,23 @@ public Object getDelegate() {
 }
 // io.vertx.core.TimeoutStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.TimeoutStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return delegate.exceptionHandler(handler); 
+        return (io.vertx.core.TimeoutStream)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.TimeoutStream handler(io.vertx.core.Handler<java.lang.Long> handler) 
 public io.vertx.core.TimeoutStream handler(io.vertx.core.Handler<java.lang.Long> handler) {
-        return delegate.handler(handler); 
+        return (io.vertx.core.TimeoutStream)delegate.handler(handler); 
 }
 // io.vertx.core.TimeoutStream pause() 
 public io.vertx.core.TimeoutStream pause() {
-        return delegate.pause(); 
+        return (io.vertx.core.TimeoutStream)delegate.pause(); 
 }
 // io.vertx.core.TimeoutStream resume() 
 public io.vertx.core.TimeoutStream resume() {
-        return delegate.resume(); 
+        return (io.vertx.core.TimeoutStream)delegate.resume(); 
 }
 // io.vertx.core.TimeoutStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.TimeoutStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return delegate.endHandler(endHandler); 
+        return (io.vertx.core.TimeoutStream)delegate.endHandler(endHandler); 
 }
 // void cancel() 
 public void cancel() {

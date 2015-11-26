@@ -17,39 +17,39 @@ public Object getDelegate() {
 }
 // boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
-        return delegate.isMetricsEnabled(); 
+        return (boolean)delegate.isMetricsEnabled(); 
 }
 // io.vertx.core.net.NetSocketStream connectStream() 
 public io.vertx.core.net.NetSocketStream connectStream() {
-        return delegate.connectStream(); 
+        return (io.vertx.core.net.NetSocketStream)delegate.connectStream(); 
 }
 // io.vertx.core.net.NetServer connectHandler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler) 
 public io.vertx.core.net.NetServer connectHandler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler) {
-        return delegate.connectHandler(handler); 
+        return (io.vertx.core.net.NetServer)delegate.connectHandler(handler); 
 }
 // io.vertx.core.net.NetServer listen() 
 public io.vertx.core.net.NetServer listen() {
-        return delegate.listen(); 
+        return (io.vertx.core.net.NetServer)delegate.listen(); 
 }
 // io.vertx.core.net.NetServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) 
 public io.vertx.core.net.NetServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) {
-        return delegate.listen(listenHandler); 
+        return (io.vertx.core.net.NetServer)delegate.listen(listenHandler); 
 }
 // io.vertx.core.net.NetServer listen(int port, java.lang.String host) 
 public io.vertx.core.net.NetServer listen(int port, java.lang.String host) {
-        return delegate.listen(port, host); 
+        return (io.vertx.core.net.NetServer)delegate.listen(port, host); 
 }
 // io.vertx.core.net.NetServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) 
 public io.vertx.core.net.NetServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) {
-        return delegate.listen(port, host, listenHandler); 
+        return (io.vertx.core.net.NetServer)delegate.listen(port, host, listenHandler); 
 }
 // io.vertx.core.net.NetServer listen(int port) 
 public io.vertx.core.net.NetServer listen(int port) {
-        return delegate.listen(port); 
+        return (io.vertx.core.net.NetServer)delegate.listen(port); 
 }
 // io.vertx.core.net.NetServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) 
 public io.vertx.core.net.NetServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) {
-        return delegate.listen(port, listenHandler); 
+        return (io.vertx.core.net.NetServer)delegate.listen(port, listenHandler); 
 }
 // void close() 
 public void close() {
@@ -61,6 +61,6 @@ public void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void
 }
 // int actualPort() 
 public int actualPort() {
-        return delegate.actualPort(); 
+        return (int)delegate.actualPort(); 
 }
 }

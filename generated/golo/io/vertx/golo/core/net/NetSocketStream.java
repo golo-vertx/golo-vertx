@@ -16,22 +16,22 @@ public Object getDelegate() {
 }
 // io.vertx.core.net.NetSocketStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.net.NetSocketStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return delegate.exceptionHandler(handler); 
+        return (io.vertx.core.net.NetSocketStream)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.net.NetSocketStream handler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler) 
 public io.vertx.core.net.NetSocketStream handler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler) {
-        return delegate.handler(handler); 
+        return (io.vertx.core.net.NetSocketStream)delegate.handler(handler); 
 }
 // io.vertx.core.net.NetSocketStream pause() 
 public io.vertx.core.net.NetSocketStream pause() {
-        return delegate.pause(); 
+        return (io.vertx.core.net.NetSocketStream)delegate.pause(); 
 }
 // io.vertx.core.net.NetSocketStream resume() 
 public io.vertx.core.net.NetSocketStream resume() {
-        return delegate.resume(); 
+        return (io.vertx.core.net.NetSocketStream)delegate.resume(); 
 }
 // io.vertx.core.net.NetSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.net.NetSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return delegate.endHandler(endHandler); 
+        return (io.vertx.core.net.NetSocketStream)delegate.endHandler(endHandler); 
 }
 }

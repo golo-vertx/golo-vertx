@@ -15,22 +15,22 @@ public Object getDelegate() {
 }
 // io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return delegate.exceptionHandler(handler); 
+        return (io.vertx.core.streams.ReadStream<T>)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler) 
 public io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler) {
-        return delegate.handler(handler); 
+        return (io.vertx.core.streams.ReadStream<T>)delegate.handler(handler); 
 }
 // io.vertx.core.streams.ReadStream<T> pause() 
 public io.vertx.core.streams.ReadStream<T> pause() {
-        return delegate.pause(); 
+        return (io.vertx.core.streams.ReadStream<T>)delegate.pause(); 
 }
 // io.vertx.core.streams.ReadStream<T> resume() 
 public io.vertx.core.streams.ReadStream<T> resume() {
-        return delegate.resume(); 
+        return (io.vertx.core.streams.ReadStream<T>)delegate.resume(); 
 }
 // io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return delegate.endHandler(endHandler); 
+        return (io.vertx.core.streams.ReadStream<T>)delegate.endHandler(endHandler); 
 }
 }

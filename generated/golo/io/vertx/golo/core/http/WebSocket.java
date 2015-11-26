@@ -18,15 +18,15 @@ public Object getDelegate() {
 }
 // boolean writeQueueFull() 
 public boolean writeQueueFull() {
-        return delegate.writeQueueFull(); 
+        return (boolean)delegate.writeQueueFull(); 
 }
 // java.lang.String binaryHandlerID() 
 public java.lang.String binaryHandlerID() {
-        return delegate.binaryHandlerID(); 
+        return (java.lang.String)delegate.binaryHandlerID(); 
 }
 // java.lang.String textHandlerID() 
 public java.lang.String textHandlerID() {
-        return delegate.textHandlerID(); 
+        return (java.lang.String)delegate.textHandlerID(); 
 }
 // void close() 
 public void close() {
@@ -34,66 +34,66 @@ public void close() {
 }
 // io.vertx.core.net.SocketAddress remoteAddress() 
 public io.vertx.core.net.SocketAddress remoteAddress() {
-        return delegate.remoteAddress(); 
+        return (io.vertx.core.net.SocketAddress)delegate.remoteAddress(); 
 }
 // io.vertx.core.net.SocketAddress localAddress() 
 public io.vertx.core.net.SocketAddress localAddress() {
-        return delegate.localAddress(); 
+        return (io.vertx.core.net.SocketAddress)delegate.localAddress(); 
 }
 // io.vertx.core.http.WebSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
 public io.vertx.core.http.WebSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
-        return delegate.exceptionHandler(handler); 
+        return (io.vertx.core.http.WebSocket)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.http.WebSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
 public io.vertx.core.http.WebSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
-        return delegate.handler(handler); 
+        return (io.vertx.core.http.WebSocket)delegate.handler(handler); 
 }
 // io.vertx.core.http.WebSocket pause() 
 public io.vertx.core.http.WebSocket pause() {
-        return delegate.pause(); 
+        return (io.vertx.core.http.WebSocket)delegate.pause(); 
 }
 // io.vertx.core.http.WebSocket resume() 
 public io.vertx.core.http.WebSocket resume() {
-        return delegate.resume(); 
+        return (io.vertx.core.http.WebSocket)delegate.resume(); 
 }
 // io.vertx.core.http.WebSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
 public io.vertx.core.http.WebSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
-        return delegate.endHandler(endHandler); 
+        return (io.vertx.core.http.WebSocket)delegate.endHandler(endHandler); 
 }
 // io.vertx.core.http.WebSocket write(io.vertx.core.buffer.Buffer data) 
 public io.vertx.core.http.WebSocket write(io.vertx.core.buffer.Buffer data) {
-        return delegate.write(data); 
+        return (io.vertx.core.http.WebSocket)delegate.write(data); 
 }
 // io.vertx.core.http.WebSocket setWriteQueueMaxSize(int maxSize) 
 public io.vertx.core.http.WebSocket setWriteQueueMaxSize(int maxSize) {
-        return delegate.setWriteQueueMaxSize(maxSize); 
+        return (io.vertx.core.http.WebSocket)delegate.setWriteQueueMaxSize(maxSize); 
 }
 // io.vertx.core.http.WebSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
 public io.vertx.core.http.WebSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler) {
-        return delegate.drainHandler(handler); 
+        return (io.vertx.core.http.WebSocket)delegate.drainHandler(handler); 
 }
 // io.vertx.core.http.WebSocket writeFrame(io.vertx.core.http.WebSocketFrame frame) 
 public io.vertx.core.http.WebSocket writeFrame(io.vertx.core.http.WebSocketFrame frame) {
-        return delegate.writeFrame(frame); 
+        return (io.vertx.core.http.WebSocket)delegate.writeFrame(frame); 
 }
 // io.vertx.core.http.WebSocket writeFinalTextFrame(java.lang.String text) 
 public io.vertx.core.http.WebSocket writeFinalTextFrame(java.lang.String text) {
-        return delegate.writeFinalTextFrame(text); 
+        return (io.vertx.core.http.WebSocket)delegate.writeFinalTextFrame(text); 
 }
 // io.vertx.core.http.WebSocket writeFinalBinaryFrame(io.vertx.core.buffer.Buffer data) 
 public io.vertx.core.http.WebSocket writeFinalBinaryFrame(io.vertx.core.buffer.Buffer data) {
-        return delegate.writeFinalBinaryFrame(data); 
+        return (io.vertx.core.http.WebSocket)delegate.writeFinalBinaryFrame(data); 
 }
 // io.vertx.core.http.WebSocket writeBinaryMessage(io.vertx.core.buffer.Buffer data) 
 public io.vertx.core.http.WebSocket writeBinaryMessage(io.vertx.core.buffer.Buffer data) {
-        return delegate.writeBinaryMessage(data); 
+        return (io.vertx.core.http.WebSocket)delegate.writeBinaryMessage(data); 
 }
 // io.vertx.core.http.WebSocket closeHandler(io.vertx.core.Handler<java.lang.Void> handler) 
 public io.vertx.core.http.WebSocket closeHandler(io.vertx.core.Handler<java.lang.Void> handler) {
-        return delegate.closeHandler(handler); 
+        return (io.vertx.core.http.WebSocket)delegate.closeHandler(handler); 
 }
 // io.vertx.core.http.WebSocket frameHandler(io.vertx.core.Handler<io.vertx.core.http.WebSocketFrame> handler) 
 public io.vertx.core.http.WebSocket frameHandler(io.vertx.core.Handler<io.vertx.core.http.WebSocketFrame> handler) {
-        return delegate.frameHandler(handler); 
+        return (io.vertx.core.http.WebSocket)delegate.frameHandler(handler); 
 }
 }
