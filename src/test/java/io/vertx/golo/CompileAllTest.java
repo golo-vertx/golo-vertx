@@ -13,11 +13,14 @@ public class CompileAllTest {
 
     @Test
     public void compileAllClasses() throws IOException{
+        final int[] counter = new int[]{0};
         Compiler compiler = new Compiler();
         Consumer<Path> compile = (path)-> {
             try {
                 if(path.toString().endsWith(".java")) {
                     Assert.assertTrue(compiler.compile(path.toString(), compiler.classPath));
+                    counter[0]++;
+                    System.out.printf("counter: " + counter[0] + " of 61 files are compiling");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
