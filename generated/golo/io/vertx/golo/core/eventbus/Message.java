@@ -34,7 +34,7 @@ public void reply(java.lang.Object message) {
         delegate.reply(message); 
 }
 // <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) 
-public <R>void {
+public <R> void reply(java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) {
         delegate.reply(message, replyHandler); 
 }
 // void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) 
@@ -42,7 +42,7 @@ public void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptio
         delegate.reply(message, options); 
 }
 // <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) 
-public <R>void {
+public <R> void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) {
         delegate.reply(message, options, replyHandler); 
 }
 // void fail(int failureCode, java.lang.String message) 

@@ -31,11 +31,11 @@ public void runOnContext(io.vertx.core.Handler<java.lang.Void> action) {
         delegate.runOnContext(action); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <T>void {
+public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
         delegate.executeBlocking(blockingCodeHandler, ordered, resultHandler); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) 
-public <T>void {
+public <T> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler) {
         delegate.executeBlocking(blockingCodeHandler, resultHandler); 
 }
 // java.lang.String deploymentID() 
@@ -63,7 +63,7 @@ public boolean isMultiThreadedWorkerContext() {
         return (boolean)delegate.isMultiThreadedWorkerContext(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameget]> T get(java.lang.String key) 
-public <T>T {
+public <T> T get(java.lang.String key) {
         return (T)delegate.get(key); 
 }
 // void put(java.lang.String key, java.lang.Object value) 

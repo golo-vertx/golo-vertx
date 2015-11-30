@@ -26,15 +26,15 @@ public java.util.List<java.lang.String> allArguments() {
         return (java.util.List<java.lang.String>)delegate.allArguments(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetOptionValue]> T getOptionValue(java.lang.String name) 
-public <T>T {
+public <T> T getOptionValue(java.lang.String name) {
         return (T)delegate.getOptionValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(java.lang.String name) 
-public <T>T {
+public <T> T getArgumentValue(java.lang.String name) {
         return (T)delegate.getArgumentValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(int index) 
-public <T>T {
+public <T> T getArgumentValue(int index) {
         return (T)delegate.getArgumentValue(index); 
 }
 // boolean isFlagEnabled(java.lang.String name) 

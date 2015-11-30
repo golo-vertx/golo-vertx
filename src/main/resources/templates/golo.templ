@@ -15,44 +15,54 @@
     return array;
   }
 
-  def parseGenericName(method) {
-    var retType = splitHelper(method.toString(), " ")[0];
+  def parseGenericNames(genCount, str) {
+    var generics = "";
     var identifier = "name=";
-    var startIndex = retType.indexOf(identifier);
-    return retType.substring(startIndex+identifier.length(),startIndex+identifier.length()+1);
+    var startIndex = 0;
+    for(int i = 0; i<genCount; i++) {
+         startIndex = str.indexOf(identifier);
+         generics = generics + str.substring(startIndex+identifier.length(),startIndex+identifier.length()+1);
+         str = str.substring(startIndex+identifier.length()+1, str.length());
+         if(i + 1 < genCount) {
+            generics = generics + ",";
+         }
+     }
+    return generics;
+  }
+
+  def takeRestOfStr(str, start) {
+    var startIndex = str.indexOf(start);
+    return str.substring(startIndex, str.length());
   }
 
   def countGenerics(method) {
     var count = 0;
-    for(int i = 0; i<method.toString() -3 ; i++) {
-        if(method.toString().substring(i, i+4).equals("Type")) {
-            count = count + 1;
+    for(int i = 0; i<method.toString().length() -12 ; i++) {
+            if(method.toString().substring(i, i+13).equals("TypeParamInfo")) {
+                count = count + 1;
+            }
         }
-    }
     return count;
   }
 
   def typeCheck(method) {
-     var gen = "";
      var str = method.toString();
      var generics = "";
      var genCount = countGenerics(method);
-     if(genCount > 0) {
-        return genCount;
+     var indexOfMethodName = genCount;
+     var elementsInMethodDefinition = splitHelper(method.toString(), " ");
+     if(genCount == 0) {
+        return str;
      }
-     // THIS DOES NOT WORK YET
-     for(int i = 0; i<str.length()-1; i++) {
-             if(str.substring(i, i+2).equals("]>")) {
-                 gen = parseGenericName(method);
-                 generics = generics + gen +",";
-             }
-          }
-          if(generics.length() > 0) {
-             generics = generics.substring(0, generics.length() -1);
-             return "<"+generics+">" + splitHelper(method.toString(), " ")[0];
-          }
-
-     return str;
+     generics = parseGenericNames(genCount, method.toString());
+     str =  "<"+generics+"> ";
+     if(elementsInMethodDefinition[indexOfMethodName] == "void" ||
+        generics.contains(elementsInMethodDefinition[indexOfMethodName]) ||
+        elementsInMethodDefinition[indexOfMethodName].contains("(") == false) {
+        str = str + elementsInMethodDefinition[indexOfMethodName] + " ";
+        indexOfMethodName = indexOfMethodName + 1;
+     }
+     return str + takeRestOfStr(method.toString(), elementsInMethodDefinition[indexOfMethodName]);
   }
 
   def genGoloModuleName(type) {
@@ -105,10 +115,9 @@
         }
         var call;
         var returnTypes = splitHelper(method.toString(), " ");
-        if(returnTypes[0].equals("void") || returnTypes[1].equals("void")) {
+        if(returnTypes[0].equals("void") || returnTypes[1].equals("void") ||
+            (returnTypes.size() > 2 && returnTypes[2].equals("void"))) {
             call = "";
-        } else  if(returnTypes.size() > 2 && returnTypes[2].equals("void")){
-            call = "return ";
         } else {
             call = "return (" + method.returnType + ")";
         }
