@@ -36,4 +36,8 @@ public class CompileTest {
     public void eventbus() throws Exception{
         Assert.assertTrue(compiler.compile(path+"eventbus/EventBus.java", compiler.classPath));
     }
+    @Test
+    public void future() throws Exception{
+        Assert.assertTrue(compiler.compile(path+"Future.java", compiler.classPath));
+    }
 }

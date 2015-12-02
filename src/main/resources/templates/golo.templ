@@ -76,9 +76,10 @@
    }
 
    def constructorMethod(className, type, method) {
-        var delegateCall = type + "." + injectParamsToMethodCall(method);
-        var currentClass = genGoloModuleName(type) + "." + className + ".class";
-        var castObjectTo = splitHelper(method.toString(), " ")[0];
+        var delegateCall = type.raw + "." + injectParamsToMethodCall(method);
+        var currentClass = genGoloModuleName(type.raw) + "." + className + ".class";
+        var indexOfClassName = countGenerics(method);
+        var castObjectTo = splitHelper(method.toString(), " ")[indexOfClassName];
         var call = "return (" + castObjectTo + ")InternalHelper.safeCreate("+delegateCall+", "+ currentClass+")";
         return call;
    }
@@ -101,7 +102,8 @@
    def isConstructorMethod(type, method) {
         if(method.staticMethod) {
             var cp = splitHelper(method.toString(), " ");
-            var class = cp[0];
+            var classIndex = countGenerics(method);
+            var class = cp[classIndex];
             if(class.equals(type.toString())) {
                 return true;
             }
@@ -122,7 +124,7 @@
             call = "return (" + method.returnType + ")";
         }
         if(method.staticMethod) {
-            call = call + type.toString() + ".";
+            call = call + type.raw.toString() + ".";
         } else {
             call = call + "delegate.";
         }
@@ -131,10 +133,11 @@
    }
 
    def createMethodDefinition(type, method) {
+        var ret = "";
         if(method.staticMethod) {
-            return "static " + method;
+            ret = "static ";
         }
-        return typeCheck(method);
+        return ret + typeCheck(method);
    }
 
    def findUniqueFunctionName(functionNames, method) {
@@ -193,7 +196,7 @@ public Object getDelegate() { \n
 @code{methodDefinition = createMethodDefinition(type, method)}
 public @{methodDefinition} {\n
     @code{
-        var cName = className(type);
+        var cName = className(type.raw);
         callOrgAPI = callForOriginalAPI(cName, type, method);
     }
     @{callOrgAPI}; \n

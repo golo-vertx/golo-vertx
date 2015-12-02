@@ -15,12 +15,12 @@ public Object getDelegate() {
     return delegate; 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws) 
-public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws) {
-        return (io.vertx.core.streams.Pump)io.vertx.core.streams.Pump.pump(rs, ws); 
+public static <T> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws) {
+        return (io.vertx.core.streams.Pump)InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump(rs, ws), io.vertx.golo.core.streams.Pump.class); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws, int writeQueueMaxSize) 
-public static <TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws, int writeQueueMaxSize) {
-        return (io.vertx.core.streams.Pump)io.vertx.core.streams.Pump.pump(rs, ws, writeQueueMaxSize); 
+public static <T> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws, int writeQueueMaxSize) {
+        return (io.vertx.core.streams.Pump)InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump(rs, ws, writeQueueMaxSize), io.vertx.golo.core.streams.Pump.class); 
 }
 // io.vertx.core.streams.Pump setWriteQueueMaxSize(int maxSize) 
 public io.vertx.core.streams.Pump setWriteQueueMaxSize(int maxSize) {
