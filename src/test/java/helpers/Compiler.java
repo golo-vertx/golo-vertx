@@ -32,8 +32,11 @@ public class Compiler {
 
     private List<String> createOptions(String jarPath) {
         List<String> optionList = new ArrayList<String>();
-        optionList.addAll(Arrays.asList("-classpath", System.getProperty("user.dir") + jarPath));
-        optionList.addAll(Arrays.asList("-d", destinationFolder));
+        optionList.addAll(
+                Arrays.asList(
+                        "-classpath", System.getProperty("user.dir") + jarPath, "-d", destinationFolder
+                )
+        );
         return optionList;
     }
 
