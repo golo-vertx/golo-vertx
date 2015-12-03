@@ -33,6 +33,7 @@ public class InternalHelper {
     public static <T, D> T safeCreate(D delegate, Class<T> type) {
         if(delegate != null) {
             try {
+
                 Constructor<T> ctor = type.getConstructor(new Class[]{Object.class});
                 return ctor.newInstance(delegate);
             } catch (NoSuchMethodException e) {

@@ -3,14 +3,6 @@ package io.vertx.golo;
 import helpers.JarCreator;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.*;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.jar.JarEntry;
-
 public class CreateJarTest {
 
     String jarArchive = "/src/test/resources/generated.jar";
