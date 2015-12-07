@@ -16,9 +16,12 @@ public class Compiler {
     public String classPath = "/extractedClass/fatjar/destinationFolder/";
     public String destinationFolder = System.getProperty("user.dir") + "/src/test/java/compiledFiles/";
 
-    public boolean compile(String pathToFile, String jarPath) throws IOException {
+    public boolean compile(String pathToFile, String jarPath, String destination) throws IOException {
+        if (destination == null) {
+            destination = destinationFolder;
+        }
         File[] files1 = asFileArray(pathToFile);
-        List<String> optionList = createOptions(jarPath);
+        List<String> optionList = createOptions(jarPath, destination);
 
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, null);
@@ -30,11 +33,11 @@ public class Compiler {
         return error;
     }
 
-    private List<String> createOptions(String jarPath) {
+    private List<String> createOptions(String jarPath, String destination) {
         List<String> optionList = new ArrayList<String>();
         optionList.addAll(
                 Arrays.asList(
-                        "-classpath", System.getProperty("user.dir") + jarPath, "-d", destinationFolder
+                        "-classpath", System.getProperty("user.dir") + jarPath, "-d", destination
                 )
         );
         return optionList;

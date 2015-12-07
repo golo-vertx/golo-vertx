@@ -15,11 +15,11 @@ public Object getDelegate() {
     return delegate; 
 }
 // io.vertx.core.net.SocketAddress sender() 
-public io.vertx.core.net.SocketAddress sender() {
+public SocketAddress {
         return (io.vertx.core.net.SocketAddress)delegate.sender(); 
 }
 // io.vertx.core.buffer.Buffer data() 
-public io.vertx.core.buffer.Buffer data() {
+public Buffer {
         return (io.vertx.core.buffer.Buffer)delegate.data(); 
 }
 }

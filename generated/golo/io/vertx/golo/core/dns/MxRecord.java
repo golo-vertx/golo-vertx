@@ -13,11 +13,11 @@ public Object getDelegate() {
     return delegate; 
 }
 // int priority() 
-public int priority() {
+public int {
         return (int)delegate.priority(); 
 }
 // java.lang.String name() 
-public java.lang.String name() {
+public String {
         return (java.lang.String)delegate.name(); 
 }
 }

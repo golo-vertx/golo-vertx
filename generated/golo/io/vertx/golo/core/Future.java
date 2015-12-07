@@ -29,23 +29,23 @@ public static <T> io.vertx.core.Future<T> failedFuture(java.lang.String failureM
         return (io.vertx.core.Future<T>)InternalHelper.safeCreate(io.vertx.core.Future.failedFuture(failureMessage), io.vertx.golo.core.Future.class); 
 }
 // boolean isComplete() 
-public boolean isComplete() {
+public boolean {
         return (boolean)delegate.isComplete(); 
 }
 // void setHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> handler) 
-public void setHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> handler) {
+public void {
         delegate.setHandler(handler); 
 }
 // void complete(T result) 
-public void complete(T result) {
+public void {
         delegate.complete(result); 
 }
 // void complete() 
-public void complete() {
+public void {
         delegate.complete(); 
 }
 // void fail(java.lang.String failureMessage) 
-public void fail(java.lang.String failureMessage) {
+public void {
         delegate.fail(failureMessage); 
 }
 }

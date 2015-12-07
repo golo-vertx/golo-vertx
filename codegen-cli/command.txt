@@ -2,3 +2,6 @@ java -jar codegen-cli/vertx-codegen-cli-3.2.0-SNAPSHOT.jar --codegen src/main/re
 
 
 javac generated/golo/io/vertx/golo/core/buffer/Buffer.java -classpath extractedClass/fatjar/destinationFolder/
+
+golo golo --files BufferTest.golo --classpath ../../../extractedClass/fatjar/destinationFolder/
+

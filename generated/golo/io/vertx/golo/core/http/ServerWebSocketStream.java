@@ -15,23 +15,23 @@ public Object getDelegate() {
     return delegate; 
 }
 // io.vertx.core.http.ServerWebSocketStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-public io.vertx.core.http.ServerWebSocketStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
+public ServerWebSocketStream {
         return (io.vertx.core.http.ServerWebSocketStream)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.http.ServerWebSocketStream handler(io.vertx.core.Handler<io.vertx.core.http.ServerWebSocket> handler) 
-public io.vertx.core.http.ServerWebSocketStream handler(io.vertx.core.Handler<io.vertx.core.http.ServerWebSocket> handler) {
+public ServerWebSocketStream {
         return (io.vertx.core.http.ServerWebSocketStream)delegate.handler(handler); 
 }
 // io.vertx.core.http.ServerWebSocketStream pause() 
-public io.vertx.core.http.ServerWebSocketStream pause() {
+public ServerWebSocketStream {
         return (io.vertx.core.http.ServerWebSocketStream)delegate.pause(); 
 }
 // io.vertx.core.http.ServerWebSocketStream resume() 
-public io.vertx.core.http.ServerWebSocketStream resume() {
+public ServerWebSocketStream {
         return (io.vertx.core.http.ServerWebSocketStream)delegate.resume(); 
 }
 // io.vertx.core.http.ServerWebSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-public io.vertx.core.http.ServerWebSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
+public ServerWebSocketStream {
         return (io.vertx.core.http.ServerWebSocketStream)delegate.endHandler(endHandler); 
 }
 }

@@ -45,6 +45,15 @@
     return count;
   }
 
+  def parseClassName(returnValue) {
+    var untilIndex = returnValue.indexOf("(");
+    var noParams = returnValue.substring(0, untilIndex);
+    var methodSplitted = splitHelper(noParams, " ");
+    var classPath = methodSplitted[methodSplitted.size() - 2];
+    var classSplitted = splitHelper(classPath, ".");
+    return classSplitted[classSplitted.size() - 1];
+  }
+
   def typeCheck(method) {
      var str = method.toString();
      var generics = "";
@@ -52,7 +61,7 @@
      var indexOfMethodName = genCount;
      var elementsInMethodDefinition = splitHelper(method.toString(), " ");
      if(genCount == 0) {
-        return str;
+        return parseClassName(str);
      }
      generics = parseGenericNames(genCount, method.toString());
      str =  "<"+generics+"> ";

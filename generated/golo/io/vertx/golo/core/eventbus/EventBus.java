@@ -17,11 +17,11 @@ public Object getDelegate() {
     return delegate; 
 }
 // boolean isMetricsEnabled() 
-public boolean isMetricsEnabled() {
+public boolean {
         return (boolean)delegate.isMetricsEnabled(); 
 }
 // io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message) 
-public io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message) {
+public EventBus {
         return (io.vertx.core.eventbus.EventBus)delegate.send(address, message); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamesend]> io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<T>>> replyHandler) 
@@ -29,7 +29,7 @@ public <T> io.vertx.core.eventbus.EventBus send(java.lang.String address, java.l
         return (io.vertx.core.eventbus.EventBus)delegate.send(address, message, replyHandler); 
 }
 // io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) 
-public io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) {
+public EventBus {
         return (io.vertx.core.eventbus.EventBus)delegate.send(address, message, options); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamesend]> io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<T>>> replyHandler) 
@@ -37,11 +37,11 @@ public <T> io.vertx.core.eventbus.EventBus send(java.lang.String address, java.l
         return (io.vertx.core.eventbus.EventBus)delegate.send(address, message, options, replyHandler); 
 }
 // io.vertx.core.eventbus.EventBus publish(java.lang.String address, java.lang.Object message) 
-public io.vertx.core.eventbus.EventBus publish(java.lang.String address, java.lang.Object message) {
+public EventBus {
         return (io.vertx.core.eventbus.EventBus)delegate.publish(address, message); 
 }
 // io.vertx.core.eventbus.EventBus publish(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) 
-public io.vertx.core.eventbus.EventBus publish(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) {
+public EventBus {
         return (io.vertx.core.eventbus.EventBus)delegate.publish(address, message, options); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNameconsumer]> io.vertx.core.eventbus.MessageConsumer<T> consumer(java.lang.String address) 
@@ -77,7 +77,7 @@ public <T> io.vertx.core.eventbus.MessageProducer<T> publisher(java.lang.String 
         return (io.vertx.core.eventbus.MessageProducer<T>)delegate.publisher(address, options); 
 }
 // void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) 
-public void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) {
+public void {
         delegate.close(completionHandler); 
 }
 }

@@ -14,31 +14,31 @@ public Object getDelegate() {
     return delegate; 
 }
 // boolean writeQueueFull() 
-public boolean writeQueueFull() {
+public boolean {
         return (boolean)delegate.writeQueueFull(); 
 }
 // io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-public io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
+public MessageProducer<T> {
         return (io.vertx.core.eventbus.MessageProducer<T>)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.eventbus.MessageProducer<T> write(T data) 
-public io.vertx.core.eventbus.MessageProducer<T> write(T data) {
+public MessageProducer<T> {
         return (io.vertx.core.eventbus.MessageProducer<T>)delegate.write(data); 
 }
 // io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize) 
-public io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize) {
+public MessageProducer<T> {
         return (io.vertx.core.eventbus.MessageProducer<T>)delegate.setWriteQueueMaxSize(maxSize); 
 }
 // io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-public io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler) {
+public MessageProducer<T> {
         return (io.vertx.core.eventbus.MessageProducer<T>)delegate.drainHandler(handler); 
 }
 // io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options) 
-public io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options) {
+public MessageProducer<T> {
         return (io.vertx.core.eventbus.MessageProducer<T>)delegate.deliveryOptions(options); 
 }
 // java.lang.String address() 
-public java.lang.String address() {
+public String {
         return (java.lang.String)delegate.address(); 
 }
 }

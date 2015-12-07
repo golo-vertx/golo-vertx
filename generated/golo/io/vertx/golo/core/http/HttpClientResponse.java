@@ -17,59 +17,59 @@ public Object getDelegate() {
     return delegate; 
 }
 // io.vertx.core.http.HttpClientResponse resume() 
-public io.vertx.core.http.HttpClientResponse resume() {
+public HttpClientResponse {
         return (io.vertx.core.http.HttpClientResponse)delegate.resume(); 
 }
 // io.vertx.core.http.HttpClientResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-public io.vertx.core.http.HttpClientResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
+public HttpClientResponse {
         return (io.vertx.core.http.HttpClientResponse)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.http.HttpClientResponse handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
-public io.vertx.core.http.HttpClientResponse handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
+public HttpClientResponse {
         return (io.vertx.core.http.HttpClientResponse)delegate.handler(handler); 
 }
 // io.vertx.core.http.HttpClientResponse pause() 
-public io.vertx.core.http.HttpClientResponse pause() {
+public HttpClientResponse {
         return (io.vertx.core.http.HttpClientResponse)delegate.pause(); 
 }
 // io.vertx.core.http.HttpClientResponse endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-public io.vertx.core.http.HttpClientResponse endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
+public HttpClientResponse {
         return (io.vertx.core.http.HttpClientResponse)delegate.endHandler(endHandler); 
 }
 // int statusCode() 
-public int statusCode() {
+public int {
         return (int)delegate.statusCode(); 
 }
 // java.lang.String statusMessage() 
-public java.lang.String statusMessage() {
+public String {
         return (java.lang.String)delegate.statusMessage(); 
 }
 // io.vertx.core.MultiMap headers() 
-public io.vertx.core.MultiMap headers() {
+public MultiMap {
         return (io.vertx.core.MultiMap)delegate.headers(); 
 }
 // java.lang.String getHeader(java.lang.String headerName) 
-public java.lang.String getHeader(java.lang.String headerName) {
+public String {
         return (java.lang.String)delegate.getHeader(headerName); 
 }
 // java.lang.String getTrailer(java.lang.String trailerName) 
-public java.lang.String getTrailer(java.lang.String trailerName) {
+public String {
         return (java.lang.String)delegate.getTrailer(trailerName); 
 }
 // io.vertx.core.MultiMap trailers() 
-public io.vertx.core.MultiMap trailers() {
+public MultiMap {
         return (io.vertx.core.MultiMap)delegate.trailers(); 
 }
 // java.util.List<java.lang.String> cookies() 
-public java.util.List<java.lang.String> cookies() {
+public String> {
         return (java.util.List<java.lang.String>)delegate.cookies(); 
 }
 // io.vertx.core.http.HttpClientResponse bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) 
-public io.vertx.core.http.HttpClientResponse bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) {
+public HttpClientResponse {
         return (io.vertx.core.http.HttpClientResponse)delegate.bodyHandler(bodyHandler); 
 }
 // io.vertx.core.net.NetSocket netSocket() 
-public io.vertx.core.net.NetSocket netSocket() {
+public NetSocket {
         return (io.vertx.core.net.NetSocket)delegate.netSocket(); 
 }
 }

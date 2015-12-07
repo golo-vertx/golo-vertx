@@ -14,23 +14,23 @@ public Object getDelegate() {
     return delegate; 
 }
 // io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-public io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
+public ReadStream<T> {
         return (io.vertx.core.streams.ReadStream<T>)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler) 
-public io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler) {
+public ReadStream<T> {
         return (io.vertx.core.streams.ReadStream<T>)delegate.handler(handler); 
 }
 // io.vertx.core.streams.ReadStream<T> pause() 
-public io.vertx.core.streams.ReadStream<T> pause() {
+public ReadStream<T> {
         return (io.vertx.core.streams.ReadStream<T>)delegate.pause(); 
 }
 // io.vertx.core.streams.ReadStream<T> resume() 
-public io.vertx.core.streams.ReadStream<T> resume() {
+public ReadStream<T> {
         return (io.vertx.core.streams.ReadStream<T>)delegate.resume(); 
 }
 // io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-public io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
+public ReadStream<T> {
         return (io.vertx.core.streams.ReadStream<T>)delegate.endHandler(endHandler); 
 }
 }

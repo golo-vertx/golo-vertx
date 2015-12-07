@@ -14,23 +14,23 @@ public Object getDelegate() {
     return delegate; 
 }
 // io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-public io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
+public WriteStream<T> {
         return (io.vertx.core.streams.WriteStream<T>)delegate.exceptionHandler(handler); 
 }
 // io.vertx.core.streams.WriteStream<T> write(T data) 
-public io.vertx.core.streams.WriteStream<T> write(T data) {
+public WriteStream<T> {
         return (io.vertx.core.streams.WriteStream<T>)delegate.write(data); 
 }
 // io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize) 
-public io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize) {
+public WriteStream<T> {
         return (io.vertx.core.streams.WriteStream<T>)delegate.setWriteQueueMaxSize(maxSize); 
 }
 // boolean writeQueueFull() 
-public boolean writeQueueFull() {
+public boolean {
         return (boolean)delegate.writeQueueFull(); 
 }
 // io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
-public io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler) {
+public WriteStream<T> {
         return (io.vertx.core.streams.WriteStream<T>)delegate.drainHandler(handler); 
 }
 }
