@@ -14,39 +14,39 @@ public Object getDelegate() {
     return delegate; 
 }
 // java.lang.String address() 
-public String {
-        return (java.lang.String)delegate.address(); 
+public String address() {
+        return delegate.address(); 
 }
 // io.vertx.core.MultiMap headers() 
-public MultiMap {
-        return (io.vertx.core.MultiMap)delegate.headers(); 
+public MultiMap headers() {
+        return InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.MultiMap.class); 
 }
 // T body() 
-public T {
-        return (T)delegate.body(); 
+public T body() {
+        return delegate.body(); 
 }
 // java.lang.String replyAddress() 
-public String {
-        return (java.lang.String)delegate.replyAddress(); 
+public String replyAddress() {
+        return delegate.replyAddress(); 
 }
 // void reply(java.lang.Object message) 
-public void {
+public void reply(java.lang.Object message) {
         delegate.reply(message); 
 }
 // <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) 
 public <R> void reply(java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) {
-        delegate.reply(message, replyHandler); 
+        delegate.reply(message,replyHandler); 
 }
 // void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) 
-public void {
-        delegate.reply(message, options); 
+public void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) {
+        delegate.reply(message,options); 
 }
 // <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) 
 public <R> void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) {
-        delegate.reply(message, options, replyHandler); 
+        delegate.reply(message,options,replyHandler); 
 }
 // void fail(int failureCode, java.lang.String message) 
-public void {
-        delegate.fail(failureCode, message); 
+public void fail(int failureCode, java.lang.String message) {
+        delegate.fail(failureCode,message); 
 }
 }

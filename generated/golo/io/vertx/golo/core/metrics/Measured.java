@@ -13,7 +13,7 @@ public Object getDelegate() {
     return delegate; 
 }
 // boolean isMetricsEnabled() 
-public boolean {
-        return (boolean)delegate.isMetricsEnabled(); 
+public boolean isMetricsEnabled() {
+        return delegate.isMetricsEnabled(); 
 }
 }

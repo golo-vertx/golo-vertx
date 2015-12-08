@@ -13,15 +13,15 @@ public Object getDelegate() {
     return delegate; 
 }
 // long totalSpace() 
-public long {
-        return (long)delegate.totalSpace(); 
+public long totalSpace() {
+        return delegate.totalSpace(); 
 }
 // long unallocatedSpace() 
-public long {
-        return (long)delegate.unallocatedSpace(); 
+public long unallocatedSpace() {
+        return delegate.unallocatedSpace(); 
 }
 // long usableSpace() 
-public long {
-        return (long)delegate.usableSpace(); 
+public long usableSpace() {
+        return delegate.usableSpace(); 
 }
 }

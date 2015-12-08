@@ -13,7 +13,7 @@ public Object getDelegate() {
     return delegate; 
 }
 // void release() 
-public void {
+public void release() {
         delegate.release(); 
 }
 }

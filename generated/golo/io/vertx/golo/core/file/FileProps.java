@@ -13,35 +13,35 @@ public Object getDelegate() {
     return delegate; 
 }
 // long creationTime() 
-public long {
-        return (long)delegate.creationTime(); 
+public long creationTime() {
+        return delegate.creationTime(); 
 }
 // long lastAccessTime() 
-public long {
-        return (long)delegate.lastAccessTime(); 
+public long lastAccessTime() {
+        return delegate.lastAccessTime(); 
 }
 // long lastModifiedTime() 
-public long {
-        return (long)delegate.lastModifiedTime(); 
+public long lastModifiedTime() {
+        return delegate.lastModifiedTime(); 
 }
 // boolean isDirectory() 
-public boolean {
-        return (boolean)delegate.isDirectory(); 
+public boolean isDirectory() {
+        return delegate.isDirectory(); 
 }
 // boolean isOther() 
-public boolean {
-        return (boolean)delegate.isOther(); 
+public boolean isOther() {
+        return delegate.isOther(); 
 }
 // boolean isRegularFile() 
-public boolean {
-        return (boolean)delegate.isRegularFile(); 
+public boolean isRegularFile() {
+        return delegate.isRegularFile(); 
 }
 // boolean isSymbolicLink() 
-public boolean {
-        return (boolean)delegate.isSymbolicLink(); 
+public boolean isSymbolicLink() {
+        return delegate.isSymbolicLink(); 
 }
 // long size() 
-public long {
-        return (long)delegate.size(); 
+public long size() {
+        return delegate.size(); 
 }
 }

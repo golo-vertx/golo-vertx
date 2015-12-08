@@ -13,31 +13,31 @@ public Object getDelegate() {
     return delegate; 
 }
 // int priority() 
-public int {
-        return (int)delegate.priority(); 
+public int priority() {
+        return delegate.priority(); 
 }
 // int weight() 
-public int {
-        return (int)delegate.weight(); 
+public int weight() {
+        return delegate.weight(); 
 }
 // int port() 
-public int {
-        return (int)delegate.port(); 
+public int port() {
+        return delegate.port(); 
 }
 // java.lang.String name() 
-public String {
-        return (java.lang.String)delegate.name(); 
+public String name() {
+        return delegate.name(); 
 }
 // java.lang.String protocol() 
-public String {
-        return (java.lang.String)delegate.protocol(); 
+public String protocol() {
+        return delegate.protocol(); 
 }
 // java.lang.String service() 
-public String {
-        return (java.lang.String)delegate.service(); 
+public String service() {
+        return delegate.service(); 
 }
 // java.lang.String target() 
-public String {
-        return (java.lang.String)delegate.target(); 
+public String target() {
+        return delegate.target(); 
 }
 }

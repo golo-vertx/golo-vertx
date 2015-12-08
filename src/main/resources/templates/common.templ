@@ -1,0 +1,98 @@
+@comment{'various stuff'}
+@includeNamed{'/vertx-java/template/common-lib.templ'}
+@code{
+
+  /**
+   * Render a relative html link to the dataObjectType from the current type.
+   */
+  def renderDataObjectHtmlLink(dataObjectType) {
+    var link = new StringBuilder();
+    for (name : CASE_QUALIFIED.parse(type.raw.getPackageName())) {
+      link.append("../");
+    }
+    link.append("../../../cheatsheet/").append(dataObjectType.simpleName).append(".html");
+    return "<a href=\"" + link + "\">" + dataObjectType.simpleName + "</a>";;
+  }
+
+  def genGroovyDocType(type) {
+    if (type.kind == CLASS_JSON_ARRAY) {
+      return "java.util.List<Object>";
+    } if (type.kind == CLASS_DATA_OBJECT || type.kind == CLASS_JSON_OBJECT) {
+      return "java.util.Map<java.lang.String, java.lang.Object>";
+    } else if (type.kind == CLASS_API) {
+      return type.translateName("groovy");
+    } else if (type.kind == CLASS_LIST || type.kind == CLASS_SET) {
+      return type.raw.name + "<" + genGroovyDocType(type.args[0]) + ">";
+    } else if (type.kind == CLASS_MAP) {
+      return "java.util.Map<" + genGroovyDocType(type.args[0]) + "," + genGroovyDocType(type.args[1]) + ">";
+    } else if (type.kind == CLASS_HANDLER) {
+      return "io.vertx.core.Handler<" + genGroovyDocType(type.args[0]) + ">";
+    } else if (type.kind == CLASS_ASYNC_RESULT) {
+      return "io.vertx.core.AsyncResult<" + genGroovyDocType(type.args[0]) + ">";
+    } else {
+      return type.name;
+    }
+  }
+
+  /**
+   * Render a tag link to an html link, this function is used as parameter of the
+   * renderDocToHtml function when it needs to render tag links.
+   */
+  def renderLinkToHtml(link) {
+    var rawType = link.targetType.raw;
+    if (rawType.module != null) {
+      var label = link.label.trim();
+      if (rawType.kind == CLASS_DATA_OBJECT) {
+        if (label.length() == 0) {
+          label = rawType.simpleName;
+        }
+        return renderDataObjectHtmlLink(rawType);
+      } else {
+        if (type.kind == CLASS_API) {
+          var elt = link.targetElement;
+          var eltKind = elt.getKind().name();
+          var ret = "{@link " + rawType.translateName("groovy");
+          if (eltKind == "METHOD") {
+            ret += "#" + elt.getSimpleName().toString();
+          }
+          if (label.length() > 0) {
+            ret += " " + label;
+          }
+          ret += "}";
+          return ret;
+        }
+      }
+    }
+    return "{@link " + rawType.name + "}";
+  }
+
+  def genConstructorType(type) {
+    var fqn = type.translateName("golo");
+    if (type.concrete) {
+      return fqn;
+    } else {
+      return fqn + "Impl";
+    }
+  }
+
+  def genConstructor(type, arg) {
+    return "new " + genConstructorType(type) + "(" + arg + ")";
+  }
+  
+  def genConvReturn(type) {
+    var kind = type.kind;
+    if (kind == CLASS_JSON_OBJECT || kind == CLASS_DATA_OBJECT) {
+      return 'Map<String, Object>';
+    } else if (kind == CLASS_JSON_ARRAY) {
+      return 'List<Object>';
+    } else if (kind == CLASS_LIST) {
+      return 'List<' + genConvReturn(type.args[0]) + '>';
+    } else if (kind == CLASS_SET) {
+      return 'Set<' + genConvReturn(type.args[0]) + '>';
+    } else if (kind == CLASS_MAP) {
+      return 'Map<String, List<' + genConvReturn(type.args[1]) + '>>';
+    } else {
+      return type.simpleName;
+    }
+  }
+}

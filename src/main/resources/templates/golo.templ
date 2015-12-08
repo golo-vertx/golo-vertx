@@ -1,4 +1,5 @@
 @comment{"Templating! The next row outputs all interfaces annotated with VertxGen-annotation."}
+@includeNamed{"common.templ"}
 
 @code{
 
@@ -54,6 +55,11 @@
     return classSplitted[classSplitted.size() - 1];
   }
 
+  def injectParamsToMethodDefinition(method) {
+    var paramsFrom = method.toString().indexOf("(");
+    return method.toString().substring(paramsFrom, method.toString().length());
+  }
+
   def typeCheck(method) {
      var str = method.toString();
      var generics = "";
@@ -61,7 +67,7 @@
      var indexOfMethodName = genCount;
      var elementsInMethodDefinition = splitHelper(method.toString(), " ");
      if(genCount == 0) {
-        return parseClassName(str);
+        return parseClassName(str) + " "+method.name+ injectParamsToMethodDefinition(method);
      }
      generics = parseGenericNames(genCount, method.toString());
      str =  "<"+generics+"> ";
@@ -84,27 +90,143 @@
         return split[split.size() - 1];
    }
 
-   def constructorMethod(className, type, method) {
-        var delegateCall = type.raw + "." + injectParamsToMethodCall(method);
+   def createApiCall(className, type, method) {
+        var delegateCall = "";
+        if(method.staticMethod) {
+            delegateCall = method.returnType.raw;
+        } else {
+            delegateCall = "this.delegate";
+        }
+        delegateCall = delegateCall + "." + injectParamsToMethodCall(method);
         var currentClass = genGoloModuleName(type.raw) + "." + className + ".class";
         var indexOfClassName = countGenerics(method);
         var castObjectTo = splitHelper(method.toString(), " ")[indexOfClassName];
-        var call = "return (" + castObjectTo + ")InternalHelper.safeCreate("+delegateCall+", "+ currentClass+")";
+        var call = "return InternalHelper.safeCreate(" + delegateCall +", "+ genConstructorType(method.returnType.raw) + ".class)";
         return call;
+   }
+
+   def handleParam(param) {
+    var eventType;
+    var eventKind;
+    var paramKind = param.type.kind;
+    if(paramKind == CLASS_HANDLER) {
+        eventType = param.type.args[0];
+        eventKind = eventType.kind;
+        if(eventKind == CLASS_OTHER || eventKind.basic || eventKind == CLASS_VOID || eventKind == CLASS_THROWABLE) {
+            return param.name;
+        } else if(eventKind == CLASS_DATA_OBJECT) {
+            return "new Handler<" + eventType.simpleName + ">() {\n
+                    			      public void handle(" + eventType.simpleName + " event) {\n" +
+                    			        param.name + ".handle((Map<String, Object>)InternalHelper.wrapObject(event.toJson()));\n
+                    			      }\n
+                    			    }";
+        } else if(eventKind == CLASS_JSON_OBJECT) {
+          	return "new Handler<JsonObject>() {\n
+          			      public void handle(JsonObject event) {\n
+          			        " + param.name + ".handle((Map<String, Object>)InternalHelper.wrapObject(event));\n
+          			      }\n
+          			    }";
+        } else if(eventKind == CLASS_JSON_ARRAY) {
+          	return "new Handler<JsonArray>() {\n
+          			      public void handle(JsonArray event) {\n
+          			        " + param.name + ".handle((List<Object>)InternalHelper.wrapObject(event));\n
+          			      }\n
+          			    }";
+        } else if(eventKind == CLASS_LIST || eventKind == CLASS_SET) {
+            var elementType = eventType.args[0];
+            var elementKind = elementType.kind;
+            if(elementKind == CLASS_PRIMITIVE || elementKind == CLASS_BOXED_PRIMITIVE || elementKind == CLASS_STRING) {
+                return param.name;
+            } else if(elementKind == CLASS_API || elementKind.json || elementKind == CLASS_DATA_OBJECT) {
+                var collectionName = eventType.raw.simpleName;
+                var toGoloElement = "";
+                var elementJavaType = "";
+                if(elementKind == CLASS_API) {
+                    toGoloElement = genConstructor(elementType, "it");
+                    elementJavaType = elementType.name;
+                } else if(elementKind == CLASS_JSON_OBJECT) {
+                    toGoloElement = "InternalHelper.wrapObject(it)";
+                    elementJavaType = "JsonObject";
+                } else if(elementKind == CLASS_DATA_OBJECT) {
+                    toGoloElement = "(Map<String, Object>)InternalHelper.wrapObject(it?.toJson())";
+                    elementJavaType = elementType.simpleName;
+                } else {
+                    toGoloElement = "InternalHelper.wrapObject(it)";
+                    elementJavaType = "JsonArray";
+                }
+                return "new Handler<" + collectionName +"<" + elementJavaType + ">>() {\n
+                      public void handle(" + collectionName + "<" + elementJavaType + "> event) {\n" +
+                        param.name + ".handle(event.collect({\n" +
+                          toGoloElement + "\n
+                        }) as " + collectionName + ")\n
+                      }\n
+                    }";
+            }
+        } else if(eventKind == CLASS_API) {
+            return "new Handler<" + eventType.erased.name + ">() {\n
+                    			      public void handle(" + eventType.erased.name + " event) {\n" +
+                    			        param.name + ".handle(" + genConstructor(eventType.raw, "event") + ");\n
+                    			      }\n
+                    			    }";
+        } else if(eventKind == CLASS_ASYNC_RESULT) {
+            var resultType = eventType.args[0];
+            var resultKind = resultType.kind;
+            if(resultKind == CLASS_OTHER || resultKind.basic || resultKind == CLASS_VOID) {
+                return param.name;
+            } else if(resultKind == CLASS_DATA_OBJECT) {
+                return resultHandlerTemplate(resultType.name, "Map<String, Object>", "(Map<String, Object>)InternalHelper.wrapObject(event.result().toJson())", param.name);
+            } else if(resultKind == CLASS_LIST || resultKind == CLASS_SET) {
+                elementType = resultType.args[0];
+                elementKind = elementType.kind;
+                if(elementKind == CLASS_PRIMITIVE || elementKind == CLASS_BOXED_PRIMITIVE || elementKind == CLASS_STRING) {
+                    return param.name;
+                } else if(elementKind == CLASS_API || elementKind.json || elementKind == CLASS_DATA_OBJECT) {
+                    var collectionName = resultType.raw.simpleName;
+                    if(elementKind == CLASS_API) {
+                        toGoloElement = genConstructor(elementType.raw, "element");
+                        elementJavaType = elementType.name;
+                        elementGoloType = elementType.simpleName;
+                    } else if(elementKind == CLASS_DATA_OBJECT) {
+                        toGoloElement = "(Map<String, Object>)InternalHelper.wrapObject(element.toJson())";
+                        elementJavaType = elementType.simpleName;
+                        elementGoloType = "Map<String, Object>";
+                    } else if(elementKind == CLASS_JSON_OBJECT) {
+                        toGroovyElement = "InternalHelper.wrapObject(element)";
+                        elementJavaType = "JsonObject";
+                        elementGroovyType = "Map<String, Object>";
+                    } else {
+                        toGroovyElement = "InternalHelper.wrapObject(element)";
+                        elementJavaType = "JsonArray";
+                        elementGroovyType = "List<Object>";
+                    }
+                    eventJavaType = collectionName + "<" + elementJavaType + ">";
+                    eventGoloType = collectionName + "<" + elementGoloType + ">";
+                    callbackObject = "event.result().collect({\n            " + elementType.name + " element ->\n            " + toGoloElement + "\n          }) as " + collectionName;
+                    return resultHandlerTemplate(eventJavaType, eventGoloType, callbackObject, param.name);
+                }
+            } else if(resultKind == CLASS_JSON_OBJECT) {
+                return resultHandlerTemplate(resultType.name ,"Map<String, Object>", "(" + eventGoloType + ")InternalHelper.wrapObject(event.result())",param.name);
+            } else if(resultKind == CLASS_JSON_ARRAY) {
+                return resultHandlerTemplate(resultType.name,"List<Object>","(" + eventGoloType + ")InternalHelper.wrapObject(event.result())",param.name);
+            } else if(resultKind == CLASS_OBJECT) {
+                return resultHandlerTemplate("Object","Object","InternalHelper.wrapObject(event.result())",param.name);
+            }
+        }
+    }
+    return param.name;
    }
 
    def injectParamsToMethodCall(method) {
         var call = "";
         call = method.name + "(";
         var params = method.params;
-        var p;
-        for(int i = 0; i < params.size(); i++) {
-            p = splitHelper(params.get(i).name, " ");
-            call = call + p[0];
-            if(i < params.size() - 1) {
-                call = call + ", ";
-            }
+        if(params == empty) {
+            return call + ")";
         }
+        for(param: params) {
+            call = call + handleParam(param) + ",";
+        }
+        call = call.substring(0, call.length() - 1);
         return call + ")";
    }
 
@@ -121,8 +243,8 @@
    }
 
    def callForOriginalAPI(className, type, method) {
-        if(isConstructorMethod(type, method)) {
-            return constructorMethod(className, type, method);
+        if(method.returnType.kind.toString().equals("API")) {
+            return createApiCall(className, type, method);
         }
         var call;
         var returnTypes = splitHelper(method.toString(), " ");
@@ -130,7 +252,7 @@
             (returnTypes.size() > 2 && returnTypes[2].equals("void"))) {
             call = "";
         } else {
-            call = "return (" + method.returnType + ")";
+            call = "return ";
         }
         if(method.staticMethod) {
             call = call + type.raw.toString() + ".";
@@ -149,33 +271,18 @@
         return ret + typeCheck(method);
    }
 
-   def findUniqueFunctionName(functionNames, method) {
-        if(method.params == empty) {
-            functionNames.add(method.name);
-            return method.name;
-        }
-        var nameIsFree = true;
-        var currentName = "";
-        for(int y=0; y < functionNames.size(); y++) {
-            currentName = functionNames.get(y);
-            if(currentName == method.name) {
-                nameIsFree = false;
-            }
-        }
-        if(nameIsFree) {
-            functionNames.add(method.name);
-            return method.name;
-        }
-        var name = method.name + "By";
-        var mini = "";
-        for (int i =0; i < method.params.size(); i++) {
-           mini = method.params.get(i).name;
-           name += mini.substring(0,1).toUpperCase() + mini.substring(1,mini.length());
-           if(i != method.params.size() -1) {
-                name += "And";
-           }
-        }
-        return name;
+   def resultHandlerTemplate(eventJavaType, eventGoloType, callbackObject, callbackName) {
+    return "new Handler<AsyncResult<" + eventJavaType + ">>() {\n
+   	      public void handle(AsyncResult<" + eventJavaType + "> event) {\n
+   	        AsyncResult<" + eventGoloType + "> f;\n
+   	        if (event.succeeded()) {\n
+   	          f = InternalHelper.<" + eventGoloType + ">result(" + callbackObject + ");\n
+   	        } else {\n
+   	          f = InternalHelper.<" + eventGoloType + ">failure(event.cause());\n
+   	        }\n" +
+   	        callbackName + ".handle(f);\n
+   	      }\n
+   	    }";
    }
 }
 

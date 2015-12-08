@@ -18,22 +18,22 @@ public Object getDelegate() {
 }
 // <TypeParamInfo.Method[name=K,typeName=io.vertx.core.shareddata.SharedData,methodNamegetClusterWideMap], TypeParamInfo.Method[name=V,typeName=io.vertx.core.shareddata.SharedData,methodNamegetClusterWideMap]> void getClusterWideMap(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.AsyncMap<K,V>>> resultHandler) 
 public <K,V> void getClusterWideMap(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.AsyncMap<K,V>>> resultHandler) {
-        delegate.getClusterWideMap(name, resultHandler); 
+        delegate.getClusterWideMap(name,resultHandler); 
 }
 // void getLock(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.Lock>> resultHandler) 
-public void {
-        delegate.getLock(name, resultHandler); 
+public void getLock(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.Lock>> resultHandler) {
+        delegate.getLock(name,resultHandler); 
 }
 // void getLockWithTimeout(java.lang.String name, long timeout, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.Lock>> resultHandler) 
-public void {
-        delegate.getLockWithTimeout(name, timeout, resultHandler); 
+public void getLockWithTimeout(java.lang.String name, long timeout, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.Lock>> resultHandler) {
+        delegate.getLockWithTimeout(name,timeout,resultHandler); 
 }
 // void getCounter(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.Counter>> resultHandler) 
-public void {
-        delegate.getCounter(name, resultHandler); 
+public void getCounter(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.shareddata.Counter>> resultHandler) {
+        delegate.getCounter(name,resultHandler); 
 }
 // <TypeParamInfo.Method[name=K,typeName=io.vertx.core.shareddata.SharedData,methodNamegetLocalMap], TypeParamInfo.Method[name=V,typeName=io.vertx.core.shareddata.SharedData,methodNamegetLocalMap]> io.vertx.core.shareddata.LocalMap<K,V> getLocalMap(java.lang.String name) 
 public <K,V> io.vertx.core.shareddata.LocalMap<K,V> getLocalMap(java.lang.String name) {
-        return (io.vertx.core.shareddata.LocalMap<K,V>)delegate.getLocalMap(name); 
+        return InternalHelper.safeCreate(this.delegate.getLocalMap(name), io.vertx.golo.core.shareddata.LocalMap.class); 
 }
 }

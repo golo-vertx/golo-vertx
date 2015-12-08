@@ -21,111 +21,123 @@ public Object getDelegate() {
     return delegate; 
 }
 // io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.exceptionHandler(handler); 
+public HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
+        return InternalHelper.safeCreate(this.delegate.exceptionHandler(handler), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.handler(handler); 
+public HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler) {
+        return InternalHelper.safeCreate(this.delegate.handler(new Handler<io.vertx.core.buffer.Buffer>() {
+                          public void handle(io.vertx.core.buffer.Buffer event) {
+handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
+                          }
+                        }), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // io.vertx.core.http.HttpServerRequest pause() 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.pause(); 
+public HttpServerRequest pause() {
+        return InternalHelper.safeCreate(this.delegate.pause(), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // io.vertx.core.http.HttpServerRequest resume() 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.resume(); 
+public HttpServerRequest resume() {
+        return InternalHelper.safeCreate(this.delegate.resume(), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.endHandler(endHandler); 
+public HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler) {
+        return InternalHelper.safeCreate(this.delegate.endHandler(endHandler), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // io.vertx.core.http.HttpVersion version() 
-public HttpVersion {
-        return (io.vertx.core.http.HttpVersion)delegate.version(); 
+public HttpVersion version() {
+        return delegate.version(); 
 }
 // io.vertx.core.http.HttpMethod method() 
-public HttpMethod {
-        return (io.vertx.core.http.HttpMethod)delegate.method(); 
+public HttpMethod method() {
+        return delegate.method(); 
 }
 // java.lang.String uri() 
-public String {
-        return (java.lang.String)delegate.uri(); 
+public String uri() {
+        return delegate.uri(); 
 }
 // java.lang.String path() 
-public String {
-        return (java.lang.String)delegate.path(); 
+public String path() {
+        return delegate.path(); 
 }
 // java.lang.String query() 
-public String {
-        return (java.lang.String)delegate.query(); 
+public String query() {
+        return delegate.query(); 
 }
 // io.vertx.core.http.HttpServerResponse response() 
-public HttpServerResponse {
-        return (io.vertx.core.http.HttpServerResponse)delegate.response(); 
+public HttpServerResponse response() {
+        return InternalHelper.safeCreate(this.delegate.response(), io.vertx.golo.core.http.HttpServerResponse.class); 
 }
 // io.vertx.core.MultiMap headers() 
-public MultiMap {
-        return (io.vertx.core.MultiMap)delegate.headers(); 
+public MultiMap headers() {
+        return InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.MultiMap.class); 
 }
 // java.lang.String getHeader(java.lang.String headerName) 
-public String {
-        return (java.lang.String)delegate.getHeader(headerName); 
+public String getHeader(java.lang.String headerName) {
+        return delegate.getHeader(headerName); 
 }
 // io.vertx.core.MultiMap params() 
-public MultiMap {
-        return (io.vertx.core.MultiMap)delegate.params(); 
+public MultiMap params() {
+        return InternalHelper.safeCreate(this.delegate.params(), io.vertx.golo.core.MultiMap.class); 
 }
 // java.lang.String getParam(java.lang.String paramName) 
-public String {
-        return (java.lang.String)delegate.getParam(paramName); 
+public String getParam(java.lang.String paramName) {
+        return delegate.getParam(paramName); 
 }
 // io.vertx.core.net.SocketAddress remoteAddress() 
-public SocketAddress {
-        return (io.vertx.core.net.SocketAddress)delegate.remoteAddress(); 
+public SocketAddress remoteAddress() {
+        return InternalHelper.safeCreate(this.delegate.remoteAddress(), io.vertx.golo.core.net.SocketAddress.class); 
 }
 // io.vertx.core.net.SocketAddress localAddress() 
-public SocketAddress {
-        return (io.vertx.core.net.SocketAddress)delegate.localAddress(); 
+public SocketAddress localAddress() {
+        return InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.core.net.SocketAddress.class); 
 }
 // java.lang.String absoluteURI() 
-public String {
-        return (java.lang.String)delegate.absoluteURI(); 
+public String absoluteURI() {
+        return delegate.absoluteURI(); 
 }
 // io.vertx.core.http.HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.bodyHandler(bodyHandler); 
+public HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler) {
+        return InternalHelper.safeCreate(this.delegate.bodyHandler(new Handler<io.vertx.core.buffer.Buffer>() {
+                          public void handle(io.vertx.core.buffer.Buffer event) {
+bodyHandler.handle(new io.vertx.golo.core.buffer.Buffer(event));
+                          }
+                        }), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // io.vertx.core.net.NetSocket netSocket() 
-public NetSocket {
-        return (io.vertx.core.net.NetSocket)delegate.netSocket(); 
+public NetSocket netSocket() {
+        return InternalHelper.safeCreate(this.delegate.netSocket(), io.vertx.golo.core.net.NetSocket.class); 
 }
 // io.vertx.core.http.HttpServerRequest setExpectMultipart(boolean expect) 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.setExpectMultipart(expect); 
+public HttpServerRequest setExpectMultipart(boolean expect) {
+        return InternalHelper.safeCreate(this.delegate.setExpectMultipart(expect), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // boolean isExpectMultipart() 
-public boolean {
-        return (boolean)delegate.isExpectMultipart(); 
+public boolean isExpectMultipart() {
+        return delegate.isExpectMultipart(); 
 }
 // io.vertx.core.http.HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler) 
-public HttpServerRequest {
-        return (io.vertx.core.http.HttpServerRequest)delegate.uploadHandler(uploadHandler); 
+public HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler) {
+        return InternalHelper.safeCreate(this.delegate.uploadHandler(new Handler<io.vertx.core.http.HttpServerFileUpload>() {
+                          public void handle(io.vertx.core.http.HttpServerFileUpload event) {
+uploadHandler.handle(new io.vertx.golo.core.http.HttpServerFileUpload(event));
+                          }
+                        }), io.vertx.golo.core.http.HttpServerRequest.class); 
 }
 // io.vertx.core.MultiMap formAttributes() 
-public MultiMap {
-        return (io.vertx.core.MultiMap)delegate.formAttributes(); 
+public MultiMap formAttributes() {
+        return InternalHelper.safeCreate(this.delegate.formAttributes(), io.vertx.golo.core.MultiMap.class); 
 }
 // java.lang.String getFormAttribute(java.lang.String attributeName) 
-public String {
-        return (java.lang.String)delegate.getFormAttribute(attributeName); 
+public String getFormAttribute(java.lang.String attributeName) {
+        return delegate.getFormAttribute(attributeName); 
 }
 // io.vertx.core.http.ServerWebSocket upgrade() 
-public ServerWebSocket {
-        return (io.vertx.core.http.ServerWebSocket)delegate.upgrade(); 
+public ServerWebSocket upgrade() {
+        return InternalHelper.safeCreate(this.delegate.upgrade(), io.vertx.golo.core.http.ServerWebSocket.class); 
 }
 // boolean isEnded() 
-public boolean {
-        return (boolean)delegate.isEnded(); 
+public boolean isEnded() {
+        return delegate.isEnded(); 
 }
 }

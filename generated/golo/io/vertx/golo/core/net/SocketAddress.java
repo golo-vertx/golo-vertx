@@ -13,11 +13,11 @@ public Object getDelegate() {
     return delegate; 
 }
 // java.lang.String host() 
-public String {
-        return (java.lang.String)delegate.host(); 
+public String host() {
+        return delegate.host(); 
 }
 // int port() 
-public int {
-        return (int)delegate.port(); 
+public int port() {
+        return delegate.port(); 
 }
 }
