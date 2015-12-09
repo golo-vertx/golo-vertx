@@ -12,6 +12,7 @@ public Object getDelegate() {
     return delegate; 
 }
 // void release() 
+// TypeParams: [] 
 public void release() {
         //param classes(remove later):  
     delegate.release(); 

@@ -46,32 +46,16 @@
     return count;
   }
 
-  def parseReturnType(method) {
-    var kind = method.returnType.kind;
-    if(kind == CLASS_PRIMITIVE || kind == CLASS_OTHER) {
-        return method.returnType;
-    } else if(kind == CLASS_SET || kind == CLASS_LIST) {
-        var classIndex = method.returnType.toString().indexOf("<");
-        var outerClass = method.returnType.toString().substring(0, classIndex);
-        var innerClasses = "";
-        for(int i = 0; i < method.returnType.args.size(); i++) {
-            innerClasses = innerClasses + parseClassName(method.returnType.args[i].toString()) + ",";
-        }
-        innerClasses = innerClasses.substring(0, innerClasses.length() - 1);
-        return parseClassName(outerClass) + "<" + innerClasses + ">";
-    }
-    return parseClassName(method.returnType.toString());
-  }
-
-  def parseClassName(class) {
-    var classElements = splitHelper(class, ".");
-    return classElements[classElements.size() - 1];
-  }
-
-
   def injectParamsToMethodDefinition(method) {
-    var paramsFrom = method.toString().indexOf("(");
-    return method.toString().substring(paramsFrom, method.toString().length());
+    var paramsStr = "(";
+    var params = method.params;
+    for(param: params) {
+        paramsStr = paramsStr + param.type.simpleName + " " + param.name +",";
+    }
+    if(paramsStr.length() > 1) {
+        paramsStr = paramsStr.substring(0, paramsStr.length() - 1);
+    }
+    return paramsStr + ")";
   }
 
   def typeCheck(method) {
@@ -81,7 +65,7 @@
      var indexOfMethodName = genCount;
      var elementsInMethodDefinition = splitHelper(method.toString(), " ");
      if(genCount == 0) {
-        return parseReturnType(method) + " "+method.name+ injectParamsToMethodDefinition(method);
+        return method.returnType.simpleName + " "+method.name+ injectParamsToMethodDefinition(method);
      }
      generics = parseGenericNames(genCount, method.toString());
      str =  "<"+generics+"> ";
@@ -91,7 +75,7 @@
         str = str + elementsInMethodDefinition[indexOfMethodName] + " ";
         indexOfMethodName = indexOfMethodName + 1;
      }
-     return str + takeRestOfStr(method.toString(), elementsInMethodDefinition[indexOfMethodName]);
+     return str + method.name + injectParamsToMethodDefinition(method);
   }
 
   def genGoloModuleName(type) {
@@ -120,28 +104,66 @@
    }
 
    def handleParam(param) {
+    var rStr = "";
     var eventType;
     var eventKind;
     var paramKind = param.type.kind;
-    if(paramKind == CLASS_HANDLER) {
+    if(paramKind == CLASS_DATA_OBJECT) {
+    		rStr = rStr + param.name + " != null ? new " + param.type.name + "(new io.vertx.core.json.JsonObject(" + param.name + ")) : null";
+    } else if(param.type.kind.json) {
+            rStr = rStr + param.name + " != null ? new " + param.type.name + "(" +param.name + ") : null)";
+    } else if(param.type.kind == CLASS_API) {
+      		rStr = rStr + "(" + param.type.name + ")" + param.name + ".getDelegate()";
+    } else if(param.type.kind == CLASS_OBJECT) {
+      		rStr = rStr + "InternalHelper.unwrapObject(" + param.name +")";
+    } else if(param.type.kind == CLASS_LIST) {
+        var listType = param.type.args[0];
+        if(listType.kind == CLASS_API) {
+            rStr = rStr + "(List<" + listType.name + ">)(" + param.name + ".collect({underpants -> underpants.getDelegate()}))";
+        } else if(listType.kind == CLASS_JSON_OBJECT) {
+            rStr = rStr + param.name + ".collect({underpants -> new JsonObject(underpants)})";
+        } else if(listType.kind == CLASS_JSON_ARRAY) {
+            rStr = rStr + param.name + ".collect({underpants -> new JsonArray(underpants)})";
+        } else if(listType.kind == CLASS_DATA_OBJECT) {
+            rStr = rStr + param.name + ".collect({underpants -> new " + listType.simpleName + "(new JsonObject(underpants))})";
+        }
+    } else if(param.type.kind == CLASS_SET) {
+        var setType = param.type.args[0];
+        if(setType.kind == CLASS_API) {
+            rStr = rStr + "(Set<" + setType.name + ">)(" + param.name + ".collect({underpants -> underpants.getDelegate()}) as Set)";
+        } else if(setType.kind == CLASS_JSON_OBJECT) {
+            rStr = rStr + param.name + ".collect({underpants -> new JsonObject(underpants)}) as Set";
+        } else if(setType.kind == CLASS_JSON_ARRAY) {
+            rStr = rStr + param.name + ".collect({underpants -> new JsonArray(underpants)}) as Set";
+        } else if(setType.kind == CLASS_DATA_OBJECT) {
+            rStr = rStr + param.name + ".collect({underpants -> new " + setType.simpleName + "(new JsonObject(underpants))}) as Set";
+        }
+    } else if(param.type.kind == CLASS_SET) {
+       var setType = param.type.args[0];
+       if(setType.kind == CLASS_API) {
+            rStr = rStr + "(Set<" + setType.name + ">)(" + param.name + ".collect({underpants -> underpants.getDelegate()}) as Set)";
+       } else if(setType.kind == CLASS_JSON_OBJECT) {
+            rStr = rStr + param.name + ".collect({underpants -> new JsonObject(underpants)}) as Set";
+       }
+    } else if(paramKind == CLASS_HANDLER) {
         eventType = param.type.args[0];
         eventKind = eventType.kind;
         if(eventKind == CLASS_OTHER || eventKind.basic || eventKind == CLASS_VOID || eventKind == CLASS_THROWABLE) {
             return param.name;
         } else if(eventKind == CLASS_DATA_OBJECT) {
-            return "new Handler<" + eventType.simpleName + ">() {\n
+            return rStr + "new Handler<" + eventType.simpleName + ">() {\n
                     			      public void handle(" + eventType.simpleName + " event) {\n" +
                     			        param.name + ".handle((Map<String, Object>)InternalHelper.wrapObject(event.toJson()));\n
                     			      }\n
                     			    }";
         } else if(eventKind == CLASS_JSON_OBJECT) {
-          	return "new Handler<JsonObject>() {\n
+          	return rStr + "new Handler<JsonObject>() {\n
           			      public void handle(JsonObject event) {\n
           			        " + param.name + ".handle((Map<String, Object>)InternalHelper.wrapObject(event));\n
           			      }\n
           			    }";
         } else if(eventKind == CLASS_JSON_ARRAY) {
-          	return "new Handler<JsonArray>() {\n
+          	return rStr + "new Handler<JsonArray>() {\n
           			      public void handle(JsonArray event) {\n
           			        " + param.name + ".handle((List<Object>)InternalHelper.wrapObject(event));\n
           			      }\n
@@ -168,7 +190,7 @@
                     toGoloElement = "InternalHelper.wrapObject(it)";
                     elementJavaType = "JsonArray";
                 }
-                return "new Handler<" + collectionName +"<" + elementJavaType + ">>() {\n
+                return rStr + "new Handler<" + collectionName +"<" + elementJavaType + ">>() {\n
                       public void handle(" + collectionName + "<" + elementJavaType + "> event) {\n" +
                         param.name + ".handle(event.collect({\n" +
                           toGoloElement + "\n
@@ -177,7 +199,7 @@
                     }";
             }
         } else if(eventKind == CLASS_API) {
-            return "new Handler<" + eventType.erased.name + ">() {\n
+            return rStr + "new Handler<" + eventType.erased.name + ">() {\n
                     			      public void handle(" + eventType.erased.name + " event) {\n" +
                     			        param.name + ".handle(" + genConstructor(eventType.raw, "event") + ");\n
                     			      }\n
@@ -188,7 +210,7 @@
             if(resultKind == CLASS_OTHER || resultKind.basic || resultKind == CLASS_VOID) {
                 return param.name;
             } else if(resultKind == CLASS_DATA_OBJECT) {
-                return resultHandlerTemplate(resultType.name, "Map<String, Object>", "(Map<String, Object>)InternalHelper.wrapObject(event.result().toJson())", param.name);
+                return rStr + resultHandlerTemplate(resultType.name, "Map<String, Object>", "(Map<String, Object>)InternalHelper.wrapObject(event.result().toJson())", param.name);
             } else if(resultKind == CLASS_LIST || resultKind == CLASS_SET) {
                 elementType = resultType.args[0];
                 elementKind = elementType.kind;
@@ -216,14 +238,14 @@
                     eventJavaType = collectionName + "<" + elementJavaType + ">";
                     eventGoloType = collectionName + "<" + elementGoloType + ">";
                     callbackObject = "event.result().collect({\n            " + elementType.name + " element ->\n            " + toGoloElement + "\n          }) as " + collectionName;
-                    return resultHandlerTemplate(eventJavaType, eventGoloType, callbackObject, param.name);
+                    return rStr + resultHandlerTemplate(eventJavaType, eventGoloType, callbackObject, param.name);
                 }
             } else if(resultKind == CLASS_JSON_OBJECT) {
-                return resultHandlerTemplate(resultType.name ,"Map<String, Object>", "(" + eventGoloType + ")InternalHelper.wrapObject(event.result())",param.name);
+                return rStr + resultHandlerTemplate(resultType.name ,"Map<String, Object>", "(" + eventGoloType + ")InternalHelper.wrapObject(event.result())",param.name);
             } else if(resultKind == CLASS_JSON_ARRAY) {
-                return resultHandlerTemplate(resultType.name,"List<Object>","(" + eventGoloType + ")InternalHelper.wrapObject(event.result())",param.name);
+                return rStr + resultHandlerTemplate(resultType.name,"List<Object>","(" + eventGoloType + ")InternalHelper.wrapObject(event.result())",param.name);
             } else if(resultKind == CLASS_OBJECT) {
-                return resultHandlerTemplate("Object","Object","InternalHelper.wrapObject(event.result())",param.name);
+                return rStr + resultHandlerTemplate("Object","Object","InternalHelper.wrapObject(event.result())",param.name);
             }
         }
     }
@@ -242,18 +264,6 @@
         }
         call = call.substring(0, call.length() - 1);
         return call + ")";
-   }
-
-   def isConstructorMethod(type, method) {
-        if(method.staticMethod) {
-            var cp = splitHelper(method.toString(), " ");
-            var classIndex = countGenerics(method);
-            var class = cp[classIndex];
-            if(class.equals(type.toString())) {
-                return true;
-            }
-        }
-        return false;
    }
 
    def callForOriginalAPI(className, type, method) {
@@ -332,6 +342,7 @@ public Object getDelegate() { \n
 @declare{'genMethodDispatch'}
 	@foreach{method:methods}
 // @{method} \n
+// TypeParams: @{method.typeParams} \n
 @code{methodDefinition = createMethodDefinition(type, method)}
 public @{methodDefinition} {\n
     @code{

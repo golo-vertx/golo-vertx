@@ -12,11 +12,13 @@ public Object getDelegate() {
     return delegate; 
 }
 // int priority() 
+// TypeParams: [] 
 public int priority() {
         //param classes(remove later):  
     return delegate.priority(); 
 }
 // java.lang.String name() 
+// TypeParams: [] 
 public String name() {
         //param classes(remove later):  
     return delegate.name(); 

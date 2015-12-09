@@ -12,16 +12,19 @@ public Object getDelegate() {
     return delegate; 
 }
 // long totalSpace() 
+// TypeParams: [] 
 public long totalSpace() {
         //param classes(remove later):  
     return delegate.totalSpace(); 
 }
 // long unallocatedSpace() 
+// TypeParams: [] 
 public long unallocatedSpace() {
         //param classes(remove later):  
     return delegate.unallocatedSpace(); 
 }
 // long usableSpace() 
+// TypeParams: [] 
 public long usableSpace() {
         //param classes(remove later):  
     return delegate.usableSpace(); 

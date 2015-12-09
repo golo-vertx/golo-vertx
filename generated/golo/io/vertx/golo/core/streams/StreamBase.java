@@ -13,7 +13,8 @@ public Object getDelegate() {
     return delegate; 
 }
 // io.vertx.core.streams.StreamBase exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) 
-public StreamBase exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler) {
+// TypeParams: [] 
+public StreamBase exceptionHandler(Handler<Throwable> handler) {
         //param classes(remove later):   HANDLER  
     return InternalHelper.safeCreate(this.delegate.exceptionHandler(handler), io.vertx.golo.core.streams.StreamBaseImpl.class); 
 }

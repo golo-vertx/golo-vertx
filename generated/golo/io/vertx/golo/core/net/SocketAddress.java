@@ -12,11 +12,13 @@ public Object getDelegate() {
     return delegate; 
 }
 // java.lang.String host() 
+// TypeParams: [] 
 public String host() {
         //param classes(remove later):  
     return delegate.host(); 
 }
 // int port() 
+// TypeParams: [] 
 public int port() {
         //param classes(remove later):  
     return delegate.port(); 
