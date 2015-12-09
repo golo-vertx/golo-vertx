@@ -1,8 +1,7 @@
 package io.vertx.golo.core.shareddata;
 
 import io.vertx.lang.golo.InternalHelper;
-
-// io.vertx.core.shareddata.Lock 
+// Type: io.vertx.core.shareddata.Lock 
 public class Lock { 
 
 private io.vertx.core.shareddata.Lock delegate; 
@@ -14,6 +13,7 @@ public Object getDelegate() {
 }
 // void release() 
 public void release() {
-        delegate.release(); 
+        //param classes(remove later):  
+    delegate.release(); 
 }
 }

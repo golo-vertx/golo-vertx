@@ -1,8 +1,7 @@
 package io.vertx.golo.core.shareddata;
 
 import io.vertx.lang.golo.InternalHelper;
-
-// io.vertx.core.shareddata.LocalMap<K,V> 
+// Type: io.vertx.core.shareddata.LocalMap<K,V> 
 public class LocalMap<K,V> { 
 
 private io.vertx.core.shareddata.LocalMap delegate; 
@@ -14,46 +13,57 @@ public Object getDelegate() {
 }
 // V get(K key) 
 public V get(K key) {
-        return delegate.get(key); 
+        //param classes(remove later):   OBJECT  
+    return delegate.get(key); 
 }
 // V put(K key, V value) 
 public V put(K key, V value) {
-        return delegate.put(key,value); 
+        //param classes(remove later):   OBJECT   OBJECT  
+    return delegate.put(key,value); 
 }
 // V remove(K key) 
 public V remove(K key) {
-        return delegate.remove(key); 
+        //param classes(remove later):   OBJECT  
+    return delegate.remove(key); 
 }
 // void clear() 
 public void clear() {
-        delegate.clear(); 
+        //param classes(remove later):  
+    delegate.clear(); 
 }
 // int size() 
 public int size() {
-        return delegate.size(); 
+        //param classes(remove later):  
+    return delegate.size(); 
 }
 // boolean isEmpty() 
 public boolean isEmpty() {
-        return delegate.isEmpty(); 
+        //param classes(remove later):  
+    return delegate.isEmpty(); 
 }
 // V putIfAbsent(K key, V value) 
 public V putIfAbsent(K key, V value) {
-        return delegate.putIfAbsent(key,value); 
+        //param classes(remove later):   OBJECT   OBJECT  
+    return delegate.putIfAbsent(key,value); 
 }
 // boolean removeIfPresent(K key, V value) 
 public boolean removeIfPresent(K key, V value) {
-        return delegate.removeIfPresent(key,value); 
+        //param classes(remove later):   OBJECT   OBJECT  
+    return delegate.removeIfPresent(key,value); 
 }
 // boolean replaceIfPresent(K key, V oldValue, V newValue) 
 public boolean replaceIfPresent(K key, V oldValue, V newValue) {
-        return delegate.replaceIfPresent(key,oldValue,newValue); 
+        //param classes(remove later):   OBJECT   OBJECT   OBJECT  
+    return delegate.replaceIfPresent(key,oldValue,newValue); 
 }
 // V replace(K key, V value) 
 public V replace(K key, V value) {
-        return delegate.replace(key,value); 
+        //param classes(remove later):   OBJECT   OBJECT  
+    return delegate.replace(key,value); 
 }
 // void close() 
 public void close() {
-        delegate.close(); 
+        //param classes(remove later):  
+    delegate.close(); 
 }
 }

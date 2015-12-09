@@ -46,14 +46,28 @@
     return count;
   }
 
-  def parseClassName(returnValue) {
-    var untilIndex = returnValue.indexOf("(");
-    var noParams = returnValue.substring(0, untilIndex);
-    var methodSplitted = splitHelper(noParams, " ");
-    var classPath = methodSplitted[methodSplitted.size() - 2];
-    var classSplitted = splitHelper(classPath, ".");
-    return classSplitted[classSplitted.size() - 1];
+  def parseReturnType(method) {
+    var kind = method.returnType.kind;
+    if(kind == CLASS_PRIMITIVE || kind == CLASS_OTHER) {
+        return method.returnType;
+    } else if(kind == CLASS_SET || kind == CLASS_LIST) {
+        var classIndex = method.returnType.toString().indexOf("<");
+        var outerClass = method.returnType.toString().substring(0, classIndex);
+        var innerClasses = "";
+        for(int i = 0; i < method.returnType.args.size(); i++) {
+            innerClasses = innerClasses + parseClassName(method.returnType.args[i].toString()) + ",";
+        }
+        innerClasses = innerClasses.substring(0, innerClasses.length() - 1);
+        return parseClassName(outerClass) + "<" + innerClasses + ">";
+    }
+    return parseClassName(method.returnType.toString());
   }
+
+  def parseClassName(class) {
+    var classElements = splitHelper(class, ".");
+    return classElements[classElements.size() - 1];
+  }
+
 
   def injectParamsToMethodDefinition(method) {
     var paramsFrom = method.toString().indexOf("(");
@@ -67,7 +81,7 @@
      var indexOfMethodName = genCount;
      var elementsInMethodDefinition = splitHelper(method.toString(), " ");
      if(genCount == 0) {
-        return parseClassName(str) + " "+method.name+ injectParamsToMethodDefinition(method);
+        return parseReturnType(method) + " "+method.name+ injectParamsToMethodDefinition(method);
      }
      generics = parseGenericNames(genCount, method.toString());
      str =  "<"+generics+"> ";
@@ -93,7 +107,7 @@
    def createApiCall(className, type, method) {
         var delegateCall = "";
         if(method.staticMethod) {
-            delegateCall = method.returnType.raw;
+            delegateCall = type.raw;
         } else {
             delegateCall = "this.delegate";
         }
@@ -288,12 +302,21 @@
 
 package @{genGoloModuleName(type)};\n\n
 
-import io.vertx.lang.golo.InternalHelper;\n\n
-@foreach{referencedType : referencedTypes}
-import @{referencedType};\n
+import io.vertx.lang.golo.InternalHelper;\n
+@comment{"Generate the imports"}
+@foreach{importedType:importedTypes}
+	@if{importedType.kind == CLASS_API}
+		@if{!ifacePackageName.equals(importedType.packageName)}
+			import @{importedType.raw.translateName("golo")};\n
+		@end{}
+	@else{}
+		@if{!importedType.packageName.equals("java.lang")}
+			import @{importedType};\n
+		@end{}
+	@end{}
 @end{}
 
-// @{type} \n
+// Type: @{type} \n
 
 public class @{className(type)} { \n\n
 
@@ -315,6 +338,7 @@ public @{methodDefinition} {\n
         var cName = className(type.raw);
         callOrgAPI = callForOriginalAPI(cName, type, method);
     }
+    //param classes(remove later): @foreach{param:method.params} @code{paramInfo=param.type.kind} @{paramInfo} @end{} \n
     @{callOrgAPI}; \n
 }\n
 @end{}

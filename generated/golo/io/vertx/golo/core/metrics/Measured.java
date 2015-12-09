@@ -1,8 +1,7 @@
 package io.vertx.golo.core.metrics;
 
 import io.vertx.lang.golo.InternalHelper;
-
-// io.vertx.core.metrics.Measured 
+// Type: io.vertx.core.metrics.Measured 
 public class Measured { 
 
 private io.vertx.core.metrics.Measured delegate; 
@@ -14,6 +13,7 @@ public Object getDelegate() {
 }
 // boolean isMetricsEnabled() 
 public boolean isMetricsEnabled() {
-        return delegate.isMetricsEnabled(); 
+        //param classes(remove later):  
+    return delegate.isMetricsEnabled(); 
 }
 }

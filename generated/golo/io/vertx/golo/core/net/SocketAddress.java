@@ -1,8 +1,7 @@
 package io.vertx.golo.core.net;
 
 import io.vertx.lang.golo.InternalHelper;
-
-// io.vertx.core.net.SocketAddress 
+// Type: io.vertx.core.net.SocketAddress 
 public class SocketAddress { 
 
 private io.vertx.core.net.SocketAddress delegate; 
@@ -14,10 +13,12 @@ public Object getDelegate() {
 }
 // java.lang.String host() 
 public String host() {
-        return delegate.host(); 
+        //param classes(remove later):  
+    return delegate.host(); 
 }
 // int port() 
 public int port() {
-        return delegate.port(); 
+        //param classes(remove later):  
+    return delegate.port(); 
 }
 }

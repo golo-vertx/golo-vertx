@@ -1,8 +1,7 @@
 package io.vertx.golo.core.file;
 
 import io.vertx.lang.golo.InternalHelper;
-
-// io.vertx.core.file.FileSystemProps 
+// Type: io.vertx.core.file.FileSystemProps 
 public class FileSystemProps { 
 
 private io.vertx.core.file.FileSystemProps delegate; 
@@ -14,14 +13,17 @@ public Object getDelegate() {
 }
 // long totalSpace() 
 public long totalSpace() {
-        return delegate.totalSpace(); 
+        //param classes(remove later):  
+    return delegate.totalSpace(); 
 }
 // long unallocatedSpace() 
 public long unallocatedSpace() {
-        return delegate.unallocatedSpace(); 
+        //param classes(remove later):  
+    return delegate.unallocatedSpace(); 
 }
 // long usableSpace() 
 public long usableSpace() {
-        return delegate.usableSpace(); 
+        //param classes(remove later):  
+    return delegate.usableSpace(); 
 }
 }

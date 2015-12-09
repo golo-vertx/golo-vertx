@@ -1,8 +1,7 @@
 package io.vertx.golo.core.dns;
 
 import io.vertx.lang.golo.InternalHelper;
-
-// io.vertx.core.dns.SrvRecord 
+// Type: io.vertx.core.dns.SrvRecord 
 public class SrvRecord { 
 
 private io.vertx.core.dns.SrvRecord delegate; 
@@ -14,30 +13,37 @@ public Object getDelegate() {
 }
 // int priority() 
 public int priority() {
-        return delegate.priority(); 
+        //param classes(remove later):  
+    return delegate.priority(); 
 }
 // int weight() 
 public int weight() {
-        return delegate.weight(); 
+        //param classes(remove later):  
+    return delegate.weight(); 
 }
 // int port() 
 public int port() {
-        return delegate.port(); 
+        //param classes(remove later):  
+    return delegate.port(); 
 }
 // java.lang.String name() 
 public String name() {
-        return delegate.name(); 
+        //param classes(remove later):  
+    return delegate.name(); 
 }
 // java.lang.String protocol() 
 public String protocol() {
-        return delegate.protocol(); 
+        //param classes(remove later):  
+    return delegate.protocol(); 
 }
 // java.lang.String service() 
 public String service() {
-        return delegate.service(); 
+        //param classes(remove later):  
+    return delegate.service(); 
 }
 // java.lang.String target() 
 public String target() {
-        return delegate.target(); 
+        //param classes(remove later):  
+    return delegate.target(); 
 }
 }
