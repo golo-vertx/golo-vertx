@@ -15,18 +15,21 @@ public Object getDelegate() {
 // TypeParams: [] 
 public long totalSpace() {
         //param classes(remove later):  
-    return delegate.totalSpace(); 
+    //evenTypes (remove later):  
+    return this.delegate.totalSpace(); 
 }
 // long unallocatedSpace() 
 // TypeParams: [] 
 public long unallocatedSpace() {
         //param classes(remove later):  
-    return delegate.unallocatedSpace(); 
+    //evenTypes (remove later):  
+    return this.delegate.unallocatedSpace(); 
 }
 // long usableSpace() 
 // TypeParams: [] 
 public long usableSpace() {
         //param classes(remove later):  
-    return delegate.usableSpace(); 
+    //evenTypes (remove later):  
+    return this.delegate.usableSpace(); 
 }
 }

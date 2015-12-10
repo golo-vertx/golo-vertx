@@ -16,30 +16,35 @@ public Object getDelegate() {
 // TypeParams: [] 
 public WriteStream<T> exceptionHandler(Handler<Throwable> handler) {
         //param classes(remove later):   HANDLER  
+    //evenTypes (remove later):    THROWABLE   
     return InternalHelper.safeCreate(this.delegate.exceptionHandler(handler), io.vertx.golo.core.streams.WriteStreamImpl.class); 
 }
 // io.vertx.core.streams.WriteStream<T> write(T data) 
 // TypeParams: [] 
 public WriteStream<T> write(T data) {
         //param classes(remove later):   OBJECT  
+    //evenTypes (remove later):    
     return InternalHelper.safeCreate(this.delegate.write(data), io.vertx.golo.core.streams.WriteStreamImpl.class); 
 }
 // io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize) 
 // TypeParams: [] 
 public WriteStream<T> setWriteQueueMaxSize(int maxSize) {
         //param classes(remove later):   PRIMITIVE  
+    //evenTypes (remove later):    
     return InternalHelper.safeCreate(this.delegate.setWriteQueueMaxSize(maxSize), io.vertx.golo.core.streams.WriteStreamImpl.class); 
 }
 // boolean writeQueueFull() 
 // TypeParams: [] 
 public boolean writeQueueFull() {
         //param classes(remove later):  
-    return delegate.writeQueueFull(); 
+    //evenTypes (remove later):  
+    return this.delegate.writeQueueFull(); 
 }
 // io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler) 
 // TypeParams: [] 
 public WriteStream<T> drainHandler(Handler<Void> handler) {
         //param classes(remove later):   HANDLER  
+    //evenTypes (remove later):    VOID   
     return InternalHelper.safeCreate(this.delegate.drainHandler(handler), io.vertx.golo.core.streams.WriteStreamImpl.class); 
 }
 }

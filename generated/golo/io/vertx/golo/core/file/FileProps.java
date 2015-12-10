@@ -15,48 +15,56 @@ public Object getDelegate() {
 // TypeParams: [] 
 public long creationTime() {
         //param classes(remove later):  
-    return delegate.creationTime(); 
+    //evenTypes (remove later):  
+    return this.delegate.creationTime(); 
 }
 // long lastAccessTime() 
 // TypeParams: [] 
 public long lastAccessTime() {
         //param classes(remove later):  
-    return delegate.lastAccessTime(); 
+    //evenTypes (remove later):  
+    return this.delegate.lastAccessTime(); 
 }
 // long lastModifiedTime() 
 // TypeParams: [] 
 public long lastModifiedTime() {
         //param classes(remove later):  
-    return delegate.lastModifiedTime(); 
+    //evenTypes (remove later):  
+    return this.delegate.lastModifiedTime(); 
 }
 // boolean isDirectory() 
 // TypeParams: [] 
 public boolean isDirectory() {
         //param classes(remove later):  
-    return delegate.isDirectory(); 
+    //evenTypes (remove later):  
+    return this.delegate.isDirectory(); 
 }
 // boolean isOther() 
 // TypeParams: [] 
 public boolean isOther() {
         //param classes(remove later):  
-    return delegate.isOther(); 
+    //evenTypes (remove later):  
+    return this.delegate.isOther(); 
 }
 // boolean isRegularFile() 
 // TypeParams: [] 
 public boolean isRegularFile() {
         //param classes(remove later):  
-    return delegate.isRegularFile(); 
+    //evenTypes (remove later):  
+    return this.delegate.isRegularFile(); 
 }
 // boolean isSymbolicLink() 
 // TypeParams: [] 
 public boolean isSymbolicLink() {
         //param classes(remove later):  
-    return delegate.isSymbolicLink(); 
+    //evenTypes (remove later):  
+    return this.delegate.isSymbolicLink(); 
 }
 // long size() 
 // TypeParams: [] 
 public long size() {
         //param classes(remove later):  
-    return delegate.size(); 
+    //evenTypes (remove later):  
+    return this.delegate.size(); 
 }
 }

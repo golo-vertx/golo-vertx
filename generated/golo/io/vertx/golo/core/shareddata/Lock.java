@@ -15,6 +15,7 @@ public Object getDelegate() {
 // TypeParams: [] 
 public void release() {
         //param classes(remove later):  
-    delegate.release(); 
+    //evenTypes (remove later):  
+    this.delegate.release(); 
 }
 }

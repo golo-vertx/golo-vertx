@@ -17,12 +17,14 @@ public Object getDelegate() {
 // TypeParams: [] 
 public SocketAddress sender() {
         //param classes(remove later):  
+    //evenTypes (remove later):  
     return InternalHelper.safeCreate(this.delegate.sender(), io.vertx.golo.core.net.SocketAddress.class); 
 }
 // io.vertx.core.buffer.Buffer data() 
 // TypeParams: [] 
 public Buffer data() {
         //param classes(remove later):  
+    //evenTypes (remove later):  
     return InternalHelper.safeCreate(this.delegate.data(), io.vertx.golo.core.buffer.Buffer.class); 
 }
 }

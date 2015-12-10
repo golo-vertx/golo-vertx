@@ -18,84 +18,98 @@ public Object getDelegate() {
 // TypeParams: [] 
 public static CommandLine create(CLI cli) {
         //param classes(remove later):   API  
+    //evenTypes (remove later):    
     return InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create(cli), io.vertx.golo.core.cli.CommandLine.class); 
 }
 // io.vertx.core.cli.CLI cli() 
 // TypeParams: [] 
 public CLI cli() {
         //param classes(remove later):  
+    //evenTypes (remove later):  
     return InternalHelper.safeCreate(this.delegate.cli(), io.vertx.golo.core.cli.CLI.class); 
 }
 // java.util.List<java.lang.String> allArguments() 
 // TypeParams: [] 
 public List<String> allArguments() {
         //param classes(remove later):  
-    return delegate.allArguments(); 
+    //evenTypes (remove later):  
+    return this.delegate.allArguments(); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetOptionValue]> T getOptionValue(java.lang.String name) 
 // TypeParams: [TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetOptionValue]] 
 public <T> T getOptionValue(String name) {
         //param classes(remove later):   STRING  
-    return delegate.getOptionValue(name); 
+    //evenTypes (remove later):    
+    return this.delegate.getOptionValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(java.lang.String name) 
 // TypeParams: [TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]] 
 public <T> T getArgumentValue(String name) {
         //param classes(remove later):   STRING  
-    return delegate.getArgumentValue(name); 
+    //evenTypes (remove later):    
+    return this.delegate.getArgumentValue(name); 
 }
 // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(int index) 
 // TypeParams: [TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]] 
 public <T> T getArgumentValue(int index) {
         //param classes(remove later):   PRIMITIVE  
-    return delegate.getArgumentValue(index); 
+    //evenTypes (remove later):    
+    return this.delegate.getArgumentValue(index); 
 }
 // boolean isFlagEnabled(java.lang.String name) 
 // TypeParams: [] 
 public boolean isFlagEnabled(String name) {
         //param classes(remove later):   STRING  
-    return delegate.isFlagEnabled(name); 
+    //evenTypes (remove later):    
+    return this.delegate.isFlagEnabled(name); 
 }
 // boolean isOptionAssigned(io.vertx.core.cli.Option option) 
 // TypeParams: [] 
 public boolean isOptionAssigned(Option option) {
         //param classes(remove later):   DATA_OBJECT  
-    return delegate.isOptionAssigned(option); 
+    //evenTypes (remove later):    
+    return this.delegate.isOptionAssigned(option); 
 }
 // java.util.List<java.lang.String> getRawValues(io.vertx.core.cli.Option option) 
 // TypeParams: [] 
 public List<String> getRawValues(Option option) {
         //param classes(remove later):   DATA_OBJECT  
-    return delegate.getRawValues(option); 
+    //evenTypes (remove later):    
+    return this.delegate.getRawValues(option); 
 }
 // java.lang.String getRawValueForOption(io.vertx.core.cli.Option option) 
 // TypeParams: [] 
 public String getRawValueForOption(Option option) {
         //param classes(remove later):   DATA_OBJECT  
-    return delegate.getRawValueForOption(option); 
+    //evenTypes (remove later):    
+    return this.delegate.getRawValueForOption(option); 
 }
 // boolean acceptMoreValues(io.vertx.core.cli.Option option) 
 // TypeParams: [] 
 public boolean acceptMoreValues(Option option) {
         //param classes(remove later):   DATA_OBJECT  
-    return delegate.acceptMoreValues(option); 
+    //evenTypes (remove later):    
+    return this.delegate.acceptMoreValues(option); 
 }
 // java.lang.String getRawValueForArgument(io.vertx.core.cli.Argument arg) 
 // TypeParams: [] 
 public String getRawValueForArgument(Argument arg) {
         //param classes(remove later):   DATA_OBJECT  
-    return delegate.getRawValueForArgument(arg); 
+    //evenTypes (remove later):    
+    return this.delegate.getRawValueForArgument(arg); 
 }
 // boolean isArgumentAssigned(io.vertx.core.cli.Argument arg) 
 // TypeParams: [] 
 public boolean isArgumentAssigned(Argument arg) {
         //param classes(remove later):   DATA_OBJECT  
-    return delegate.isArgumentAssigned(arg); 
+    //evenTypes (remove later):    
+    return this.delegate.isArgumentAssigned(arg); 
 }
 // boolean isSeenInCommandLine(io.vertx.core.cli.Option option) 
 // TypeParams: [] 
 public boolean isSeenInCommandLine(Option option) {
         //param classes(remove later):   DATA_OBJECT  
-    return delegate.isSeenInCommandLine(option); 
+    //evenTypes (remove later):    
+    return this.delegate.isSeenInCommandLine(option); 
 }
 }

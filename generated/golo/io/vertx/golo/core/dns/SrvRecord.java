@@ -15,42 +15,49 @@ public Object getDelegate() {
 // TypeParams: [] 
 public int priority() {
         //param classes(remove later):  
-    return delegate.priority(); 
+    //evenTypes (remove later):  
+    return this.delegate.priority(); 
 }
 // int weight() 
 // TypeParams: [] 
 public int weight() {
         //param classes(remove later):  
-    return delegate.weight(); 
+    //evenTypes (remove later):  
+    return this.delegate.weight(); 
 }
 // int port() 
 // TypeParams: [] 
 public int port() {
         //param classes(remove later):  
-    return delegate.port(); 
+    //evenTypes (remove later):  
+    return this.delegate.port(); 
 }
 // java.lang.String name() 
 // TypeParams: [] 
 public String name() {
         //param classes(remove later):  
-    return delegate.name(); 
+    //evenTypes (remove later):  
+    return this.delegate.name(); 
 }
 // java.lang.String protocol() 
 // TypeParams: [] 
 public String protocol() {
         //param classes(remove later):  
-    return delegate.protocol(); 
+    //evenTypes (remove later):  
+    return this.delegate.protocol(); 
 }
 // java.lang.String service() 
 // TypeParams: [] 
 public String service() {
         //param classes(remove later):  
-    return delegate.service(); 
+    //evenTypes (remove later):  
+    return this.delegate.service(); 
 }
 // java.lang.String target() 
 // TypeParams: [] 
 public String target() {
         //param classes(remove later):  
-    return delegate.target(); 
+    //evenTypes (remove later):  
+    return this.delegate.target(); 
 }
 }

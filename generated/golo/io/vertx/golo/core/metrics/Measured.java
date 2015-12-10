@@ -15,6 +15,7 @@ public Object getDelegate() {
 // TypeParams: [] 
 public boolean isMetricsEnabled() {
         //param classes(remove later):  
-    return delegate.isMetricsEnabled(); 
+    //evenTypes (remove later):  
+    return this.delegate.isMetricsEnabled(); 
 }
 }

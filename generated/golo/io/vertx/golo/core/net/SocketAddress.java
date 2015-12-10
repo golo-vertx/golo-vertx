@@ -15,12 +15,14 @@ public Object getDelegate() {
 // TypeParams: [] 
 public String host() {
         //param classes(remove later):  
-    return delegate.host(); 
+    //evenTypes (remove later):  
+    return this.delegate.host(); 
 }
 // int port() 
 // TypeParams: [] 
 public int port() {
         //param classes(remove later):  
-    return delegate.port(); 
+    //evenTypes (remove later):  
+    return this.delegate.port(); 
 }
 }

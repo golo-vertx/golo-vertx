@@ -138,12 +138,14 @@
         } else if(setType.kind == CLASS_DATA_OBJECT) {
             rStr = rStr + param.name + ".collect({underpants -> new " + setType.simpleName + "(new JsonObject(underpants))}) as Set";
         }
-    } else if(param.type.kind == CLASS_SET) {
-       var setType = param.type.args[0];
+    } else if(param.type.kind == CLASS_MAP) {
+       var mapType = param.type.args[1];
        if(setType.kind == CLASS_API) {
-            rStr = rStr + "(Set<" + setType.name + ">)(" + param.name + ".collect({underpants -> underpants.getDelegate()}) as Set)";
+            rStr = rStr + "(Map<String, " + mapType.name + ">)(" + param.name + ".collectEntries({k, v -> [k, v.getDelegate()]}))";
        } else if(setType.kind == CLASS_JSON_OBJECT) {
-            rStr = rStr + param.name + ".collect({underpants -> new JsonObject(underpants)}) as Set";
+            rStr = rStr + "(Map<String, " + mapType.name + ">)(" + param.name + ".collectEntries({k, v -> [k, new JsonObject(v)]}))";
+       } else if(setType.kind == CLASS_JSON_ARRAY) {
+            rStr = rStr + "(Map<String, " + mapType.name + ">)(" + param.name + ".collectEntries({k, v -> [k, new JsonArray(v)]}))";
        }
     } else if(paramKind == CLASS_HANDLER) {
         eventType = param.type.args[0];
@@ -172,7 +174,7 @@
             var elementType = eventType.args[0];
             var elementKind = elementType.kind;
             if(elementKind == CLASS_PRIMITIVE || elementKind == CLASS_BOXED_PRIMITIVE || elementKind == CLASS_STRING) {
-                return param.name;
+                return rStr + param.name;
             } else if(elementKind == CLASS_API || elementKind.json || elementKind == CLASS_DATA_OBJECT) {
                 var collectionName = eventType.raw.simpleName;
                 var toGoloElement = "";
@@ -208,7 +210,7 @@
             var resultType = eventType.args[0];
             var resultKind = resultType.kind;
             if(resultKind == CLASS_OTHER || resultKind.basic || resultKind == CLASS_VOID) {
-                return param.name;
+                return rStr + param.name;
             } else if(resultKind == CLASS_DATA_OBJECT) {
                 return rStr + resultHandlerTemplate(resultType.name, "Map<String, Object>", "(Map<String, Object>)InternalHelper.wrapObject(event.result().toJson())", param.name);
             } else if(resultKind == CLASS_LIST || resultKind == CLASS_SET) {
@@ -246,7 +248,15 @@
                 return rStr + resultHandlerTemplate(resultType.name,"List<Object>","(" + eventGoloType + ")InternalHelper.wrapObject(event.result())",param.name);
             } else if(resultKind == CLASS_OBJECT) {
                 return rStr + resultHandlerTemplate("Object","Object","InternalHelper.wrapObject(event.result())",param.name);
+            } else if(resultKind == CLASS_API) {
+                return rStr + resultHandlerTemplate(resultType.name, resultType.simpleName, "new " + resultType.simpleName + "(event.result())", param.name, eventType);
             }
+        } else if(eventKind == CLASS_OBJECT) {
+            return rStr + "new Handler<Object>() {\n
+            			      public void handle(Object event) {\n" +
+            			        param.name + ".handle(InternalHelper.wrapObject(event))\n
+            			      }\n
+            			    }";
         }
     }
     return param.name;
@@ -281,7 +291,7 @@
         if(method.staticMethod) {
             call = call + type.raw.toString() + ".";
         } else {
-            call = call + "delegate.";
+            call = call + "this.delegate.";
         }
         call = call + injectParamsToMethodCall(method);
         return call;
@@ -295,7 +305,7 @@
         return ret + typeCheck(method);
    }
 
-   def resultHandlerTemplate(eventJavaType, eventGoloType, callbackObject, callbackName) {
+   def resultHandlerTemplate(eventJavaType, eventGoloType, callbackObject, callbackName, eventType) {
     return "new Handler<AsyncResult<" + eventJavaType + ">>() {\n
    	      public void handle(AsyncResult<" + eventJavaType + "> event) {\n
    	        AsyncResult<" + eventGoloType + "> f;\n
@@ -304,9 +314,9 @@
    	        } else {\n
    	          f = InternalHelper.<" + eventGoloType + ">failure(event.cause());\n
    	        }\n" +
-   	        callbackName + ".handle(f);\n
+   	        callbackName + ".handle(("+ eventType.simpleName +")f);\n
    	      }\n
-   	    }";
+   	    }\n";
    }
 }
 
@@ -350,6 +360,7 @@ public @{methodDefinition} {\n
         callOrgAPI = callForOriginalAPI(cName, type, method);
     }
     //param classes(remove later): @foreach{param:method.params} @code{paramInfo=param.type.kind} @{paramInfo} @end{} \n
+    //evenTypes (remove later): @foreach{param:method.params} @if{param.type.kind == CLASS_HANDLER} @code{eventType=param.type.args[0].kind} @{eventType} @end{} @end{} \n
     @{callOrgAPI}; \n
 }\n
 @end{}

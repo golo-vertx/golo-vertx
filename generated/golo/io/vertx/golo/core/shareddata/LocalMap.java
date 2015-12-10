@@ -15,66 +15,77 @@ public Object getDelegate() {
 // TypeParams: [] 
 public V get(K key) {
         //param classes(remove later):   OBJECT  
-    return delegate.get(key); 
+    //evenTypes (remove later):    
+    return this.delegate.get(key); 
 }
 // V put(K key, V value) 
 // TypeParams: [] 
 public V put(K key,V value) {
         //param classes(remove later):   OBJECT   OBJECT  
-    return delegate.put(key,value); 
+    //evenTypes (remove later):      
+    return this.delegate.put(key,value); 
 }
 // V remove(K key) 
 // TypeParams: [] 
 public V remove(K key) {
         //param classes(remove later):   OBJECT  
-    return delegate.remove(key); 
+    //evenTypes (remove later):    
+    return this.delegate.remove(key); 
 }
 // void clear() 
 // TypeParams: [] 
 public void clear() {
         //param classes(remove later):  
-    delegate.clear(); 
+    //evenTypes (remove later):  
+    this.delegate.clear(); 
 }
 // int size() 
 // TypeParams: [] 
 public int size() {
         //param classes(remove later):  
-    return delegate.size(); 
+    //evenTypes (remove later):  
+    return this.delegate.size(); 
 }
 // boolean isEmpty() 
 // TypeParams: [] 
 public boolean isEmpty() {
         //param classes(remove later):  
-    return delegate.isEmpty(); 
+    //evenTypes (remove later):  
+    return this.delegate.isEmpty(); 
 }
 // V putIfAbsent(K key, V value) 
 // TypeParams: [] 
 public V putIfAbsent(K key,V value) {
         //param classes(remove later):   OBJECT   OBJECT  
-    return delegate.putIfAbsent(key,value); 
+    //evenTypes (remove later):      
+    return this.delegate.putIfAbsent(key,value); 
 }
 // boolean removeIfPresent(K key, V value) 
 // TypeParams: [] 
 public boolean removeIfPresent(K key,V value) {
         //param classes(remove later):   OBJECT   OBJECT  
-    return delegate.removeIfPresent(key,value); 
+    //evenTypes (remove later):      
+    return this.delegate.removeIfPresent(key,value); 
 }
 // boolean replaceIfPresent(K key, V oldValue, V newValue) 
 // TypeParams: [] 
 public boolean replaceIfPresent(K key,V oldValue,V newValue) {
         //param classes(remove later):   OBJECT   OBJECT   OBJECT  
-    return delegate.replaceIfPresent(key,oldValue,newValue); 
+    //evenTypes (remove later):        
+    return this.delegate.replaceIfPresent(key,oldValue,newValue); 
 }
 // V replace(K key, V value) 
 // TypeParams: [] 
 public V replace(K key,V value) {
         //param classes(remove later):   OBJECT   OBJECT  
-    return delegate.replace(key,value); 
+    //evenTypes (remove later):      
+    return this.delegate.replace(key,value); 
 }
 // void close() 
 // TypeParams: [] 
 public void close() {
         //param classes(remove later):  
-    delegate.close(); 
+    //evenTypes (remove later):  
+    this.delegate.close(); 
 }
 }

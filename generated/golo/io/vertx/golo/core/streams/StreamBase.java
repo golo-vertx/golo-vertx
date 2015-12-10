@@ -16,6 +16,7 @@ public Object getDelegate() {
 // TypeParams: [] 
 public StreamBase exceptionHandler(Handler<Throwable> handler) {
         //param classes(remove later):   HANDLER  
+    //evenTypes (remove later):    THROWABLE   
     return InternalHelper.safeCreate(this.delegate.exceptionHandler(handler), io.vertx.golo.core.streams.StreamBaseImpl.class); 
 }
 }

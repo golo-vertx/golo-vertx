@@ -19,54 +19,85 @@ public Object getDelegate() {
 // TypeParams: [] 
 public String address() {
         //param classes(remove later):  
-    return delegate.address(); 
+    //evenTypes (remove later):  
+    return this.delegate.address(); 
 }
 // io.vertx.core.MultiMap headers() 
 // TypeParams: [] 
 public MultiMap headers() {
         //param classes(remove later):  
+    //evenTypes (remove later):  
     return InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.MultiMap.class); 
 }
 // T body() 
 // TypeParams: [] 
 public T body() {
         //param classes(remove later):  
-    return delegate.body(); 
+    //evenTypes (remove later):  
+    return this.delegate.body(); 
 }
 // java.lang.String replyAddress() 
 // TypeParams: [] 
 public String replyAddress() {
         //param classes(remove later):  
-    return delegate.replyAddress(); 
+    //evenTypes (remove later):  
+    return this.delegate.replyAddress(); 
 }
 // void reply(java.lang.Object message) 
 // TypeParams: [] 
 public void reply(Object message) {
         //param classes(remove later):   OBJECT  
-    delegate.reply(message); 
+    //evenTypes (remove later):    
+    this.delegate.reply(message); 
 }
 // <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) 
 // TypeParams: [TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]] 
 public <R> void reply(Object message,Handler<AsyncResult<Message<R>>> replyHandler) {
         //param classes(remove later):   OBJECT   HANDLER  
-    delegate.reply(message,replyHandler); 
+    //evenTypes (remove later):      ASYNC_RESULT   
+    this.delegate.reply(message,new Handler<AsyncResult<io.vertx.core.eventbus.Message<R>>>() {
+         public void handle(AsyncResult<io.vertx.core.eventbus.Message<R>> event) {
+           AsyncResult<Message<R>> f;
+           if (event.succeeded()) {
+             f = InternalHelper.<Message<R>>result(new Message<R>(event.result()));
+           } else {
+             f = InternalHelper.<Message<R>>failure(event.cause());
+           }
+replyHandler.handle((AsyncResult<Message<R>>)f);
+         }
+       }
+); 
 }
 // void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options) 
 // TypeParams: [] 
 public void reply(Object message,DeliveryOptions options) {
         //param classes(remove later):   OBJECT   DATA_OBJECT  
-    delegate.reply(message,options); 
+    //evenTypes (remove later):      
+    this.delegate.reply(message,options); 
 }
 // <TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler) 
 // TypeParams: [TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]] 
 public <R> void reply(Object message,DeliveryOptions options,Handler<AsyncResult<Message<R>>> replyHandler) {
         //param classes(remove later):   OBJECT   DATA_OBJECT   HANDLER  
-    delegate.reply(message,options,replyHandler); 
+    //evenTypes (remove later):        ASYNC_RESULT   
+    this.delegate.reply(message,options,new Handler<AsyncResult<io.vertx.core.eventbus.Message<R>>>() {
+         public void handle(AsyncResult<io.vertx.core.eventbus.Message<R>> event) {
+           AsyncResult<Message<R>> f;
+           if (event.succeeded()) {
+             f = InternalHelper.<Message<R>>result(new Message<R>(event.result()));
+           } else {
+             f = InternalHelper.<Message<R>>failure(event.cause());
+           }
+replyHandler.handle((AsyncResult<Message<R>>)f);
+         }
+       }
+); 
 }
 // void fail(int failureCode, java.lang.String message) 
 // TypeParams: [] 
 public void fail(int failureCode,String message) {
         //param classes(remove later):   PRIMITIVE   STRING  
-    delegate.fail(failureCode,message); 
+    //evenTypes (remove later):      
+    this.delegate.fail(failureCode,message); 
 }
 }

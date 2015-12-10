@@ -15,12 +15,14 @@ public Object getDelegate() {
 // TypeParams: [] 
 public int priority() {
         //param classes(remove later):  
-    return delegate.priority(); 
+    //evenTypes (remove later):  
+    return this.delegate.priority(); 
 }
 // java.lang.String name() 
 // TypeParams: [] 
 public String name() {
         //param classes(remove later):  
-    return delegate.name(); 
+    //evenTypes (remove later):  
+    return this.delegate.name(); 
 }
 }
