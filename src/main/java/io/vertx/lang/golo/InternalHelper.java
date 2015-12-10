@@ -60,8 +60,6 @@ public class InternalHelper {
             try {
                 Constructor<T> ctor = type.getConstructor(Object.class);
                 T t = ctor.newInstance(delegate);
-                System.out.println("TYPE: ");
-                System.out.println(t.getClass());
                 return t;
             } catch (NoSuchMethodException e) {
                 e.printStackTrace();

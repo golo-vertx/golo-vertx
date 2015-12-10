@@ -1,5 +1,4 @@
-java -jar codegen-cli/vertx-codegen-cli-3.2.0-SNAPSHOT.jar --codegen src/main/resources/codegen.json --target generated io.vertx:vertx-core:3.1.0-SNAPSHOT
-
+java -jar codegen-cli/vertx-codegen-cli-3.2.0-SNAPSHOT.jar --codegen src/main/resources/codegen.json --target src/main/java io.vertx:vertx-core:3.1.0-SNAPSHOT
 
 javac generated/golo/io/vertx/golo/core/buffer/Buffer.java -classpath extractedClass/fatjar/destinationFolder/
 

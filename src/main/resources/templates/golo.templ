@@ -2,7 +2,6 @@
 @includeNamed{"common.templ"}
 
 @code{
-
   def splitHelper(toSplit, splitter) {
     var array = [];
     var start = 0;
@@ -196,7 +195,7 @@
                       public void handle(" + collectionName + "<" + elementJavaType + "> event) {\n" +
                         param.name + ".handle(event.collect({\n" +
                           toGoloElement + "\n
-                        }) as " + collectionName + ")\n
+                        }) as " + collectionName + ");\n
                       }\n
                     }";
             }
@@ -229,13 +228,13 @@
                         elementJavaType = elementType.simpleName;
                         elementGoloType = "Map<String, Object>";
                     } else if(elementKind == CLASS_JSON_OBJECT) {
-                        toGroovyElement = "InternalHelper.wrapObject(element)";
+                        toGoloElement = "InternalHelper.wrapObject(element)";
                         elementJavaType = "JsonObject";
-                        elementGroovyType = "Map<String, Object>";
+                        elementGoloType = "Map<String, Object>";
                     } else {
-                        toGroovyElement = "InternalHelper.wrapObject(element)";
+                        toGoloElement = "InternalHelper.wrapObject(element)";
                         elementJavaType = "JsonArray";
-                        elementGroovyType = "List<Object>";
+                        elementGoloType = "List<Object>";
                     }
                     eventJavaType = collectionName + "<" + elementJavaType + ">";
                     eventGoloType = collectionName + "<" + elementGoloType + ">";
@@ -254,7 +253,7 @@
         } else if(eventKind == CLASS_OBJECT) {
             return rStr + "new Handler<Object>() {\n
             			      public void handle(Object event) {\n" +
-            			        param.name + ".handle(InternalHelper.wrapObject(event))\n
+            			        param.name + ".handle(InternalHelper.wrapObject(event));\n
             			      }\n
             			    }";
         }
@@ -320,6 +319,104 @@
    }
 }
 
+@declare{'paramTemplate'}
+	@if{param.type.kind == CLASS_DATA_OBJECT}
+		Map<String, Object> @{param.name}@if{defaultDataObject} = [:]@end{}
+	@else{param.type.kind == CLASS_JSON_OBJECT}
+		Map<String, Object> @{param.name}
+	@else{param.type.kind == CLASS_JSON_ARRAY}
+		List<Object> @{param.name}
+	@else{param.type.kind == CLASS_HANDLER && (param.type.args[0].kind.json || param.type.args[0].kind == CLASS_DATA_OBJECT)}
+		@if{param.type.args[0].kind == CLASS_JSON_OBJECT || param.type.args[0].kind == CLASS_DATA_OBJECT}
+			@code{goloJsonType='Map<String, Object>'}
+		@else{}
+			@code{goloJsonType='List<Object>'}
+		@end{}
+		Handler<@{goloJsonType}> @{param.name}
+	@else{param.type.kind == CLASS_HANDLER && param.type.args[0].kind.collection && (param.type.args[0].args[0].kind.json || param.type.args[0].args[0].kind == CLASS_DATA_OBJECT)}
+		@if{param.type.args[0].args[0].kind == CLASS_JSON_OBJECT || param.type.args[0].args[0].kind == CLASS_DATA_OBJECT}
+			@code{goloJsonType='Map<String, Object>'}
+		@else{}
+			@code{goloJsonType='List<Object>'}
+		@end{}
+		Handler<@{param.type.args[0].raw.simpleName}<@{goloJsonType}>> @{param.name}
+	@else{param.type.kind == CLASS_HANDLER && param.type.args[0].kind == CLASS_ASYNC_RESULT && (param.type.args[0].args[0].kind.json || param.type.args[0].args[0].kind == CLASS_DATA_OBJECT)}
+		@if{param.type.args[0].args[0].kind == CLASS_JSON_OBJECT || param.type.args[0].args[0].kind == CLASS_DATA_OBJECT}
+			@code{goloJsonType='Map<String, Object>'}
+		@else{}
+			@code{goloJsonType='List<Object>'}
+		@end{}
+		Handler<AsyncResult<@{goloJsonType}>> @{param.name}
+	@else{param.type.kind == CLASS_HANDLER && param.type.args[0].kind == CLASS_ASYNC_RESULT && param.type.args[0].args[0].kind.collection && (param.type.args[0].args[0].args[0].kind.json || param.type.args[0].args[0].args[0].kind == CLASS_DATA_OBJECT)}
+		@if{param.type.args[0].args[0].args[0].kind == CLASS_JSON_OBJECT || param.type.args[0].args[0].args[0].kind == CLASS_DATA_OBJECT}
+			@code{goloJsonType='Map<String, Object>'}
+		@else{}
+			@code{goloJsonType='List<Object>'}
+		@end{}
+		Handler<AsyncResult<@{param.type.args[0].args[0].raw.simpleName}<@{goloJsonType}>>> @{param.name}
+	@else{param.type.kind == CLASS_LIST}
+		@if{param.type.args[0].kind == CLASS_JSON_OBJECT || param.type.args[0].kind == CLASS_DATA_OBJECT}
+			List<Map<String, Object>> @{param.name}
+		@else{param.type.args[0].kind == CLASS_JSON_ARRAY}
+			List<List<Object>> @{param.name}
+		@else{}
+			@{param.type.simpleName} @{param.name}
+		@end{}
+	@else{param.type.kind == CLASS_SET}
+		@if{param.type.args[0].kind == CLASS_JSON_OBJECT || param.type.args[0].kind == CLASS_DATA_OBJECT}
+			Set<Map<String, Object>> @{param.name}
+		@else{param.type.args[0].kind == CLASS_JSON_ARRAY}
+			Set<List<Object>> @{param.name}
+		@else{}
+			@{param.type.simpleName} @{param.name}
+		@end{}
+	@else{param.type.kind == CLASS_MAP}
+		@if{param.type.args[1].kind == CLASS_JSON_OBJECT}
+			Map<String, Map<String, Object>> @{param.name}
+		@else{param.type.args[1].kind == CLASS_JSON_ARRAY}
+			Map<String, List<Object>> @{param.name}
+		@else{}
+			@{param.type.simpleName} @{param.name}
+		@end{}
+	@else{}
+		@{param.type.simpleName} @{param.name}
+	@end{}
+@end{}
+
+@declare{'genMethodDispatch'}
+        @foreach{method:methods}
+    // @{method} \n
+    // TypeParams: @{method.typeParams} \n
+    @code{methodDefinition = createMethodDefinition(type, method)}
+    public @{methodDefinition} {\n
+        @code{
+            var cName = className(type.raw);
+            callOrgAPI = callForOriginalAPI(cName, type, method);
+        }
+        //param classes(remove later): @foreach{param:method.params} @code{paramInfo=param.type.kind} @{paramInfo} @end{} \n
+        //evenTypes (remove later): @foreach{param:method.params} @if{param.type.kind == CLASS_HANDLER} @code{eventType=param.type.args[0].kind} @{eventType} @end{} @end{} \n
+        @{callOrgAPI}; \n
+    }\n
+    @end{}
+    }\n
+@end{}
+
+@declare{'generateClassBody'}
+    private @{type.raw} delegate; \n
+
+    public @{constructor}(Object delegate) {\n
+    @if{concrete && concreteSuperType != null}
+        super((@{type.raw}) delegate);\n
+    @end{}
+        this.delegate = (@{type.raw}) delegate;\n
+      }\n
+
+    public Object getDelegate() { \n
+        return delegate; \n
+    }\n
+    @includeNamed{'genMethodDispatch';functionNames=new java.util.ArrayList()}
+@end{}
+
 package @{genGoloModuleName(type)};\n\n
 
 import io.vertx.lang.golo.InternalHelper;\n
@@ -337,34 +434,47 @@ import io.vertx.lang.golo.InternalHelper;\n
 @end{}
 
 // Type: @{type} \n
+public @if{concrete}class@else{}interface@end{} @{helper.getSimpleName(ifaceFQCN)}
 
-public class @{className(type)} { \n\n
+@if{concrete}
+	@if{concreteSuperType != null}
+	 extends @{concreteSuperType.simpleName}
+	@end{}
+@end{}
 
-private @{type.raw} delegate; \n
-@comment{"Next rows defines the constructor"}
-public @{className(type.raw)}(Object delegate) { \n
-    this.delegate = (@{type.raw})delegate; \n
-}\n
-public Object getDelegate() { \n
-    return delegate; \n
-}\n
+@if{abstractSuperTypes.size() > 0}
+	 @if{concrete}implements@else{}extends@end{}
+	@foreach{abstractSuperType: abstractSuperTypes}
+	 @{abstractSuperType.simpleName}
+	@end{', '}
+@end{}
 
-@declare{'genMethodDispatch'}
+ {\n
+
+@comment{'Compute the defaultDataObject map that store if we need a default data object value or not per method'}
+@code{defaultDataObjectMap=new java.util.IdentityHashMap()}
+@foreach{method:methods}
+	@code{defaultDataObject=false}
+	@if{method.params.size() > 0 && method.params[0].type.kind == CLASS_DATA_OBJECT}
+		@code{defaultDataObject=true}
+		@foreach{m:methods}
+			@if{m.name == method.name && m.params == method.params.subList(1, method.params.size())}
+				@code{defaultDataObject=false}
+			@end{}
+		@end{}
+	@end{}
+	@code{defaultDataObjectMap.put(method, defaultDataObject)}
+@end{}
+
+@if{concrete}
+    @includeNamed{'generateClassBody';constructor=(type.raw.simpleName)}
+@else{}
+	public Object getDelegate();\n
 	@foreach{method:methods}
-// @{method} \n
-// TypeParams: @{method.typeParams} \n
-@code{methodDefinition = createMethodDefinition(type, method)}
-public @{methodDefinition} {\n
-    @code{
-        var cName = className(type.raw);
-        callOrgAPI = callForOriginalAPI(cName, type, method);
-    }
-    //param classes(remove later): @foreach{param:method.params} @code{paramInfo=param.type.kind} @{paramInfo} @end{} \n
-    //evenTypes (remove later): @foreach{param:method.params} @if{param.type.kind == CLASS_HANDLER} @code{eventType=param.type.args[0].kind} @{eventType} @end{} @end{} \n
-    @{callOrgAPI}; \n
+	  @if{method.staticMethod}static @end{}@if{method.typeParams.size() > 0}<@foreach{typeVar:method.typeParams}@{typeVar}@end{}> @end{}@{method.returnType.simpleName} @{method.name}(@foreach{param: method.params}@includeNamed{'paramTemplate';param=param;defaultDataObject=defaultDataObjectMap[method]}@end{', '});\n
+	@end{}
 }\n
+    \n
+    class @{type.raw.simpleName}Impl@if{typeParams.size() > 0}<@foreach{typeParam:typeParams}@{typeParam.name}@end{','}>@end{} implements @{helper.getSimpleName(ifaceFQCN)} {\n
+    @includeNamed{'generateClassBody';constructor=(type.raw.simpleName + 'Impl')}
 @end{}
-}\n
-@end{}
-
-@includeNamed{'genMethodDispatch';functionNames=new java.util.ArrayList()}
