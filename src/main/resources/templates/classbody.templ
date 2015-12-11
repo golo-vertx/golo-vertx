@@ -1,0 +1,89 @@
+	  private @{type.raw} delegate;\n
+	  public @{constructor}(Object delegate) {\n
+	@if{concrete && concreteSuperType != null}
+	    super((@{type.raw}) delegate);\n
+	@end{}
+	    this.delegate = (@{type.raw}) delegate;\n
+	  }\n
+
+	  public Object getDelegate() {\n
+	    return delegate;\n
+	  }\n
+
+	@foreach{method:methods}
+	@if{method.doc != null}
+	  /**\n
+	@{renderDocToHtml("   *", method.doc, renderLinkToHtml)}
+	@foreach{param: method.params}
+	   * @param @{param.name} @if{param.description != null}@{renderTokensToHtml("", param.description.tokens, renderLinkToHtml, "")}@end{}@if{param.type.kind == CLASS_DATA_OBJECT} (see @{renderDataObjectHtmlLink(param.type)})@end{}\n
+	@end{}
+	@if{!method.returnType.name.equals("void")}
+	   * @return @if{method.returnDescription != null}@{renderTokensToHtml("", method.returnDescription.tokens, renderLinkToHtml, "")}@end{}@if{method.returnType.kind == CLASS_DATA_OBJECT} (see @{renderDataObjectHtmlLink(method.returnType)})@end{}\n
+	@end{}
+	   */\n
+	@end{}
+	  public @if{method.staticMethod}static @end{}@if{method.typeParams.size() > 0}<@foreach{typeParam:method.typeParams}@{typeParam.name}@end{', '}> @end{}@{genConvReturn(method.returnType)} @{method.name}(@foreach{param: method.params}@includeNamed{'paramTemplate';param=param;defaultDataObject=defaultDataObjectMap[method]}@end{', '}) {\n
+	@if{method.fluent}
+	    @includeNamed{'invokeDelegate';method=method};\n
+			@if{method.returnType instanceof io.vertx.codegen.TypeInfo$Variable}
+	    return (@{method.returnType.name}) this;\n
+			@else{}
+	    return this;\n
+			@end{}
+	@else{method.returnType.name.equals('void')}
+	    @includeNamed{'invokeDelegate';method=method};\n
+	@else{}
+		return
+		@if{method.returnType.kind == CLASS_OBJECT}
+		    // This cast is cleary flawed\n
+		    (@{method.returnType.simpleName}) InternalHelper.wrapObject(@includeNamed{'invokeDelegate';method=method});\n
+		@else{method.returnType.kind == CLASS_JSON_OBJECT}
+		    (Map<String, Object>)InternalHelper.wrapObject(@includeNamed{'invokeDelegate';method=method});\n
+		@else{method.returnType.kind == CLASS_DATA_OBJECT}
+		    (Map<String, Object>)InternalHelper.wrapObject(@includeNamed{'invokeDelegate';method=method}.toJson());\n
+		@else{method.returnType.kind == CLASS_JSON_ARRAY}
+		    (List<Object>)InternalHelper.wrapObject(@includeNamed{'invokeDelegate';method=method});\n
+		@else{method.returnType.kind == CLASS_LIST}
+			@if{method.returnType.args[0].kind == CLASS_JSON_OBJECT}
+		    @includeNamed{'invokeDelegate';method=method}.collect({underpants -> InternalHelper.wrapObject(underpants)});\n
+			@else{method.returnType.args[0].kind == CLASS_JSON_ARRAY}
+		    @includeNamed{'invokeDelegate';method=method}.collect({underpants -> InternalHelper.wrapObject(underpants)});\n
+			@else{method.returnType.args[0].kind == CLASS_DATA_OBJECT}
+		    @includeNamed{'invokeDelegate';method=method}.stream().map((underpants) -> (Map<String, Object>)InternalHelper.wrapObject(underpants.toJson())).collect(java.util.stream.Collectors.toList());\n
+			@else{method.returnType.args[0].kind == CLASS_API}
+		    @includeNamed{'invokeDelegate';method=method}.collect({underpants -> @{genConstructor(method.returnType.args[0], "underpants")}});\n
+		  @else{}
+		    @includeNamed{'invokeDelegate';method=method};\n
+			@end{}
+		@else{method.returnType.kind == CLASS_SET}
+			@if{method.returnType.args[0].kind == CLASS_JSON_OBJECT}
+		    @includeNamed{'invokeDelegate';method=method}.collect({underpants -> InternalHelper.wrapObject(underpants)}) as Set;\n
+			@else{method.returnType.args[0].kind == CLASS_JSON_ARRAY}
+		    @includeNamed{'invokeDelegate';method=method}.collect({underpants -> InternalHelper.wrapObject(underpants)}) as Set;\n
+			@else{method.returnType.args[0].kind == CLASS_DATA_OBJECT}
+		    @includeNamed{'invokeDelegate';method=method}.collect({underpants -> (Map<String, Object>)InternalHelper.wrapObject(underpants.toJson())}) as Set;\n
+			@else{method.returnType.args[0].kind == CLASS_API}
+		    @includeNamed{'invokeDelegate';method=method}.collect({underpants -> @{genConstructor(method.returnType.args[0], "underpants")}}) as Set;\n
+			@else{}
+		    @includeNamed{'invokeDelegate';method=method};\n
+			@end{}
+		@else{method.returnType.kind == CLASS_MAP}
+			@if{method.returnType.args[1].kind == CLASS_JSON_OBJECT}
+		    @includeNamed{'invokeDelegate';method=method}.collectEntries({k, v -> [k, InternalHelper.wrapObject(v)]});\n
+			@else{method.returnType.args[1].kind == CLASS_JSON_ARRAY}
+		    @includeNamed{'invokeDelegate';method=method}.collectEntries({k, v -> [k, InternalHelper.wrapObject(v)]});\n
+			@else{method.returnType.args[1].kind == CLASS_API}
+		    @includeNamed{'invokeDelegate';method=method}.collectEntries({k, v -> [k, @{genConstructor(method.returnType.args[0], "v")}]});\n
+			@else{}
+		    @includeNamed{'invokeDelegate';method=method};\n
+			@end{}
+		@else{method.returnType.kind == CLASS_ENUM}
+		    @includeNamed{'invokeDelegate';method=method};\n
+		@else{method.returnType.kind == CLASS_API}
+		    InternalHelper.safeCreate(@includeNamed{'invokeDelegate';method=method}, @{genConstructorType(method.returnType.raw)}.class);\n
+		@else{}
+		    @includeNamed{'invokeDelegate';method=method};\n
+		@end{}
+		@end{}
+	  }\n
+	@end{}

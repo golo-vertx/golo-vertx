@@ -1,89 +1,97 @@
 package io.vertx.golo.core;
 
 import io.vertx.lang.golo.InternalHelper;
+import io.vertx.golo.core.metrics.Measured;
+import java.util.Map;
+import io.vertx.core.json.JsonObject;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.Future<T> 
 public class Future<T> {
-        private io.vertx.core.Future delegate; 
-    public Future(Object delegate) {
-            this.delegate = (io.vertx.core.Future) delegate;
-      }
-    public Object getDelegate() { 
-        return delegate; 
-    }
-                // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]> io.vertx.core.Future<T> future() 
-    // TypeParams: [TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]] 
-        public static <T> io.vertx.core.Future<T> future() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return InternalHelper.safeCreate(io.vertx.core.Future.future(), io.vertx.golo.core.Future.class); 
-    }
-        // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture() 
-    // TypeParams: [TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]] 
-        public static <T> io.vertx.core.Future<T> succeededFuture() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(), io.vertx.golo.core.Future.class); 
-    }
-        // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture(T result) 
-    // TypeParams: [TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]] 
-        public static <T> io.vertx.core.Future<T> succeededFuture(T result) {
-                //param classes(remove later):   OBJECT  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(result), io.vertx.golo.core.Future.class); 
-    }
-        // <TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage) 
-    // TypeParams: [TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]] 
-        public static <T> io.vertx.core.Future<T> failedFuture(String failureMessage) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(io.vertx.core.Future.failedFuture(failureMessage), io.vertx.golo.core.Future.class); 
-    }
-        // boolean isComplete() 
-    // TypeParams: [] 
-        public boolean isComplete() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isComplete(); 
-    }
-        // void setHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> handler) 
-    // TypeParams: [] 
-        public void setHandler(Handler<AsyncResult<T>> handler) {
-                //param classes(remove later):   HANDLER  
-        //evenTypes (remove later):    ASYNC_RESULT   
-        this.delegate.setHandler(new Handler<AsyncResult<Object>>() {
-         public void handle(AsyncResult<Object> event) {
-           AsyncResult<Object> f;
-           if (event.succeeded()) {
-             f = InternalHelper.<Object>result(InternalHelper.wrapObject(event.result()));
-           } else {
-             f = InternalHelper.<Object>failure(event.cause());
-           }
-handler.handle((AsyncResult<T>)f);
-         }
-       }
-); 
-    }
-        // void complete(T result) 
-    // TypeParams: [] 
-        public void complete(T result) {
-                //param classes(remove later):   OBJECT  
-        //evenTypes (remove later):    
-        this.delegate.complete(result); 
-    }
-        // void complete() 
-    // TypeParams: [] 
-        public void complete() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        this.delegate.complete(); 
-    }
-        // void fail(java.lang.String failureMessage) 
-    // TypeParams: [] 
-        public void fail(String failureMessage) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        this.delegate.fail(failureMessage); 
-    }
+      private io.vertx.core.Future delegate;
+  public Future(Object delegate) {
+    this.delegate = (io.vertx.core.Future) delegate;
+  }
+  public Object getDelegate() {
+    return delegate;
+  }
+  /**
+   * Create a future that hasn't completed yet
+   * @return the future
+   */
+  public static <T> Future<T> future() {
+return    InternalHelper.safeCreate(io.vertx.core.Future.future(), io.vertx.golo.core.Future.class);
+  }
+  /**
+   * Create a succeeded future with a null result
+   * @return the future
+   */
+  public static <T> Future<T> succeededFuture() {
+return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(), io.vertx.golo.core.Future.class);
+  }
+  /**
+   * Created a succeeded future with the specified result.
+   * @param result the result
+   * @return the future
+   */
+  public static <T> Future<T> succeededFuture(T result) {
+return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(InternalHelper.unwrapObject(result)), io.vertx.golo.core.Future.class);
+  }
+  /**
+   * Create a failed future with the specified failure message.
+   * @param failureMessage the failure message
+   * @return the future
+   */
+  public static <T> Future<T> failedFuture(String failureMessage) {
+return    InternalHelper.safeCreate(io.vertx.core.Future.failedFuture(failureMessage), io.vertx.golo.core.Future.class);
+  }
+  /**
+   * Has the future completed?
+   * <p>
+   * It's completed if it's either succeeded or failed.
+   * @return true if completed, false if not
+   */
+  public boolean isComplete() {
+return    ((io.vertx.core.Future) this.delegate).isComplete();
+  }
+  /**
+   * Set a handler for the result.
+   * <p>
+   * If the future has already been completed it will be called immediately. Otherwise it will be called when the
+   * future is completed.
+   * @param handler the Handler that will be called with the result
+   */
+  public void setHandler(Handler<AsyncResult<T>> handler) {
+    ((io.vertx.core.Future) this.delegate).setHandler(new Handler<AsyncResult<Object>>() {
+      public void handle(AsyncResult<Object> event) {
+        AsyncResult<Object> f;
+        if (event.succeeded()) {
+          f = InternalHelper.<Object>result(InternalHelper.wrapObject(event.result()));
+        } else {
+          f = InternalHelper.<Object>failure(event.cause());
         }
+        handler.handle((AsyncResult)f);
+      }
+    });
+  }
+  /**
+   * Set the result. Any handler will be called, if there is one, and the future will be marked as completed.
+   * @param result the result
+   */
+  public void complete(T result) {
+    ((io.vertx.core.Future) this.delegate).complete(InternalHelper.unwrapObject(result));
+  }
+  /**
+   * Set a null result. Any handler will be called, if there is one, and the future will be marked as completed.
+   */
+  public void complete() {
+    ((io.vertx.core.Future) this.delegate).complete();
+  }
+  /**
+   * Set the failure. Any handler will be called, if there is one, and the future will be marked as completed.
+   * @param failureMessage the failure message
+   */
+  public void fail(String failureMessage) {
+    ((io.vertx.core.Future) this.delegate).fail(failureMessage);
+  }
+}

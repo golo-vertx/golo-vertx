@@ -1,184 +1,216 @@
 package io.vertx.golo.core.cli;
 
 import io.vertx.lang.golo.InternalHelper;
+import io.vertx.golo.core.metrics.Measured;
+import java.util.Map;
+import io.vertx.core.json.JsonObject;
 import io.vertx.core.cli.Option;
 import java.util.List;
 import io.vertx.core.cli.Argument;
 // Type: io.vertx.core.cli.CLI 
 public class CLI {
-        private io.vertx.core.cli.CLI delegate; 
-    public CLI(Object delegate) {
-            this.delegate = (io.vertx.core.cli.CLI) delegate;
-      }
-    public Object getDelegate() { 
-        return delegate; 
-    }
-                // io.vertx.core.cli.CLI create(java.lang.String name) 
-    // TypeParams: [] 
-        public static CLI create(String name) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments) 
-    // TypeParams: [] 
-        public CommandLine parse(List<String> arguments) {
-                //param classes(remove later):   LIST  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.golo.core.cli.CommandLine.class); 
-    }
-        // io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments, boolean validate) 
-    // TypeParams: [] 
-        public CommandLine parse(List<String> arguments,boolean validate) {
-                //param classes(remove later):   LIST   PRIMITIVE  
-        //evenTypes (remove later):      
-        return InternalHelper.safeCreate(this.delegate.parse(arguments,validate), io.vertx.golo.core.cli.CommandLine.class); 
-    }
-        // java.lang.String getName() 
-    // TypeParams: [] 
-        public String getName() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.getName(); 
-    }
-        // io.vertx.core.cli.CLI setName(java.lang.String name) 
-    // TypeParams: [] 
-        public CLI setName(String name) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.setName(name), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // java.lang.String getDescription() 
-    // TypeParams: [] 
-        public String getDescription() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.getDescription(); 
-    }
-        // io.vertx.core.cli.CLI setDescription(java.lang.String desc) 
-    // TypeParams: [] 
-        public CLI setDescription(String desc) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.setDescription(desc), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // java.lang.String getSummary() 
-    // TypeParams: [] 
-        public String getSummary() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.getSummary(); 
-    }
-        // io.vertx.core.cli.CLI setSummary(java.lang.String summary) 
-    // TypeParams: [] 
-        public CLI setSummary(String summary) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.setSummary(summary), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // boolean isHidden() 
-    // TypeParams: [] 
-        public boolean isHidden() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isHidden(); 
-    }
-        // io.vertx.core.cli.CLI setHidden(boolean hidden) 
-    // TypeParams: [] 
-        public CLI setHidden(boolean hidden) {
-                //param classes(remove later):   PRIMITIVE  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.setHidden(hidden), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // java.util.List<io.vertx.core.cli.Option> getOptions() 
-    // TypeParams: [] 
-        public List<Option> getOptions() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.getOptions(); 
-    }
-        // io.vertx.core.cli.CLI addOption(io.vertx.core.cli.Option option) 
-    // TypeParams: [] 
-        public CLI addOption(Option option) {
-                //param classes(remove later):   DATA_OBJECT  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.addOption(option), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // io.vertx.core.cli.CLI addOptions(java.util.List<io.vertx.core.cli.Option> options) 
-    // TypeParams: [] 
-        public CLI addOptions(List<Option> options) {
-                //param classes(remove later):   LIST  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.addOptions(options), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // io.vertx.core.cli.CLI setOptions(java.util.List<io.vertx.core.cli.Option> options) 
-    // TypeParams: [] 
-        public CLI setOptions(List<Option> options) {
-                //param classes(remove later):   LIST  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.setOptions(options), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // java.util.List<io.vertx.core.cli.Argument> getArguments() 
-    // TypeParams: [] 
-        public List<Argument> getArguments() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.getArguments(); 
-    }
-        // io.vertx.core.cli.CLI addArgument(io.vertx.core.cli.Argument arg) 
-    // TypeParams: [] 
-        public CLI addArgument(Argument arg) {
-                //param classes(remove later):   DATA_OBJECT  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.addArgument(arg), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // io.vertx.core.cli.CLI addArguments(java.util.List<io.vertx.core.cli.Argument> args) 
-    // TypeParams: [] 
-        public CLI addArguments(List<Argument> args) {
-                //param classes(remove later):   LIST  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.addArguments(args), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // io.vertx.core.cli.CLI setArguments(java.util.List<io.vertx.core.cli.Argument> args) 
-    // TypeParams: [] 
-        public CLI setArguments(List<Argument> args) {
-                //param classes(remove later):   LIST  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.setArguments(args), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // io.vertx.core.cli.Option getOption(java.lang.String name) 
-    // TypeParams: [] 
-        public Option getOption(String name) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return this.delegate.getOption(name); 
-    }
-        // io.vertx.core.cli.Argument getArgument(java.lang.String name) 
-    // TypeParams: [] 
-        public Argument getArgument(String name) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return this.delegate.getArgument(name); 
-    }
-        // io.vertx.core.cli.Argument getArgument(int index) 
-    // TypeParams: [] 
-        public Argument getArgument(int index) {
-                //param classes(remove later):   PRIMITIVE  
-        //evenTypes (remove later):    
-        return this.delegate.getArgument(index); 
-    }
-        // io.vertx.core.cli.CLI removeOption(java.lang.String name) 
-    // TypeParams: [] 
-        public CLI removeOption(String name) {
-                //param classes(remove later):   STRING  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.removeOption(name), io.vertx.golo.core.cli.CLI.class); 
-    }
-        // io.vertx.core.cli.CLI removeArgument(int index) 
-    // TypeParams: [] 
-        public CLI removeArgument(int index) {
-                //param classes(remove later):   PRIMITIVE  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.removeArgument(index), io.vertx.golo.core.cli.CLI.class); 
-    }
-        }
+      private io.vertx.core.cli.CLI delegate;
+  public CLI(Object delegate) {
+    this.delegate = (io.vertx.core.cli.CLI) delegate;
+  }
+  public Object getDelegate() {
+    return delegate;
+  }
+  /**
+   * Creates an instance of {@link io.vertx.golo.core.cli.CLI} using the default implementation.
+   * @param name the name of the CLI (must not be <code>null</code>)
+   * @return the created instance of {@link io.vertx.golo.core.cli.CLI}
+   */
+  public static CLI create(String name) {
+return    InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx.golo.core.cli.CLI.class);
+  }
+  /**
+   * Parses the user command line interface and create a new {@link io.vertx.golo.core.cli.CommandLine} containing extracting values.
+   * @param arguments the arguments
+   * @return the creates command line
+   */
+  public CommandLine parse(List<String> arguments) {
+return    InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.golo.core.cli.CommandLine.class);
+  }
+  /**
+   * Parses the user command line interface and create a new {@link io.vertx.golo.core.cli.CommandLine} containing extracting values.
+   * @param arguments the arguments
+   * @param validate enable / disable parsing validation
+   * @return the creates command line
+   */
+  public CommandLine parse(List<String> arguments, boolean validate) {
+return    InternalHelper.safeCreate(this.delegate.parse(arguments, validate), io.vertx.golo.core.cli.CommandLine.class);
+  }
+  /**
+   * @return the CLI name.
+   * @return 
+   */
+  public String getName() {
+return    this.delegate.getName();
+  }
+  /**
+   * Sets the name of the CLI.
+   * @param name the name
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI setName(String name) {
+    this.delegate.setName(name);
+    return this;
+  }
+  /**
+   * @return the CLI description.
+   * @return 
+   */
+  public String getDescription() {
+return    this.delegate.getDescription();
+  }
+  public CLI setDescription(String desc) {
+    this.delegate.setDescription(desc);
+    return this;
+  }
+  /**
+   * @return the CLI summary.
+   * @return 
+   */
+  public String getSummary() {
+return    this.delegate.getSummary();
+  }
+  /**
+   * Sets the summary of the CLI.
+   * @param summary the summary
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI setSummary(String summary) {
+    this.delegate.setSummary(summary);
+    return this;
+  }
+  /**
+   * Checks whether or not the current {@link io.vertx.golo.core.cli.CLI} instance is hidden.
+   * @return <code>true</code> if the current {@link io.vertx.golo.core.cli.CLI} is hidden,  otherwise
+   */
+  public boolean isHidden() {
+return    this.delegate.isHidden();
+  }
+  /**
+   * Sets whether or not the current instance of {@link io.vertx.golo.core.cli.CLI} must be hidden. Hidden CLI are not listed when
+   * displaying usages / help messages. In other words, hidden commands are for power user.
+   * @param hidden enables or disables the hidden aspect of the CI
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI setHidden(boolean hidden) {
+    this.delegate.setHidden(hidden);
+    return this;
+  }
+  /**
+   * Gets the list of options.
+   * @return the list of options, empty if none.
+   */
+  public List<Map<String, Object>> getOptions() {
+return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, Object>)InternalHelper.wrapObject(underpants.toJson())).collect(java.util.stream.Collectors.toList());
+  }
+  /**
+   * Adds an option.
+   * @param option the option, must not be <code>null</code>. (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI addOption(Map<String, Object> option) {
+    this.delegate.addOption(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
+    return this;
+  }
+  /**
+   * Adds a set of options. Unlike {@link io.vertx.golo.core.cli.CLI#setOptions}}, this method does not remove the existing options.
+   * The given list is appended to the existing list.
+   * @param options the options, must not be <code>null</code>
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI addOptions(List<Map<String, Object>> options) {
+    this.delegate.addOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
+    return this;
+  }
+  /**
+   * Sets the list of arguments.
+   * @param options the list of options, must not be <code>null</code>
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI setOptions(List<Map<String, Object>> options) {
+    this.delegate.setOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
+    return this;
+  }
+  /**
+   * Gets the list of defined arguments.
+   * @return the list of argument, empty if none.
+   */
+  public List<Map<String, Object>> getArguments() {
+return    this.delegate.getArguments().stream().map((underpants) -> (Map<String, Object>)InternalHelper.wrapObject(underpants.toJson())).collect(java.util.stream.Collectors.toList());
+  }
+  /**
+   * Adds an argument.
+   * @param arg the argument, must not be <code>null</code> (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI addArgument(Map<String, Object> arg) {
+    this.delegate.addArgument(arg != null ? new io.vertx.core.cli.Argument(new io.vertx.core.json.JsonObject(arg)) : null);
+    return this;
+  }
+  /**
+   * Adds a set of arguments. Unlike {@link io.vertx.golo.core.cli.CLI#setArguments}, this method does not remove the existing arguments.
+   * The given list is appended to the existing list.
+   * @param args the arguments, must not be <code>null</code>
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI addArguments(List<Map<String, Object>> args) {
+    this.delegate.addArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
+    return this;
+  }
+  /**
+   * Sets the list of arguments.
+   * @param args the list of arguments, must not be <code>null</code>
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI setArguments(List<Map<String, Object>> args) {
+    this.delegate.setArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
+    return this;
+  }
+  /**
+   * Gets an <a href="../../../../../../../cheatsheet/Option.html">Option</a> based on its name (short name, long name or argument name).
+   * @param name the name, must not be <code>null</code>
+   * @return the <a href="../../../../../../../cheatsheet/Option.html">Option</a>, <code>null</code> if not found (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
+   */
+  public Map<String, Object> getOption(String name) {
+return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getOption(name).toJson());
+  }
+  /**
+   * Gets an <a href="../../../../../../../cheatsheet/Argument.html">Argument</a> based on its name (argument name).
+   * @param name the name of the argument, must not be <code>null</code>
+   * @return the <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>, <code>null</code> if not found. (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
+   */
+  public Map<String, Object> getArgument(String name) {
+return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgument(name).toJson());
+  }
+  /**
+   * Gets an <a href="../../../../../../../cheatsheet/Argument.html">Argument</a> based on its index.
+   * @param index the index, must be positive or zero.
+   * @return the <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>, <code>null</code> if not found. (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
+   */
+  public Map<String, Object> getArgument(int index) {
+return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgument(index).toJson());
+  }
+  /**
+   * Removes an option identified by its name. This method does nothing if the option cannot be found.
+   * @param name the option name
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI removeOption(String name) {
+    this.delegate.removeOption(name);
+    return this;
+  }
+  /**
+   * Removes an argument identified by its index. This method does nothing if the argument cannot be found.
+   * @param index the argument index
+   * @return the current {@link io.vertx.golo.core.cli.CLI} instance
+   */
+  public CLI removeArgument(int index) {
+    this.delegate.removeArgument(index);
+    return this;
+  }
+}

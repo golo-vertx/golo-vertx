@@ -1,69 +1,72 @@
 package io.vertx.golo.core.file;
 
 import io.vertx.lang.golo.InternalHelper;
+import io.vertx.golo.core.metrics.Measured;
+import java.util.Map;
+import io.vertx.core.json.JsonObject;
 // Type: io.vertx.core.file.FileProps 
 public class FileProps {
-        private io.vertx.core.file.FileProps delegate; 
-    public FileProps(Object delegate) {
-            this.delegate = (io.vertx.core.file.FileProps) delegate;
-      }
-    public Object getDelegate() { 
-        return delegate; 
-    }
-                // long creationTime() 
-    // TypeParams: [] 
-        public long creationTime() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.creationTime(); 
-    }
-        // long lastAccessTime() 
-    // TypeParams: [] 
-        public long lastAccessTime() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.lastAccessTime(); 
-    }
-        // long lastModifiedTime() 
-    // TypeParams: [] 
-        public long lastModifiedTime() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.lastModifiedTime(); 
-    }
-        // boolean isDirectory() 
-    // TypeParams: [] 
-        public boolean isDirectory() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isDirectory(); 
-    }
-        // boolean isOther() 
-    // TypeParams: [] 
-        public boolean isOther() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isOther(); 
-    }
-        // boolean isRegularFile() 
-    // TypeParams: [] 
-        public boolean isRegularFile() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isRegularFile(); 
-    }
-        // boolean isSymbolicLink() 
-    // TypeParams: [] 
-        public boolean isSymbolicLink() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isSymbolicLink(); 
-    }
-        // long size() 
-    // TypeParams: [] 
-        public long size() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.size(); 
-    }
-        }
+      private io.vertx.core.file.FileProps delegate;
+  public FileProps(Object delegate) {
+    this.delegate = (io.vertx.core.file.FileProps) delegate;
+  }
+  public Object getDelegate() {
+    return delegate;
+  }
+  /**
+   * The date the file was created
+   * @return 
+   */
+  public long creationTime() {
+return    this.delegate.creationTime();
+  }
+  /**
+   * The date the file was last accessed
+   * @return 
+   */
+  public long lastAccessTime() {
+return    this.delegate.lastAccessTime();
+  }
+  /**
+   * The date the file was last modified
+   * @return 
+   */
+  public long lastModifiedTime() {
+return    this.delegate.lastModifiedTime();
+  }
+  /**
+   * Is the file a directory?
+   * @return 
+   */
+  public boolean isDirectory() {
+return    this.delegate.isDirectory();
+  }
+  /**
+   * Is the file some other type? (I.e. not a directory, regular file or symbolic link)
+   * @return 
+   */
+  public boolean isOther() {
+return    this.delegate.isOther();
+  }
+  /**
+   * Is the file a regular file?
+   * @return 
+   */
+  public boolean isRegularFile() {
+return    this.delegate.isRegularFile();
+  }
+  /**
+   * Is the file a symbolic link?
+   * @return 
+   */
+  public boolean isSymbolicLink() {
+return    this.delegate.isSymbolicLink();
+  }
+  /**
+   * The size of the file, in bytes
+   * @return 
+   */
+  public long size() {
+return    this.delegate.size();
+  }
+}

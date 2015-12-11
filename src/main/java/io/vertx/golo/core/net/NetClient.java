@@ -2,47 +2,58 @@ package io.vertx.golo.core.net;
 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
+import java.util.Map;
+import io.vertx.core.json.JsonObject;
+import io.vertx.golo.core.metrics.Measured;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.net.NetClient 
 public class NetClient implements Measured {
-        private io.vertx.core.net.NetClient delegate; 
-    public NetClient(Object delegate) {
-            this.delegate = (io.vertx.core.net.NetClient) delegate;
-      }
-    public Object getDelegate() { 
-        return delegate; 
-    }
-                // boolean isMetricsEnabled() 
-    // TypeParams: [] 
-        public boolean isMetricsEnabled() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isMetricsEnabled(); 
-    }
-        // io.vertx.core.net.NetClient connect(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetSocket>> connectHandler) 
-    // TypeParams: [] 
-        public NetClient connect(int port,String host,Handler<AsyncResult<NetSocket>> connectHandler) {
-                //param classes(remove later):   PRIMITIVE   STRING   HANDLER  
-        //evenTypes (remove later):        ASYNC_RESULT   
-        return InternalHelper.safeCreate(this.delegate.connect(port,host,new Handler<AsyncResult<io.vertx.core.net.NetSocket>>() {
-         public void handle(AsyncResult<io.vertx.core.net.NetSocket> event) {
-           AsyncResult<NetSocket> f;
-           if (event.succeeded()) {
-             f = InternalHelper.<NetSocket>result(new NetSocket(event.result()));
-           } else {
-             f = InternalHelper.<NetSocket>failure(event.cause());
-           }
-connectHandler.handle((AsyncResult<NetSocket>)f);
-         }
-       }
-), io.vertx.golo.core.net.NetClient.class); 
-    }
-        // void close() 
-    // TypeParams: [] 
-        public void close() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        this.delegate.close(); 
-    }
+      private io.vertx.core.net.NetClient delegate;
+  public NetClient(Object delegate) {
+    this.delegate = (io.vertx.core.net.NetClient) delegate;
+  }
+  public Object getDelegate() {
+    return delegate;
+  }
+  /**
+   * Whether the metrics are enabled for this measured object
+   * @return true if the metrics are enabled
+   */
+  public boolean isMetricsEnabled() {
+return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
+  }
+  /**
+   * Open a connection to a server at the specific <code>port</code> and <code>host</code>.
+   * <p>
+   * <code>host</code> can be a valid host name or IP address. The connect is done asynchronously and on success, a
+   * {@link io.vertx.golo.core.net.NetSocket} instance is supplied via the <code>connectHandler</code> instance
+   * @param port the port
+   * @param host the host
+   * @param connectHandler 
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetClient connect(int port, String host, Handler<AsyncResult<NetSocket>> connectHandler) {
+    this.delegate.connect(port, host, new Handler<AsyncResult<io.vertx.core.net.NetSocket>>() {
+      public void handle(AsyncResult<io.vertx.core.net.NetSocket> event) {
+        AsyncResult<NetSocket> f;
+        if (event.succeeded()) {
+          f = InternalHelper.<NetSocket>result(new NetSocket(event.result()));
+        } else {
+          f = InternalHelper.<NetSocket>failure(event.cause());
         }
+        connectHandler.handle((AsyncResult)f);
+      }
+    });
+    return this;
+  }
+  /**
+   * Close the client.
+   * <p>
+   * Any sockets which have not been closed manually will be closed here. The close is asynchronous and may not
+   * complete until some time after the method has returned.
+   */
+  public void close() {
+    this.delegate.close();
+  }
+}

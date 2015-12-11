@@ -1,62 +1,65 @@
 package io.vertx.golo.core.dns;
 
 import io.vertx.lang.golo.InternalHelper;
+import io.vertx.golo.core.metrics.Measured;
+import java.util.Map;
+import io.vertx.core.json.JsonObject;
 // Type: io.vertx.core.dns.SrvRecord 
 public class SrvRecord {
-        private io.vertx.core.dns.SrvRecord delegate; 
-    public SrvRecord(Object delegate) {
-            this.delegate = (io.vertx.core.dns.SrvRecord) delegate;
-      }
-    public Object getDelegate() { 
-        return delegate; 
-    }
-                // int priority() 
-    // TypeParams: [] 
-        public int priority() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.priority(); 
-    }
-        // int weight() 
-    // TypeParams: [] 
-        public int weight() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.weight(); 
-    }
-        // int port() 
-    // TypeParams: [] 
-        public int port() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.port(); 
-    }
-        // java.lang.String name() 
-    // TypeParams: [] 
-        public String name() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.name(); 
-    }
-        // java.lang.String protocol() 
-    // TypeParams: [] 
-        public String protocol() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.protocol(); 
-    }
-        // java.lang.String service() 
-    // TypeParams: [] 
-        public String service() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.service(); 
-    }
-        // java.lang.String target() 
-    // TypeParams: [] 
-        public String target() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.target(); 
-    }
-        }
+      private io.vertx.core.dns.SrvRecord delegate;
+  public SrvRecord(Object delegate) {
+    this.delegate = (io.vertx.core.dns.SrvRecord) delegate;
+  }
+  public Object getDelegate() {
+    return delegate;
+  }
+  /**
+   * Returns the priority for this service record.
+   * @return 
+   */
+  public int priority() {
+return    this.delegate.priority();
+  }
+  /**
+   * Returns the weight of this service record.
+   * @return 
+   */
+  public int weight() {
+return    this.delegate.weight();
+  }
+  /**
+   * Returns the port the service is running on.
+   * @return 
+   */
+  public int port() {
+return    this.delegate.port();
+  }
+  /**
+   * Returns the name for the server being queried.
+   * @return 
+   */
+  public String name() {
+return    this.delegate.name();
+  }
+  /**
+   * Returns the protocol for the service being queried (i.e. "_tcp").
+   * @return 
+   */
+  public String protocol() {
+return    this.delegate.protocol();
+  }
+  /**
+   * Returns the service's name (i.e. "_http").
+   * @return 
+   */
+  public String service() {
+return    this.delegate.service();
+  }
+  /**
+   * Returns the name of the host for the service.
+   * @return 
+   */
+  public String target() {
+return    this.delegate.target();
+  }
+}

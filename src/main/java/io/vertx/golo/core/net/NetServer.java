@@ -2,136 +2,172 @@ package io.vertx.golo.core.net;
 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
+import java.util.Map;
+import io.vertx.core.json.JsonObject;
+import io.vertx.golo.core.metrics.Measured;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.net.NetServer 
 public class NetServer implements Measured {
-        private io.vertx.core.net.NetServer delegate; 
-    public NetServer(Object delegate) {
-            this.delegate = (io.vertx.core.net.NetServer) delegate;
+      private io.vertx.core.net.NetServer delegate;
+  public NetServer(Object delegate) {
+    this.delegate = (io.vertx.core.net.NetServer) delegate;
+  }
+  public Object getDelegate() {
+    return delegate;
+  }
+  /**
+   * Whether the metrics are enabled for this measured object
+   * @return true if the metrics are enabled
+   */
+  public boolean isMetricsEnabled() {
+return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
+  }
+  /**
+   * Return the connect stream for this server. The server can only have at most one handler at any one time.
+   * As the server accepts TCP or SSL connections it creates an instance of {@link io.vertx.golo.core.net.NetSocket} and passes it to the
+   * connect stream .
+   * @return the connect stream
+   */
+  public NetSocketStream connectStream() {
+return    InternalHelper.safeCreate(this.delegate.connectStream(), io.vertx.golo.core.net.NetSocketStream.class);
+  }
+  /**
+   * Supply a connect handler for this server. The server can only have at most one connect handler at any one time.
+   * As the server accepts TCP or SSL connections it creates an instance of {@link io.vertx.golo.core.net.NetSocket} and passes it to the
+   * connect handler.
+   * @param handler 
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetServer connectHandler(Handler<NetSocket> handler) {
+return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.vertx.core.net.NetSocket>() {
+      public void handle(io.vertx.core.net.NetSocket event) {
+        handler.handle(new io.vertx.golo.core.net.NetSocket(event));
       }
-    public Object getDelegate() { 
-        return delegate; 
-    }
-                // boolean isMetricsEnabled() 
-    // TypeParams: [] 
-        public boolean isMetricsEnabled() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.isMetricsEnabled(); 
-    }
-        // io.vertx.core.net.NetSocketStream connectStream() 
-    // TypeParams: [] 
-        public NetSocketStream connectStream() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return InternalHelper.safeCreate(this.delegate.connectStream(), io.vertx.golo.core.net.NetSocketStream.class); 
-    }
-        // io.vertx.core.net.NetServer connectHandler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler) 
-    // TypeParams: [] 
-        public NetServer connectHandler(Handler<NetSocket> handler) {
-                //param classes(remove later):   HANDLER  
-        //evenTypes (remove later):    API   
-        return InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.vertx.core.net.NetSocket>() {
-                          public void handle(io.vertx.core.net.NetSocket event) {
-handler.handle(new io.vertx.golo.core.net.NetSocket(event));
-                          }
-                        }), io.vertx.golo.core.net.NetServer.class); 
-    }
-        // io.vertx.core.net.NetServer listen() 
-    // TypeParams: [] 
-        public NetServer listen() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return InternalHelper.safeCreate(this.delegate.listen(), io.vertx.golo.core.net.NetServer.class); 
-    }
-        // io.vertx.core.net.NetServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) 
-    // TypeParams: [] 
-        public NetServer listen(Handler<AsyncResult<NetServer>> listenHandler) {
-                //param classes(remove later):   HANDLER  
-        //evenTypes (remove later):    ASYNC_RESULT   
-        return InternalHelper.safeCreate(this.delegate.listen(new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
-         public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
-           AsyncResult<NetServer> f;
-           if (event.succeeded()) {
-             f = InternalHelper.<NetServer>result(new NetServer(event.result()));
-           } else {
-             f = InternalHelper.<NetServer>failure(event.cause());
-           }
-listenHandler.handle((AsyncResult<NetServer>)f);
-         }
-       }
-), io.vertx.golo.core.net.NetServer.class); 
-    }
-        // io.vertx.core.net.NetServer listen(int port, java.lang.String host) 
-    // TypeParams: [] 
-        public NetServer listen(int port,String host) {
-                //param classes(remove later):   PRIMITIVE   STRING  
-        //evenTypes (remove later):      
-        return InternalHelper.safeCreate(this.delegate.listen(port,host), io.vertx.golo.core.net.NetServer.class); 
-    }
-        // io.vertx.core.net.NetServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) 
-    // TypeParams: [] 
-        public NetServer listen(int port,String host,Handler<AsyncResult<NetServer>> listenHandler) {
-                //param classes(remove later):   PRIMITIVE   STRING   HANDLER  
-        //evenTypes (remove later):        ASYNC_RESULT   
-        return InternalHelper.safeCreate(this.delegate.listen(port,host,new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
-         public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
-           AsyncResult<NetServer> f;
-           if (event.succeeded()) {
-             f = InternalHelper.<NetServer>result(new NetServer(event.result()));
-           } else {
-             f = InternalHelper.<NetServer>failure(event.cause());
-           }
-listenHandler.handle((AsyncResult<NetServer>)f);
-         }
-       }
-), io.vertx.golo.core.net.NetServer.class); 
-    }
-        // io.vertx.core.net.NetServer listen(int port) 
-    // TypeParams: [] 
-        public NetServer listen(int port) {
-                //param classes(remove later):   PRIMITIVE  
-        //evenTypes (remove later):    
-        return InternalHelper.safeCreate(this.delegate.listen(port), io.vertx.golo.core.net.NetServer.class); 
-    }
-        // io.vertx.core.net.NetServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler) 
-    // TypeParams: [] 
-        public NetServer listen(int port,Handler<AsyncResult<NetServer>> listenHandler) {
-                //param classes(remove later):   PRIMITIVE   HANDLER  
-        //evenTypes (remove later):      ASYNC_RESULT   
-        return InternalHelper.safeCreate(this.delegate.listen(port,new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
-         public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
-           AsyncResult<NetServer> f;
-           if (event.succeeded()) {
-             f = InternalHelper.<NetServer>result(new NetServer(event.result()));
-           } else {
-             f = InternalHelper.<NetServer>failure(event.cause());
-           }
-listenHandler.handle((AsyncResult<NetServer>)f);
-         }
-       }
-), io.vertx.golo.core.net.NetServer.class); 
-    }
-        // void close() 
-    // TypeParams: [] 
-        public void close() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        this.delegate.close(); 
-    }
-        // void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler) 
-    // TypeParams: [] 
-        public void close(Handler<AsyncResult<Void>> completionHandler) {
-                //param classes(remove later):   HANDLER  
-        //evenTypes (remove later):    ASYNC_RESULT   
-        this.delegate.close(completionHandler); 
-    }
-        // int actualPort() 
-    // TypeParams: [] 
-        public int actualPort() {
-                //param classes(remove later):  
-        //evenTypes (remove later):  
-        return this.delegate.actualPort(); 
-    }
+    }), io.vertx.golo.core.net.NetServer.class);
+  }
+  /**
+   * Start listening on the port and host as configured in the <a href="../../../../../../../cheatsheet/NetServerOptions.html">NetServerOptions</a> used when
+   * creating the server.
+   * <p>
+   * The server may not be listening until some time after the call to listen has returned.
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetServer listen() {
+    this.delegate.listen();
+    return this;
+  }
+  /**
+   * Like {@link io.vertx.golo.core.net.NetServer#listen} but providing a handler that will be notified when the server is listening, or fails.
+   * @param listenHandler handler that will be notified when listening or failed
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetServer listen(Handler<AsyncResult<NetServer>> listenHandler) {
+    this.delegate.listen(new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
+      public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
+        AsyncResult<NetServer> f;
+        if (event.succeeded()) {
+          f = InternalHelper.<NetServer>result(new NetServer(event.result()));
+        } else {
+          f = InternalHelper.<NetServer>failure(event.cause());
         }
+        listenHandler.handle((AsyncResult)f);
+      }
+    });
+    return this;
+  }
+  /**
+   * Start listening on the specified port and host, ignoring post and host configured in the <a href="../../../../../../../cheatsheet/NetServerOptions.html">NetServerOptions</a> used when
+   * creating the server.
+   * <p>
+   * Port <code>0</code> can be specified meaning "choose an random port".
+   * <p>
+   * Host <code>0.0.0.0</code> can be specified meaning "listen on all available interfaces".
+   * <p>
+   * The server may not be listening until some time after the call to listen has returned.
+   * @param port 
+   * @param host 
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetServer listen(int port, String host) {
+    this.delegate.listen(port, host);
+    return this;
+  }
+  /**
+   * Like {@link io.vertx.golo.core.net.NetServer#listen} but providing a handler that will be notified when the server is listening, or fails.
+   * @param port the port to listen on
+   * @param host the host to listen on
+   * @param listenHandler handler that will be notified when listening or failed
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetServer listen(int port, String host, Handler<AsyncResult<NetServer>> listenHandler) {
+    this.delegate.listen(port, host, new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
+      public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
+        AsyncResult<NetServer> f;
+        if (event.succeeded()) {
+          f = InternalHelper.<NetServer>result(new NetServer(event.result()));
+        } else {
+          f = InternalHelper.<NetServer>failure(event.cause());
+        }
+        listenHandler.handle((AsyncResult)f);
+      }
+    });
+    return this;
+  }
+  /**
+   * Start listening on the specified port and host "0.0.0.0", ignoring post and host configured in the
+   * <a href="../../../../../../../cheatsheet/NetServerOptions.html">NetServerOptions</a> used when creating the server.
+   * <p>
+   * Port <code>0</code> can be specified meaning "choose an random port".
+   * <p>
+   * The server may not be listening until some time after the call to listen has returned.
+   * @param port 
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetServer listen(int port) {
+    this.delegate.listen(port);
+    return this;
+  }
+  /**
+   * Like {@link io.vertx.golo.core.net.NetServer#listen} but providing a handler that will be notified when the server is listening, or fails.
+   * @param port the port to listen on
+   * @param listenHandler handler that will be notified when listening or failed
+   * @return a reference to this, so the API can be used fluently
+   */
+  public NetServer listen(int port, Handler<AsyncResult<NetServer>> listenHandler) {
+    this.delegate.listen(port, new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
+      public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
+        AsyncResult<NetServer> f;
+        if (event.succeeded()) {
+          f = InternalHelper.<NetServer>result(new NetServer(event.result()));
+        } else {
+          f = InternalHelper.<NetServer>failure(event.cause());
+        }
+        listenHandler.handle((AsyncResult)f);
+      }
+    });
+    return this;
+  }
+  /**
+   * Close the server. This will close any currently open connections. The close may not complete until after this
+   * method has returned.
+   */
+  public void close() {
+    this.delegate.close();
+  }
+  /**
+   * Like {@link io.vertx.golo.core.net.NetServer#close} but supplying a handler that will be notified when close is complete.
+   * @param completionHandler the handler
+   */
+  public void close(Handler<AsyncResult<Void>> completionHandler) {
+    this.delegate.close(completionHandler);
+  }
+  /**
+   * The actual port the server is listening on. This is useful if you bound the server specifying 0 as port number
+   * signifying an ephemeral port
+   * @return the actual port the server is listening on.
+   */
+  public int actualPort() {
+return    this.delegate.actualPort();
+  }
+}
