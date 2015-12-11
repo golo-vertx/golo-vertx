@@ -4,13 +4,14 @@ import helpers.Compiler;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.function.Consumer;
 
-public class CompileAllTest {
+public class CompilingTest {
+
+    String pathToGeneratedFiles = "/src/main/java";
 
     @Test
     public void compileAllClasses() throws IOException{
@@ -28,7 +29,7 @@ public class CompileAllTest {
                 e.printStackTrace();
             }
         };
-        Path start = Paths.get(System.getProperty("user.dir") + "/generated");
+        Path start = Paths.get(System.getProperty("user.dir") + pathToGeneratedFiles);
         forEachFile(start, compile);
     }
 

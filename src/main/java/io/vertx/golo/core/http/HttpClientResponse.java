@@ -19,14 +19,20 @@ public class HttpClientResponse implements ReadStream<Buffer> {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.http.HttpClientResponse resume()
+//io.vertx.core.http.HttpClientResponse
   public HttpClientResponse resume() {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).resume();
     return this;
   }
+//io.vertx.core.http.HttpClientResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.http.HttpClientResponse
   public HttpClientResponse exceptionHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).exceptionHandler(handler);
     return this;
   }
+//io.vertx.core.http.HttpClientResponse handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
+//io.vertx.core.http.HttpClientResponse
   public HttpClientResponse handler(Handler<Buffer> handler) {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
@@ -35,14 +41,20 @@ public class HttpClientResponse implements ReadStream<Buffer> {
     });
     return this;
   }
+//io.vertx.core.http.HttpClientResponse pause()
+//io.vertx.core.http.HttpClientResponse
   public HttpClientResponse pause() {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).pause();
     return this;
   }
+//io.vertx.core.http.HttpClientResponse endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
+//io.vertx.core.http.HttpClientResponse
   public HttpClientResponse endHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).endHandler(endHandler);
     return this;
   }
+//int statusCode()
+//int
   /**
    * @return the status code of the response
    * @return 
@@ -50,6 +62,8 @@ public class HttpClientResponse implements ReadStream<Buffer> {
   public int statusCode() {
 return    this.delegate.statusCode();
   }
+//java.lang.String statusMessage()
+//java.lang.String
   /**
    * @return the status message of the response
    * @return 
@@ -57,6 +71,8 @@ return    this.delegate.statusCode();
   public String statusMessage() {
 return    this.delegate.statusMessage();
   }
+//io.vertx.core.MultiMap headers()
+//io.vertx.core.MultiMap
   /**
    * @return the headers
    * @return 
@@ -64,6 +80,8 @@ return    this.delegate.statusMessage();
   public MultiMap headers() {
 return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.MultiMap.class);
   }
+//java.lang.String getHeader(java.lang.String headerName)
+//java.lang.String
   /**
    * Return the first header value with the specified name
    * @param headerName the header name
@@ -72,6 +90,8 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
   public String getHeader(String headerName) {
 return    this.delegate.getHeader(headerName);
   }
+//java.lang.String getTrailer(java.lang.String trailerName)
+//java.lang.String
   /**
    * Return the first trailer value with the specified name
    * @param trailerName the trailer name
@@ -80,6 +100,8 @@ return    this.delegate.getHeader(headerName);
   public String getTrailer(String trailerName) {
 return    this.delegate.getTrailer(trailerName);
   }
+//io.vertx.core.MultiMap trailers()
+//io.vertx.core.MultiMap
   /**
    * @return the trailers
    * @return 
@@ -87,6 +109,8 @@ return    this.delegate.getTrailer(trailerName);
   public MultiMap trailers() {
 return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core.MultiMap.class);
   }
+//java.util.List<java.lang.String> cookies()
+//java.util.List<java.lang.String>
   /**
    * @return the Set-Cookie headers (including trailers)
    * @return 
@@ -94,6 +118,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
   public List<String> cookies() {
 return    this.delegate.cookies();
   }
+//io.vertx.core.http.HttpClientResponse bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler)
+//io.vertx.core.http.HttpClientResponse
   /**
    * Convenience method for receiving the entire request body in one piece.
    * <p>
@@ -110,6 +136,8 @@ return    this.delegate.cookies();
     });
     return this;
   }
+//io.vertx.core.net.NetSocket netSocket()
+//io.vertx.core.net.NetSocket
   /**
    * Get a net socket for the underlying connection of this request.
    * <p>

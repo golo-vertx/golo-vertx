@@ -18,6 +18,8 @@ public class HttpClient implements Measured {
   public Object getDelegate() {
     return delegate;
   }
+//boolean isMetricsEnabled()
+//boolean
   /**
    * Whether the metrics are enabled for this measured object
    * @return true if the metrics are enabled
@@ -25,6 +27,8 @@ public class HttpClient implements Measured {
   public boolean isMetricsEnabled() {
 return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   }
+//io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server at the specified host and port.
    * @param method the HTTP method
@@ -36,6 +40,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   public HttpClientRequest request(HttpMethod method, int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.request(method, port, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server at the specified host and default port.
    * @param method the HTTP method
@@ -46,6 +52,8 @@ return    InternalHelper.safeCreate(this.delegate.request(method, port, host, re
   public HttpClientRequest request(HttpMethod method, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.request(method, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -63,6 +71,8 @@ return    InternalHelper.safeCreate(this.delegate.request(method, port, host, re
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -79,6 +89,8 @@ return    InternalHelper.safeCreate(this.delegate.request(method, host, requestU
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server at the default host and port.
    * @param method the HTTP method
@@ -88,6 +100,8 @@ return    InternalHelper.safeCreate(this.delegate.request(method, host, requestU
   public HttpClientRequest request(HttpMethod method, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.request(method, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest request(io.vertx.core.http.HttpMethod method, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -103,6 +117,8 @@ return    InternalHelper.safeCreate(this.delegate.request(method, requestURI, ne
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest requestAbs(io.vertx.core.http.HttpMethod method, java.lang.String absoluteURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server using an absolute URI
    * @param method the HTTP method
@@ -112,6 +128,8 @@ return    InternalHelper.safeCreate(this.delegate.request(method, requestURI, ne
   public HttpClientRequest requestAbs(HttpMethod method, String absoluteURI) {
 return    InternalHelper.safeCreate(this.delegate.requestAbs(method, absoluteURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest requestAbs(io.vertx.core.http.HttpMethod method, java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP request to send to the server using an absolute URI, specifying a response handler to receive
    * the response
@@ -127,6 +145,8 @@ return    InternalHelper.safeCreate(this.delegate.requestAbs(method, absoluteURI
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest get(int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server at the specified host and port.
    * @param port the port
@@ -137,6 +157,8 @@ return    InternalHelper.safeCreate(this.delegate.requestAbs(method, absoluteURI
   public HttpClientRequest get(int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.get(port, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest get(java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server at the specified host and default port.
    * @param host the host
@@ -146,6 +168,8 @@ return    InternalHelper.safeCreate(this.delegate.get(port, host, requestURI), i
   public HttpClientRequest get(String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.get(host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest get(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -162,6 +186,8 @@ return    InternalHelper.safeCreate(this.delegate.get(port, host, requestURI, ne
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest get(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -177,6 +203,8 @@ return    InternalHelper.safeCreate(this.delegate.get(host, requestURI, new Hand
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest get(java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server at the default host and port.
    * @param requestURI the relative URI
@@ -185,6 +213,8 @@ return    InternalHelper.safeCreate(this.delegate.get(host, requestURI, new Hand
   public HttpClientRequest get(String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.get(requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest get(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -199,6 +229,8 @@ return    InternalHelper.safeCreate(this.delegate.get(requestURI, new Handler<io
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest getAbs(java.lang.String absoluteURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server using an absolute URI
    * @param absoluteURI the absolute URI
@@ -207,6 +239,8 @@ return    InternalHelper.safeCreate(this.delegate.get(requestURI, new Handler<io
   public HttpClientRequest getAbs(String absoluteURI) {
 return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest getAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP GET request to send to the server using an absolute URI, specifying a response handler to receive
    * the response
@@ -221,6 +255,8 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClient getNow(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP GET request to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -238,6 +274,8 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
     });
     return this;
   }
+//io.vertx.core.http.HttpClient getNow(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP GET request to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -254,6 +292,8 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
     });
     return this;
   }
+//io.vertx.core.http.HttpClient getNow(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP GET request  to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -269,6 +309,8 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
     });
     return this;
   }
+//io.vertx.core.http.HttpClientRequest post(int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server at the specified host and port.
    * @param port the port
@@ -279,6 +321,8 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
   public HttpClientRequest post(int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.post(port, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest post(java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server at the specified host and default port.
    * @param host the host
@@ -288,6 +332,8 @@ return    InternalHelper.safeCreate(this.delegate.post(port, host, requestURI), 
   public HttpClientRequest post(String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.post(host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest post(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -304,6 +350,8 @@ return    InternalHelper.safeCreate(this.delegate.post(port, host, requestURI, n
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest post(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -319,6 +367,8 @@ return    InternalHelper.safeCreate(this.delegate.post(host, requestURI, new Han
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest post(java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server at the default host and port.
    * @param requestURI the relative URI
@@ -327,6 +377,8 @@ return    InternalHelper.safeCreate(this.delegate.post(host, requestURI, new Han
   public HttpClientRequest post(String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.post(requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest post(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -341,6 +393,8 @@ return    InternalHelper.safeCreate(this.delegate.post(requestURI, new Handler<i
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest postAbs(java.lang.String absoluteURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server using an absolute URI
    * @param absoluteURI the absolute URI
@@ -349,6 +403,8 @@ return    InternalHelper.safeCreate(this.delegate.post(requestURI, new Handler<i
   public HttpClientRequest postAbs(String absoluteURI) {
 return    InternalHelper.safeCreate(this.delegate.postAbs(absoluteURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest postAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP POST request to send to the server using an absolute URI, specifying a response handler to receive
    * the response
@@ -363,6 +419,8 @@ return    InternalHelper.safeCreate(this.delegate.postAbs(absoluteURI, new Handl
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest head(int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server at the specified host and port.
    * @param port the port
@@ -373,6 +431,8 @@ return    InternalHelper.safeCreate(this.delegate.postAbs(absoluteURI, new Handl
   public HttpClientRequest head(int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.head(port, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest head(java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server at the specified host and default port.
    * @param host the host
@@ -382,6 +442,8 @@ return    InternalHelper.safeCreate(this.delegate.head(port, host, requestURI), 
   public HttpClientRequest head(String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.head(host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest head(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -398,6 +460,8 @@ return    InternalHelper.safeCreate(this.delegate.head(port, host, requestURI, n
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest head(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -413,6 +477,8 @@ return    InternalHelper.safeCreate(this.delegate.head(host, requestURI, new Han
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest head(java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server at the default host and port.
    * @param requestURI the relative URI
@@ -421,6 +487,8 @@ return    InternalHelper.safeCreate(this.delegate.head(host, requestURI, new Han
   public HttpClientRequest head(String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.head(requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest head(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -435,6 +503,8 @@ return    InternalHelper.safeCreate(this.delegate.head(requestURI, new Handler<i
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest headAbs(java.lang.String absoluteURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server using an absolute URI
    * @param absoluteURI the absolute URI
@@ -443,6 +513,8 @@ return    InternalHelper.safeCreate(this.delegate.head(requestURI, new Handler<i
   public HttpClientRequest headAbs(String absoluteURI) {
 return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest headAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP HEAD request to send to the server using an absolute URI, specifying a response handler to receive
    * the response
@@ -457,6 +529,8 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClient headNow(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP HEAD request to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -474,6 +548,8 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
     });
     return this;
   }
+//io.vertx.core.http.HttpClient headNow(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP HEAD request to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -490,6 +566,8 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
     });
     return this;
   }
+//io.vertx.core.http.HttpClient headNow(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP HEAD request  to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -505,6 +583,8 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
     });
     return this;
   }
+//io.vertx.core.http.HttpClientRequest options(int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server at the specified host and port.
    * @param port the port
@@ -515,6 +595,8 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
   public HttpClientRequest options(int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.options(port, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest options(java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server at the specified host and default port.
    * @param host the host
@@ -524,6 +606,8 @@ return    InternalHelper.safeCreate(this.delegate.options(port, host, requestURI
   public HttpClientRequest options(String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.options(host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest options(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -540,6 +624,8 @@ return    InternalHelper.safeCreate(this.delegate.options(port, host, requestURI
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest options(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -555,6 +641,8 @@ return    InternalHelper.safeCreate(this.delegate.options(host, requestURI, new 
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest options(java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server at the default host and port.
    * @param requestURI the relative URI
@@ -563,6 +651,8 @@ return    InternalHelper.safeCreate(this.delegate.options(host, requestURI, new 
   public HttpClientRequest options(String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.options(requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest options(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -577,6 +667,8 @@ return    InternalHelper.safeCreate(this.delegate.options(requestURI, new Handle
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest optionsAbs(java.lang.String absoluteURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server using an absolute URI
    * @param absoluteURI the absolute URI
@@ -585,6 +677,8 @@ return    InternalHelper.safeCreate(this.delegate.options(requestURI, new Handle
   public HttpClientRequest optionsAbs(String absoluteURI) {
 return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest optionsAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP OPTIONS request to send to the server using an absolute URI, specifying a response handler to receive
    * the response
@@ -599,6 +693,8 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClient optionsNow(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP OPTIONS request to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -616,6 +712,8 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
     });
     return this;
   }
+//io.vertx.core.http.HttpClient optionsNow(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP OPTIONS request to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -632,6 +730,8 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
     });
     return this;
   }
+//io.vertx.core.http.HttpClient optionsNow(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Sends an HTTP OPTIONS request  to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -647,6 +747,8 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
     });
     return this;
   }
+//io.vertx.core.http.HttpClientRequest put(int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server at the specified host and port.
    * @param port the port
@@ -657,6 +759,8 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
   public HttpClientRequest put(int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.put(port, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest put(java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server at the specified host and default port.
    * @param host the host
@@ -666,6 +770,8 @@ return    InternalHelper.safeCreate(this.delegate.put(port, host, requestURI), i
   public HttpClientRequest put(String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.put(host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest put(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -682,6 +788,8 @@ return    InternalHelper.safeCreate(this.delegate.put(port, host, requestURI, ne
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest put(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -697,6 +805,8 @@ return    InternalHelper.safeCreate(this.delegate.put(host, requestURI, new Hand
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest put(java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server at the default host and port.
    * @param requestURI the relative URI
@@ -705,6 +815,8 @@ return    InternalHelper.safeCreate(this.delegate.put(host, requestURI, new Hand
   public HttpClientRequest put(String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.put(requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest put(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -719,6 +831,8 @@ return    InternalHelper.safeCreate(this.delegate.put(requestURI, new Handler<io
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest putAbs(java.lang.String absoluteURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server using an absolute URI
    * @param absoluteURI the absolute URI
@@ -727,6 +841,8 @@ return    InternalHelper.safeCreate(this.delegate.put(requestURI, new Handler<io
   public HttpClientRequest putAbs(String absoluteURI) {
 return    InternalHelper.safeCreate(this.delegate.putAbs(absoluteURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest putAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP PUT request to send to the server using an absolute URI, specifying a response handler to receive
    * the response
@@ -741,6 +857,8 @@ return    InternalHelper.safeCreate(this.delegate.putAbs(absoluteURI, new Handle
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest delete(int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server at the specified host and port.
    * @param port the port
@@ -751,6 +869,8 @@ return    InternalHelper.safeCreate(this.delegate.putAbs(absoluteURI, new Handle
   public HttpClientRequest delete(int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.delete(port, host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest delete(java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server at the specified host and default port.
    * @param host the host
@@ -760,6 +880,8 @@ return    InternalHelper.safeCreate(this.delegate.delete(port, host, requestURI)
   public HttpClientRequest delete(String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.delete(host, requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest delete(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server at the specified host and port, specifying a response handler to receive
    * the response
@@ -776,6 +898,8 @@ return    InternalHelper.safeCreate(this.delegate.delete(port, host, requestURI,
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest delete(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server at the specified host and default port, specifying a response handler to receive
    * the response
@@ -791,6 +915,8 @@ return    InternalHelper.safeCreate(this.delegate.delete(host, requestURI, new H
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest delete(java.lang.String requestURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server at the default host and port.
    * @param requestURI the relative URI
@@ -799,6 +925,8 @@ return    InternalHelper.safeCreate(this.delegate.delete(host, requestURI, new H
   public HttpClientRequest delete(String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.delete(requestURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest delete(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server at the default host and port, specifying a response handler to receive
    * the response
@@ -813,6 +941,8 @@ return    InternalHelper.safeCreate(this.delegate.delete(requestURI, new Handler
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest deleteAbs(java.lang.String absoluteURI)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server using an absolute URI
    * @param absoluteURI the absolute URI
@@ -821,6 +951,8 @@ return    InternalHelper.safeCreate(this.delegate.delete(requestURI, new Handler
   public HttpClientRequest deleteAbs(String absoluteURI) {
 return    InternalHelper.safeCreate(this.delegate.deleteAbs(absoluteURI), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClientRequest deleteAbs(java.lang.String absoluteURI, io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> responseHandler)
+//io.vertx.core.http.HttpClientRequest
   /**
    * Create an HTTP DELETE request to send to the server using an absolute URI, specifying a response handler to receive
    * the response
@@ -835,6 +967,8 @@ return    InternalHelper.safeCreate(this.delegate.deleteAbs(absoluteURI, new Han
       }
     }), io.vertx.golo.core.http.HttpClientRequest.class);
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI
    * @param port the port
@@ -851,6 +985,8 @@ return    InternalHelper.safeCreate(this.delegate.deleteAbs(absoluteURI, new Han
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI
    * @param port the port
@@ -867,6 +1003,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the host and relative request URI and default port
    * @param host the host
@@ -882,6 +1020,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the host and relative request URI and default port
    * @param host the host
@@ -897,6 +1037,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, ne
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI, and with the specified headers
    * @param port the port
@@ -914,6 +1056,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, ne
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI, and with the specified headers
    * @param port the port
@@ -931,6 +1075,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified host,relative request UR, and default port and with the specified headers
    * @param host the host
@@ -947,6 +1093,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified host,relative request UR, and default port and with the specified headers
    * @param host the host
@@ -963,6 +1111,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI, with the specified headers and using
    * the specified version of WebSockets
@@ -982,6 +1132,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI, with the specified headers and using
    * the specified version of WebSockets
@@ -1001,6 +1153,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified host, relative request URI and default port with the specified headers and using
    * the specified version of WebSockets
@@ -1019,6 +1173,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified host, relative request URI and default port with the specified headers and using
    * the specified version of WebSockets
@@ -1037,6 +1193,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI, with the specified headers, using
    * the specified version of WebSockets, and the specified websocket sub protocols
@@ -1057,6 +1215,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified port, host and relative request URI, with the specified headers, using
    * the specified version of WebSockets, and the specified websocket sub protocols
@@ -1077,6 +1237,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified host, relative request URI and default port, with the specified headers, using
    * the specified version of WebSockets, and the specified websocket sub protocols
@@ -1096,6 +1258,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket to the specified host, relative request URI and default port, with the specified headers, using
    * the specified version of WebSockets, and the specified websocket sub protocols
@@ -1115,6 +1279,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port
    * @param requestURI the relative URI
@@ -1129,6 +1295,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port
    * @param requestURI the relative URI
@@ -1143,6 +1311,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, new Hand
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port and the specified headers
    * @param requestURI the relative URI
@@ -1158,6 +1328,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, new Hand
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port and the specified headers
    * @param requestURI the relative URI
@@ -1173,6 +1345,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port, the specified headers and the
    * specified version of WebSockets
@@ -1190,6 +1364,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port, the specified headers and the
    * specified version of WebSockets
@@ -1207,6 +1383,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port, the specified headers, the
    * specified version of WebSockets and the specified sub protocols
@@ -1225,6 +1403,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
     });
     return this;
   }
+//io.vertx.core.http.HttpClient websocket(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols, io.vertx.core.Handler<io.vertx.core.http.WebSocket> wsConnect, io.vertx.core.Handler<java.lang.Throwable> failureHandler)
+//io.vertx.core.http.HttpClient
   /**
    * Connect a WebSocket at the relative request URI using the default host and port, the specified headers, the
    * specified version of WebSockets and the specified sub protocols
@@ -1243,6 +1423,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
       }
     }, failureHandler), io.vertx.golo.core.http.HttpClient.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(int port, java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified port, host and relative request URI
    * @param port the port
@@ -1253,6 +1435,8 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
   public WebSocketStream websocketStream(int port, String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, requestURI), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String host, java.lang.String requestURI)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified host, relative request URI and default port
    * @param host the host
@@ -1262,6 +1446,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, re
   public WebSocketStream websocketStream(String host, String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestURI), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified port, host and relative request URI, and with the specified headers
    * @param port the port
@@ -1273,6 +1459,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestU
   public WebSocketStream websocketStream(int port, String host, String requestURI, MultiMap headers) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate()), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified host, relative request URI and default port and with the specified headers
    * @param host the host
@@ -1283,6 +1471,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, re
   public WebSocketStream websocketStream(String host, String requestURI, MultiMap headers) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate()), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified port, host and relative request URI, with the specified headers and using
    * the specified version of WebSockets
@@ -1296,6 +1486,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestU
   public WebSocketStream websocketStream(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified host, relative request URI and default port and with the specified headers and using
    * the specified version of WebSockets
@@ -1308,6 +1500,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, re
   public WebSocketStream websocketStream(String host, String requestURI, MultiMap headers, WebsocketVersion version) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(int port, java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified port, host and relative request URI, with the specified headers, using
    * the specified version of WebSockets, and the specified websocket sub protocols
@@ -1322,6 +1516,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestU
   public WebSocketStream websocketStream(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String host, java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream to the specified host, relative request URI and default port, with the specified headers, using
    * the specified version of WebSockets, and the specified websocket sub protocols
@@ -1335,6 +1531,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(port, host, re
   public WebSocketStream websocketStream(String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String requestURI)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream at the relative request URI using the default host and port and the specified headers
    * @param requestURI the relative URI
@@ -1343,6 +1541,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(host, requestU
   public WebSocketStream websocketStream(String requestURI) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String requestURI, io.vertx.core.MultiMap headers)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream at the relative request URI using the default host and port and the specified headers
    * @param requestURI the relative URI
@@ -1352,6 +1552,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI), i
   public WebSocketStream websocketStream(String requestURI, MultiMap headers) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI, (io.vertx.core.MultiMap)headers.getDelegate()), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream at the relative request URI using the default host and port, the specified headers and the
    * specified version of WebSockets
@@ -1363,6 +1565,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI, (i
   public WebSocketStream websocketStream(String requestURI, MultiMap headers, WebsocketVersion version) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//io.vertx.core.http.WebSocketStream websocketStream(java.lang.String requestURI, io.vertx.core.MultiMap headers, io.vertx.core.http.WebsocketVersion version, java.lang.String subProtocols)
+//io.vertx.core.http.WebSocketStream
   /**
    * Create a WebSocket stream at the relative request URI using the default host and port, the specified headers, the
    * specified version of WebSockets and the specified sub protocols
@@ -1375,6 +1579,8 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI, (i
   public WebSocketStream websocketStream(String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols) {
 return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols), io.vertx.golo.core.http.WebSocketStream.class);
   }
+//void close()
+//void
   /**
    * Close the client. Closing will close down any pooled connections.
    * Clients should always be closed after use.

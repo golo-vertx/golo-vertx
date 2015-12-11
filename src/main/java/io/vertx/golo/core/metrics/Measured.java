@@ -18,6 +18,8 @@ class MeasuredImpl implements Measured {
   public Object getDelegate() {
     return delegate;
   }
+//boolean isMetricsEnabled()
+//boolean
   /**
    * Whether the metrics are enabled for this measured object
    * @return true if the metrics are enabled

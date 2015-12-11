@@ -23,6 +23,8 @@ class WriteStreamImpl<T> implements WriteStream<T> {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.streams.WriteStream<T>
   /**
    * Set an exception handler on the write stream.
    * @param handler the exception handler
@@ -32,6 +34,8 @@ class WriteStreamImpl<T> implements WriteStream<T> {
     (  (io.vertx.core.streams.WriteStream) this.delegate).exceptionHandler(handler);
     return this;
   }
+//io.vertx.core.streams.WriteStream<T> write(T data)
+//io.vertx.core.streams.WriteStream<T>
   /**
    * Write some data to the stream. The data is put on an internal write queue, and the write actually happens
    * asynchronously. To avoid running out of memory by putting too much on the write queue,
@@ -43,6 +47,8 @@ class WriteStreamImpl<T> implements WriteStream<T> {
     ((io.vertx.core.streams.WriteStream) this.delegate).write(InternalHelper.unwrapObject(data));
     return this;
   }
+//io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize)
+//io.vertx.core.streams.WriteStream<T>
   /**
    * Set the maximum size of the write queue to <code>maxSize</code>. You will still be able to write to the stream even
    * if there is more than <code>maxSize</code> bytes in the write queue. This is used as an indicator by classes such as
@@ -54,6 +60,8 @@ class WriteStreamImpl<T> implements WriteStream<T> {
     ((io.vertx.core.streams.WriteStream) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
+//boolean writeQueueFull()
+//boolean
   /**
    * This will return <code>true</code> if there are more bytes in the write queue than the value set using {@link io.vertx.golo.core.streams.WriteStream#setWriteQueueMaxSize}
    * @return true if write queue is full
@@ -61,6 +69,8 @@ class WriteStreamImpl<T> implements WriteStream<T> {
   public boolean writeQueueFull() {
 return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
+//io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
+//io.vertx.core.streams.WriteStream<T>
   /**
    * Set a drain handler on the stream. If the write queue is full, then the handler will be called when the write
    * queue has been reduced to maxSize / 2. See {@link io.vertx.golo.core.streams.Pump} for an example of this being used.

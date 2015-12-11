@@ -17,6 +17,8 @@ public class EventBus implements Measured {
   public Object getDelegate() {
     return delegate;
   }
+//boolean isMetricsEnabled()
+//boolean
   /**
    * Whether the metrics are enabled for this measured object
    * @return true if the metrics are enabled
@@ -24,6 +26,8 @@ public class EventBus implements Measured {
   public boolean isMetricsEnabled() {
 return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   }
+//io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message)
+//io.vertx.core.eventbus.EventBus
   /**
    * Sends a message.
    * <p>
@@ -36,6 +40,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     this.delegate.send(address, InternalHelper.unwrapObject(message));
     return this;
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamesend]> io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<T>>> replyHandler)
+//io.vertx.core.eventbus.EventBus
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#send} but specifying a <code>replyHandler</code> that will be called if the recipient
    * subsequently replies to the message.
@@ -58,6 +64,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     });
     return this;
   }
+//io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options)
+//io.vertx.core.eventbus.EventBus
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#send} but specifying <code>options</code> that can be used to configure the delivery.
    * @param address the address to send it to
@@ -69,6 +77,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     this.delegate.send(address, InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null);
     return this;
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamesend]> io.vertx.core.eventbus.EventBus send(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<T>>> replyHandler)
+//io.vertx.core.eventbus.EventBus
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#send} but specifying a <code>replyHandler</code> that will be called if the recipient
    * subsequently replies to the message.
@@ -92,6 +102,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     });
     return this;
   }
+//io.vertx.core.eventbus.EventBus publish(java.lang.String address, java.lang.Object message)
+//io.vertx.core.eventbus.EventBus
   /**
    * Publish a message.<p>
    * The message will be delivered to all handlers registered to the address.
@@ -103,6 +115,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     this.delegate.publish(address, InternalHelper.unwrapObject(message));
     return this;
   }
+//io.vertx.core.eventbus.EventBus publish(java.lang.String address, java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options)
+//io.vertx.core.eventbus.EventBus
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#publish} but specifying <code>options</code> that can be used to configure the delivery.
    * @param address the address to publish it to
@@ -114,6 +128,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     this.delegate.publish(address, InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null);
     return this;
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNameconsumer]> io.vertx.core.eventbus.MessageConsumer<T> consumer(java.lang.String address)
+//io.vertx.core.eventbus.MessageConsumer<T>
   /**
    * Create a message consumer against the specified address.
    * <p>
@@ -126,6 +142,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   public <T> MessageConsumer<T> consumer(String address) {
 return    InternalHelper.safeCreate(this.delegate.consumer(address), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNameconsumer]> io.vertx.core.eventbus.MessageConsumer<T> consumer(java.lang.String address, io.vertx.core.Handler<io.vertx.core.eventbus.Message<T>> handler)
+//io.vertx.core.eventbus.MessageConsumer<T>
   /**
    * Create a consumer and register it against the specified address.
    * @param address the address that will register it at
@@ -139,6 +157,8 @@ return    InternalHelper.safeCreate(this.delegate.consumer(address, new Handler<
       }
     }), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamelocalConsumer]> io.vertx.core.eventbus.MessageConsumer<T> localConsumer(java.lang.String address)
+//io.vertx.core.eventbus.MessageConsumer<T>
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#consumer} but the address won't be propagated across the cluster.
    * @param address the address to register it at
@@ -147,6 +167,8 @@ return    InternalHelper.safeCreate(this.delegate.consumer(address, new Handler<
   public <T> MessageConsumer<T> localConsumer(String address) {
 return    InternalHelper.safeCreate(this.delegate.localConsumer(address), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamelocalConsumer]> io.vertx.core.eventbus.MessageConsumer<T> localConsumer(java.lang.String address, io.vertx.core.Handler<io.vertx.core.eventbus.Message<T>> handler)
+//io.vertx.core.eventbus.MessageConsumer<T>
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#consumer} but the address won't be propagated across the cluster.
    * @param address the address that will register it at
@@ -160,6 +182,8 @@ return    InternalHelper.safeCreate(this.delegate.localConsumer(address, new Han
       }
     }), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamesender]> io.vertx.core.eventbus.MessageProducer<T> sender(java.lang.String address)
+//io.vertx.core.eventbus.MessageProducer<T>
   /**
    * Create a message sender against the specified address.
    * <p>
@@ -172,6 +196,8 @@ return    InternalHelper.safeCreate(this.delegate.localConsumer(address, new Han
   public <T> MessageProducer<T> sender(String address) {
 return    InternalHelper.safeCreate(this.delegate.sender(address), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamesender]> io.vertx.core.eventbus.MessageProducer<T> sender(java.lang.String address, io.vertx.core.eventbus.DeliveryOptions options)
+//io.vertx.core.eventbus.MessageProducer<T>
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#sender} but specifying delivery options that will be used for configuring the delivery of
    * the message.
@@ -182,6 +208,8 @@ return    InternalHelper.safeCreate(this.delegate.sender(address), io.vertx.golo
   public <T> MessageProducer<T> sender(String address, Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.sender(address, options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamepublisher]> io.vertx.core.eventbus.MessageProducer<T> publisher(java.lang.String address)
+//io.vertx.core.eventbus.MessageProducer<T>
   /**
    * Create a message publisher against the specified address.
    * <p>
@@ -194,6 +222,8 @@ return    InternalHelper.safeCreate(this.delegate.sender(address, options != nul
   public <T> MessageProducer<T> publisher(String address) {
 return    InternalHelper.safeCreate(this.delegate.publisher(address), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamepublisher]> io.vertx.core.eventbus.MessageProducer<T> publisher(java.lang.String address, io.vertx.core.eventbus.DeliveryOptions options)
+//io.vertx.core.eventbus.MessageProducer<T>
   /**
    * Like {@link io.vertx.golo.core.eventbus.EventBus#publisher} but specifying delivery options that will be used for configuring the delivery of
    * the message.
@@ -204,6 +234,8 @@ return    InternalHelper.safeCreate(this.delegate.publisher(address), io.vertx.g
   public <T> MessageProducer<T> publisher(String address, Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.publisher(address, options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
+//void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
+//void
   /**
    * Close the event bus and release any resources held
    * @param completionHandler may be <code>null</code>

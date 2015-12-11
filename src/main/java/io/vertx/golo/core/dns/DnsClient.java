@@ -16,6 +16,8 @@ public class DnsClient {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.dns.DnsClient lookup(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to lookup the A (ipv4) or AAAA (ipv6) record for the given name. The first found will be used.
    * @param name the name to resolve
@@ -26,6 +28,8 @@ public class DnsClient {
     this.delegate.lookup(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient lookup4(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to lookup the A (ipv4) record for the given name. The first found will be used.
    * @param name the name to resolve
@@ -36,6 +40,8 @@ public class DnsClient {
     this.delegate.lookup4(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient lookup6(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to lookup the AAAA (ipv6) record for the given name. The first found will be used.
    * @param name the name to resolve
@@ -46,6 +52,8 @@ public class DnsClient {
     this.delegate.lookup6(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient resolveA(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve all A (ipv4) records for the given name.
    * @param name the name to resolve
@@ -56,6 +64,8 @@ public class DnsClient {
     this.delegate.resolveA(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient resolveAAAA(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve all AAAA (ipv6) records for the given name.
    * @param name the name to resolve
@@ -66,6 +76,8 @@ public class DnsClient {
     this.delegate.resolveAAAA(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient resolveCNAME(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve the CNAME record for the given name.
    * @param name the name to resolve the CNAME for
@@ -76,6 +88,8 @@ public class DnsClient {
     this.delegate.resolveCNAME(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient resolveMX(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<io.vertx.core.dns.MxRecord>>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve the MX records for the given name.
    * @param name the name for which the MX records should be resolved
@@ -98,6 +112,8 @@ public class DnsClient {
     });
     return this;
   }
+//io.vertx.core.dns.DnsClient resolveTXT(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve the TXT records for the given name.
    * @param name the name for which the TXT records should be resolved
@@ -108,6 +124,8 @@ public class DnsClient {
     this.delegate.resolveTXT(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient resolvePTR(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve the PTR record for the given name.
    * @param name the name to resolve the PTR for
@@ -118,6 +136,8 @@ public class DnsClient {
     this.delegate.resolvePTR(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient resolveNS(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve the NS records for the given name.
    * @param name the name for which the NS records should be resolved
@@ -128,6 +148,8 @@ public class DnsClient {
     this.delegate.resolveNS(name, handler);
     return this;
   }
+//io.vertx.core.dns.DnsClient resolveSRV(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<io.vertx.core.dns.SrvRecord>>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to resolve the SRV records for the given name.
    * @param name the name for which the SRV records should be resolved
@@ -150,6 +172,8 @@ public class DnsClient {
     });
     return this;
   }
+//io.vertx.core.dns.DnsClient reverseLookup(java.lang.String ipaddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> handler)
+//io.vertx.core.dns.DnsClient
   /**
    * Try to do a reverse lookup of an IP address. This is basically the same as doing trying to resolve a PTR record
    * but allows you to just pass in the IP address and not a valid ptr query string.

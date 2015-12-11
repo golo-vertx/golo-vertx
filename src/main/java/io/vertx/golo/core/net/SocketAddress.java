@@ -13,9 +13,13 @@ public class SocketAddress {
   public Object getDelegate() {
     return delegate;
   }
+//java.lang.String host()
+//java.lang.String
   public String host() {
 return    this.delegate.host();
   }
+//int port()
+//int
   public int port() {
 return    this.delegate.port();
   }

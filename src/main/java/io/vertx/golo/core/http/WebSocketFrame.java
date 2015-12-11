@@ -14,6 +14,8 @@ public class WebSocketFrame {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)
+//io.vertx.core.http.WebSocketFrame
   /**
    * Create a binary WebSocket frame.
    * @param data the data for the frame
@@ -23,6 +25,8 @@ public class WebSocketFrame {
   public static WebSocketFrame binaryFrame(Buffer data, boolean isFinal) {
 return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFrame((io.vertx.core.buffer.Buffer)data.getDelegate(), isFinal), io.vertx.golo.core.http.WebSocketFrame.class);
   }
+//io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal)
+//io.vertx.core.http.WebSocketFrame
   /**
    * Create a text WebSocket frame.
    * @param str the string for the frame
@@ -32,6 +36,8 @@ return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFram
   public static WebSocketFrame textFrame(String str, boolean isFinal) {
 return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(str, isFinal), io.vertx.golo.core.http.WebSocketFrame.class);
   }
+//io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)
+//io.vertx.core.http.WebSocketFrame
   /**
    * Create a continuation frame
    * @param data the data for the frame
@@ -41,6 +47,8 @@ return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(
   public static WebSocketFrame continuationFrame(Buffer data, boolean isFinal) {
 return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.continuationFrame((io.vertx.core.buffer.Buffer)data.getDelegate(), isFinal), io.vertx.golo.core.http.WebSocketFrame.class);
   }
+//boolean isText()
+//boolean
   /**
    * @return true if it's a text frame
    * @return 
@@ -48,6 +56,8 @@ return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.continuati
   public boolean isText() {
 return    this.delegate.isText();
   }
+//boolean isBinary()
+//boolean
   /**
    * @return true if it's a binary frame
    * @return 
@@ -55,6 +65,8 @@ return    this.delegate.isText();
   public boolean isBinary() {
 return    this.delegate.isBinary();
   }
+//boolean isContinuation()
+//boolean
   /**
    * @return true if it's a continuation frame
    * @return 
@@ -62,6 +74,8 @@ return    this.delegate.isBinary();
   public boolean isContinuation() {
 return    this.delegate.isContinuation();
   }
+//java.lang.String textData()
+//java.lang.String
   /**
    * @return the content of this frame as a UTF-8 string and returns the
    * converted string. Only use this for text frames.
@@ -70,6 +84,8 @@ return    this.delegate.isContinuation();
   public String textData() {
 return    this.delegate.textData();
   }
+//io.vertx.core.buffer.Buffer binaryData()
+//io.vertx.core.buffer.Buffer
   /**
    * @return the data of the frame
    * @return 
@@ -77,6 +93,8 @@ return    this.delegate.textData();
   public Buffer binaryData() {
 return    InternalHelper.safeCreate(this.delegate.binaryData(), io.vertx.golo.core.buffer.Buffer.class);
   }
+//boolean isFinal()
+//boolean
   /**
    * @return true if this is the final frame.
    * @return 

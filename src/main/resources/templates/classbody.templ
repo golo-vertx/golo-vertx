@@ -11,6 +11,8 @@
 	  }\n
 
 	@foreach{method:methods}
+	//@{method}\n
+	//@{method.returnType}\n
 	@if{method.doc != null}
 	  /**\n
 	@{renderDocToHtml("   *", method.doc, renderLinkToHtml)}

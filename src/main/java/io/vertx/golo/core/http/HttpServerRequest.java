@@ -21,10 +21,14 @@ public class HttpServerRequest implements ReadStream<Buffer> {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.http.HttpServerRequest
   public HttpServerRequest exceptionHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).exceptionHandler(handler);
     return this;
   }
+//io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
+//io.vertx.core.http.HttpServerRequest
   public HttpServerRequest handler(Handler<Buffer> handler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
@@ -33,18 +37,26 @@ public class HttpServerRequest implements ReadStream<Buffer> {
     });
     return this;
   }
+//io.vertx.core.http.HttpServerRequest pause()
+//io.vertx.core.http.HttpServerRequest
   public HttpServerRequest pause() {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).pause();
     return this;
   }
+//io.vertx.core.http.HttpServerRequest resume()
+//io.vertx.core.http.HttpServerRequest
   public HttpServerRequest resume() {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).resume();
     return this;
   }
+//io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
+//io.vertx.core.http.HttpServerRequest
   public HttpServerRequest endHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).endHandler(endHandler);
     return this;
   }
+//io.vertx.core.http.HttpVersion version()
+//io.vertx.core.http.HttpVersion
   /**
    * @return the HTTP version of the request
    * @return 
@@ -52,6 +64,8 @@ public class HttpServerRequest implements ReadStream<Buffer> {
   public HttpVersion version() {
 return    this.delegate.version();
   }
+//io.vertx.core.http.HttpMethod method()
+//io.vertx.core.http.HttpMethod
   /**
    * @return the HTTP method for the request.
    * @return 
@@ -59,6 +73,8 @@ return    this.delegate.version();
   public HttpMethod method() {
 return    this.delegate.method();
   }
+//java.lang.String uri()
+//java.lang.String
   /**
    * @return the URI of the request. This is usually a relative URI
    * @return 
@@ -66,6 +82,8 @@ return    this.delegate.method();
   public String uri() {
 return    this.delegate.uri();
   }
+//java.lang.String path()
+//java.lang.String
   /**
    * @return The path part of the uri. For example /somepath/somemorepath/someresource.foo
    * @return 
@@ -73,6 +91,8 @@ return    this.delegate.uri();
   public String path() {
 return    this.delegate.path();
   }
+//java.lang.String query()
+//java.lang.String
   /**
    * @return the query part of the uri. For example someparam=32&amp;someotherparam=x
    * @return 
@@ -80,6 +100,8 @@ return    this.delegate.path();
   public String query() {
 return    this.delegate.query();
   }
+//io.vertx.core.http.HttpServerResponse response()
+//io.vertx.core.http.HttpServerResponse
   /**
    * @return the response. Each instance of this class has an {@link io.vertx.golo.core.http.HttpServerResponse} instance attached to it. This is used
    * to send the response back to the client.
@@ -88,6 +110,8 @@ return    this.delegate.query();
   public HttpServerResponse response() {
 return    InternalHelper.safeCreate(this.delegate.response(), io.vertx.golo.core.http.HttpServerResponse.class);
   }
+//io.vertx.core.MultiMap headers()
+//io.vertx.core.MultiMap
   /**
    * @return the headers in the request.
    * @return 
@@ -95,6 +119,8 @@ return    InternalHelper.safeCreate(this.delegate.response(), io.vertx.golo.core
   public MultiMap headers() {
 return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.MultiMap.class);
   }
+//java.lang.String getHeader(java.lang.String headerName)
+//java.lang.String
   /**
    * Return the first header value with the specified name
    * @param headerName the header name
@@ -103,6 +129,8 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
   public String getHeader(String headerName) {
 return    this.delegate.getHeader(headerName);
   }
+//io.vertx.core.MultiMap params()
+//io.vertx.core.MultiMap
   /**
    * @return the query parameters in the request
    * @return 
@@ -110,6 +138,8 @@ return    this.delegate.getHeader(headerName);
   public MultiMap params() {
 return    InternalHelper.safeCreate(this.delegate.params(), io.vertx.golo.core.MultiMap.class);
   }
+//java.lang.String getParam(java.lang.String paramName)
+//java.lang.String
   /**
    * Return the first param value with the specified name
    * @param paramName the param name
@@ -118,6 +148,8 @@ return    InternalHelper.safeCreate(this.delegate.params(), io.vertx.golo.core.M
   public String getParam(String paramName) {
 return    this.delegate.getParam(paramName);
   }
+//io.vertx.core.net.SocketAddress remoteAddress()
+//io.vertx.core.net.SocketAddress
   /**
    * @return the remote (client side) address of the request
    * @return 
@@ -125,6 +157,8 @@ return    this.delegate.getParam(paramName);
   public SocketAddress remoteAddress() {
 return    InternalHelper.safeCreate(this.delegate.remoteAddress(), io.vertx.golo.core.net.SocketAddress.class);
   }
+//io.vertx.core.net.SocketAddress localAddress()
+//io.vertx.core.net.SocketAddress
   /**
    * @return the local (server side) address of the server that handles the request
    * @return 
@@ -132,6 +166,8 @@ return    InternalHelper.safeCreate(this.delegate.remoteAddress(), io.vertx.golo
   public SocketAddress localAddress() {
 return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.core.net.SocketAddress.class);
   }
+//java.lang.String absoluteURI()
+//java.lang.String
   /**
    * @return the absolute URI corresponding to the the HTTP request
    * @return 
@@ -139,6 +175,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
   public String absoluteURI() {
 return    this.delegate.absoluteURI();
   }
+//io.vertx.core.http.HttpServerRequest bodyHandler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> bodyHandler)
+//io.vertx.core.http.HttpServerRequest
   /**
    * Convenience method for receiving the entire request body in one piece.
    * <p>
@@ -155,6 +193,8 @@ return    this.delegate.absoluteURI();
     });
     return this;
   }
+//io.vertx.core.net.NetSocket netSocket()
+//io.vertx.core.net.NetSocket
   /**
    * Get a net socket for the underlying connection of this request.
    * <p>
@@ -168,6 +208,8 @@ return    this.delegate.absoluteURI();
   public NetSocket netSocket() {
 return    InternalHelper.safeCreate(this.delegate.netSocket(), io.vertx.golo.core.net.NetSocket.class);
   }
+//io.vertx.core.http.HttpServerRequest setExpectMultipart(boolean expect)
+//io.vertx.core.http.HttpServerRequest
   /**
    * Call this with true if you are expecting a multi-part body to be submitted in the request.
    * This must be called before the body of the request has been received
@@ -178,6 +220,8 @@ return    InternalHelper.safeCreate(this.delegate.netSocket(), io.vertx.golo.cor
     this.delegate.setExpectMultipart(expect);
     return this;
   }
+//boolean isExpectMultipart()
+//boolean
   /**
    * @return  true if we are expecting a multi-part body for this request. See {@link io.vertx.golo.core.http.HttpServerRequest#setExpectMultipart}.
    * @return 
@@ -185,6 +229,8 @@ return    InternalHelper.safeCreate(this.delegate.netSocket(), io.vertx.golo.cor
   public boolean isExpectMultipart() {
 return    this.delegate.isExpectMultipart();
   }
+//io.vertx.core.http.HttpServerRequest uploadHandler(io.vertx.core.Handler<io.vertx.core.http.HttpServerFileUpload> uploadHandler)
+//io.vertx.core.http.HttpServerRequest
   /**
    * Set an upload handler. The handler will get notified once a new file upload was received to allow you to deal
    * with the file upload.
@@ -199,6 +245,8 @@ return    this.delegate.isExpectMultipart();
     });
     return this;
   }
+//io.vertx.core.MultiMap formAttributes()
+//io.vertx.core.MultiMap
   /**
    * Returns a map of all form attributes in the request.
    * <p>
@@ -211,6 +259,8 @@ return    this.delegate.isExpectMultipart();
   public MultiMap formAttributes() {
 return    InternalHelper.safeCreate(this.delegate.formAttributes(), io.vertx.golo.core.MultiMap.class);
   }
+//java.lang.String getFormAttribute(java.lang.String attributeName)
+//java.lang.String
   /**
    * Return the first form attribute value with the specified name
    * @param attributeName the attribute name
@@ -219,6 +269,8 @@ return    InternalHelper.safeCreate(this.delegate.formAttributes(), io.vertx.gol
   public String getFormAttribute(String attributeName) {
 return    this.delegate.getFormAttribute(attributeName);
   }
+//io.vertx.core.http.ServerWebSocket upgrade()
+//io.vertx.core.http.ServerWebSocket
   /**
    * Upgrade the connection to a WebSocket connection.
    * <p>
@@ -229,6 +281,8 @@ return    this.delegate.getFormAttribute(attributeName);
   public ServerWebSocket upgrade() {
 return    InternalHelper.safeCreate(this.delegate.upgrade(), io.vertx.golo.core.http.ServerWebSocket.class);
   }
+//boolean isEnded()
+//boolean
   /**
    * Has the request ended? I.e. has the entire request, including the body been read?
    * @return true if ended

@@ -14,6 +14,8 @@ public class Buffer {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.buffer.Buffer buffer()
+//io.vertx.core.buffer.Buffer
   /**
    * Create a new, empty buffer.
    * @return the buffer
@@ -21,6 +23,8 @@ public class Buffer {
   public static Buffer buffer() {
 return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(), io.vertx.golo.core.buffer.Buffer.class);
   }
+//io.vertx.core.buffer.Buffer buffer(int initialSizeHint)
+//io.vertx.core.buffer.Buffer
   /**
    * Create a new buffer given the initial size hint.
    * <p>
@@ -32,6 +36,8 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(), io.ver
   public static Buffer buffer(int initialSizeHint) {
 return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(initialSizeHint), io.vertx.golo.core.buffer.Buffer.class);
   }
+//io.vertx.core.buffer.Buffer buffer(java.lang.String string)
+//io.vertx.core.buffer.Buffer
   /**
    * Create a new buffer from a string. The string will be UTF-8 encoded into the buffer.
    * @param string the string
@@ -40,6 +46,8 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(initialSi
   public static Buffer buffer(String string) {
 return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string), io.vertx.golo.core.buffer.Buffer.class);
   }
+//io.vertx.core.buffer.Buffer buffer(java.lang.String string, java.lang.String enc)
+//io.vertx.core.buffer.Buffer
   /**
    * Create a new buffer from a string and using the specified encoding.
    * The string will be encoded into the buffer using the specified encoding.
@@ -50,6 +58,8 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string), 
   public static Buffer buffer(String string, String enc) {
 return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string, enc), io.vertx.golo.core.buffer.Buffer.class);
   }
+//java.lang.String toString(java.lang.String enc)
+//java.lang.String
   /**
    * Returns a <code>String</code> representation of the Buffer with the encoding specified by <code>enc</code>
    * @param enc 
@@ -58,6 +68,8 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string, e
   public String toString(String enc) {
 return    this.delegate.toString(enc);
   }
+//byte getByte(int pos)
+//byte
   /**
    * Returns the <code>byte</code> at position <code>pos</code> in the Buffer.
    * @param pos 
@@ -66,6 +78,8 @@ return    this.delegate.toString(enc);
   public byte getByte(int pos) {
 return    this.delegate.getByte(pos);
   }
+//short getUnsignedByte(int pos)
+//short
   /**
    * Returns the unsigned <code>byte</code> at position <code>pos</code> in the Buffer, as a <code>short</code>.
    * @param pos 
@@ -74,6 +88,8 @@ return    this.delegate.getByte(pos);
   public short getUnsignedByte(int pos) {
 return    this.delegate.getUnsignedByte(pos);
   }
+//int getInt(int pos)
+//int
   /**
    * Returns the <code>int</code> at position <code>pos</code> in the Buffer.
    * @param pos 
@@ -82,6 +98,8 @@ return    this.delegate.getUnsignedByte(pos);
   public int getInt(int pos) {
 return    this.delegate.getInt(pos);
   }
+//long getUnsignedInt(int pos)
+//long
   /**
    * Returns the unsigned <code>int</code> at position <code>pos</code> in the Buffer, as a <code>long</code>.
    * @param pos 
@@ -90,6 +108,8 @@ return    this.delegate.getInt(pos);
   public long getUnsignedInt(int pos) {
 return    this.delegate.getUnsignedInt(pos);
   }
+//long getLong(int pos)
+//long
   /**
    * Returns the <code>long</code> at position <code>pos</code> in the Buffer.
    * @param pos 
@@ -98,6 +118,8 @@ return    this.delegate.getUnsignedInt(pos);
   public long getLong(int pos) {
 return    this.delegate.getLong(pos);
   }
+//double getDouble(int pos)
+//double
   /**
    * Returns the <code>double</code> at position <code>pos</code> in the Buffer.
    * @param pos 
@@ -106,6 +128,8 @@ return    this.delegate.getLong(pos);
   public double getDouble(int pos) {
 return    this.delegate.getDouble(pos);
   }
+//float getFloat(int pos)
+//float
   /**
    * Returns the <code>float</code> at position <code>pos</code> in the Buffer.
    * @param pos 
@@ -114,6 +138,8 @@ return    this.delegate.getDouble(pos);
   public float getFloat(int pos) {
 return    this.delegate.getFloat(pos);
   }
+//short getShort(int pos)
+//short
   /**
    * Returns the <code>short</code> at position <code>pos</code> in the Buffer.
    * @param pos 
@@ -122,6 +148,8 @@ return    this.delegate.getFloat(pos);
   public short getShort(int pos) {
 return    this.delegate.getShort(pos);
   }
+//int getUnsignedShort(int pos)
+//int
   /**
    * Returns the unsigned <code>short</code> at position <code>pos</code> in the Buffer, as an <code>int</code>.
    * @param pos 
@@ -130,6 +158,8 @@ return    this.delegate.getShort(pos);
   public int getUnsignedShort(int pos) {
 return    this.delegate.getUnsignedShort(pos);
   }
+//io.vertx.core.buffer.Buffer getBuffer(int start, int end)
+//io.vertx.core.buffer.Buffer
   /**
    * Returns a copy of a sub-sequence the Buffer as a {@link io.vertx.golo.core.buffer.Buffer} starting at position <code>start</code>
    * and ending at position <code>end - 1</code>
@@ -140,6 +170,8 @@ return    this.delegate.getUnsignedShort(pos);
   public Buffer getBuffer(int start, int end) {
 return    InternalHelper.safeCreate(this.delegate.getBuffer(start, end), io.vertx.golo.core.buffer.Buffer.class);
   }
+//java.lang.String getString(int start, int end, java.lang.String enc)
+//java.lang.String
   /**
    * Returns a copy of a sub-sequence the Buffer as a <code>String</code> starting at position <code>start</code>
    * and ending at position <code>end - 1</code> interpreted as a String in the specified encoding
@@ -151,6 +183,8 @@ return    InternalHelper.safeCreate(this.delegate.getBuffer(start, end), io.vert
   public String getString(int start, int end, String enc) {
 return    this.delegate.getString(start, end, enc);
   }
+//java.lang.String getString(int start, int end)
+//java.lang.String
   /**
    * Returns a copy of a sub-sequence the Buffer as a <code>String</code> starting at position <code>start</code>
    * and ending at position <code>end - 1</code> interpreted as a String in UTF-8 encoding
@@ -161,6 +195,8 @@ return    this.delegate.getString(start, end, enc);
   public String getString(int start, int end) {
 return    this.delegate.getString(start, end);
   }
+//io.vertx.core.buffer.Buffer appendBuffer(io.vertx.core.buffer.Buffer buff)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>Buffer</code> to the end of this Buffer. The buffer will expand as necessary to accommodate
    * any bytes written.<p>
@@ -172,6 +208,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendBuffer((io.vertx.core.buffer.Buffer)buff.getDelegate());
     return this;
   }
+//io.vertx.core.buffer.Buffer appendBuffer(io.vertx.core.buffer.Buffer buff, int offset, int len)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>Buffer</code> starting at the <code>offset</code> using <code>len</code> to the end of this Buffer. The buffer will expand as necessary to accommodate
    * any bytes written.<p>
@@ -185,6 +223,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendBuffer((io.vertx.core.buffer.Buffer)buff.getDelegate(), offset, len);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendByte(byte b)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>byte</code> to the end of the Buffer. The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -195,6 +235,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendByte(b);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendUnsignedByte(short b)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified unsigned <code>byte</code> to the end of the Buffer. The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -205,6 +247,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendUnsignedByte(b);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendInt(int i)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>int</code> to the end of the Buffer. The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -215,6 +259,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendInt(i);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendUnsignedInt(long i)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified unsigned <code>int</code> to the end of the Buffer. The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -225,6 +271,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendUnsignedInt(i);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendLong(long l)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>long</code> to the end of the Buffer. The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -235,6 +283,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendLong(l);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendShort(short s)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>short</code> to the end of the Buffer.The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -245,6 +295,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendShort(s);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendUnsignedShort(int s)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified unsigned <code>short</code> to the end of the Buffer.The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -255,6 +307,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendUnsignedShort(s);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendFloat(float f)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>float</code> to the end of the Buffer. The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -265,6 +319,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendFloat(f);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendDouble(double d)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>double</code> to the end of the Buffer. The buffer will expand as necessary to accommodate any bytes written.<p>
    * Returns a reference to <code>this</code> so multiple operations can be appended together.
@@ -275,6 +331,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendDouble(d);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendString(java.lang.String str, java.lang.String enc)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>String</code> to the end of the Buffer with the encoding as specified by <code>enc</code>.<p>
    * The buffer will expand as necessary to accommodate any bytes written.<p>
@@ -287,6 +345,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendString(str, enc);
     return this;
   }
+//io.vertx.core.buffer.Buffer appendString(java.lang.String str)
+//io.vertx.core.buffer.Buffer
   /**
    * Appends the specified <code>String str</code> to the end of the Buffer with UTF-8 encoding.<p>
    * The buffer will expand as necessary to accommodate any bytes written.<p>
@@ -298,6 +358,8 @@ return    this.delegate.getString(start, end);
     this.delegate.appendString(str);
     return this;
   }
+//io.vertx.core.buffer.Buffer setByte(int pos, byte b)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the <code>byte</code> at position <code>pos</code> in the Buffer to the value <code>b</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -309,6 +371,8 @@ return    this.delegate.getString(start, end);
     this.delegate.setByte(pos, b);
     return this;
   }
+//io.vertx.core.buffer.Buffer setUnsignedByte(int pos, short b)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the unsigned <code>byte</code> at position <code>pos</code> in the Buffer to the value <code>b</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -319,6 +383,8 @@ return    this.delegate.getString(start, end);
   public Buffer setUnsignedByte(int pos, short b) {
 return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.vertx.golo.core.buffer.Buffer.class);
   }
+//io.vertx.core.buffer.Buffer setInt(int pos, int i)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the <code>int</code> at position <code>pos</code> in the Buffer to the value <code>i</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -330,6 +396,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setInt(pos, i);
     return this;
   }
+//io.vertx.core.buffer.Buffer setUnsignedInt(int pos, long i)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the unsigned <code>int</code> at position <code>pos</code> in the Buffer to the value <code>i</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -341,6 +409,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setUnsignedInt(pos, i);
     return this;
   }
+//io.vertx.core.buffer.Buffer setLong(int pos, long l)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the <code>long</code> at position <code>pos</code> in the Buffer to the value <code>l</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -352,6 +422,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setLong(pos, l);
     return this;
   }
+//io.vertx.core.buffer.Buffer setDouble(int pos, double d)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the <code>double</code> at position <code>pos</code> in the Buffer to the value <code>d</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -363,6 +435,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setDouble(pos, d);
     return this;
   }
+//io.vertx.core.buffer.Buffer setFloat(int pos, float f)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the <code>float</code> at position <code>pos</code> in the Buffer to the value <code>f</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -374,6 +448,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setFloat(pos, f);
     return this;
   }
+//io.vertx.core.buffer.Buffer setShort(int pos, short s)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the <code>short</code> at position <code>pos</code> in the Buffer to the value <code>s</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -385,6 +461,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setShort(pos, s);
     return this;
   }
+//io.vertx.core.buffer.Buffer setUnsignedShort(int pos, int s)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the unsigned <code>short</code> at position <code>pos</code> in the Buffer to the value <code>s</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -396,6 +474,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setUnsignedShort(pos, s);
     return this;
   }
+//io.vertx.core.buffer.Buffer setBuffer(int pos, io.vertx.core.buffer.Buffer b)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the bytes at position <code>pos</code> in the Buffer to the bytes represented by the <code>Buffer b</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -407,6 +487,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setBuffer(pos, (io.vertx.core.buffer.Buffer)b.getDelegate());
     return this;
   }
+//io.vertx.core.buffer.Buffer setBuffer(int pos, io.vertx.core.buffer.Buffer b, int offset, int len)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the bytes at position <code>pos</code> in the Buffer to the bytes represented by the <code>Buffer b</code> on the given <code>offset</code> and <code>len</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -420,6 +502,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setBuffer(pos, (io.vertx.core.buffer.Buffer)b.getDelegate(), offset, len);
     return this;
   }
+//io.vertx.core.buffer.Buffer setString(int pos, java.lang.String str)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the bytes at position <code>pos</code> in the Buffer to the value of <code>str</code> encoded in UTF-8.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -431,6 +515,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setString(pos, str);
     return this;
   }
+//io.vertx.core.buffer.Buffer setString(int pos, java.lang.String str, java.lang.String enc)
+//io.vertx.core.buffer.Buffer
   /**
    * Sets the bytes at position <code>pos</code> in the Buffer to the value of <code>str</code> encoded in encoding <code>enc</code>.<p>
    * The buffer will expand as necessary to accommodate any value written.
@@ -443,6 +529,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
     this.delegate.setString(pos, str, enc);
     return this;
   }
+//int length()
+//int
   /**
    * Returns the length of the buffer, measured in bytes.
    * All positions are indexed from zero.
@@ -451,6 +539,8 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
   public int length() {
 return    this.delegate.length();
   }
+//io.vertx.core.buffer.Buffer copy()
+//io.vertx.core.buffer.Buffer
   /**
    * Returns a copy of the entire Buffer.
    * @return 
@@ -458,6 +548,8 @@ return    this.delegate.length();
   public Buffer copy() {
 return    InternalHelper.safeCreate(this.delegate.copy(), io.vertx.golo.core.buffer.Buffer.class);
   }
+//io.vertx.core.buffer.Buffer slice()
+//io.vertx.core.buffer.Buffer
   /**
    * Returns a slice of this buffer. Modifying the content
    * of the returned buffer or this buffer affects each other's content
@@ -467,6 +559,8 @@ return    InternalHelper.safeCreate(this.delegate.copy(), io.vertx.golo.core.buf
   public Buffer slice() {
 return    InternalHelper.safeCreate(this.delegate.slice(), io.vertx.golo.core.buffer.Buffer.class);
   }
+//io.vertx.core.buffer.Buffer slice(int start, int end)
+//io.vertx.core.buffer.Buffer
   /**
    * Returns a slice of this buffer. Modifying the content
    * of the returned buffer or this buffer affects each other's content

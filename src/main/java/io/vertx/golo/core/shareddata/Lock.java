@@ -13,6 +13,8 @@ public class Lock {
   public Object getDelegate() {
     return delegate;
   }
+//void release()
+//void
   /**
    * Release the lock. Once the lock is released another will be able to obtain the lock.
    */

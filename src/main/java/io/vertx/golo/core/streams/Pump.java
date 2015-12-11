@@ -13,6 +13,8 @@ public class Pump {
   public Object getDelegate() {
     return delegate;
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws)
+//io.vertx.core.streams.Pump
   /**
    * Create a new <code>Pump</code> with the given <code>ReadStream</code> and <code>WriteStream</code>
    * @param rs the read stream
@@ -22,6 +24,8 @@ public class Pump {
   public static <T> Pump pump(ReadStream<T> rs, WriteStream<T> ws) {
 return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.core.streams.ReadStream<T>)rs.getDelegate(), (io.vertx.core.streams.WriteStream<T>)ws.getDelegate()), io.vertx.golo.core.streams.Pump.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws, int writeQueueMaxSize)
+//io.vertx.core.streams.Pump
   /**
    * Create a new <code>Pump</code> with the given <code>ReadStream</code> and <code>WriteStream</code> and
    * <code>writeQueueMaxSize</code>
@@ -33,6 +37,8 @@ return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.co
   public static <T> Pump pump(ReadStream<T> rs, WriteStream<T> ws, int writeQueueMaxSize) {
 return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.core.streams.ReadStream<T>)rs.getDelegate(), (io.vertx.core.streams.WriteStream<T>)ws.getDelegate(), writeQueueMaxSize), io.vertx.golo.core.streams.Pump.class);
   }
+//io.vertx.core.streams.Pump setWriteQueueMaxSize(int maxSize)
+//io.vertx.core.streams.Pump
   /**
    * Set the write queue max size to <code>maxSize</code>
    * @param maxSize the max size
@@ -42,6 +48,8 @@ return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.co
     this.delegate.setWriteQueueMaxSize(maxSize);
     return this;
   }
+//io.vertx.core.streams.Pump start()
+//io.vertx.core.streams.Pump
   /**
    * Start the Pump. The Pump can be started and stopped multiple times.
    * @return a reference to this, so the API can be used fluently
@@ -50,6 +58,8 @@ return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.co
     this.delegate.start();
     return this;
   }
+//io.vertx.core.streams.Pump stop()
+//io.vertx.core.streams.Pump
   /**
    * Stop the Pump. The Pump can be started and stopped multiple times.
    * @return a reference to this, so the API can be used fluently
@@ -58,6 +68,8 @@ return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.co
     this.delegate.stop();
     return this;
   }
+//int numberPumped()
+//int
   /**
    * Return the total number of items pumped by this pump.
    * @return 

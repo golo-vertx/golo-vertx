@@ -13,6 +13,8 @@ public class SrvRecord {
   public Object getDelegate() {
     return delegate;
   }
+//int priority()
+//int
   /**
    * Returns the priority for this service record.
    * @return 
@@ -20,6 +22,8 @@ public class SrvRecord {
   public int priority() {
 return    this.delegate.priority();
   }
+//int weight()
+//int
   /**
    * Returns the weight of this service record.
    * @return 
@@ -27,6 +31,8 @@ return    this.delegate.priority();
   public int weight() {
 return    this.delegate.weight();
   }
+//int port()
+//int
   /**
    * Returns the port the service is running on.
    * @return 
@@ -34,6 +40,8 @@ return    this.delegate.weight();
   public int port() {
 return    this.delegate.port();
   }
+//java.lang.String name()
+//java.lang.String
   /**
    * Returns the name for the server being queried.
    * @return 
@@ -41,6 +49,8 @@ return    this.delegate.port();
   public String name() {
 return    this.delegate.name();
   }
+//java.lang.String protocol()
+//java.lang.String
   /**
    * Returns the protocol for the service being queried (i.e. "_tcp").
    * @return 
@@ -48,6 +58,8 @@ return    this.delegate.name();
   public String protocol() {
 return    this.delegate.protocol();
   }
+//java.lang.String service()
+//java.lang.String
   /**
    * Returns the service's name (i.e. "_http").
    * @return 
@@ -55,6 +67,8 @@ return    this.delegate.protocol();
   public String service() {
 return    this.delegate.service();
   }
+//java.lang.String target()
+//java.lang.String
   /**
    * Returns the name of the host for the service.
    * @return 

@@ -16,6 +16,8 @@ public class NetClient implements Measured {
   public Object getDelegate() {
     return delegate;
   }
+//boolean isMetricsEnabled()
+//boolean
   /**
    * Whether the metrics are enabled for this measured object
    * @return true if the metrics are enabled
@@ -23,6 +25,8 @@ public class NetClient implements Measured {
   public boolean isMetricsEnabled() {
 return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   }
+//io.vertx.core.net.NetClient connect(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetSocket>> connectHandler)
+//io.vertx.core.net.NetClient
   /**
    * Open a connection to a server at the specific <code>port</code> and <code>host</code>.
    * <p>
@@ -47,6 +51,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     });
     return this;
   }
+//void close()
+//void
   /**
    * Close the client.
    * <p>

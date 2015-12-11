@@ -16,6 +16,8 @@ public class MultiMap {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.MultiMap caseInsensitiveMultiMap()
+//io.vertx.core.MultiMap
   /**
    * Create a multi-map implementation with case insensitive keys, for instance it can be used to hold some HTTP headers.
    * @return the multi-map
@@ -23,6 +25,8 @@ public class MultiMap {
   public static MultiMap caseInsensitiveMultiMap() {
 return    InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiMap(), io.vertx.golo.core.MultiMap.class);
   }
+//java.lang.String get(java.lang.String name)
+//java.lang.String
   /**
    * Returns the value of with the specified name.  If there are
    * more than one values for the specified name, the first value is returned.
@@ -32,6 +36,8 @@ return    InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiM
   public String get(String name) {
 return    this.delegate.get(name);
   }
+//java.util.List<java.lang.String> getAll(java.lang.String name)
+//java.util.List<java.lang.String>
   /**
    * Returns the values with the specified name
    * @param name The name to search
@@ -40,6 +46,8 @@ return    this.delegate.get(name);
   public List<String> getAll(String name) {
 return    this.delegate.getAll(name);
   }
+//boolean contains(java.lang.String name)
+//boolean
   /**
    * Checks to see if there is a value with the specified name
    * @param name The name to search for
@@ -48,6 +56,8 @@ return    this.delegate.getAll(name);
   public boolean contains(String name) {
 return    this.delegate.contains(name);
   }
+//boolean isEmpty()
+//boolean
   /**
    * Return true if empty
    * @return 
@@ -55,6 +65,8 @@ return    this.delegate.contains(name);
   public boolean isEmpty() {
 return    this.delegate.isEmpty();
   }
+//java.util.Set<java.lang.String> names()
+//java.util.Set<java.lang.String>
   /**
    * Gets a immutable {@link java.util.Set} of all names
    * @return A {@link java.util.Set} of all names
@@ -62,6 +74,8 @@ return    this.delegate.isEmpty();
   public Set<String> names() {
 return    this.delegate.names();
   }
+//io.vertx.core.MultiMap add(java.lang.String name, java.lang.String value)
+//io.vertx.core.MultiMap
   /**
    * Adds a new value with the specified name and value.
    * @param name The name
@@ -72,6 +86,8 @@ return    this.delegate.names();
     this.delegate.add(name, value);
     return this;
   }
+//io.vertx.core.MultiMap addAll(io.vertx.core.MultiMap map)
+//io.vertx.core.MultiMap
   /**
    * Adds all the entries from another MultiMap to this one
    * @param map 
@@ -81,6 +97,8 @@ return    this.delegate.names();
     this.delegate.addAll((io.vertx.core.MultiMap)map.getDelegate());
     return this;
   }
+//io.vertx.core.MultiMap set(java.lang.String name, java.lang.String value)
+//io.vertx.core.MultiMap
   /**
    * Sets a value under the specified name.
    * <p>
@@ -93,6 +111,8 @@ return    this.delegate.names();
     this.delegate.set(name, value);
     return this;
   }
+//io.vertx.core.MultiMap setAll(io.vertx.core.MultiMap map)
+//io.vertx.core.MultiMap
   /**
    * Cleans this instance.
    * @param map 
@@ -102,6 +122,8 @@ return    this.delegate.names();
     this.delegate.setAll((io.vertx.core.MultiMap)map.getDelegate());
     return this;
   }
+//io.vertx.core.MultiMap remove(java.lang.String name)
+//io.vertx.core.MultiMap
   /**
    * Removes the value with the given name
    * @param name The name of the value to remove
@@ -111,6 +133,8 @@ return    this.delegate.names();
     this.delegate.remove(name);
     return this;
   }
+//io.vertx.core.MultiMap clear()
+//io.vertx.core.MultiMap
   /**
    * Removes all
    * @return a reference to this, so the API can be used fluently
@@ -119,6 +143,8 @@ return    this.delegate.names();
     this.delegate.clear();
     return this;
   }
+//int size()
+//int
   /**
    * Return the number of keys.
    * @return 

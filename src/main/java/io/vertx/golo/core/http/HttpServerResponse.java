@@ -18,6 +18,8 @@ public class HttpServerResponse implements WriteStream<Buffer> {
   public Object getDelegate() {
     return delegate;
   }
+//boolean writeQueueFull()
+//boolean
   /**
    * This will return <code>true</code> if there are more bytes in the write queue than the value set using {@link io.vertx.golo.core.http.HttpServerResponse#setWriteQueueMaxSize}
    * @return true if write queue is full
@@ -25,22 +27,32 @@ public class HttpServerResponse implements WriteStream<Buffer> {
   public boolean writeQueueFull() {
 return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
+//io.vertx.core.http.HttpServerResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.http.HttpServerResponse
   public HttpServerResponse exceptionHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).exceptionHandler(handler);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse write(io.vertx.core.buffer.Buffer data)
+//io.vertx.core.http.HttpServerResponse
   public HttpServerResponse write(Buffer data) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
+//io.vertx.core.http.HttpServerResponse setWriteQueueMaxSize(int maxSize)
+//io.vertx.core.http.HttpServerResponse
   public HttpServerResponse setWriteQueueMaxSize(int maxSize) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
+//io.vertx.core.http.HttpServerResponse
   public HttpServerResponse drainHandler(Handler<Void> handler) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).drainHandler(handler);
     return this;
   }
+//int getStatusCode()
+//int
   /**
    * @return the HTTP status code of the response. The default is <code>200</code> representing <code>OK</code>.
    * @return 
@@ -48,6 +60,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   public int getStatusCode() {
 return    this.delegate.getStatusCode();
   }
+//io.vertx.core.http.HttpServerResponse setStatusCode(int statusCode)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Set the status code. If the status message hasn't been explicitly set, a default status message corresponding
    * to the code will be looked-up and used.
@@ -58,6 +72,8 @@ return    this.delegate.getStatusCode();
     this.delegate.setStatusCode(statusCode);
     return this;
   }
+//java.lang.String getStatusMessage()
+//java.lang.String
   /**
    * @return the HTTP status message of the response. If this is not specified a default value will be used depending on what
    * {@link io.vertx.golo.core.http.HttpServerResponse#setStatusCode} has been set to.
@@ -66,6 +82,8 @@ return    this.delegate.getStatusCode();
   public String getStatusMessage() {
 return    this.delegate.getStatusMessage();
   }
+//io.vertx.core.http.HttpServerResponse setStatusMessage(java.lang.String statusMessage)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Set the status message
    * @param statusMessage 
@@ -75,6 +93,8 @@ return    this.delegate.getStatusMessage();
     this.delegate.setStatusMessage(statusMessage);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse setChunked(boolean chunked)
+//io.vertx.core.http.HttpServerResponse
   /**
    * If <code>chunked</code> is <code>true</code>, this response will use HTTP chunked encoding, and each call to write to the body
    * will correspond to a new HTTP chunk sent on the wire.
@@ -94,6 +114,8 @@ return    this.delegate.getStatusMessage();
     this.delegate.setChunked(chunked);
     return this;
   }
+//boolean isChunked()
+//boolean
   /**
    * @return is the response chunked?
    * @return 
@@ -101,6 +123,8 @@ return    this.delegate.getStatusMessage();
   public boolean isChunked() {
 return    this.delegate.isChunked();
   }
+//io.vertx.core.MultiMap headers()
+//io.vertx.core.MultiMap
   /**
    * @return The HTTP headers
    * @return 
@@ -108,6 +132,8 @@ return    this.delegate.isChunked();
   public MultiMap headers() {
 return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.MultiMap.class);
   }
+//io.vertx.core.http.HttpServerResponse putHeader(java.lang.String name, java.lang.String value)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Put an HTTP header
    * @param name the header name
@@ -118,6 +144,8 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
     this.delegate.putHeader(name, value);
     return this;
   }
+//io.vertx.core.MultiMap trailers()
+//io.vertx.core.MultiMap
   /**
    * @return The HTTP trailers
    * @return 
@@ -125,6 +153,8 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
   public MultiMap trailers() {
 return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core.MultiMap.class);
   }
+//io.vertx.core.http.HttpServerResponse putTrailer(java.lang.String name, java.lang.String value)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Put an HTTP trailer
    * @param name the trailer name
@@ -135,6 +165,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.putTrailer(name, value);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse closeHandler(io.vertx.core.Handler<java.lang.Void> handler)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Set a close handler for the response. This will be called if the underlying connection closes before the response
    * is complete.
@@ -145,6 +177,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.closeHandler(handler);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse write(java.lang.String chunk, java.lang.String enc)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Write a {@link java.lang.String} to the response body, encoded using the encoding <code>enc</code>.
    * @param chunk the string to write
@@ -155,6 +189,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.write(chunk, enc);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse write(java.lang.String chunk)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Write a {@link java.lang.String} to the response body, encoded in UTF-8.
    * @param chunk the string to write
@@ -164,6 +200,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.write(chunk);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse writeContinue()
+//io.vertx.core.http.HttpServerResponse
   /**
    * Used to write an interim 100 Continue response to signify that the client should send the rest of the request.
    * Must only be used if the request contains an "Expect:100-Continue" header
@@ -173,6 +211,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.writeContinue();
     return this;
   }
+//void end(java.lang.String chunk)
+//void
   /**
    * Same as {@link io.vertx.golo.core.http.HttpServerResponse#end} but writes a String in UTF-8 encoding before ending the response.
    * @param chunk the string to write before ending the response
@@ -180,6 +220,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
   public void end(String chunk) {
     this.delegate.end(chunk);
   }
+//void end(java.lang.String chunk, java.lang.String enc)
+//void
   /**
    * Same as {@link io.vertx.golo.core.http.HttpServerResponse#end} but writes a String with the specified encoding before ending the response.
    * @param chunk the string to write before ending the response
@@ -188,6 +230,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
   public void end(String chunk, String enc) {
     this.delegate.end(chunk, enc);
   }
+//void end(io.vertx.core.buffer.Buffer chunk)
+//void
   /**
    * Same as {@link io.vertx.golo.core.http.HttpServerResponse#end} but writes some data to the response body before ending. If the response is not chunked and
    * no other data has been written then the @code{Content-Length} header will be automatically set.
@@ -196,6 +240,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
   public void end(Buffer chunk) {
     this.delegate.end((io.vertx.core.buffer.Buffer)chunk.getDelegate());
   }
+//void end()
+//void
   /**
    * Ends the response. If no data has been written to the response body,
    * the actual response won't get written until this method gets called.
@@ -205,6 +251,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
   public void end() {
     this.delegate.end();
   }
+//io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Same as {@link io.vertx.golo.core.http.HttpServerResponse#sendFile} using offset @code{0} which means starting from the beginning of the file.
    * @param filename path to the file to serve
@@ -214,6 +262,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.sendFile(filename);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename, long offset)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Same as {@link io.vertx.golo.core.http.HttpServerResponse#sendFile} using length @code{Long.MAX_VALUE} which means until the end of the
    * file.
@@ -225,6 +275,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.sendFile(filename, offset);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename, long offset, long length)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Ask the OS to stream a file as specified by <code>filename</code> directly
    * from disk to the outgoing connection, bypassing userspace altogether
@@ -240,6 +292,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.sendFile(filename, offset, length);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> resultHandler)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Like {@link io.vertx.golo.core.http.HttpServerResponse#sendFile} but providing a handler which will be notified once the file has been completely
    * written to the wire.
@@ -251,6 +305,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.sendFile(filename, resultHandler);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename, long offset, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> resultHandler)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Like {@link io.vertx.golo.core.http.HttpServerResponse#sendFile} but providing a handler which will be notified once the file has been completely
    * written to the wire.
@@ -263,6 +319,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.sendFile(filename, offset, resultHandler);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse sendFile(java.lang.String filename, long offset, long length, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> resultHandler)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Like {@link io.vertx.golo.core.http.HttpServerResponse#sendFile} but providing a handler which will be notified once the file has been
    * completely written to the wire.
@@ -276,12 +334,16 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
     this.delegate.sendFile(filename, offset, length, resultHandler);
     return this;
   }
+//void close()
+//void
   /**
    * Close the underlying TCP connection corresponding to the request.
    */
   public void close() {
     this.delegate.close();
   }
+//boolean ended()
+//boolean
   /**
    * @return has the response already ended?
    * @return 
@@ -289,6 +351,8 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
   public boolean ended() {
 return    this.delegate.ended();
   }
+//boolean closed()
+//boolean
   /**
    * @return has the underlying TCP connection corresponding to the request already been closed?
    * @return 
@@ -296,6 +360,8 @@ return    this.delegate.ended();
   public boolean closed() {
 return    this.delegate.closed();
   }
+//boolean headWritten()
+//boolean
   /**
    * @return have the headers for the response already been written?
    * @return 
@@ -303,6 +369,8 @@ return    this.delegate.closed();
   public boolean headWritten() {
 return    this.delegate.headWritten();
   }
+//io.vertx.core.http.HttpServerResponse headersEndHandler(io.vertx.core.Handler<java.lang.Void> handler)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Provide a handler that will be called just before the headers are written to the wire.<p>
    * This provides a hook allowing you to add any more headers or do any more operations before this occurs.
@@ -313,6 +381,8 @@ return    this.delegate.headWritten();
     this.delegate.headersEndHandler(handler);
     return this;
   }
+//io.vertx.core.http.HttpServerResponse bodyEndHandler(io.vertx.core.Handler<java.lang.Void> handler)
+//io.vertx.core.http.HttpServerResponse
   /**
    * Provide a handler that will be called just before the last part of the body is written to the wire
    * and the response is ended.<p>

@@ -18,6 +18,8 @@ public class AsyncFile implements ReadStream<Buffer>,  WriteStream<Buffer> {
   public Object getDelegate() {
     return delegate;
   }
+//boolean writeQueueFull()
+//boolean
   /**
    * This will return <code>true</code> if there are more bytes in the write queue than the value set using {@link io.vertx.golo.core.file.AsyncFile#setWriteQueueMaxSize}
    * @return true if write queue is full
@@ -25,6 +27,8 @@ public class AsyncFile implements ReadStream<Buffer>,  WriteStream<Buffer> {
   public boolean writeQueueFull() {
 return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
+//io.vertx.core.file.AsyncFile handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
+//io.vertx.core.file.AsyncFile
   public AsyncFile handler(Handler<Buffer> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
@@ -33,40 +37,58 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     });
     return this;
   }
+//io.vertx.core.file.AsyncFile pause()
+//io.vertx.core.file.AsyncFile
   public AsyncFile pause() {
     (  (io.vertx.core.file.AsyncFile) this.delegate).pause();
     return this;
   }
+//io.vertx.core.file.AsyncFile resume()
+//io.vertx.core.file.AsyncFile
   public AsyncFile resume() {
     (  (io.vertx.core.file.AsyncFile) this.delegate).resume();
     return this;
   }
+//io.vertx.core.file.AsyncFile endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
+//io.vertx.core.file.AsyncFile
   public AsyncFile endHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).endHandler(endHandler);
     return this;
   }
+//io.vertx.core.file.AsyncFile write(io.vertx.core.buffer.Buffer data)
+//io.vertx.core.file.AsyncFile
   public AsyncFile write(Buffer data) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
+//io.vertx.core.file.AsyncFile setWriteQueueMaxSize(int maxSize)
+//io.vertx.core.file.AsyncFile
   public AsyncFile setWriteQueueMaxSize(int maxSize) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
+//io.vertx.core.file.AsyncFile drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
+//io.vertx.core.file.AsyncFile
   public AsyncFile drainHandler(Handler<Void> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).drainHandler(handler);
     return this;
   }
+//io.vertx.core.file.AsyncFile exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.file.AsyncFile
   public AsyncFile exceptionHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).exceptionHandler(handler);
     return this;
   }
+//void close()
+//void
   /**
    * Close the file. The actual close happens asynchronously.
    */
   public void close() {
     this.delegate.close();
   }
+//void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
+//void
   /**
    * Close the file. The actual close happens asynchronously.
    * The handler will be called when the close is complete, or an error occurs.
@@ -75,6 +97,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   public void close(Handler<AsyncResult<Void>> handler) {
     this.delegate.close(handler);
   }
+//io.vertx.core.file.AsyncFile write(io.vertx.core.buffer.Buffer buffer, long position, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
+//io.vertx.core.file.AsyncFile
   /**
    * Write a {@link io.vertx.golo.core.buffer.Buffer} to the file at position <code>position</code> in the file, asynchronously.
    * <p>
@@ -94,6 +118,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     this.delegate.write((io.vertx.core.buffer.Buffer)buffer.getDelegate(), position, handler);
     return this;
   }
+//io.vertx.core.file.AsyncFile read(io.vertx.core.buffer.Buffer buffer, int offset, long position, int length, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.buffer.Buffer>> handler)
+//io.vertx.core.file.AsyncFile
   /**
    * Reads <code>length</code> bytes of data from the file at position <code>position</code> in the file, asynchronously.
    * <p>
@@ -124,6 +150,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     });
     return this;
   }
+//io.vertx.core.file.AsyncFile flush()
+//io.vertx.core.file.AsyncFile
   /**
    * Flush any writes made to this file to underlying persistent storage.
    * <p>
@@ -136,6 +164,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     this.delegate.flush();
     return this;
   }
+//io.vertx.core.file.AsyncFile flush(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
+//io.vertx.core.file.AsyncFile
   /**
    * Same as {@link io.vertx.golo.core.file.AsyncFile#flush} but the handler will be called when the flush is complete or if an error occurs
    * @param handler 
@@ -145,6 +175,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     this.delegate.flush(handler);
     return this;
   }
+//io.vertx.core.file.AsyncFile setReadPos(long readPos)
+//io.vertx.core.file.AsyncFile
   /**
    * Sets the position from which data will be read from when using the file as a {@link io.vertx.golo.core.streams.ReadStream}.
    * @param readPos the position in the file
@@ -154,6 +186,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     this.delegate.setReadPos(readPos);
     return this;
   }
+//io.vertx.core.file.AsyncFile setWritePos(long writePos)
+//io.vertx.core.file.AsyncFile
   /**
    * Sets the position from which data will be written when using the file as a {@link io.vertx.golo.core.streams.WriteStream}.
    * @param writePos the position in the file
@@ -163,6 +197,8 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     this.delegate.setWritePos(writePos);
     return this;
   }
+//io.vertx.core.file.AsyncFile setReadBufferSize(int readBufferSize)
+//io.vertx.core.file.AsyncFile
   /**
    * Sets the buffer size that will be used to read the data from the file. Changing this value will impact how much
    * the data will be read at a time from the file system.

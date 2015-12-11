@@ -15,6 +15,8 @@ public class AsyncMap<K,V> {
   public Object getDelegate() {
     return delegate;
   }
+//void get(K k, io.vertx.core.Handler<io.vertx.core.AsyncResult<V>> resultHandler)
+//void
   /**
    * Get a value from the map, asynchronously.
    * @param k the key
@@ -33,6 +35,8 @@ public class AsyncMap<K,V> {
       }
     });
   }
+//void put(K k, V v, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
+//void
   /**
    * Put a value in the map, asynchronously.
    * @param k the key
@@ -42,6 +46,8 @@ public class AsyncMap<K,V> {
   public void put(K k, V v, Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).put(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), completionHandler);
   }
+//void put(K k, V v, long ttl, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
+//void
   /**
    * Like {@link io.vertx.golo.core.shareddata.AsyncMap#put} but specifying a timeout. If the value cannot be put within the timeout a
    * failure will be passed to the handler
@@ -53,6 +59,8 @@ public class AsyncMap<K,V> {
   public void put(K k, V v, long ttl, Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).put(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), ttl, completionHandler);
   }
+//void putIfAbsent(K k, V v, io.vertx.core.Handler<io.vertx.core.AsyncResult<V>> completionHandler)
+//void
   /**
    * Put the entry only if there is no entry with the key already present. If key already present then the existing
    * value will be returned to the handler, otherwise null.
@@ -73,6 +81,8 @@ public class AsyncMap<K,V> {
       }
     });
   }
+//void putIfAbsent(K k, V v, long ttl, io.vertx.core.Handler<io.vertx.core.AsyncResult<V>> completionHandler)
+//void
   /**
    * Link {@link io.vertx.golo.core.shareddata.AsyncMap#putIfAbsent} but specifying a timeout. If the value cannot be put within the timeout a
    * failure will be passed to the handler
@@ -94,6 +104,8 @@ public class AsyncMap<K,V> {
       }
     });
   }
+//void remove(K k, io.vertx.core.Handler<io.vertx.core.AsyncResult<V>> resultHandler)
+//void
   /**
    * Remove a value from the map, asynchronously.
    * @param k the key
@@ -112,6 +124,8 @@ public class AsyncMap<K,V> {
       }
     });
   }
+//void removeIfPresent(K k, V v, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Boolean>> resultHandler)
+//void
   /**
    * Remove a value from the map, only if entry already exists with same value.
    * @param k the key
@@ -121,6 +135,8 @@ public class AsyncMap<K,V> {
   public void removeIfPresent(K k, V v, Handler<AsyncResult<Boolean>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).removeIfPresent(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), resultHandler);
   }
+//void replace(K k, V v, io.vertx.core.Handler<io.vertx.core.AsyncResult<V>> resultHandler)
+//void
   /**
    * Replace the entry only if it is currently mapped to some value
    * @param k the key
@@ -140,6 +156,8 @@ public class AsyncMap<K,V> {
       }
     });
   }
+//void replaceIfPresent(K k, V oldValue, V newValue, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Boolean>> resultHandler)
+//void
   /**
    * Replace the entry only if it is currently mapped to a specific value
    * @param k the key
@@ -150,6 +168,8 @@ public class AsyncMap<K,V> {
   public void replaceIfPresent(K k, V oldValue, V newValue, Handler<AsyncResult<Boolean>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).replaceIfPresent(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(oldValue), InternalHelper.unwrapObject(newValue), resultHandler);
   }
+//void clear(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> resultHandler)
+//void
   /**
    * Clear all entries in the map
    * @param resultHandler called on completion
@@ -157,6 +177,8 @@ public class AsyncMap<K,V> {
   public void clear(Handler<AsyncResult<Void>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).clear(resultHandler);
   }
+//void size(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Integer>> resultHandler)
+//void
   /**
    * Provide the number of entries in the map
    * @param resultHandler handler which will receive the number of entries

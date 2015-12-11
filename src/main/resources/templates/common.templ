@@ -67,7 +67,7 @@
   }
 
   def genConstructorType(type) {
-    var fqn = type.translateName("golo");
+    return type.translateName("golo");
     if (type.concrete) {
       return fqn;
     } else {

@@ -16,6 +16,8 @@ public class CommandLine {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.cli.CommandLine create(io.vertx.core.cli.CLI cli)
+//io.vertx.core.cli.CommandLine
   /**
    * Creates a command line object from the {@link io.vertx.golo.core.cli.CLI}. This object is intended to be used by
    * the parser to set the argument and option values.
@@ -25,6 +27,8 @@ public class CommandLine {
   public static CommandLine create(CLI cli) {
 return    InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create((io.vertx.core.cli.CLI)cli.getDelegate()), io.vertx.golo.core.cli.CommandLine.class);
   }
+//io.vertx.core.cli.CLI cli()
+//io.vertx.core.cli.CLI
   /**
    * @return the model of this command line object.
    * @return 
@@ -32,6 +36,8 @@ return    InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create((io.ver
   public CLI cli() {
 return    InternalHelper.safeCreate(this.delegate.cli(), io.vertx.golo.core.cli.CLI.class);
   }
+//java.util.List<java.lang.String> allArguments()
+//java.util.List<java.lang.String>
   /**
    * @return the ordered list of arguments. Arguments are command line arguments not matching an option.
    * @return 
@@ -39,6 +45,8 @@ return    InternalHelper.safeCreate(this.delegate.cli(), io.vertx.golo.core.cli.
   public List<String> allArguments() {
 return    this.delegate.allArguments();
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetOptionValue]> T getOptionValue(java.lang.String name)
+//T
   /**
    * Gets the value of an option with the matching name (can be the long name, short name or arg name).
    * @param name the name
@@ -48,6 +56,8 @@ return    this.delegate.allArguments();
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getOptionValue(name));
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(java.lang.String name)
+//T
   /**
    * Gets the value of an argument with the matching name (arg name).
    * @param name the name
@@ -57,6 +67,8 @@ return    // This cast is cleary flawed
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getArgumentValue(name));
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.cli.CommandLine,methodNamegetArgumentValue]> T getArgumentValue(int index)
+//T
   /**
    * Gets the value of an argument with the given index.
    * @param index the index
@@ -66,6 +78,8 @@ return    // This cast is cleary flawed
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getArgumentValue(index));
   }
+//boolean isFlagEnabled(java.lang.String name)
+//boolean
   /**
    * Gets the value of an option marked as a flag.
    * <p/>
@@ -76,6 +90,8 @@ return    // This cast is cleary flawed
   public boolean isFlagEnabled(String name) {
 return    this.delegate.isFlagEnabled(name);
   }
+//boolean isOptionAssigned(io.vertx.core.cli.Option option)
+//boolean
   /**
    * Checks whether or not the given option has been assigned in the command line.
    * @param option the option (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
@@ -84,6 +100,8 @@ return    this.delegate.isFlagEnabled(name);
   public boolean isOptionAssigned(Map<String, Object> option) {
 return    this.delegate.isOptionAssigned(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
   }
+//java.util.List<java.lang.String> getRawValues(io.vertx.core.cli.Option option)
+//java.util.List<java.lang.String>
   /**
    * Gets the raw values of the given option. Raw values are simple "String", not converted to the option type.
    * @param option the option (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
@@ -92,6 +110,8 @@ return    this.delegate.isOptionAssigned(option != null ? new io.vertx.core.cli.
   public List<String> getRawValues(Map<String, Object> option) {
 return    this.delegate.getRawValues(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
   }
+//java.lang.String getRawValueForOption(io.vertx.core.cli.Option option)
+//java.lang.String
   /**
    * Gets the raw value of the given option. Raw values are the values as given in the user command line.
    * @param option the option (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
@@ -100,6 +120,8 @@ return    this.delegate.getRawValues(option != null ? new io.vertx.core.cli.Opti
   public String getRawValueForOption(Map<String, Object> option) {
 return    this.delegate.getRawValueForOption(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
   }
+//boolean acceptMoreValues(io.vertx.core.cli.Option option)
+//boolean
   /**
    * Checks whether or not the given option accept more values.
    * @param option the option (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
@@ -108,6 +130,8 @@ return    this.delegate.getRawValueForOption(option != null ? new io.vertx.core.
   public boolean acceptMoreValues(Map<String, Object> option) {
 return    this.delegate.acceptMoreValues(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
   }
+//java.lang.String getRawValueForArgument(io.vertx.core.cli.Argument arg)
+//java.lang.String
   /**
    * Gets the raw value of the given argument. Raw values are the values as given in the user command line.
    * @param arg the argument (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
@@ -116,6 +140,8 @@ return    this.delegate.acceptMoreValues(option != null ? new io.vertx.core.cli.
   public String getRawValueForArgument(Map<String, Object> arg) {
 return    this.delegate.getRawValueForArgument(arg != null ? new io.vertx.core.cli.Argument(new io.vertx.core.json.JsonObject(arg)) : null);
   }
+//boolean isArgumentAssigned(io.vertx.core.cli.Argument arg)
+//boolean
   /**
    * Checks whether or not the given argument has been assigned in the command line.
    * @param arg the argument (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
@@ -124,6 +150,8 @@ return    this.delegate.getRawValueForArgument(arg != null ? new io.vertx.core.c
   public boolean isArgumentAssigned(Map<String, Object> arg) {
 return    this.delegate.isArgumentAssigned(arg != null ? new io.vertx.core.cli.Argument(new io.vertx.core.json.JsonObject(arg)) : null);
   }
+//boolean isSeenInCommandLine(io.vertx.core.cli.Option option)
+//boolean
   /**
    * check whether or not the given option has been seen in the user command line.
    * @param option the option (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)

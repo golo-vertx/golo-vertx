@@ -17,6 +17,8 @@ public class Context {
   public Object getDelegate() {
     return delegate;
   }
+//boolean isOnWorkerThread()
+//boolean
   /**
    * Is the current thread a worker thread?
    * <p>
@@ -27,6 +29,8 @@ public class Context {
   public static boolean isOnWorkerThread() {
 return    io.vertx.core.Context.isOnWorkerThread();
   }
+//boolean isOnEventLoopThread()
+//boolean
   /**
    * Is the current thread an event thread?
    * <p>
@@ -37,6 +41,8 @@ return    io.vertx.core.Context.isOnWorkerThread();
   public static boolean isOnEventLoopThread() {
 return    io.vertx.core.Context.isOnEventLoopThread();
   }
+//boolean isOnVertxThread()
+//boolean
   /**
    * Is the current thread a Vert.x thread? That's either a worker thread or an event loop thread
    * @return true if current thread is a Vert.x thread, false otherwise
@@ -44,6 +50,8 @@ return    io.vertx.core.Context.isOnEventLoopThread();
   public static boolean isOnVertxThread() {
 return    io.vertx.core.Context.isOnVertxThread();
   }
+//void runOnContext(io.vertx.core.Handler<java.lang.Void> action)
+//void
   /**
    * Run the specified action asynchronously on the same context, some time after the current execution has completed.
    * @param action the action to run
@@ -51,6 +59,8 @@ return    io.vertx.core.Context.isOnVertxThread();
   public void runOnContext(Handler<Void> action) {
     this.delegate.runOnContext(action);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler)
+//void
   /**
    * Safely execute some blocking code.
    * <p>
@@ -83,6 +93,8 @@ return    io.vertx.core.Context.isOnVertxThread();
       }
     });
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler)
+//void
   /**
    * Invoke {@link io.vertx.golo.core.Context#executeBlocking} with order = true.
    * @param blockingCodeHandler handler representing the blocking code to run
@@ -105,6 +117,8 @@ return    io.vertx.core.Context.isOnVertxThread();
       }
     });
   }
+//java.lang.String deploymentID()
+//java.lang.String
   /**
    * If the context is associated with a Verticle deployment, this returns the deployment ID of that deployment.
    * @return the deployment ID of the deployment or null if not a Verticle deployment
@@ -112,6 +126,8 @@ return    io.vertx.core.Context.isOnVertxThread();
   public String deploymentID() {
 return    this.delegate.deploymentID();
   }
+//io.vertx.core.json.JsonObject config()
+//io.vertx.core.json.JsonObject
   /**
    * If the context is associated with a Verticle deployment, this returns the configuration that was specified when
    * the verticle was deployed.
@@ -120,6 +136,8 @@ return    this.delegate.deploymentID();
   public Map<String, Object> config() {
 return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.config());
   }
+//java.util.List<java.lang.String> processArgs()
+//java.util.List<java.lang.String>
   /**
    * The process args
    * @return 
@@ -127,6 +145,8 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.config())
   public List<String> processArgs() {
 return    this.delegate.processArgs();
   }
+//boolean isEventLoopContext()
+//boolean
   /**
    * Is the current context an event loop context?
    * <p>
@@ -138,6 +158,8 @@ return    this.delegate.processArgs();
   public boolean isEventLoopContext() {
 return    this.delegate.isEventLoopContext();
   }
+//boolean isWorkerContext()
+//boolean
   /**
    * Is the current context a worker context?
    * <p>
@@ -149,6 +171,8 @@ return    this.delegate.isEventLoopContext();
   public boolean isWorkerContext() {
 return    this.delegate.isWorkerContext();
   }
+//boolean isMultiThreadedWorkerContext()
+//boolean
   /**
    * Is the current context a multi-threaded worker context?
    * @return true if the current context is a multi-threaded worker context, false otherwise
@@ -156,6 +180,8 @@ return    this.delegate.isWorkerContext();
   public boolean isMultiThreadedWorkerContext() {
 return    this.delegate.isMultiThreadedWorkerContext();
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameget]> T get(java.lang.String key)
+//T
   /**
    * Get some data from the context.
    * @param key the key of the data
@@ -165,6 +191,8 @@ return    this.delegate.isMultiThreadedWorkerContext();
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.get(key));
   }
+//void put(java.lang.String key, java.lang.Object value)
+//void
   /**
    * Put some data in the context.
    * <p>
@@ -175,6 +203,8 @@ return    // This cast is cleary flawed
   public void put(String key, Object value) {
     this.delegate.put(key, InternalHelper.unwrapObject(value));
   }
+//boolean remove(java.lang.String key)
+//boolean
   /**
    * Remove some data from the context.
    * @param key the key to remove
@@ -183,6 +213,8 @@ return    // This cast is cleary flawed
   public boolean remove(String key) {
 return    this.delegate.remove(key);
   }
+//io.vertx.core.Vertx owner()
+//io.vertx.core.Vertx
   /**
    * @return The Vertx instance that created the context
    * @return 
@@ -190,6 +222,8 @@ return    this.delegate.remove(key);
   public Vertx owner() {
 return    InternalHelper.safeCreate(this.delegate.owner(), io.vertx.golo.core.Vertx.class);
   }
+//int getInstanceCount()
+//int
   /**
    * @return  the number of instances of the verticle that were deployed in the deployment (if any) related
    * to this context

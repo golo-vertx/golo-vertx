@@ -15,6 +15,8 @@ public class DatagramPacket {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.net.SocketAddress sender()
+//io.vertx.core.net.SocketAddress
   /**
    * Returns the {@link io.vertx.golo.core.net.SocketAddress} of the sender that sent
    * this {@link io.vertx.golo.core.datagram.DatagramPacket}.
@@ -23,6 +25,8 @@ public class DatagramPacket {
   public SocketAddress sender() {
 return    InternalHelper.safeCreate(this.delegate.sender(), io.vertx.golo.core.net.SocketAddress.class);
   }
+//io.vertx.core.buffer.Buffer data()
+//io.vertx.core.buffer.Buffer
   /**
    * Returns the data of the {@link io.vertx.golo.core.datagram.DatagramPacket}
    * @return the data

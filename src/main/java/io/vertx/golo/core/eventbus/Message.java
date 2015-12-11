@@ -17,6 +17,8 @@ public class Message<T> {
   public Object getDelegate() {
     return delegate;
   }
+//java.lang.String address()
+//java.lang.String
   /**
    * The address the message was sent to
    * @return 
@@ -24,6 +26,8 @@ public class Message<T> {
   public String address() {
 return    ((io.vertx.core.eventbus.Message) this.delegate).address();
   }
+//io.vertx.core.MultiMap headers()
+//io.vertx.core.MultiMap
   /**
    * Multi-map of message headers. Can be empty
    * @return the headers
@@ -31,6 +35,8 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).address();
   public MultiMap headers() {
 return    InternalHelper.safeCreate(((io.vertx.core.eventbus.Message) this.delegate).headers(), io.vertx.golo.core.MultiMap.class);
   }
+//T body()
+//T
   /**
    * The body of the message. Can be null.
    * @return the body, or null.
@@ -39,6 +45,8 @@ return    InternalHelper.safeCreate(((io.vertx.core.eventbus.Message) this.deleg
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(((io.vertx.core.eventbus.Message) this.delegate).body());
   }
+//java.lang.String replyAddress()
+//java.lang.String
   /**
    * The reply address. Can be null.
    * @return the reply address, or null, if message was sent without a reply handler.
@@ -46,6 +54,8 @@ return    // This cast is cleary flawed
   public String replyAddress() {
 return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
   }
+//void reply(java.lang.Object message)
+//void
   /**
    * Reply to this message.
    * <p>
@@ -57,6 +67,8 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
   public void reply(Object message) {
     ((io.vertx.core.eventbus.Message) this.delegate).reply(InternalHelper.unwrapObject(message));
   }
+//<TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler)
+//void
   /**
    * The same as <code>reply(R message)</code> but you can specify handler for the reply - i.e.
    * to receive the reply to the reply.
@@ -76,6 +88,8 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
       }
     });
   }
+//void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options)
+//void
   /**
    * Link {@link io.vertx.golo.core.eventbus.Message#reply} but allows you to specify delivery options for the reply.
    * @param message the reply message
@@ -84,6 +98,8 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
   public void reply(Object message, Map<String, Object> options) {
     ((io.vertx.core.eventbus.Message) this.delegate).reply(InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null);
   }
+//<TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler)
+//void
   /**
    * The same as <code>reply(R message, DeliveryOptions)</code> but you can specify handler for the reply - i.e.
    * to receive the reply to the reply.
@@ -104,6 +120,8 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
       }
     });
   }
+//void fail(int failureCode, java.lang.String message)
+//void
   /**
    * Signal to the sender that processing of this message failed.
    * <p>

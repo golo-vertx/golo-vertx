@@ -13,6 +13,8 @@ public class FileSystemProps {
   public Object getDelegate() {
     return delegate;
   }
+//long totalSpace()
+//long
   /**
    * @return The total space on the file system, in bytes
    * @return 
@@ -20,6 +22,8 @@ public class FileSystemProps {
   public long totalSpace() {
 return    this.delegate.totalSpace();
   }
+//long unallocatedSpace()
+//long
   /**
    * @return The total un-allocated space on the file system, in bytes
    * @return 
@@ -27,6 +31,8 @@ return    this.delegate.totalSpace();
   public long unallocatedSpace() {
 return    this.delegate.unallocatedSpace();
   }
+//long usableSpace()
+//long
   /**
    * @return The total usable space on the file system, in bytes
    * @return 

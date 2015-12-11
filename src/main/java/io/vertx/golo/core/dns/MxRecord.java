@@ -13,6 +13,8 @@ public class MxRecord {
   public Object getDelegate() {
     return delegate;
   }
+//int priority()
+//int
   /**
    * The priority of the MX record.
    * @return 
@@ -20,6 +22,8 @@ public class MxRecord {
   public int priority() {
 return    this.delegate.priority();
   }
+//java.lang.String name()
+//java.lang.String
   /**
    * The name of the MX record
    * @return 

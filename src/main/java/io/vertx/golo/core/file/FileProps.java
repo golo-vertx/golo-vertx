@@ -13,6 +13,8 @@ public class FileProps {
   public Object getDelegate() {
     return delegate;
   }
+//long creationTime()
+//long
   /**
    * The date the file was created
    * @return 
@@ -20,6 +22,8 @@ public class FileProps {
   public long creationTime() {
 return    this.delegate.creationTime();
   }
+//long lastAccessTime()
+//long
   /**
    * The date the file was last accessed
    * @return 
@@ -27,6 +31,8 @@ return    this.delegate.creationTime();
   public long lastAccessTime() {
 return    this.delegate.lastAccessTime();
   }
+//long lastModifiedTime()
+//long
   /**
    * The date the file was last modified
    * @return 
@@ -34,6 +40,8 @@ return    this.delegate.lastAccessTime();
   public long lastModifiedTime() {
 return    this.delegate.lastModifiedTime();
   }
+//boolean isDirectory()
+//boolean
   /**
    * Is the file a directory?
    * @return 
@@ -41,6 +49,8 @@ return    this.delegate.lastModifiedTime();
   public boolean isDirectory() {
 return    this.delegate.isDirectory();
   }
+//boolean isOther()
+//boolean
   /**
    * Is the file some other type? (I.e. not a directory, regular file or symbolic link)
    * @return 
@@ -48,6 +58,8 @@ return    this.delegate.isDirectory();
   public boolean isOther() {
 return    this.delegate.isOther();
   }
+//boolean isRegularFile()
+//boolean
   /**
    * Is the file a regular file?
    * @return 
@@ -55,6 +67,8 @@ return    this.delegate.isOther();
   public boolean isRegularFile() {
 return    this.delegate.isRegularFile();
   }
+//boolean isSymbolicLink()
+//boolean
   /**
    * Is the file a symbolic link?
    * @return 
@@ -62,6 +76,8 @@ return    this.delegate.isRegularFile();
   public boolean isSymbolicLink() {
 return    this.delegate.isSymbolicLink();
   }
+//long size()
+//long
   /**
    * The size of the file, in bytes
    * @return 

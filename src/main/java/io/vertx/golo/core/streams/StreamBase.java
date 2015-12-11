@@ -19,6 +19,8 @@ class StreamBaseImpl implements StreamBase {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.streams.StreamBase exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.streams.StreamBase
   /**
    * Set an exception handler.
    * @param handler the handler

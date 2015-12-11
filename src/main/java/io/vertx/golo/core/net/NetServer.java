@@ -16,6 +16,8 @@ public class NetServer implements Measured {
   public Object getDelegate() {
     return delegate;
   }
+//boolean isMetricsEnabled()
+//boolean
   /**
    * Whether the metrics are enabled for this measured object
    * @return true if the metrics are enabled
@@ -23,6 +25,8 @@ public class NetServer implements Measured {
   public boolean isMetricsEnabled() {
 return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   }
+//io.vertx.core.net.NetSocketStream connectStream()
+//io.vertx.core.net.NetSocketStream
   /**
    * Return the connect stream for this server. The server can only have at most one handler at any one time.
    * As the server accepts TCP or SSL connections it creates an instance of {@link io.vertx.golo.core.net.NetSocket} and passes it to the
@@ -32,6 +36,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   public NetSocketStream connectStream() {
 return    InternalHelper.safeCreate(this.delegate.connectStream(), io.vertx.golo.core.net.NetSocketStream.class);
   }
+//io.vertx.core.net.NetServer connectHandler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler)
+//io.vertx.core.net.NetServer
   /**
    * Supply a connect handler for this server. The server can only have at most one connect handler at any one time.
    * As the server accepts TCP or SSL connections it creates an instance of {@link io.vertx.golo.core.net.NetSocket} and passes it to the
@@ -46,6 +52,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
       }
     }), io.vertx.golo.core.net.NetServer.class);
   }
+//io.vertx.core.net.NetServer listen()
+//io.vertx.core.net.NetServer
   /**
    * Start listening on the port and host as configured in the <a href="../../../../../../../cheatsheet/NetServerOptions.html">NetServerOptions</a> used when
    * creating the server.
@@ -57,6 +65,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
     this.delegate.listen();
     return this;
   }
+//io.vertx.core.net.NetServer listen(io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler)
+//io.vertx.core.net.NetServer
   /**
    * Like {@link io.vertx.golo.core.net.NetServer#listen} but providing a handler that will be notified when the server is listening, or fails.
    * @param listenHandler handler that will be notified when listening or failed
@@ -76,6 +86,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
     });
     return this;
   }
+//io.vertx.core.net.NetServer listen(int port, java.lang.String host)
+//io.vertx.core.net.NetServer
   /**
    * Start listening on the specified port and host, ignoring post and host configured in the <a href="../../../../../../../cheatsheet/NetServerOptions.html">NetServerOptions</a> used when
    * creating the server.
@@ -93,6 +105,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
     this.delegate.listen(port, host);
     return this;
   }
+//io.vertx.core.net.NetServer listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler)
+//io.vertx.core.net.NetServer
   /**
    * Like {@link io.vertx.golo.core.net.NetServer#listen} but providing a handler that will be notified when the server is listening, or fails.
    * @param port the port to listen on
@@ -114,6 +128,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
     });
     return this;
   }
+//io.vertx.core.net.NetServer listen(int port)
+//io.vertx.core.net.NetServer
   /**
    * Start listening on the specified port and host "0.0.0.0", ignoring post and host configured in the
    * <a href="../../../../../../../cheatsheet/NetServerOptions.html">NetServerOptions</a> used when creating the server.
@@ -128,6 +144,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
     this.delegate.listen(port);
     return this;
   }
+//io.vertx.core.net.NetServer listen(int port, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.net.NetServer>> listenHandler)
+//io.vertx.core.net.NetServer
   /**
    * Like {@link io.vertx.golo.core.net.NetServer#listen} but providing a handler that will be notified when the server is listening, or fails.
    * @param port the port to listen on
@@ -148,6 +166,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
     });
     return this;
   }
+//void close()
+//void
   /**
    * Close the server. This will close any currently open connections. The close may not complete until after this
    * method has returned.
@@ -155,6 +175,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
   public void close() {
     this.delegate.close();
   }
+//void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
+//void
   /**
    * Like {@link io.vertx.golo.core.net.NetServer#close} but supplying a handler that will be notified when close is complete.
    * @param completionHandler the handler
@@ -162,6 +184,8 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
   public void close(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
+//int actualPort()
+//int
   /**
    * The actual port the server is listening on. This is useful if you bound the server specifying 0 as port number
    * signifying an ephemeral port

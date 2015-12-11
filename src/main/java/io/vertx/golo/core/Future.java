@@ -15,6 +15,8 @@ public class Future<T> {
   public Object getDelegate() {
     return delegate;
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefuture]> io.vertx.core.Future<T> future()
+//io.vertx.core.Future<T>
   /**
    * Create a future that hasn't completed yet
    * @return the future
@@ -22,6 +24,8 @@ public class Future<T> {
   public static <T> Future<T> future() {
 return    InternalHelper.safeCreate(io.vertx.core.Future.future(), io.vertx.golo.core.Future.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture()
+//io.vertx.core.Future<T>
   /**
    * Create a succeeded future with a null result
    * @return the future
@@ -29,6 +33,8 @@ return    InternalHelper.safeCreate(io.vertx.core.Future.future(), io.vertx.golo
   public static <T> Future<T> succeededFuture() {
 return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(), io.vertx.golo.core.Future.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamesucceededFuture]> io.vertx.core.Future<T> succeededFuture(T result)
+//io.vertx.core.Future<T>
   /**
    * Created a succeeded future with the specified result.
    * @param result the result
@@ -37,6 +43,8 @@ return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(), io.v
   public static <T> Future<T> succeededFuture(T result) {
 return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(InternalHelper.unwrapObject(result)), io.vertx.golo.core.Future.class);
   }
+//<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage)
+//io.vertx.core.Future<T>
   /**
    * Create a failed future with the specified failure message.
    * @param failureMessage the failure message
@@ -45,6 +53,8 @@ return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(Interna
   public static <T> Future<T> failedFuture(String failureMessage) {
 return    InternalHelper.safeCreate(io.vertx.core.Future.failedFuture(failureMessage), io.vertx.golo.core.Future.class);
   }
+//boolean isComplete()
+//boolean
   /**
    * Has the future completed?
    * <p>
@@ -54,6 +64,8 @@ return    InternalHelper.safeCreate(io.vertx.core.Future.failedFuture(failureMes
   public boolean isComplete() {
 return    ((io.vertx.core.Future) this.delegate).isComplete();
   }
+//void setHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> handler)
+//void
   /**
    * Set a handler for the result.
    * <p>
@@ -74,6 +86,8 @@ return    ((io.vertx.core.Future) this.delegate).isComplete();
       }
     });
   }
+//void complete(T result)
+//void
   /**
    * Set the result. Any handler will be called, if there is one, and the future will be marked as completed.
    * @param result the result
@@ -81,12 +95,16 @@ return    ((io.vertx.core.Future) this.delegate).isComplete();
   public void complete(T result) {
     ((io.vertx.core.Future) this.delegate).complete(InternalHelper.unwrapObject(result));
   }
+//void complete()
+//void
   /**
    * Set a null result. Any handler will be called, if there is one, and the future will be marked as completed.
    */
   public void complete() {
     ((io.vertx.core.Future) this.delegate).complete();
   }
+//void fail(java.lang.String failureMessage)
+//void
   /**
    * Set the failure. Any handler will be called, if there is one, and the future will be marked as completed.
    * @param failureMessage the failure message

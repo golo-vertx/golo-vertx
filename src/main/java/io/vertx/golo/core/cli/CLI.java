@@ -16,6 +16,8 @@ public class CLI {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.cli.CLI create(java.lang.String name)
+//io.vertx.core.cli.CLI
   /**
    * Creates an instance of {@link io.vertx.golo.core.cli.CLI} using the default implementation.
    * @param name the name of the CLI (must not be <code>null</code>)
@@ -24,6 +26,8 @@ public class CLI {
   public static CLI create(String name) {
 return    InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx.golo.core.cli.CLI.class);
   }
+//io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments)
+//io.vertx.core.cli.CommandLine
   /**
    * Parses the user command line interface and create a new {@link io.vertx.golo.core.cli.CommandLine} containing extracting values.
    * @param arguments the arguments
@@ -32,6 +36,8 @@ return    InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx
   public CommandLine parse(List<String> arguments) {
 return    InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.golo.core.cli.CommandLine.class);
   }
+//io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments, boolean validate)
+//io.vertx.core.cli.CommandLine
   /**
    * Parses the user command line interface and create a new {@link io.vertx.golo.core.cli.CommandLine} containing extracting values.
    * @param arguments the arguments
@@ -41,6 +47,8 @@ return    InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.gol
   public CommandLine parse(List<String> arguments, boolean validate) {
 return    InternalHelper.safeCreate(this.delegate.parse(arguments, validate), io.vertx.golo.core.cli.CommandLine.class);
   }
+//java.lang.String getName()
+//java.lang.String
   /**
    * @return the CLI name.
    * @return 
@@ -48,6 +56,8 @@ return    InternalHelper.safeCreate(this.delegate.parse(arguments, validate), io
   public String getName() {
 return    this.delegate.getName();
   }
+//io.vertx.core.cli.CLI setName(java.lang.String name)
+//io.vertx.core.cli.CLI
   /**
    * Sets the name of the CLI.
    * @param name the name
@@ -57,6 +67,8 @@ return    this.delegate.getName();
     this.delegate.setName(name);
     return this;
   }
+//java.lang.String getDescription()
+//java.lang.String
   /**
    * @return the CLI description.
    * @return 
@@ -64,10 +76,14 @@ return    this.delegate.getName();
   public String getDescription() {
 return    this.delegate.getDescription();
   }
+//io.vertx.core.cli.CLI setDescription(java.lang.String desc)
+//io.vertx.core.cli.CLI
   public CLI setDescription(String desc) {
     this.delegate.setDescription(desc);
     return this;
   }
+//java.lang.String getSummary()
+//java.lang.String
   /**
    * @return the CLI summary.
    * @return 
@@ -75,6 +91,8 @@ return    this.delegate.getDescription();
   public String getSummary() {
 return    this.delegate.getSummary();
   }
+//io.vertx.core.cli.CLI setSummary(java.lang.String summary)
+//io.vertx.core.cli.CLI
   /**
    * Sets the summary of the CLI.
    * @param summary the summary
@@ -84,6 +102,8 @@ return    this.delegate.getSummary();
     this.delegate.setSummary(summary);
     return this;
   }
+//boolean isHidden()
+//boolean
   /**
    * Checks whether or not the current {@link io.vertx.golo.core.cli.CLI} instance is hidden.
    * @return <code>true</code> if the current {@link io.vertx.golo.core.cli.CLI} is hidden,  otherwise
@@ -91,6 +111,8 @@ return    this.delegate.getSummary();
   public boolean isHidden() {
 return    this.delegate.isHidden();
   }
+//io.vertx.core.cli.CLI setHidden(boolean hidden)
+//io.vertx.core.cli.CLI
   /**
    * Sets whether or not the current instance of {@link io.vertx.golo.core.cli.CLI} must be hidden. Hidden CLI are not listed when
    * displaying usages / help messages. In other words, hidden commands are for power user.
@@ -101,6 +123,8 @@ return    this.delegate.isHidden();
     this.delegate.setHidden(hidden);
     return this;
   }
+//java.util.List<io.vertx.core.cli.Option> getOptions()
+//java.util.List<io.vertx.core.cli.Option>
   /**
    * Gets the list of options.
    * @return the list of options, empty if none.
@@ -108,6 +132,8 @@ return    this.delegate.isHidden();
   public List<Map<String, Object>> getOptions() {
 return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, Object>)InternalHelper.wrapObject(underpants.toJson())).collect(java.util.stream.Collectors.toList());
   }
+//io.vertx.core.cli.CLI addOption(io.vertx.core.cli.Option option)
+//io.vertx.core.cli.CLI
   /**
    * Adds an option.
    * @param option the option, must not be <code>null</code>. (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
@@ -117,6 +143,8 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
     this.delegate.addOption(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
     return this;
   }
+//io.vertx.core.cli.CLI addOptions(java.util.List<io.vertx.core.cli.Option> options)
+//io.vertx.core.cli.CLI
   /**
    * Adds a set of options. Unlike {@link io.vertx.golo.core.cli.CLI#setOptions}}, this method does not remove the existing options.
    * The given list is appended to the existing list.
@@ -127,6 +155,8 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
     this.delegate.addOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
+//io.vertx.core.cli.CLI setOptions(java.util.List<io.vertx.core.cli.Option> options)
+//io.vertx.core.cli.CLI
   /**
    * Sets the list of arguments.
    * @param options the list of options, must not be <code>null</code>
@@ -136,6 +166,8 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
     this.delegate.setOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
+//java.util.List<io.vertx.core.cli.Argument> getArguments()
+//java.util.List<io.vertx.core.cli.Argument>
   /**
    * Gets the list of defined arguments.
    * @return the list of argument, empty if none.
@@ -143,6 +175,8 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
   public List<Map<String, Object>> getArguments() {
 return    this.delegate.getArguments().stream().map((underpants) -> (Map<String, Object>)InternalHelper.wrapObject(underpants.toJson())).collect(java.util.stream.Collectors.toList());
   }
+//io.vertx.core.cli.CLI addArgument(io.vertx.core.cli.Argument arg)
+//io.vertx.core.cli.CLI
   /**
    * Adds an argument.
    * @param arg the argument, must not be <code>null</code> (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
@@ -152,6 +186,8 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
     this.delegate.addArgument(arg != null ? new io.vertx.core.cli.Argument(new io.vertx.core.json.JsonObject(arg)) : null);
     return this;
   }
+//io.vertx.core.cli.CLI addArguments(java.util.List<io.vertx.core.cli.Argument> args)
+//io.vertx.core.cli.CLI
   /**
    * Adds a set of arguments. Unlike {@link io.vertx.golo.core.cli.CLI#setArguments}, this method does not remove the existing arguments.
    * The given list is appended to the existing list.
@@ -162,6 +198,8 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
     this.delegate.addArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
+//io.vertx.core.cli.CLI setArguments(java.util.List<io.vertx.core.cli.Argument> args)
+//io.vertx.core.cli.CLI
   /**
    * Sets the list of arguments.
    * @param args the list of arguments, must not be <code>null</code>
@@ -171,6 +209,8 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
     this.delegate.setArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
+//io.vertx.core.cli.Option getOption(java.lang.String name)
+//io.vertx.core.cli.Option
   /**
    * Gets an <a href="../../../../../../../cheatsheet/Option.html">Option</a> based on its name (short name, long name or argument name).
    * @param name the name, must not be <code>null</code>
@@ -179,6 +219,8 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
   public Map<String, Object> getOption(String name) {
 return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getOption(name).toJson());
   }
+//io.vertx.core.cli.Argument getArgument(java.lang.String name)
+//io.vertx.core.cli.Argument
   /**
    * Gets an <a href="../../../../../../../cheatsheet/Argument.html">Argument</a> based on its name (argument name).
    * @param name the name of the argument, must not be <code>null</code>
@@ -187,6 +229,8 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getOption
   public Map<String, Object> getArgument(String name) {
 return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgument(name).toJson());
   }
+//io.vertx.core.cli.Argument getArgument(int index)
+//io.vertx.core.cli.Argument
   /**
    * Gets an <a href="../../../../../../../cheatsheet/Argument.html">Argument</a> based on its index.
    * @param index the index, must be positive or zero.
@@ -195,6 +239,8 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgume
   public Map<String, Object> getArgument(int index) {
 return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgument(index).toJson());
   }
+//io.vertx.core.cli.CLI removeOption(java.lang.String name)
+//io.vertx.core.cli.CLI
   /**
    * Removes an option identified by its name. This method does nothing if the option cannot be found.
    * @param name the option name
@@ -204,6 +250,8 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgume
     this.delegate.removeOption(name);
     return this;
   }
+//io.vertx.core.cli.CLI removeArgument(int index)
+//io.vertx.core.cli.CLI
   /**
    * Removes an argument identified by its index. This method does nothing if the argument cannot be found.
    * @param index the argument index

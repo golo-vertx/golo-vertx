@@ -13,6 +13,8 @@ public class LocalMap<K,V> {
   public Object getDelegate() {
     return delegate;
   }
+//V get(K key)
+//V
   /**
    * Get a value from the map
    * @param key the key
@@ -22,6 +24,8 @@ public class LocalMap<K,V> {
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).get(InternalHelper.unwrapObject(key)));
   }
+//V put(K key, V value)
+//V
   /**
    * Put an entry in the map
    * @param key the key
@@ -32,6 +36,8 @@ return    // This cast is cleary flawed
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).put(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value)));
   }
+//V remove(K key)
+//V
   /**
    * Remove an entry from the map
    * @param key the key
@@ -41,12 +47,16 @@ return    // This cast is cleary flawed
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).remove(InternalHelper.unwrapObject(key)));
   }
+//void clear()
+//void
   /**
    * Clear all entries in the map
    */
   public void clear() {
     ((io.vertx.core.shareddata.LocalMap) this.delegate).clear();
   }
+//int size()
+//int
   /**
    * Get the size of the map
    * @return the number of entries in the map
@@ -54,6 +64,8 @@ return    // This cast is cleary flawed
   public int size() {
 return    ((io.vertx.core.shareddata.LocalMap) this.delegate).size();
   }
+//boolean isEmpty()
+//boolean
   /**
    * @return true if there are zero entries in the map
    * @return 
@@ -61,6 +73,8 @@ return    ((io.vertx.core.shareddata.LocalMap) this.delegate).size();
   public boolean isEmpty() {
 return    ((io.vertx.core.shareddata.LocalMap) this.delegate).isEmpty();
   }
+//V putIfAbsent(K key, V value)
+//V
   /**
    * Put the entry only if there is no existing entry for that key
    * @param key the key
@@ -71,6 +85,8 @@ return    ((io.vertx.core.shareddata.LocalMap) this.delegate).isEmpty();
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).putIfAbsent(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value)));
   }
+//boolean removeIfPresent(K key, V value)
+//boolean
   /**
    * Remove the entry only if there is an entry with the specified key and value
    * @param key the key
@@ -80,6 +96,8 @@ return    // This cast is cleary flawed
   public boolean removeIfPresent(K key, V value) {
 return    ((io.vertx.core.shareddata.LocalMap) this.delegate).removeIfPresent(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value));
   }
+//boolean replaceIfPresent(K key, V oldValue, V newValue)
+//boolean
   /**
    * Replace the entry only if there is an existing entry with the specified key and value
    * @param key the key
@@ -90,6 +108,8 @@ return    ((io.vertx.core.shareddata.LocalMap) this.delegate).removeIfPresent(In
   public boolean replaceIfPresent(K key, V oldValue, V newValue) {
 return    ((io.vertx.core.shareddata.LocalMap) this.delegate).replaceIfPresent(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(oldValue), InternalHelper.unwrapObject(newValue));
   }
+//V replace(K key, V value)
+//V
   /**
    * Replace the entry only if there is an existing entry with the key
    * @param key the key
@@ -100,6 +120,8 @@ return    ((io.vertx.core.shareddata.LocalMap) this.delegate).replaceIfPresent(I
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).replace(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value)));
   }
+//void close()
+//void
   /**
    * Close and release the map
    */

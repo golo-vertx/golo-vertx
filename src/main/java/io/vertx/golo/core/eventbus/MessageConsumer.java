@@ -16,10 +16,14 @@ public class MessageConsumer<T> implements ReadStream<Message<T>> {
   public Object getDelegate() {
     return delegate;
   }
+//io.vertx.core.eventbus.MessageConsumer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.eventbus.MessageConsumer<T>
   public MessageConsumer<T> exceptionHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.streams.StreamBase) this.delegate).exceptionHandler(handler);
     return this;
   }
+//io.vertx.core.eventbus.MessageConsumer<T> handler(io.vertx.core.Handler<io.vertx.core.eventbus.Message<T>> handler)
+//io.vertx.core.eventbus.MessageConsumer<T>
   public MessageConsumer<T> handler(Handler<Message<T>> handler) {
     (  (io.vertx.core.streams.ReadStream) this.delegate).handler(new Handler<io.vertx.core.eventbus.Message<java.lang.Object>>() {
       public void handle(io.vertx.core.eventbus.Message<java.lang.Object> event) {
@@ -28,25 +32,35 @@ public class MessageConsumer<T> implements ReadStream<Message<T>> {
     });
     return this;
   }
+//io.vertx.core.eventbus.MessageConsumer<T> pause()
+//io.vertx.core.eventbus.MessageConsumer<T>
   public MessageConsumer<T> pause() {
     (  (io.vertx.core.streams.ReadStream) this.delegate).pause();
     return this;
   }
+//io.vertx.core.eventbus.MessageConsumer<T> resume()
+//io.vertx.core.eventbus.MessageConsumer<T>
   public MessageConsumer<T> resume() {
     (  (io.vertx.core.streams.ReadStream) this.delegate).resume();
     return this;
   }
+//io.vertx.core.eventbus.MessageConsumer<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
+//io.vertx.core.eventbus.MessageConsumer<T>
   public MessageConsumer<T> endHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.streams.ReadStream) this.delegate).endHandler(endHandler);
     return this;
   }
+//io.vertx.core.streams.ReadStream<T> bodyStream()
+//io.vertx.core.streams.ReadStream<T>
   /**
    * @return a read stream for the body of the message stream.
    * @return 
    */
   public ReadStream<T> bodyStream() {
-return    InternalHelper.safeCreate(((io.vertx.core.eventbus.MessageConsumer) this.delegate).bodyStream(), io.vertx.golo.core.streams.ReadStreamImpl.class);
+return    InternalHelper.safeCreate(((io.vertx.core.eventbus.MessageConsumer) this.delegate).bodyStream(), io.vertx.golo.core.streams.ReadStream.class);
   }
+//boolean isRegistered()
+//boolean
   /**
    * @return true if the current consumer is registered
    * @return 
@@ -54,6 +68,8 @@ return    InternalHelper.safeCreate(((io.vertx.core.eventbus.MessageConsumer) th
   public boolean isRegistered() {
 return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).isRegistered();
   }
+//java.lang.String address()
+//java.lang.String
   /**
    * @return The address the handler was registered with.
    * @return 
@@ -61,6 +77,8 @@ return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).isRegistered(
   public String address() {
 return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).address();
   }
+//io.vertx.core.eventbus.MessageConsumer<T> setMaxBufferedMessages(int maxBufferedMessages)
+//io.vertx.core.eventbus.MessageConsumer<T>
   /**
    * Set the number of messages this registration will buffer when this stream is paused. The default
    * value is <code>0</code>. When a new value is set, buffered messages may be discarded to reach
@@ -71,6 +89,8 @@ return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).address();
   public MessageConsumer<T> setMaxBufferedMessages(int maxBufferedMessages) {
 return    InternalHelper.safeCreate(((io.vertx.core.eventbus.MessageConsumer) this.delegate).setMaxBufferedMessages(maxBufferedMessages), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
+//int getMaxBufferedMessages()
+//int
   /**
    * @return the maximum number of messages that can be buffered when this stream is paused
    * @return 
@@ -78,6 +98,8 @@ return    InternalHelper.safeCreate(((io.vertx.core.eventbus.MessageConsumer) th
   public int getMaxBufferedMessages() {
 return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).getMaxBufferedMessages();
   }
+//void completionHandler(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
+//void
   /**
    * Optional method which can be called to indicate when the registration has been propagated across the cluster.
    * @param completionHandler the completion handler
@@ -85,12 +107,16 @@ return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).getMaxBuffere
   public void completionHandler(Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.eventbus.MessageConsumer) this.delegate).completionHandler(completionHandler);
   }
+//void unregister()
+//void
   /**
    * Unregisters the handler which created this registration
    */
   public void unregister() {
     ((io.vertx.core.eventbus.MessageConsumer) this.delegate).unregister();
   }
+//void unregister(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
+//void
   /**
    * Unregisters the handler which created this registration
    * @param completionHandler the handler called when the unregister is done. For example in a cluster when all nodes of the event bus have been unregistered.

@@ -19,6 +19,8 @@ public class DatagramSocket implements ReadStream<DatagramPacket>,  Measured {
   public Object getDelegate() {
     return delegate;
   }
+//boolean isMetricsEnabled()
+//boolean
   /**
    * Whether the metrics are enabled for this measured object
    * @return true if the metrics are enabled
@@ -26,6 +28,8 @@ public class DatagramSocket implements ReadStream<DatagramPacket>,  Measured {
   public boolean isMetricsEnabled() {
 return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   }
+//io.vertx.core.datagram.DatagramSocket send(io.vertx.core.buffer.Buffer packet, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Write the given {@link io.vertx.golo.core.buffer.Buffer} to the {@link io.vertx.golo.core.net.SocketAddress}.
    * The {@link io.vertx.golo.core.Handler} will be notified once the write completes.
@@ -49,6 +53,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
     });
     return this;
   }
+//io.vertx.core.datagram.PacketWritestream sender(int port, java.lang.String host)
+//io.vertx.core.datagram.PacketWritestream
   /**
    * Returns a {@link io.vertx.golo.core.datagram.PacketWritestream} able to send  to the
    * {@link io.vertx.golo.core.net.SocketAddress}.
@@ -59,6 +65,8 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   public PacketWritestream sender(int port, String host) {
 return    InternalHelper.safeCreate(this.delegate.sender(port, host), io.vertx.golo.core.datagram.PacketWritestream.class);
   }
+//io.vertx.core.datagram.DatagramSocket send(java.lang.String str, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Write the given {@link java.lang.String} to the {@link io.vertx.golo.core.net.SocketAddress} using UTF8 encoding.
    * The  will be notified once the write completes.
@@ -82,6 +90,8 @@ return    InternalHelper.safeCreate(this.delegate.sender(port, host), io.vertx.g
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket send(java.lang.String str, java.lang.String enc, int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Write the given {@link java.lang.String} to the {@link io.vertx.golo.core.net.SocketAddress} using the given encoding.
    * The  will be notified once the write completes.
@@ -106,6 +116,8 @@ return    InternalHelper.safeCreate(this.delegate.sender(port, host), io.vertx.g
     });
     return this;
   }
+//void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
+//void
   /**
    * Closes the {@link io.vertx.golo.core.datagram.DatagramSocket} implementation asynchronous
    * and notifies the handler once done.
@@ -114,12 +126,16 @@ return    InternalHelper.safeCreate(this.delegate.sender(port, host), io.vertx.g
   public void close(Handler<AsyncResult<Void>> handler) {
     this.delegate.close(handler);
   }
+//void close()
+//void
   /**
    * Closes the {@link io.vertx.golo.core.datagram.DatagramSocket}. The close itself is asynchronous.
    */
   public void close() {
     this.delegate.close();
   }
+//io.vertx.core.net.SocketAddress localAddress()
+//io.vertx.core.net.SocketAddress
   /**
    * Return the {@link io.vertx.golo.core.net.SocketAddress} to which
    * this {@link io.vertx.golo.core.datagram.DatagramSocket} is bound.
@@ -128,6 +144,8 @@ return    InternalHelper.safeCreate(this.delegate.sender(port, host), io.vertx.g
   public SocketAddress localAddress() {
 return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.core.net.SocketAddress.class);
   }
+//io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Joins a multicast group and listens for packets send to it.
    * The  is notified once the operation completes.
@@ -149,6 +167,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket listenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Joins a multicast group and listens for packets send to it on the given network interface.
    * The  is notified once the operation completes.
@@ -172,6 +192,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Leaves a multicast group and stops listening for packets send to it.
    * The  is notified once the operation completes.
@@ -193,6 +215,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket unlistenMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String source, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Leaves a multicast group and stops listening for packets send to it on the given network interface.
    * The  is notified once the operation completes.
@@ -216,6 +240,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Block the given address for the given multicast address and notifies the  once
    * the operation completes.
@@ -238,6 +264,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket blockMulticastGroup(java.lang.String multicastAddress, java.lang.String networkInterface, java.lang.String sourceToBlock, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Block the given address for the given multicast address on the given network interface and notifies
    * the  once the operation completes.
@@ -261,6 +289,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket listen(int port, java.lang.String host, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.datagram.DatagramSocket>> handler)
+//io.vertx.core.datagram.DatagramSocket
   /**
    * Start listening on the given port and host. The handler will be called when the socket is listening.
    * @param port the port to listen on
@@ -282,18 +312,26 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket pause()
+//io.vertx.core.datagram.DatagramSocket
   public DatagramSocket pause() {
     (  (io.vertx.core.datagram.DatagramSocket) this.delegate).pause();
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket resume()
+//io.vertx.core.datagram.DatagramSocket
   public DatagramSocket resume() {
     (  (io.vertx.core.datagram.DatagramSocket) this.delegate).resume();
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
+//io.vertx.core.datagram.DatagramSocket
   public DatagramSocket endHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.datagram.DatagramSocket) this.delegate).endHandler(endHandler);
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket handler(io.vertx.core.Handler<io.vertx.core.datagram.DatagramPacket> handler)
+//io.vertx.core.datagram.DatagramSocket
   public DatagramSocket handler(Handler<DatagramPacket> handler) {
     (  (io.vertx.core.datagram.DatagramSocket) this.delegate).handler(new Handler<io.vertx.core.datagram.DatagramPacket>() {
       public void handle(io.vertx.core.datagram.DatagramPacket event) {
@@ -302,6 +340,8 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     });
     return this;
   }
+//io.vertx.core.datagram.DatagramSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
+//io.vertx.core.datagram.DatagramSocket
   public DatagramSocket exceptionHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.datagram.DatagramSocket) this.delegate).exceptionHandler(handler);
     return this;
