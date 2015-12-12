@@ -1,7 +1,7 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=9, -651147883=1322527447, -2118890445=768155177, -244276756=1647738407, -1459240295=-717324778, 1702816386=-361059728, -2083920444=-381201169, -804712521=1251522848, -1397701218=-1602097262, -849505581=-938488099} 
+//myHashMap={0=10, 58921667=696283239, -1564086745=261145269, 1752645954=1183541019, -304041049=1817799937, -1807049645=898314081, -104116862=2101362482, -570085297=1795018357, 740856179=435551230, 884614247=1115754589, 1634565107=-955806548} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -15,6 +15,7 @@ import io.vertx.core.Handler;
 public class FileSystem {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=10, 58921667=696283239, -1564086745=261145269, 1752645954=1183541019, -304041049=1817799937, -1807049645=898314081, -104116862=2101362482, -570085297=1795018357, 740856179=435551230, 884614247=1115754589, 1634565107=-955806548}
   private io.vertx.core.file.FileSystem delegate;
   public FileSystem(Object delegate) {
     this.delegate = (io.vertx.core.file.FileSystem) delegate;

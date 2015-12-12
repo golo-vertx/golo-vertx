@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=2, 709905987=-1888025070, -1139276686=1368080700} 
+//myHashMap={0=1, 1199269117=982174470} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -15,6 +15,7 @@ import io.vertx.core.Handler;
 public class HttpClient implements Measured {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=1, 1199269117=982174470}
   private io.vertx.core.http.HttpClient delegate;
   public HttpClient(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpClient) delegate;

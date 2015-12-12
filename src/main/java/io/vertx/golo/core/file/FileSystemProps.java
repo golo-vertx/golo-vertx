@@ -1,7 +1,7 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=6, -439470966=-1332866709, -1334178689=-1764986645, -261485966=2121527155, -1049308183=-673430138, -102921872=1720585502, -2006070429=1309873384} 
+//myHashMap={0=5, -316188729=-1909611136, -1205619769=1958570935, -841972859=1816725950, -189458263=1778646998, 1746971919=1830050656} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,6 +10,7 @@ import io.vertx.core.json.JsonObject;
 public class FileSystemProps {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=5, -316188729=-1909611136, -1205619769=1958570935, -841972859=1816725950, -189458263=1778646998, 1746971919=1830050656}
   private io.vertx.core.file.FileSystemProps delegate;
   public FileSystemProps(Object delegate) {
     this.delegate = (io.vertx.core.file.FileSystemProps) delegate;

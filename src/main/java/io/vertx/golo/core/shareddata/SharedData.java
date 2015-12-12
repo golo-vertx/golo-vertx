@@ -1,7 +1,7 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=3, 758695392=-633693800, -688678680=1290974710, -491470295=-1959182021} 
+//myHashMap={0=10, -1006704019=1562376419, 442716502=-987003452, 1351126813=-1435909030, -1047859188=-1209433691, 1063211128=-524726947, -146343007=1758761671, 1577888747=1285204376, 474724707=-1609327713, -713245936=1844720388, -1916270267=-715542636} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,6 +12,7 @@ import io.vertx.core.Handler;
 public class SharedData {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=10, -1006704019=1562376419, 442716502=-987003452, 1351126813=-1435909030, -1047859188=-1209433691, 1063211128=-524726947, -146343007=1758761671, 1577888747=1285204376, 474724707=-1609327713, -713245936=1844720388, -1916270267=-715542636}
   private io.vertx.core.shareddata.SharedData delegate;
   public SharedData(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.SharedData) delegate;

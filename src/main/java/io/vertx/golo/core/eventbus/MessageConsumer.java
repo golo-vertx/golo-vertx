@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=2, 741288216=-1818535876, 1459481184=120220534} 
+//myHashMap={0=4, 1422242081=1631688574, -2042742039=-1775574140, 1478943085=-1025029755, 419912601=-1709282803} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -13,6 +13,7 @@ import io.vertx.core.Handler;
 public class MessageConsumer<T> implements ReadStream<Message<T>> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=4, 1422242081=1631688574, -2042742039=-1775574140, 1478943085=-1025029755, 419912601=-1709282803}
   private io.vertx.core.eventbus.MessageConsumer delegate;
   public MessageConsumer(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.MessageConsumer) delegate;

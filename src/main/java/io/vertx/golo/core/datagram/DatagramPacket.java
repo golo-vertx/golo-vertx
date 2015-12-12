@@ -1,7 +1,7 @@
 package io.vertx.golo.core.datagram;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=5, -1152331594=-943935005, 764311000=1716973182, -786534407=1142396912, 2031135225=-300863223, 963261030=-782932812} 
+//myHashMap={0=6, -1207633308=-66502003, 1762707345=-1505268100, 2004890626=-1827698499, -685265516=657094096, -958151737=-1872629617, -462055142=-202478954} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,6 +12,7 @@ import io.vertx.golo.core.net.SocketAddress;
 public class DatagramPacket {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=6, -1207633308=-66502003, 1762707345=-1505268100, 2004890626=-1827698499, -685265516=657094096, -958151737=-1872629617, -462055142=-202478954}
   private io.vertx.core.datagram.DatagramPacket delegate;
   public DatagramPacket(Object delegate) {
     this.delegate = (io.vertx.core.datagram.DatagramPacket) delegate;

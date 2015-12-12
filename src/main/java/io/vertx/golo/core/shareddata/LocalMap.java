@@ -1,7 +1,7 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=5, -1288828514=-922508195, 1969095547=-1690398043, -1099730325=-719904402, 2117274778=-1389665805, -1126041187=-565644999} 
+//myHashMap={0=6, 1799402387=-1600216653, 1347603428=1511808335, -1451579363=125582715, 83781414=-1049283421, 93439355=-1721297478, -729852108=-1287063437} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,6 +10,7 @@ import io.vertx.core.json.JsonObject;
 public class LocalMap<K,V> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=6, 1799402387=-1600216653, 1347603428=1511808335, -1451579363=125582715, 83781414=-1049283421, 93439355=-1721297478, -729852108=-1287063437}
   private io.vertx.core.shareddata.LocalMap delegate;
   public LocalMap(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.LocalMap) delegate;

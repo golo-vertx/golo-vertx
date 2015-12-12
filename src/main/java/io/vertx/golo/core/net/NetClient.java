@@ -1,7 +1,7 @@
 package io.vertx.golo.core.net;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=1, 1972567221=-1554885540} 
+//myHashMap={0=9, -2095558869=1923816537, 71990238=-1722098835, 1373227468=638214332, -1167349332=375407985, -282814435=1657971671, 424658582=-1667304535, -1015109294=2007040076, -346546300=319726743, 957084423=-148506123} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -13,6 +13,7 @@ import io.vertx.core.Handler;
 public class NetClient implements Measured {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=9, -2095558869=1923816537, 71990238=-1722098835, 1373227468=638214332, -1167349332=375407985, -282814435=1657971671, 424658582=-1667304535, -1015109294=2007040076, -346546300=319726743, 957084423=-148506123}
   private io.vertx.core.net.NetClient delegate;
   public NetClient(Object delegate) {
     this.delegate = (io.vertx.core.net.NetClient) delegate;

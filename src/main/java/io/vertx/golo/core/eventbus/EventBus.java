@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=4, -1848858261=-1259298882, -744598460=609863646, -1855633112=377201107, -699512431=242672004} 
+//myHashMap={0=9, -376207965=-431408481, 1046062091=874289643, -1499001245=-1928495847, 1365888364=1995157392, 1743906939=471240161, -875178242=1950773858, 1733358668=-302527136, 1486868288=2028281438, 1088406112=-481639437} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -14,6 +14,7 @@ import io.vertx.core.Handler;
 public class EventBus implements Measured {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=9, -376207965=-431408481, 1046062091=874289643, -1499001245=-1928495847, 1365888364=1995157392, 1743906939=471240161, -875178242=1950773858, 1733358668=-302527136, 1486868288=2028281438, 1088406112=-481639437}
   private io.vertx.core.eventbus.EventBus delegate;
   public EventBus(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.EventBus) delegate;

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.datagram;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=5, -664287513=702068671, -1766303224=1633498220, 782911656=-431107575, -12025507=-50939818, -1105907621=-1930676396} 
+//myHashMap={0=3, 735012279=17976863, -1723547682=-795951841, 1895594707=-998068359} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -13,6 +13,7 @@ import io.vertx.core.Handler;
 public class PacketWritestream implements WriteStream<Buffer> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=3, 735012279=17976863, -1723547682=-795951841, 1895594707=-998068359}
   private io.vertx.core.datagram.PacketWritestream delegate;
   public PacketWritestream(Object delegate) {
     this.delegate = (io.vertx.core.datagram.PacketWritestream) delegate;

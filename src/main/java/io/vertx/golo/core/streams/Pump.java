@@ -1,7 +1,7 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=1, 1163394930=-2135240182} 
+//myHashMap={0=9, -1536631063=-298745103, -460336728=-1191615657, 2099297688=794000376, -668913495=439939489, 1864227956=-1724410186, 268235618=1336505117, -573244854=-2112910806, -1663221214=1406575203, -1704140029=-676644108} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,6 +10,7 @@ import io.vertx.core.json.JsonObject;
 public class Pump {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=9, -1536631063=-298745103, -460336728=-1191615657, 2099297688=794000376, -668913495=439939489, 1864227956=-1724410186, 268235618=1336505117, -573244854=-2112910806, -1663221214=1406575203, -1704140029=-676644108}
   private io.vertx.core.streams.Pump delegate;
   public Pump(Object delegate) {
     this.delegate = (io.vertx.core.streams.Pump) delegate;

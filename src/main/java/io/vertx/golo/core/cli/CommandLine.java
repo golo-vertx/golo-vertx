@@ -1,7 +1,7 @@
 package io.vertx.golo.core.cli;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=8, 883204693=399641995, 1803665059=1703004991, -1216209562=1411052605, -1924858927=-1095514636, -257636915=-1908058239, -1946792260=1455176751, -239011125=488156113, 197417064=1964690135} 
+//myHashMap={0=8, 149605082=1539379431, -134166240=-1544899591, 10429485=1434893737, 614877796=-1559147967, -1797255094=1281204042, 829734489=885344996, -1095240279=-825734564, -337127511=-799120699} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -13,6 +13,7 @@ import io.vertx.core.cli.Argument;
 public class CommandLine {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=8, 149605082=1539379431, -134166240=-1544899591, 10429485=1434893737, 614877796=-1559147967, -1797255094=1281204042, 829734489=885344996, -1095240279=-825734564, -337127511=-799120699}
   private io.vertx.core.cli.CommandLine delegate;
   public CommandLine(Object delegate) {
     this.delegate = (io.vertx.core.cli.CommandLine) delegate;

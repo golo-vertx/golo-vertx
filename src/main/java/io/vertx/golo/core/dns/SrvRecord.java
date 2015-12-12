@@ -1,7 +1,7 @@
 package io.vertx.golo.core.dns;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=9, 1374239356=-68977859, 453715965=1800645126, -1313182221=1236957674, -1994859758=1513084381, -1272014990=1247604742, -398072823=-1212099696, 937788699=-1859217547, -1996621374=-590083832, -2114147693=-1524230420} 
+//myHashMap={0=8, 830912886=17839510, -1274027429=1908688943, 1173632720=379578407, -1988318950=542125062, 307442132=-1076358978, 1132057090=784613524, 433438361=-452800302, 538223129=-1805997328} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,6 +10,7 @@ import io.vertx.core.json.JsonObject;
 public class SrvRecord {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=8, 830912886=17839510, -1274027429=1908688943, 1173632720=379578407, -1988318950=542125062, 307442132=-1076358978, 1132057090=784613524, 433438361=-452800302, 538223129=-1805997328}
   private io.vertx.core.dns.SrvRecord delegate;
   public SrvRecord(Object delegate) {
     this.delegate = (io.vertx.core.dns.SrvRecord) delegate;

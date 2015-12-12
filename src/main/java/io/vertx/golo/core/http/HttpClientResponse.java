@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=2, -689447114=183876335, -576454196=-1402164719} 
+//myHashMap={0=6, -138735846=-395898243, -216970637=1147068713, -2134229633=870165185, -1372173565=277638485, 285719434=607300823, 1830695873=1154283686} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -16,6 +16,7 @@ import io.vertx.golo.core.net.NetSocket;
 public class HttpClientResponse implements ReadStream<Buffer> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=6, -138735846=-395898243, -216970637=1147068713, -2134229633=870165185, -1372173565=277638485, 285719434=607300823, 1830695873=1154283686}
   private io.vertx.core.http.HttpClientResponse delegate;
   public HttpClientResponse(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpClientResponse) delegate;

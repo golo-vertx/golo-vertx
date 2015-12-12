@@ -1,7 +1,7 @@
 package io.vertx.golo.core.datagram;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=10, 2086808275=1707397218, -633638321=-709774895, -1465237682=892197001, 711844939=1462051502, -924089620=1381192730, 985142226=-1390139051, 2126326599=-631513944, -360184412=1926248808, -1462215482=-1543316680, -373775017=-232672277} 
+//myHashMap={0=8, 1949171263=-1486591865, -737213909=660507224, -33149856=-1134017492, 1717584776=1740277653, 1213299673=-334036850, -1387853683=-1874195225, -2109631446=-1355142753, -1262502781=506014784} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -16,6 +16,7 @@ import io.vertx.golo.core.net.SocketAddress;
 public class DatagramSocket implements ReadStream<DatagramPacket>,  Measured {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=8, 1949171263=-1486591865, -737213909=660507224, -33149856=-1134017492, 1717584776=1740277653, 1213299673=-334036850, -1387853683=-1874195225, -2109631446=-1355142753, -1262502781=506014784}
   private io.vertx.core.datagram.DatagramSocket delegate;
   public DatagramSocket(Object delegate) {
     this.delegate = (io.vertx.core.datagram.DatagramSocket) delegate;

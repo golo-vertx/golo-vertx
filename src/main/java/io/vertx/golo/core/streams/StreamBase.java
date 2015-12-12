@@ -1,7 +1,7 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=3, -222978912=1384511208, 461542937=490612441, -1109120200=-1869497354} 
+//myHashMap={0=9, 1860699001=1240316989, -1946123391=1442619244, -416970668=996072580, -1747192151=650513403, 205355464=-1873633654, 1804177359=-666813730, 1587063663=-66639966, 1393115876=-183548548, -1130385775=1795490939} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -16,6 +16,7 @@ public Object getDelegate();
 class StreamBaseImpl implements StreamBase {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=9, 1860699001=1240316989, -1946123391=1442619244, -416970668=996072580, -1747192151=650513403, 205355464=-1873633654, 1804177359=-666813730, 1587063663=-66639966, 1393115876=-183548548, -1130385775=1795490939}
   private io.vertx.core.streams.StreamBase delegate;
   public StreamBaseImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.StreamBase) delegate;

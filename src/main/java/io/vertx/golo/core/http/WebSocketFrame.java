@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=10, -910757866=-545709765, 537285349=1288386241, -649627905=1357586348, 700000291=2057540824, 488022813=-793391310, -1378698711=-1737591874, 1552722855=1329655002, 2115499708=-841153965, 1765070616=-399808596, 269722253=213998267} 
+//myHashMap={0=10, 1893785680=1106428157, 931410720=2131142180, 20838184=-217646958, -1465189521=-166793369, -379670648=1201255854, 8981070=-2067680207, 2039127821=-248822382, 829267562=-124754138, -996019352=922801315, 1090774751=-34951580} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,6 +11,7 @@ import io.vertx.golo.core.buffer.Buffer;
 public class WebSocketFrame {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=10, 1893785680=1106428157, 931410720=2131142180, 20838184=-217646958, -1465189521=-166793369, -379670648=1201255854, 8981070=-2067680207, 2039127821=-248822382, 829267562=-124754138, -996019352=922801315, 1090774751=-34951580}
   private io.vertx.core.http.WebSocketFrame delegate;
   public WebSocketFrame(Object delegate) {
     this.delegate = (io.vertx.core.http.WebSocketFrame) delegate;

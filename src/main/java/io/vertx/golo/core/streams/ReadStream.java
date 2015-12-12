@@ -1,7 +1,7 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=9, -1385387747=1192008886, 995079214=-432785048, 223417042=-1031925696, -465789176=-196287679, -1462622633=1249425976, 1973389877=-69492573, -667752402=-1217735944, -2027986830=-1756493870, -1196163971=-411807994} 
+//myHashMap={0=3, 1644561763=-686779806, -353639680=470728300, 760201858=74459397} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -20,6 +20,7 @@ public Object getDelegate();
 class ReadStreamImpl<T> implements ReadStream<T> {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=3, 1644561763=-686779806, -353639680=470728300, 760201858=74459397}
   private io.vertx.core.streams.ReadStream delegate;
   public ReadStreamImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.ReadStream) delegate;

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=10, 874816292=-1683026160, -506052218=223952658, 2116797880=-1145610059, 2051083298=1299601932, 974376439=-795911297, -2075958981=45119915, -1236135960=-16662292, 1655609122=2009573167, 1119520212=-1519429772, -818375849=-300693384} 
+//myHashMap={0=10, -2049992657=191340631, 415293413=379995766, -1366051083=547307788, 1478213373=648400450, 196233893=-570504694, -610553300=556096524, 1538392552=1877221367, 732817734=-1986673367, 1275729761=-853216391, -1547772816=-1083629439} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,6 +12,7 @@ import io.vertx.core.Handler;
 public class Counter {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=10, -2049992657=191340631, 415293413=379995766, -1366051083=547307788, 1478213373=648400450, 196233893=-570504694, -610553300=556096524, 1538392552=1877221367, 732817734=-1986673367, 1275729761=-853216391, -1547772816=-1083629439}
   private io.vertx.core.shareddata.Counter delegate;
   public Counter(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.Counter) delegate;

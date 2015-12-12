@@ -1,7 +1,7 @@
 package io.vertx.golo.core.buffer;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=5, -879883714=80445558, 51711825=2110132031, 1266829813=311868141, -324774211=-168158388, -286283072=1765592786} 
+//myHashMap={0=4, 407664654=-455211747, 1175774422=-459065384, 1958820941=-1238507815, 225005367=348846815} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,6 +11,7 @@ import io.vertx.core.shareddata.impl.ClusterSerializable;
 public class Buffer {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=4, 407664654=-455211747, 1175774422=-459065384, 1958820941=-1238507815, 225005367=348846815}
   private io.vertx.core.buffer.Buffer delegate;
   public Buffer(Object delegate) {
     this.delegate = (io.vertx.core.buffer.Buffer) delegate;

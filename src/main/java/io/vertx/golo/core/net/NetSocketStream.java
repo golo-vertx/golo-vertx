@@ -1,7 +1,7 @@
 package io.vertx.golo.core.net;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=4, -984064150=-2086046451, -1302279004=1527245409, -1866781902=-1105118547, -841150157=1200315062} 
+//myHashMap={0=9, -790891205=286687405, 1530095650=258206165, 1700794599=23380983, -454564913=39905148, 470893467=-1927590968, 975857440=-562830283, -1101012140=112572421, -579659937=26128239, 1051357734=1264215796} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,6 +12,7 @@ import io.vertx.core.Handler;
 public class NetSocketStream implements ReadStream<NetSocket> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=9, -790891205=286687405, 1530095650=258206165, 1700794599=23380983, -454564913=39905148, 470893467=-1927590968, 975857440=-562830283, -1101012140=112572421, -579659937=26128239, 1051357734=1264215796}
   private io.vertx.core.net.NetSocketStream delegate;
   public NetSocketStream(Object delegate) {
     this.delegate = (io.vertx.core.net.NetSocketStream) delegate;

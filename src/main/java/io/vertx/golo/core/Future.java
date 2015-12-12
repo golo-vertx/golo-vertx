@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=2, -2026892044=-1348680945, -1107472485=601935241} 
+//myHashMap={0=10, -1773055135=-1242788536, 1852322698=2056478720, -1410959214=-1757027361, 686287890=-265517982, 692872276=656664037, 1582786622=-1617339203, 2063777710=1557905203, 522923095=1674438580, 458255966=-1781383076, -1336709236=-1848560681} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,6 +12,7 @@ import io.vertx.core.Handler;
 public class Future<T> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=10, -1773055135=-1242788536, 1852322698=2056478720, -1410959214=-1757027361, 686287890=-265517982, 692872276=656664037, 1582786622=-1617339203, 2063777710=1557905203, 522923095=1674438580, 458255966=-1781383076, -1336709236=-1848560681}
   private io.vertx.core.Future delegate;
   public Future(Object delegate) {
     this.delegate = (io.vertx.core.Future) delegate;

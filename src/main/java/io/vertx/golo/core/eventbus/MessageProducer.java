@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=10, 1462370872=457235966, -791099829=1129348601, 1221282430=-1387439831, 1715671830=-2138727838, 1203731881=1576716662, 442352363=504277240, -1544775306=968282507, 455121517=-434657933, 318383125=1372830053, -1435448273=-1582102363} 
+//myHashMap={0=9, 1829954967=-419011088, 850664977=-1151053420, 575181469=-646495479, 1701030203=851438145, 581243484=-137810048, -1345502682=-40569146, 1515785029=416819911, -1032928686=1225294962, -181494239=-694403374} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -13,6 +13,7 @@ import io.vertx.core.Handler;
 public class MessageProducer<T> implements WriteStream<T> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=9, 1829954967=-419011088, 850664977=-1151053420, 575181469=-646495479, 1701030203=851438145, 581243484=-137810048, -1345502682=-40569146, 1515785029=416819911, -1032928686=1225294962, -181494239=-694403374}
   private io.vertx.core.eventbus.MessageProducer delegate;
   public MessageProducer(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.MessageProducer) delegate;

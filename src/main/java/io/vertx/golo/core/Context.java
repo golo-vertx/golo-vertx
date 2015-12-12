@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=2, 627038174=595281133, 1853281370=1878864778} 
+//myHashMap={0=10, -1634614383=1243560769, -64774800=-58270469, 441408348=-470511972, 196590004=289115761, -846174509=1461946529, -1004257454=-817402648, 1831168812=-940850708, -1184112314=1756592400, -1808475989=265610529, -1752971044=-629495039} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -14,6 +14,7 @@ import io.vertx.core.Handler;
 public class Context {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=10, -1634614383=1243560769, -64774800=-58270469, 441408348=-470511972, 196590004=289115761, -846174509=1461946529, -1004257454=-817402648, 1831168812=-940850708, -1184112314=1756592400, -1808475989=265610529, -1752971044=-629495039}
   private io.vertx.core.Context delegate;
   public Context(Object delegate) {
     this.delegate = (io.vertx.core.Context) delegate;

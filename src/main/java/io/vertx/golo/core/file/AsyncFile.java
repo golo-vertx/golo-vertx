@@ -1,7 +1,7 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=2, 2070106981=810636801, 1227813217=696992427} 
+//myHashMap={0=10, 162839744=-1987006372, 977834094=325700734, 871647779=-1616356922, -551526902=-1967537456, 390615684=-1908092795, 1793497979=36501591, -562937681=1404363620, -1943741717=20598464, -1816884101=-715038890, 1789503142=2093536968} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -15,6 +15,7 @@ import io.vertx.core.Handler;
 public class AsyncFile implements ReadStream<Buffer>,  WriteStream<Buffer> {
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
+  //Test variable from golo.templ - myHashMap={0=10, 162839744=-1987006372, 977834094=325700734, 871647779=-1616356922, -551526902=-1967537456, 390615684=-1908092795, 1793497979=36501591, -562937681=1404363620, -1943741717=20598464, -1816884101=-715038890, 1789503142=2093536968}
   private io.vertx.core.file.AsyncFile delegate;
   public AsyncFile(Object delegate) {
     this.delegate = (io.vertx.core.file.AsyncFile) delegate;
