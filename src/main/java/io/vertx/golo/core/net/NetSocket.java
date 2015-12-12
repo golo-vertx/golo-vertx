@@ -1,7 +1,7 @@
 package io.vertx.golo.core.net;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=5, 956817540=-1299350721, -1978871254=-644509625, 1966582862=-1597599974, -1329148900=795798629, -207450887=865626109} 
+//myHashMap={0=2, 1690095943=18870713, 1565878680=-978542751} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,11 +11,13 @@ import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.net.NetSocket 
+//[confirm] Type: io.vertx.core.net.NetSocket 
 public class NetSocket implements ReadStream<Buffer>,  WriteStream<Buffer> {
+//[INFO] ifaceSimpleName=NetSocket
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=5, 956817540=-1299350721, -1978871254=-644509625, 1966582862=-1597599974, -1329148900=795798629, -207450887=865626109}
+  //Test variable from golo.templ - myHashMap={0=2, 1690095943=18870713, 1565878680=-978542751}
   private io.vertx.core.net.NetSocket delegate;
   public NetSocket(Object delegate) {
     this.delegate = (io.vertx.core.net.NetSocket) delegate;
@@ -259,4 +261,7 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
   public boolean isSsl() {
 return    this.delegate.isSsl();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

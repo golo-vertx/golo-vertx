@@ -1,7 +1,7 @@
 package io.vertx.golo.core.cli;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=2, -1978658143=1394900023, -823434039=-724932388} 
+//myHashMap={0=1, -20836613=-1724404714} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.cli.Option;
 import java.util.List;
 import io.vertx.core.cli.Argument;
-// Type: io.vertx.core.cli.CLI 
+//[confirm] Type: io.vertx.core.cli.CLI 
 public class CLI {
+//[INFO] ifaceSimpleName=CLI
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=2, -1978658143=1394900023, -823434039=-724932388}
+  //Test variable from golo.templ - myHashMap={0=1, -20836613=-1724404714}
   private io.vertx.core.cli.CLI delegate;
   public CLI(Object delegate) {
     this.delegate = (io.vertx.core.cli.CLI) delegate;
@@ -266,4 +268,7 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgume
     this.delegate.removeArgument(index);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

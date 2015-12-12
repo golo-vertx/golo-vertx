@@ -1,18 +1,20 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, -1773055135=-1242788536, 1852322698=2056478720, -1410959214=-1757027361, 686287890=-265517982, 692872276=656664037, 1582786622=-1617339203, 2063777710=1557905203, 522923095=1674438580, 458255966=-1781383076, -1336709236=-1848560681} 
+//myHashMap={0=1, -97148502=-297636833} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.Future<T> 
+//[confirm] Type: io.vertx.core.Future<T> 
 public class Future<T> {
+//[INFO] ifaceSimpleName=Future
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, -1773055135=-1242788536, 1852322698=2056478720, -1410959214=-1757027361, 686287890=-265517982, 692872276=656664037, 1582786622=-1617339203, 2063777710=1557905203, 522923095=1674438580, 458255966=-1781383076, -1336709236=-1848560681}
+  //Test variable from golo.templ - myHashMap={0=1, -97148502=-297636833}
   private io.vertx.core.Future delegate;
   public Future(Object delegate) {
     this.delegate = (io.vertx.core.Future) delegate;
@@ -117,4 +119,7 @@ return    ((io.vertx.core.Future) this.delegate).isComplete();
   public void fail(String failureMessage) {
     ((io.vertx.core.Future) this.delegate).fail(failureMessage);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

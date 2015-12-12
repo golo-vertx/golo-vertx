@@ -1,22 +1,24 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, 1860699001=1240316989, -1946123391=1442619244, -416970668=996072580, -1747192151=650513403, 205355464=-1873633654, 1804177359=-666813730, 1587063663=-66639966, 1393115876=-183548548, -1130385775=1795490939} 
+//myHashMap={0=10, 2014844745=-1972128936, -424955495=395781, 1845308040=-1750564416, 1946555072=725983679, 483258661=-424411460, 1583631006=-320761946, 1640097323=901726906, -366511526=707591217, 318447204=-1212559972, -1035843363=267355517} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.streams.StreamBase 
+//[confirm] Type: io.vertx.core.streams.StreamBase 
 public interface StreamBase {
 public Object getDelegate();
   StreamBase exceptionHandler(Handler<Throwable> handler);
 }
+//[INFO] var concrete=false
 
+//[debug] came from !concrete part 
 class StreamBaseImpl implements StreamBase {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, 1860699001=1240316989, -1946123391=1442619244, -416970668=996072580, -1747192151=650513403, 205355464=-1873633654, 1804177359=-666813730, 1587063663=-66639966, 1393115876=-183548548, -1130385775=1795490939}
+  //Test variable from golo.templ - myHashMap={0=10, 2014844745=-1972128936, -424955495=395781, 1845308040=-1750564416, 1946555072=725983679, 483258661=-424411460, 1583631006=-320761946, 1640097323=901726906, -366511526=707591217, 318447204=-1212559972, -1035843363=267355517}
   private io.vertx.core.streams.StreamBase delegate;
   public StreamBaseImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.StreamBase) delegate;

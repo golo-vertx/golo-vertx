@@ -308,7 +308,7 @@ import io.vertx.core.json.JsonObject;\n
 	@end{}
 @end{}
 
-// Type: @{type} \n
+//[confirm] Type: @{type} \n
 public @if{concrete}class@else{}interface@end{} @{helper.getSimpleName(ifaceFQCN)}
 
 @if{concrete}
@@ -342,7 +342,10 @@ public @if{concrete}class@else{}interface@end{} @{helper.getSimpleName(ifaceFQCN
 @end{}
 
 @if{concrete}
+	//[INFO] ifaceSimpleName=@{ifaceSimpleName}\n
+	//[track] control goes into classbody.templ\n
     @includeNamed{'classbody.templ';constructor=ifaceSimpleName}
+    //[track] control returns from classbody.templ\n
 @else{}
 	public Object getDelegate();\n
 	@foreach{method:methods}
@@ -351,8 +354,14 @@ public @if{concrete}class@else{}interface@end{} @{helper.getSimpleName(ifaceFQCN
 @end{}
 }\n
 
+//[INFO] var concrete=@{concrete}\n
+@if{concrete}
+//[debug] came from concrete part \n
+@end{}
+@comment{"Hypothesis -> the next part is never called actually. For all most all files that I checked concrete=true. Can see Impl down there. May imply for the actual implementation classes. But here I guess the codegen runs only on API interfaces, so that may not be required"}
 @if{!concrete}
 \n
+//[debug] came from !concrete part \n
 class @{type.raw.simpleName}Impl@if{typeParams.size() > 0}<@foreach{typeParam:typeParams}@{typeParam.name}@end{','}>@end{} implements @{helper.getSimpleName(ifaceFQCN)} {\n
 @includeNamed{'classbody.templ';constructor=(type.raw.simpleName + 'Impl')}
 }\n

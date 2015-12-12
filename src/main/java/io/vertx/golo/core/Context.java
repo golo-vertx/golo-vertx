@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, -1634614383=1243560769, -64774800=-58270469, 441408348=-470511972, 196590004=289115761, -846174509=1461946529, -1004257454=-817402648, 1831168812=-940850708, -1184112314=1756592400, -1808475989=265610529, -1752971044=-629495039} 
+//myHashMap={0=4, 56196525=-196848780, 1281775858=-2082094144, 621053474=216195249, 1348597391=170645659} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,11 +10,13 @@ import java.util.List;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.Context 
+//[confirm] Type: io.vertx.core.Context 
 public class Context {
+//[INFO] ifaceSimpleName=Context
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, -1634614383=1243560769, -64774800=-58270469, 441408348=-470511972, 196590004=289115761, -846174509=1461946529, -1004257454=-817402648, 1831168812=-940850708, -1184112314=1756592400, -1808475989=265610529, -1752971044=-629495039}
+  //Test variable from golo.templ - myHashMap={0=4, 56196525=-196848780, 1281775858=-2082094144, 621053474=216195249, 1348597391=170645659}
   private io.vertx.core.Context delegate;
   public Context(Object delegate) {
     this.delegate = (io.vertx.core.Context) delegate;
@@ -237,4 +239,7 @@ return    InternalHelper.safeCreate(this.delegate.owner(), io.vertx.golo.core.Ve
   public int getInstanceCount() {
 return    this.delegate.getInstanceCount();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

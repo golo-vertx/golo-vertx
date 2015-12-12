@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=8, 2109449115=-1643655202, -1154740774=-516277725, -1942871563=397389389, -152212086=1329817079, -1004947872=782125196, -1626626638=-1885344374, 569115797=129622034, 443643179=-2065204530} 
+//myHashMap={0=4, 1006971248=374874893, -844418580=-1968077618, 1892364176=1242628828, 2028615302=-2068597068} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.metrics.Measured;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.http.HttpServer 
+//[confirm] Type: io.vertx.core.http.HttpServer 
 public class HttpServer implements Measured {
+//[INFO] ifaceSimpleName=HttpServer
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=8, 2109449115=-1643655202, -1154740774=-516277725, -1942871563=397389389, -152212086=1329817079, -1004947872=782125196, -1626626638=-1885344374, 569115797=129622034, 443643179=-2065204530}
+  //Test variable from golo.templ - myHashMap={0=4, 1006971248=374874893, -844418580=-1968077618, 1892364176=1242628828, 2028615302=-2068597068}
   private io.vertx.core.http.HttpServer delegate;
   public HttpServer(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpServer) delegate;
@@ -206,4 +208,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
   public void close(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

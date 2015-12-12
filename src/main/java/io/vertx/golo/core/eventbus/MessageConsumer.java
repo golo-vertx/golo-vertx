@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=4, 1422242081=1631688574, -2042742039=-1775574140, 1478943085=-1025029755, 419912601=-1709282803} 
+//myHashMap={0=3, -1431472914=2122064443, -1833884229=-1204822366, -662917754=-1924079727} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.eventbus.MessageConsumer<T> 
+//[confirm] Type: io.vertx.core.eventbus.MessageConsumer<T> 
 public class MessageConsumer<T> implements ReadStream<Message<T>> {
+//[INFO] ifaceSimpleName=MessageConsumer
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=4, 1422242081=1631688574, -2042742039=-1775574140, 1478943085=-1025029755, 419912601=-1709282803}
+  //Test variable from golo.templ - myHashMap={0=3, -1431472914=2122064443, -1833884229=-1204822366, -662917754=-1924079727}
   private io.vertx.core.eventbus.MessageConsumer delegate;
   public MessageConsumer(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.MessageConsumer) delegate;
@@ -129,4 +131,7 @@ return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).getMaxBuffere
   public void unregister(Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.eventbus.MessageConsumer) this.delegate).unregister(completionHandler);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

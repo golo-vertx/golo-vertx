@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=5, 3135614=176376063, 167664745=-1152863084, -478972197=-847600110, 2024421287=1789955944, -2041794717=-2135586835} 
+//myHashMap={0=5, -1973060379=257899201, 904950336=1578772212, 1036209125=-750166750, -1024908700=610785845, 35316853=-39700223} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.core.Handler;
 import io.vertx.golo.core.net.SocketAddress;
-// Type: io.vertx.core.http.WebSocket 
+//[confirm] Type: io.vertx.core.http.WebSocket 
 public class WebSocket implements WebSocketBase {
+//[INFO] ifaceSimpleName=WebSocket
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=5, 3135614=176376063, 167664745=-1152863084, -478972197=-847600110, 2024421287=1789955944, -2041794717=-2135586835}
+  //Test variable from golo.templ - myHashMap={0=5, -1973060379=257899201, 904950336=1578772212, 1036209125=-750166750, -1024908700=610785845, 35316853=-39700223}
   private io.vertx.core.http.WebSocket delegate;
   public WebSocket(Object delegate) {
     this.delegate = (io.vertx.core.http.WebSocket) delegate;
@@ -176,4 +178,7 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
     });
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=3, 1670908045=2129172927, -163294295=1575615878, 573950248=-1192673116} 
+//myHashMap={0=4, 749644716=1990677461, -102025757=1900253181, -803682939=-1076446865, 435380141=1375101353} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.http.HttpServerFileUpload 
+//[confirm] Type: io.vertx.core.http.HttpServerFileUpload 
 public class HttpServerFileUpload implements ReadStream<Buffer> {
+//[INFO] ifaceSimpleName=HttpServerFileUpload
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=3, 1670908045=2129172927, -163294295=1575615878, 573950248=-1192673116}
+  //Test variable from golo.templ - myHashMap={0=4, 749644716=1990677461, -102025757=1900253181, -803682939=-1076446865, 435380141=1375101353}
   private io.vertx.core.http.HttpServerFileUpload delegate;
   public HttpServerFileUpload(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpServerFileUpload) delegate;
@@ -130,4 +132,7 @@ return    this.delegate.size();
   public boolean isSizeAvailable() {
 return    this.delegate.isSizeAvailable();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

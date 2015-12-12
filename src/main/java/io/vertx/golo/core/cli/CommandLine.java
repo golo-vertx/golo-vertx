@@ -1,7 +1,7 @@
 package io.vertx.golo.core.cli;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=8, 149605082=1539379431, -134166240=-1544899591, 10429485=1434893737, 614877796=-1559147967, -1797255094=1281204042, 829734489=885344996, -1095240279=-825734564, -337127511=-799120699} 
+//myHashMap={0=4, -2073553879=-1849743955, 1043814515=-1279900702, -1556424746=95837808, -1015904932=1148187077} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.cli.Option;
 import java.util.List;
 import io.vertx.core.cli.Argument;
-// Type: io.vertx.core.cli.CommandLine 
+//[confirm] Type: io.vertx.core.cli.CommandLine 
 public class CommandLine {
+//[INFO] ifaceSimpleName=CommandLine
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=8, 149605082=1539379431, -134166240=-1544899591, 10429485=1434893737, 614877796=-1559147967, -1797255094=1281204042, 829734489=885344996, -1095240279=-825734564, -337127511=-799120699}
+  //Test variable from golo.templ - myHashMap={0=4, -2073553879=-1849743955, 1043814515=-1279900702, -1556424746=95837808, -1015904932=1148187077}
   private io.vertx.core.cli.CommandLine delegate;
   public CommandLine(Object delegate) {
     this.delegate = (io.vertx.core.cli.CommandLine) delegate;
@@ -165,4 +167,7 @@ return    this.delegate.isArgumentAssigned(arg != null ? new io.vertx.core.cli.A
   public boolean isSeenInCommandLine(Map<String, Object> option) {
 return    this.delegate.isSeenInCommandLine(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

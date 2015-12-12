@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -519030126=430982955, 1778758902=-1744347111, 696991886=-1036477057, 1031337757=-2091801545, -1254774173=-200612586, -235705468=-46808330, -804786224=-2089350798, 938714857=-143264614, -2046805425=-864953114} 
+//myHashMap={0=1, 794465398=-1758354705} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
-// Type: io.vertx.core.MultiMap 
+//[confirm] Type: io.vertx.core.MultiMap 
 public class MultiMap {
+//[INFO] ifaceSimpleName=MultiMap
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -519030126=430982955, 1778758902=-1744347111, 696991886=-1036477057, 1031337757=-2091801545, -1254774173=-200612586, -235705468=-46808330, -804786224=-2089350798, 938714857=-143264614, -2046805425=-864953114}
+  //Test variable from golo.templ - myHashMap={0=1, 794465398=-1758354705}
   private io.vertx.core.MultiMap delegate;
   public MultiMap(Object delegate) {
     this.delegate = (io.vertx.core.MultiMap) delegate;
@@ -157,4 +159,7 @@ return    this.delegate.names();
   public int size() {
 return    this.delegate.size();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

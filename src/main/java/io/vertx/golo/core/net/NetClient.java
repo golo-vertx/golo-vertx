@@ -1,7 +1,7 @@
 package io.vertx.golo.core.net;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -2095558869=1923816537, 71990238=-1722098835, 1373227468=638214332, -1167349332=375407985, -282814435=1657971671, 424658582=-1667304535, -1015109294=2007040076, -346546300=319726743, 957084423=-148506123} 
+//myHashMap={0=6, -113752213=-1973395767, 2040142201=-1008994004, -693368747=61200408, -336589478=-699301957, -1020112818=619201232, 1254411019=-1697517894} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.metrics.Measured;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.net.NetClient 
+//[confirm] Type: io.vertx.core.net.NetClient 
 public class NetClient implements Measured {
+//[INFO] ifaceSimpleName=NetClient
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -2095558869=1923816537, 71990238=-1722098835, 1373227468=638214332, -1167349332=375407985, -282814435=1657971671, 424658582=-1667304535, -1015109294=2007040076, -346546300=319726743, 957084423=-148506123}
+  //Test variable from golo.templ - myHashMap={0=6, -113752213=-1973395767, 2040142201=-1008994004, -693368747=61200408, -336589478=-699301957, -1020112818=619201232, 1254411019=-1697517894}
   private io.vertx.core.net.NetClient delegate;
   public NetClient(Object delegate) {
     this.delegate = (io.vertx.core.net.NetClient) delegate;
@@ -67,4 +69,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
   public void close() {
     this.delegate.close();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

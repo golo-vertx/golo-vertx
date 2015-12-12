@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=1, 1199269117=982174470} 
+//myHashMap={0=7, 1504726224=1694258189, -1428127342=-605697908, 1379781583=102265882, 1187763452=1147193690, 50564196=209878474, 542138219=-1953048633, -80842447=1729119074} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,11 +11,13 @@ import io.vertx.core.http.HttpMethod;
 import io.vertx.golo.core.MultiMap;
 import io.vertx.core.http.WebsocketVersion;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.http.HttpClient 
+//[confirm] Type: io.vertx.core.http.HttpClient 
 public class HttpClient implements Measured {
+//[INFO] ifaceSimpleName=HttpClient
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=1, 1199269117=982174470}
+  //Test variable from golo.templ - myHashMap={0=7, 1504726224=1694258189, -1428127342=-605697908, 1379781583=102265882, 1187763452=1147193690, 50564196=209878474, 542138219=-1953048633, -80842447=1729119074}
   private io.vertx.core.http.HttpClient delegate;
   public HttpClient(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpClient) delegate;
@@ -1593,4 +1595,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(requestURI, (i
   public void close() {
     this.delegate.close();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

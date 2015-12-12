@@ -1,18 +1,20 @@
 package io.vertx.golo.core.net;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -790891205=286687405, 1530095650=258206165, 1700794599=23380983, -454564913=39905148, 470893467=-1927590968, 975857440=-562830283, -1101012140=112572421, -579659937=26128239, 1051357734=1264215796} 
+//myHashMap={0=8, 1373391901=2066388956, -290726311=-1139167372, 1759093835=-1337107725, 1433711591=1545585232, 908963094=-1457531139, -1302926326=-1537931491, -1705366908=1321414299, 531262836=1321215115} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.net.NetSocketStream 
+//[confirm] Type: io.vertx.core.net.NetSocketStream 
 public class NetSocketStream implements ReadStream<NetSocket> {
+//[INFO] ifaceSimpleName=NetSocketStream
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -790891205=286687405, 1530095650=258206165, 1700794599=23380983, -454564913=39905148, 470893467=-1927590968, 975857440=-562830283, -1101012140=112572421, -579659937=26128239, 1051357734=1264215796}
+  //Test variable from golo.templ - myHashMap={0=8, 1373391901=2066388956, -290726311=-1139167372, 1759093835=-1337107725, 1433711591=1545585232, 908963094=-1457531139, -1302926326=-1537931491, -1705366908=1321414299, 531262836=1321215115}
   private io.vertx.core.net.NetSocketStream delegate;
   public NetSocketStream(Object delegate) {
     this.delegate = (io.vertx.core.net.NetSocketStream) delegate;
@@ -54,4 +56,7 @@ public class NetSocketStream implements ReadStream<NetSocket> {
     (  (io.vertx.core.net.NetSocketStream) this.delegate).endHandler(endHandler);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

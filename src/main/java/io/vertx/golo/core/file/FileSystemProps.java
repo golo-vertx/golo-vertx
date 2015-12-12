@@ -1,16 +1,18 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=5, -316188729=-1909611136, -1205619769=1958570935, -841972859=1816725950, -189458263=1778646998, 1746971919=1830050656} 
+//myHashMap={0=7, 921032423=-1328754799, -802803419=1779727554, 1325022377=-1935862929, 730440956=-2063528947, -69099258=618128633, 1422591986=-354643542, -843533769=2146022627} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
-// Type: io.vertx.core.file.FileSystemProps 
+//[confirm] Type: io.vertx.core.file.FileSystemProps 
 public class FileSystemProps {
+//[INFO] ifaceSimpleName=FileSystemProps
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=5, -316188729=-1909611136, -1205619769=1958570935, -841972859=1816725950, -189458263=1778646998, 1746971919=1830050656}
+  //Test variable from golo.templ - myHashMap={0=7, 921032423=-1328754799, -802803419=1779727554, 1325022377=-1935862929, 730440956=-2063528947, -69099258=618128633, 1422591986=-354643542, -843533769=2146022627}
   private io.vertx.core.file.FileSystemProps delegate;
   public FileSystemProps(Object delegate) {
     this.delegate = (io.vertx.core.file.FileSystemProps) delegate;
@@ -45,4 +47,7 @@ return    this.delegate.unallocatedSpace();
   public long usableSpace() {
 return    this.delegate.usableSpace();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

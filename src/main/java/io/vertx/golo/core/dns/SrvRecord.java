@@ -1,16 +1,18 @@
 package io.vertx.golo.core.dns;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=8, 830912886=17839510, -1274027429=1908688943, 1173632720=379578407, -1988318950=542125062, 307442132=-1076358978, 1132057090=784613524, 433438361=-452800302, 538223129=-1805997328} 
+//myHashMap={0=2, 1601707923=-1770081414, -1361472012=1171129562} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
-// Type: io.vertx.core.dns.SrvRecord 
+//[confirm] Type: io.vertx.core.dns.SrvRecord 
 public class SrvRecord {
+//[INFO] ifaceSimpleName=SrvRecord
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=8, 830912886=17839510, -1274027429=1908688943, 1173632720=379578407, -1988318950=542125062, 307442132=-1076358978, 1132057090=784613524, 433438361=-452800302, 538223129=-1805997328}
+  //Test variable from golo.templ - myHashMap={0=2, 1601707923=-1770081414, -1361472012=1171129562}
   private io.vertx.core.dns.SrvRecord delegate;
   public SrvRecord(Object delegate) {
     this.delegate = (io.vertx.core.dns.SrvRecord) delegate;
@@ -81,4 +83,7 @@ return    this.delegate.service();
   public String target() {
 return    this.delegate.target();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

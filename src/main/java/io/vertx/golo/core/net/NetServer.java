@@ -1,7 +1,7 @@
 package io.vertx.golo.core.net;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=2, -573676835=-1885305426, -1088286018=-1511197371} 
+//myHashMap={0=6, 2015596771=2044306298, 1292163780=-1339455453, -1587119753=866202906, 192669832=1969460551, -380964810=1502027830, 1090830265=-1132178078} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.metrics.Measured;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.net.NetServer 
+//[confirm] Type: io.vertx.core.net.NetServer 
 public class NetServer implements Measured {
+//[INFO] ifaceSimpleName=NetServer
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=2, -573676835=-1885305426, -1088286018=-1511197371}
+  //Test variable from golo.templ - myHashMap={0=6, 2015596771=2044306298, 1292163780=-1339455453, -1587119753=866202906, 192669832=1969460551, -380964810=1502027830, 1090830265=-1132178078}
   private io.vertx.core.net.NetServer delegate;
   public NetServer(Object delegate) {
     this.delegate = (io.vertx.core.net.NetServer) delegate;
@@ -199,4 +201,7 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
   public int actualPort() {
 return    this.delegate.actualPort();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

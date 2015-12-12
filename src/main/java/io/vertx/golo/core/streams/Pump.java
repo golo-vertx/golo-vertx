@@ -1,16 +1,18 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -1536631063=-298745103, -460336728=-1191615657, 2099297688=794000376, -668913495=439939489, 1864227956=-1724410186, 268235618=1336505117, -573244854=-2112910806, -1663221214=1406575203, -1704140029=-676644108} 
+//myHashMap={0=1, 1626685221=-2132448935} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
-// Type: io.vertx.core.streams.Pump 
+//[confirm] Type: io.vertx.core.streams.Pump 
 public class Pump {
+//[INFO] ifaceSimpleName=Pump
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -1536631063=-298745103, -460336728=-1191615657, 2099297688=794000376, -668913495=439939489, 1864227956=-1724410186, 268235618=1336505117, -573244854=-2112910806, -1663221214=1406575203, -1704140029=-676644108}
+  //Test variable from golo.templ - myHashMap={0=1, 1626685221=-2132448935}
   private io.vertx.core.streams.Pump delegate;
   public Pump(Object delegate) {
     this.delegate = (io.vertx.core.streams.Pump) delegate;
@@ -82,4 +84,7 @@ return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.co
   public int numberPumped() {
 return    this.delegate.numberPumped();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

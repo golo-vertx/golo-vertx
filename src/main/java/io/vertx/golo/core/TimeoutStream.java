@@ -1,18 +1,20 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=6, 1251162501=747383428, 2051969831=804151995, -1110033028=-854925668, -1724748066=-2104550942, -1566252583=-747923537, 218671365=-1176253006} 
+//myHashMap={0=6, -736036704=1289953348, -1030369296=967931340, 1735690305=1343476915, 2141656032=118886, -1096844541=1036388761, -360461636=-1444681016} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.TimeoutStream 
+//[confirm] Type: io.vertx.core.TimeoutStream 
 public class TimeoutStream implements ReadStream<Long> {
+//[INFO] ifaceSimpleName=TimeoutStream
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=6, 1251162501=747383428, 2051969831=804151995, -1110033028=-854925668, -1724748066=-2104550942, -1566252583=-747923537, 218671365=-1176253006}
+  //Test variable from golo.templ - myHashMap={0=6, -736036704=1289953348, -1030369296=967931340, 1735690305=1343476915, 2141656032=118886, -1096844541=1036388761, -360461636=-1444681016}
   private io.vertx.core.TimeoutStream delegate;
   public TimeoutStream(Object delegate) {
     this.delegate = (io.vertx.core.TimeoutStream) delegate;
@@ -59,4 +61,7 @@ public class TimeoutStream implements ReadStream<Long> {
   public void cancel() {
     this.delegate.cancel();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

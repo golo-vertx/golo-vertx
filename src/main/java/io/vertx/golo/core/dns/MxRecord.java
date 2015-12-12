@@ -1,16 +1,18 @@
 package io.vertx.golo.core.dns;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -253232217=-393782408, 499907624=-1659008230, -1764785206=947612003, -1812337167=912016955, 959907901=-462507927, -1252934438=-937502719, 336669242=196274568, -228660558=-1334839455, -1245672708=-931165996} 
+//myHashMap={0=8, -987476064=2019706114, 806605813=-1920467223, -1861136520=-665497466, 1162618741=-1581571687, 691452477=-2034211695, 1452178898=-338945153, -255627332=252872960, 1612499411=-1417689573} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
-// Type: io.vertx.core.dns.MxRecord 
+//[confirm] Type: io.vertx.core.dns.MxRecord 
 public class MxRecord {
+//[INFO] ifaceSimpleName=MxRecord
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -253232217=-393782408, 499907624=-1659008230, -1764785206=947612003, -1812337167=912016955, 959907901=-462507927, -1252934438=-937502719, 336669242=196274568, -228660558=-1334839455, -1245672708=-931165996}
+  //Test variable from golo.templ - myHashMap={0=8, -987476064=2019706114, 806605813=-1920467223, -1861136520=-665497466, 1162618741=-1581571687, 691452477=-2034211695, 1452178898=-338945153, -255627332=252872960, 1612499411=-1417689573}
   private io.vertx.core.dns.MxRecord delegate;
   public MxRecord(Object delegate) {
     this.delegate = (io.vertx.core.dns.MxRecord) delegate;
@@ -36,4 +38,7 @@ return    this.delegate.priority();
   public String name() {
 return    this.delegate.name();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

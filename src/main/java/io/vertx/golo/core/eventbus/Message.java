@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, 1216868535=-1432941021, -1417877699=-389147422, -1239687574=2037924420, 1005548429=1508098716, 1141314085=287875638, -1127031835=-1082139374, 31288276=106354739, -359773963=1239941090, -592018134=830635341, -1564590845=996377833} 
+//myHashMap={0=9, -245301248=-245114441, -107175362=1299154637, -1201597149=-514837617, -1336653280=1823869134, 1113108957=925008666, -1483165886=354929859, -1785981722=1339555400, -1947699741=1517743933, 520487914=-1870843836} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,11 +10,13 @@ import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.golo.core.MultiMap;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.eventbus.Message<T> 
+//[confirm] Type: io.vertx.core.eventbus.Message<T> 
 public class Message<T> {
+//[INFO] ifaceSimpleName=Message
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, 1216868535=-1432941021, -1417877699=-389147422, -1239687574=2037924420, 1005548429=1508098716, 1141314085=287875638, -1127031835=-1082139374, 31288276=106354739, -359773963=1239941090, -592018134=830635341, -1564590845=996377833}
+  //Test variable from golo.templ - myHashMap={0=9, -245301248=-245114441, -107175362=1299154637, -1201597149=-514837617, -1336653280=1823869134, 1113108957=925008666, -1483165886=354929859, -1785981722=1339555400, -1947699741=1517743933, 520487914=-1870843836}
   private io.vertx.core.eventbus.Message delegate;
   public Message(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.Message) delegate;
@@ -138,4 +140,7 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
   public void fail(int failureCode, String message) {
     ((io.vertx.core.eventbus.Message) this.delegate).fail(failureCode, message);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

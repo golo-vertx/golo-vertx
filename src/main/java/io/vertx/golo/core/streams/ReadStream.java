@@ -1,13 +1,13 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=3, 1644561763=-686779806, -353639680=470728300, 760201858=74459397} 
+//myHashMap={0=9, -1781409584=70505195, 1003235901=554619405, -789985221=-361122085, -368835802=-232880076, -1106760453=1045814432, 1395134603=1867320533, 1078355269=43244366, 856890455=1567472959, -1946209975=1007011650} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.streams.ReadStream<T> 
+//[confirm] Type: io.vertx.core.streams.ReadStream<T> 
 public interface ReadStream<T> extends StreamBase {
 public Object getDelegate();
   ReadStream<T> exceptionHandler(Handler<Throwable> handler);
@@ -16,11 +16,13 @@ public Object getDelegate();
   ReadStream<T> resume();
   ReadStream<T> endHandler(Handler<Void> endHandler);
 }
+//[INFO] var concrete=false
 
+//[debug] came from !concrete part 
 class ReadStreamImpl<T> implements ReadStream<T> {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=3, 1644561763=-686779806, -353639680=470728300, 760201858=74459397}
+  //Test variable from golo.templ - myHashMap={0=9, -1781409584=70505195, 1003235901=554619405, -789985221=-361122085, -368835802=-232880076, -1106760453=1045814432, 1395134603=1867320533, 1078355269=43244366, 856890455=1567472959, -1946209975=1007011650}
   private io.vertx.core.streams.ReadStream delegate;
   public ReadStreamImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.ReadStream) delegate;

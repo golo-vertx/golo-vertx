@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=3, 992458439=1293082508, 1864822610=418221952, 1940263130=-1082470163} 
+//myHashMap={0=4, -1517147821=443159638, -1070823362=-323967268, -656801447=622195371, 321209389=349858144} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -14,11 +14,13 @@ import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
 import io.vertx.golo.core.net.SocketAddress;
 import io.vertx.golo.core.net.NetSocket;
-// Type: io.vertx.core.http.HttpServerRequest 
+//[confirm] Type: io.vertx.core.http.HttpServerRequest 
 public class HttpServerRequest implements ReadStream<Buffer> {
+//[INFO] ifaceSimpleName=HttpServerRequest
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=3, 992458439=1293082508, 1864822610=418221952, 1940263130=-1082470163}
+  //Test variable from golo.templ - myHashMap={0=4, -1517147821=443159638, -1070823362=-323967268, -656801447=622195371, 321209389=349858144}
   private io.vertx.core.http.HttpServerRequest delegate;
   public HttpServerRequest(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpServerRequest) delegate;
@@ -295,4 +297,7 @@ return    InternalHelper.safeCreate(this.delegate.upgrade(), io.vertx.golo.core.
   public boolean isEnded() {
 return    this.delegate.isEnded();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

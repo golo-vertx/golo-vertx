@@ -1,18 +1,20 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, -1006704019=1562376419, 442716502=-987003452, 1351126813=-1435909030, -1047859188=-1209433691, 1063211128=-524726947, -146343007=1758761671, 1577888747=1285204376, 474724707=-1609327713, -713245936=1844720388, -1916270267=-715542636} 
+//myHashMap={0=5, 1694364540=-1236617489, 186099333=-610228158, -572374170=2062217911, -923286050=1677605180, 385663335=-1108724180} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.shareddata.SharedData 
+//[confirm] Type: io.vertx.core.shareddata.SharedData 
 public class SharedData {
+//[INFO] ifaceSimpleName=SharedData
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, -1006704019=1562376419, 442716502=-987003452, 1351126813=-1435909030, -1047859188=-1209433691, 1063211128=-524726947, -146343007=1758761671, 1577888747=1285204376, 474724707=-1609327713, -713245936=1844720388, -1916270267=-715542636}
+  //Test variable from golo.templ - myHashMap={0=5, 1694364540=-1236617489, 186099333=-610228158, -572374170=2062217911, -923286050=1677605180, 385663335=-1108724180}
   private io.vertx.core.shareddata.SharedData delegate;
   public SharedData(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.SharedData) delegate;
@@ -113,4 +115,7 @@ public class SharedData {
   public <K, V> LocalMap<K,V> getLocalMap(String name) {
 return    InternalHelper.safeCreate(this.delegate.getLocalMap(name), io.vertx.golo.core.shareddata.LocalMap.class);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

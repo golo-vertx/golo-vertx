@@ -1,16 +1,18 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=6, 1799402387=-1600216653, 1347603428=1511808335, -1451579363=125582715, 83781414=-1049283421, 93439355=-1721297478, -729852108=-1287063437} 
+//myHashMap={0=7, 426850993=-777756990, -1702200211=-61997596, 733303119=-1771862943, -1847200882=1201906866, -492476295=67417924, 2024357095=1843347320, 138657677=1219946208} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
-// Type: io.vertx.core.shareddata.LocalMap<K,V> 
+//[confirm] Type: io.vertx.core.shareddata.LocalMap<K,V> 
 public class LocalMap<K,V> {
+//[INFO] ifaceSimpleName=LocalMap
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=6, 1799402387=-1600216653, 1347603428=1511808335, -1451579363=125582715, 83781414=-1049283421, 93439355=-1721297478, -729852108=-1287063437}
+  //Test variable from golo.templ - myHashMap={0=7, 426850993=-777756990, -1702200211=-61997596, 733303119=-1771862943, -1847200882=1201906866, -492476295=67417924, 2024357095=1843347320, 138657677=1219946208}
   private io.vertx.core.shareddata.LocalMap delegate;
   public LocalMap(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.LocalMap) delegate;
@@ -133,4 +135,7 @@ return    // This cast is cleary flawed
   public void close() {
     ((io.vertx.core.shareddata.LocalMap) this.delegate).close();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

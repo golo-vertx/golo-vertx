@@ -1,17 +1,19 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, 1893785680=1106428157, 931410720=2131142180, 20838184=-217646958, -1465189521=-166793369, -379670648=1201255854, 8981070=-2067680207, 2039127821=-248822382, 829267562=-124754138, -996019352=922801315, 1090774751=-34951580} 
+//myHashMap={0=6, -576854453=-1206553899, 1620020260=-1315271760, 2030738289=1208839531, -209270550=-760416365, 1506464580=-757733564, -2143933975=-906014199} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.buffer.Buffer;
-// Type: io.vertx.core.http.WebSocketFrame 
+//[confirm] Type: io.vertx.core.http.WebSocketFrame 
 public class WebSocketFrame {
+//[INFO] ifaceSimpleName=WebSocketFrame
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, 1893785680=1106428157, 931410720=2131142180, 20838184=-217646958, -1465189521=-166793369, -379670648=1201255854, 8981070=-2067680207, 2039127821=-248822382, 829267562=-124754138, -996019352=922801315, 1090774751=-34951580}
+  //Test variable from golo.templ - myHashMap={0=6, -576854453=-1206553899, 1620020260=-1315271760, 2030738289=1208839531, -209270550=-760416365, 1506464580=-757733564, -2143933975=-906014199}
   private io.vertx.core.http.WebSocketFrame delegate;
   public WebSocketFrame(Object delegate) {
     this.delegate = (io.vertx.core.http.WebSocketFrame) delegate;
@@ -107,4 +109,7 @@ return    InternalHelper.safeCreate(this.delegate.binaryData(), io.vertx.golo.co
   public boolean isFinal() {
 return    this.delegate.isFinal();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

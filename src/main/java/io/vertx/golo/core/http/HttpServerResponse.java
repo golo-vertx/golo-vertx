@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=4, 1457669586=2146312618, -954811850=1781273637, 423687723=-1128516287, -35625089=978509295} 
+//myHashMap={0=5, 432971564=-1869328829, 2054805468=-788799672, 183298347=1915254645, 1837855527=566330765, 1055079919=234802986} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,11 +11,13 @@ import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.golo.core.MultiMap;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.http.HttpServerResponse 
+//[confirm] Type: io.vertx.core.http.HttpServerResponse 
 public class HttpServerResponse implements WriteStream<Buffer> {
+//[INFO] ifaceSimpleName=HttpServerResponse
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=4, 1457669586=2146312618, -954811850=1781273637, 423687723=-1128516287, -35625089=978509295}
+  //Test variable from golo.templ - myHashMap={0=5, 432971564=-1869328829, 2054805468=-788799672, 183298347=1915254645, 1837855527=566330765, 1055079919=234802986}
   private io.vertx.core.http.HttpServerResponse delegate;
   public HttpServerResponse(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpServerResponse) delegate;
@@ -399,4 +401,7 @@ return    this.delegate.headWritten();
     this.delegate.bodyEndHandler(handler);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

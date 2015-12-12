@@ -1,16 +1,18 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -794365596=601466816, 1778013918=-298276226, 1012716281=1083305713, 1270534061=815801115, 1456722489=514182668, 1863305251=-1115500170, 646956898=-1857374838, 800620199=-187819104, 1439385652=408946012} 
+//myHashMap={0=2, -1038517074=-147586284, -194896699=-1541836769} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
-// Type: io.vertx.core.file.FileProps 
+//[confirm] Type: io.vertx.core.file.FileProps 
 public class FileProps {
+//[INFO] ifaceSimpleName=FileProps
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -794365596=601466816, 1778013918=-298276226, 1012716281=1083305713, 1270534061=815801115, 1456722489=514182668, 1863305251=-1115500170, 646956898=-1857374838, 800620199=-187819104, 1439385652=408946012}
+  //Test variable from golo.templ - myHashMap={0=2, -1038517074=-147586284, -194896699=-1541836769}
   private io.vertx.core.file.FileProps delegate;
   public FileProps(Object delegate) {
     this.delegate = (io.vertx.core.file.FileProps) delegate;
@@ -90,4 +92,7 @@ return    this.delegate.isSymbolicLink();
   public long size() {
 return    this.delegate.size();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

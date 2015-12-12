@@ -1,18 +1,20 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=5, 476312384=-1415370775, 560457675=-1824696507, 1036739365=-1652858473, 2097660760=-788374866, -781996804=-1117005605} 
+//myHashMap={0=4, 1810222078=-631307837, 2076255597=-892982148, 990498903=1725125868, 1760553040=882340197} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.shareddata.AsyncMap<K,V> 
+//[confirm] Type: io.vertx.core.shareddata.AsyncMap<K,V> 
 public class AsyncMap<K,V> {
+//[INFO] ifaceSimpleName=AsyncMap
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=5, 476312384=-1415370775, 560457675=-1824696507, 1036739365=-1652858473, 2097660760=-788374866, -781996804=-1117005605}
+  //Test variable from golo.templ - myHashMap={0=4, 1810222078=-631307837, 2076255597=-892982148, 990498903=1725125868, 1760553040=882340197}
   private io.vertx.core.shareddata.AsyncMap delegate;
   public AsyncMap(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.AsyncMap) delegate;
@@ -191,4 +193,7 @@ public class AsyncMap<K,V> {
   public void size(Handler<AsyncResult<Integer>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).size(resultHandler);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

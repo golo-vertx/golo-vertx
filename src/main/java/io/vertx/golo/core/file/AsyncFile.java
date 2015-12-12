@@ -1,7 +1,7 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, 162839744=-1987006372, 977834094=325700734, 871647779=-1616356922, -551526902=-1967537456, 390615684=-1908092795, 1793497979=36501591, -562937681=1404363620, -1943741717=20598464, -1816884101=-715038890, 1789503142=2093536968} 
+//myHashMap={0=1, 1867880490=1865660436} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,11 +11,13 @@ import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.file.AsyncFile 
+//[confirm] Type: io.vertx.core.file.AsyncFile 
 public class AsyncFile implements ReadStream<Buffer>,  WriteStream<Buffer> {
+//[INFO] ifaceSimpleName=AsyncFile
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, 162839744=-1987006372, 977834094=325700734, 871647779=-1616356922, -551526902=-1967537456, 390615684=-1908092795, 1793497979=36501591, -562937681=1404363620, -1943741717=20598464, -1816884101=-715038890, 1789503142=2093536968}
+  //Test variable from golo.templ - myHashMap={0=1, 1867880490=1865660436}
   private io.vertx.core.file.AsyncFile delegate;
   public AsyncFile(Object delegate) {
     this.delegate = (io.vertx.core.file.AsyncFile) delegate;
@@ -214,4 +216,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     this.delegate.setReadBufferSize(readBufferSize);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

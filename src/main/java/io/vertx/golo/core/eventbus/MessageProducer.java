@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, 1829954967=-419011088, 850664977=-1151053420, 575181469=-646495479, 1701030203=851438145, 581243484=-137810048, -1345502682=-40569146, 1515785029=416819911, -1032928686=1225294962, -181494239=-694403374} 
+//myHashMap={0=10, -976880332=-779567405, 2057918111=-583496732, 2129318173=1582347369, -611374984=1882762169, -1132363639=-1721604261, -1041199752=1082134958, 2087296624=-1633343236, -999446941=-1580544843, 1630367523=-2021847910, -772491685=1998113201} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.eventbus.MessageProducer<T> 
+//[confirm] Type: io.vertx.core.eventbus.MessageProducer<T> 
 public class MessageProducer<T> implements WriteStream<T> {
+//[INFO] ifaceSimpleName=MessageProducer
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, 1829954967=-419011088, 850664977=-1151053420, 575181469=-646495479, 1701030203=851438145, 581243484=-137810048, -1345502682=-40569146, 1515785029=416819911, -1032928686=1225294962, -181494239=-694403374}
+  //Test variable from golo.templ - myHashMap={0=10, -976880332=-779567405, 2057918111=-583496732, 2129318173=1582347369, -611374984=1882762169, -1132363639=-1721604261, -1041199752=1082134958, 2087296624=-1633343236, -999446941=-1580544843, 1630367523=-2021847910, -772491685=1998113201}
   private io.vertx.core.eventbus.MessageProducer delegate;
   public MessageProducer(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.MessageProducer) delegate;
@@ -74,4 +76,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   public String address() {
 return    ((io.vertx.core.eventbus.MessageProducer) this.delegate).address();
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

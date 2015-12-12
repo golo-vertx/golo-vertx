@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=8, -314217644=-1854826746, 582793449=1934471120, -1082020986=236631303, -1063867058=1548923144, 880652868=-805012018, -1228905639=-30965887, 173626691=824700930, -790026091=-30477149} 
+//myHashMap={0=2, -1170431176=704611351, -623067197=972037939} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -26,11 +26,13 @@ import io.vertx.golo.core.file.FileSystem;
 import io.vertx.core.http.HttpServerOptions;
 import io.vertx.core.Handler;
 import io.vertx.golo.core.http.HttpClient;
-// Type: io.vertx.core.Vertx 
+//[confirm] Type: io.vertx.core.Vertx 
 public class Vertx implements Measured {
+//[INFO] ifaceSimpleName=Vertx
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=8, -314217644=-1854826746, 582793449=1934471120, -1082020986=236631303, -1063867058=1548923144, 880652868=-805012018, -1228905639=-30965887, 173626691=824700930, -790026091=-30477149}
+  //Test variable from golo.templ - myHashMap={0=2, -1170431176=704611351, -623067197=972037939}
   private io.vertx.core.Vertx delegate;
   public Vertx(Object delegate) {
     this.delegate = (io.vertx.core.Vertx) delegate;
@@ -474,4 +476,7 @@ return    this.delegate.isClustered();
       }
     });
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

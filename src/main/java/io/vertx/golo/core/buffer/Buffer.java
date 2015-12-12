@@ -1,17 +1,19 @@
 package io.vertx.golo.core.buffer;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=4, 407664654=-455211747, 1175774422=-459065384, 1958820941=-1238507815, 225005367=348846815} 
+//myHashMap={0=9, -1080600730=580515493, -1895424505=-1749517020, 1034257156=209349565, 1880573506=-753389189, -1286227533=2113142420, 243836607=-827033664, -382781993=1588983118, -654355277=-1667489209, -875440626=-1521308439} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.shareddata.impl.ClusterSerializable;
-// Type: io.vertx.core.buffer.Buffer 
+//[confirm] Type: io.vertx.core.buffer.Buffer 
 public class Buffer {
+//[INFO] ifaceSimpleName=Buffer
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=4, 407664654=-455211747, 1175774422=-459065384, 1958820941=-1238507815, 225005367=348846815}
+  //Test variable from golo.templ - myHashMap={0=9, -1080600730=580515493, -1895424505=-1749517020, 1034257156=209349565, 1880573506=-753389189, -1286227533=2113142420, 243836607=-827033664, -382781993=1588983118, -654355277=-1667489209, -875440626=-1521308439}
   private io.vertx.core.buffer.Buffer delegate;
   public Buffer(Object delegate) {
     this.delegate = (io.vertx.core.buffer.Buffer) delegate;
@@ -577,4 +579,7 @@ return    InternalHelper.safeCreate(this.delegate.slice(), io.vertx.golo.core.bu
   public Buffer slice(int start, int end) {
 return    InternalHelper.safeCreate(this.delegate.slice(start, end), io.vertx.golo.core.buffer.Buffer.class);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

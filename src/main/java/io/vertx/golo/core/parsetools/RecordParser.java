@@ -1,18 +1,20 @@
 package io.vertx.golo.core.parsetools;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=5, 1310460781=657445729, 1611244812=926202742, 361424076=-463339608, 1793415390=996366484, -2008648934=1919118350} 
+//myHashMap={0=1, -513672397=511000569} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.parsetools.RecordParser 
+//[confirm] Type: io.vertx.core.parsetools.RecordParser 
 public class RecordParser {
+//[INFO] ifaceSimpleName=RecordParser
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=5, 1310460781=657445729, 1611244812=926202742, 361424076=-463339608, 1793415390=996366484, -2008648934=1919118350}
+  //Test variable from golo.templ - myHashMap={0=1, -513672397=511000569}
   private io.vertx.core.parsetools.RecordParser delegate;
   public RecordParser(Object delegate) {
     this.delegate = (io.vertx.core.parsetools.RecordParser) delegate;
@@ -127,4 +129,7 @@ return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newFix
   public void handle(Buffer buffer) {
     this.delegate.handle((io.vertx.core.buffer.Buffer)buffer.getDelegate());
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

@@ -1,18 +1,20 @@
 package io.vertx.golo.core.datagram;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=6, -1207633308=-66502003, 1762707345=-1505268100, 2004890626=-1827698499, -685265516=657094096, -958151737=-1872629617, -462055142=-202478954} 
+//myHashMap={0=7, -17613791=-2141168084, 202494658=1301965770, -337777913=-2122897512, 1583788666=623676254, -949450619=1271146057, -1937095836=-262728630, -802437468=722127852} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.golo.core.net.SocketAddress;
-// Type: io.vertx.core.datagram.DatagramPacket 
+//[confirm] Type: io.vertx.core.datagram.DatagramPacket 
 public class DatagramPacket {
+//[INFO] ifaceSimpleName=DatagramPacket
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=6, -1207633308=-66502003, 1762707345=-1505268100, 2004890626=-1827698499, -685265516=657094096, -958151737=-1872629617, -462055142=-202478954}
+  //Test variable from golo.templ - myHashMap={0=7, -17613791=-2141168084, 202494658=1301965770, -337777913=-2122897512, 1583788666=623676254, -949450619=1271146057, -1937095836=-262728630, -802437468=722127852}
   private io.vertx.core.datagram.DatagramPacket delegate;
   public DatagramPacket(Object delegate) {
     this.delegate = (io.vertx.core.datagram.DatagramPacket) delegate;
@@ -39,4 +41,7 @@ return    InternalHelper.safeCreate(this.delegate.sender(), io.vertx.golo.core.n
   public Buffer data() {
 return    InternalHelper.safeCreate(this.delegate.data(), io.vertx.golo.core.buffer.Buffer.class);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=6, -138735846=-395898243, -216970637=1147068713, -2134229633=870165185, -1372173565=277638485, 285719434=607300823, 1830695873=1154283686} 
+//myHashMap={0=4, 2011742441=-1774854481, -1187276366=1155244514, -878186085=-1852457947, -137809801=-1458768861} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,11 +12,13 @@ import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.golo.core.MultiMap;
 import io.vertx.core.Handler;
 import io.vertx.golo.core.net.NetSocket;
-// Type: io.vertx.core.http.HttpClientResponse 
+//[confirm] Type: io.vertx.core.http.HttpClientResponse 
 public class HttpClientResponse implements ReadStream<Buffer> {
+//[INFO] ifaceSimpleName=HttpClientResponse
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=6, -138735846=-395898243, -216970637=1147068713, -2134229633=870165185, -1372173565=277638485, 285719434=607300823, 1830695873=1154283686}
+  //Test variable from golo.templ - myHashMap={0=4, 2011742441=-1774854481, -1187276366=1155244514, -878186085=-1852457947, -137809801=-1458768861}
   private io.vertx.core.http.HttpClientResponse delegate;
   public HttpClientResponse(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpClientResponse) delegate;
@@ -155,4 +157,7 @@ return    this.delegate.cookies();
   public NetSocket netSocket() {
 return    InternalHelper.safeCreate(this.delegate.netSocket(), io.vertx.golo.core.net.NetSocket.class);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

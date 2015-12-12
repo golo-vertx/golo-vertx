@@ -1,18 +1,20 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=2, -835680816=-853920165, -1119743228=1758418210} 
+//myHashMap={0=4, -833324553=1734625467, 1372010924=1754987382, -464690863=-1967931166, -1944208574=-511354068} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.http.WebSocketStream 
+//[confirm] Type: io.vertx.core.http.WebSocketStream 
 public class WebSocketStream implements ReadStream<WebSocket> {
+//[INFO] ifaceSimpleName=WebSocketStream
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=2, -835680816=-853920165, -1119743228=1758418210}
+  //Test variable from golo.templ - myHashMap={0=4, -833324553=1734625467, 1372010924=1754987382, -464690863=-1967931166, -1944208574=-511354068}
   private io.vertx.core.http.WebSocketStream delegate;
   public WebSocketStream(Object delegate) {
     this.delegate = (io.vertx.core.http.WebSocketStream) delegate;
@@ -54,4 +56,7 @@ public class WebSocketStream implements ReadStream<WebSocket> {
     (  (io.vertx.core.http.WebSocketStream) this.delegate).endHandler(endHandler);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

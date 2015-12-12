@@ -1,7 +1,7 @@
 package io.vertx.golo.core.dns;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=3, 1730379952=783766751, 200076315=-310068401, -18318490=-899400368} 
+//myHashMap={0=2, 874734813=953372075, -1608867451=633361619} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import java.util.List;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.dns.DnsClient 
+//[confirm] Type: io.vertx.core.dns.DnsClient 
 public class DnsClient {
+//[INFO] ifaceSimpleName=DnsClient
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=3, 1730379952=783766751, 200076315=-310068401, -18318490=-899400368}
+  //Test variable from golo.templ - myHashMap={0=2, 874734813=953372075, -1608867451=633361619}
   private io.vertx.core.dns.DnsClient delegate;
   public DnsClient(Object delegate) {
     this.delegate = (io.vertx.core.dns.DnsClient) delegate;
@@ -190,4 +192,7 @@ public class DnsClient {
     this.delegate.reverseLookup(ipaddress, handler);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

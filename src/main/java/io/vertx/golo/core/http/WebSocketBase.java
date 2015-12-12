@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=3, -1208493919=-804041422, -82906654=1277924223, -137451407=-1638719922} 
+//myHashMap={0=10, 754570361=-249930978, 446748000=629065431, -1145041440=-220545681, -1382887374=-752169602, -1129215741=1319107943, 592788598=1096423843, 509369306=1329436355, 155804053=1539714062, -380062732=304489119, -395056705=1400805647} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,7 +11,7 @@ import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
 import io.vertx.golo.core.net.SocketAddress;
-// Type: io.vertx.core.http.WebSocketBase 
+//[confirm] Type: io.vertx.core.http.WebSocketBase 
 public interface WebSocketBase extends ReadStream<Buffer>,  WriteStream<Buffer> {
 public Object getDelegate();
   boolean writeQueueFull();
@@ -35,11 +35,13 @@ public Object getDelegate();
   SocketAddress remoteAddress();
   SocketAddress localAddress();
 }
+//[INFO] var concrete=false
 
+//[debug] came from !concrete part 
 class WebSocketBaseImpl implements WebSocketBase {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=3, -1208493919=-804041422, -82906654=1277924223, -137451407=-1638719922}
+  //Test variable from golo.templ - myHashMap={0=10, 754570361=-249930978, 446748000=629065431, -1145041440=-220545681, -1382887374=-752169602, -1129215741=1319107943, 592788598=1096423843, 509369306=1329436355, 155804053=1539714062, -380062732=304489119, -395056705=1400805647}
   private io.vertx.core.http.WebSocketBase delegate;
   public WebSocketBaseImpl(Object delegate) {
     this.delegate = (io.vertx.core.http.WebSocketBase) delegate;

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -376207965=-431408481, 1046062091=874289643, -1499001245=-1928495847, 1365888364=1995157392, 1743906939=471240161, -875178242=1950773858, 1733358668=-302527136, 1486868288=2028281438, 1088406112=-481639437} 
+//myHashMap={0=8, -1908254957=1114021986, -2109491583=969904215, 1855061890=1931957988, 1283745687=505345902, -1633159613=550024427, 1712125177=148608738, -1464389217=-675321410, -325200270=-2008492064} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,11 +10,13 @@ import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.golo.core.metrics.Measured;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.eventbus.EventBus 
+//[confirm] Type: io.vertx.core.eventbus.EventBus 
 public class EventBus implements Measured {
+//[INFO] ifaceSimpleName=EventBus
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -376207965=-431408481, 1046062091=874289643, -1499001245=-1928495847, 1365888364=1995157392, 1743906939=471240161, -875178242=1950773858, 1733358668=-302527136, 1486868288=2028281438, 1088406112=-481639437}
+  //Test variable from golo.templ - myHashMap={0=8, -1908254957=1114021986, -2109491583=969904215, 1855061890=1931957988, 1283745687=505345902, -1633159613=550024427, 1712125177=148608738, -1464389217=-675321410, -325200270=-2008492064}
   private io.vertx.core.eventbus.EventBus delegate;
   public EventBus(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.EventBus) delegate;
@@ -248,4 +250,7 @@ return    InternalHelper.safeCreate(this.delegate.publisher(address, options != 
   public void close(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

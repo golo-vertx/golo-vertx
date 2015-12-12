@@ -1,7 +1,7 @@
 package io.vertx.golo.core.datagram;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=8, 1949171263=-1486591865, -737213909=660507224, -33149856=-1134017492, 1717584776=1740277653, 1213299673=-334036850, -1387853683=-1874195225, -2109631446=-1355142753, -1262502781=506014784} 
+//myHashMap={0=4, -1416329696=1224878539, 23727532=-861918754, 317706135=1237109208, 698419976=1966138497} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,11 +12,13 @@ import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.golo.core.net.SocketAddress;
-// Type: io.vertx.core.datagram.DatagramSocket 
+//[confirm] Type: io.vertx.core.datagram.DatagramSocket 
 public class DatagramSocket implements ReadStream<DatagramPacket>,  Measured {
+//[INFO] ifaceSimpleName=DatagramSocket
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=8, 1949171263=-1486591865, -737213909=660507224, -33149856=-1134017492, 1717584776=1740277653, 1213299673=-334036850, -1387853683=-1874195225, -2109631446=-1355142753, -1262502781=506014784}
+  //Test variable from golo.templ - myHashMap={0=4, -1416329696=1224878539, 23727532=-861918754, 317706135=1237109208, 698419976=1966138497}
   private io.vertx.core.datagram.DatagramSocket delegate;
   public DatagramSocket(Object delegate) {
     this.delegate = (io.vertx.core.datagram.DatagramSocket) delegate;
@@ -351,4 +353,7 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
     (  (io.vertx.core.datagram.DatagramSocket) this.delegate).exceptionHandler(handler);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

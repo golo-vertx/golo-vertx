@@ -1,18 +1,20 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, -2049992657=191340631, 415293413=379995766, -1366051083=547307788, 1478213373=648400450, 196233893=-570504694, -610553300=556096524, 1538392552=1877221367, 732817734=-1986673367, 1275729761=-853216391, -1547772816=-1083629439} 
+//myHashMap={0=5, 2082204861=-1036681252, -1913545495=-1897504507, 884673794=-1568158022, 450938089=1192823715, 368012517=-957868411} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.shareddata.Counter 
+//[confirm] Type: io.vertx.core.shareddata.Counter 
 public class Counter {
+//[INFO] ifaceSimpleName=Counter
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, -2049992657=191340631, 415293413=379995766, -1366051083=547307788, 1478213373=648400450, 196233893=-570504694, -610553300=556096524, 1538392552=1877221367, 732817734=-1986673367, 1275729761=-853216391, -1547772816=-1083629439}
+  //Test variable from golo.templ - myHashMap={0=5, 2082204861=-1036681252, -1913545495=-1897504507, 884673794=-1568158022, 450938089=1192823715, 368012517=-957868411}
   private io.vertx.core.shareddata.Counter delegate;
   public Counter(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.Counter) delegate;
@@ -88,4 +90,7 @@ public class Counter {
   public void compareAndSet(long expected, long value, Handler<AsyncResult<Boolean>> resultHandler) {
     this.delegate.compareAndSet(expected, value, resultHandler);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

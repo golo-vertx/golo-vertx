@@ -1,7 +1,7 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, 58921667=696283239, -1564086745=261145269, 1752645954=1183541019, -304041049=1817799937, -1807049645=898314081, -104116862=2101362482, -570085297=1795018357, 740856179=435551230, 884614247=1115754589, 1634565107=-955806548} 
+//myHashMap={0=9, 718553348=2086732491, -1052076534=-1959271220, 1113851590=-864735283, -1194189146=832032856, -1569506762=1251067842, -998261383=1811022601, 1146709537=1294131282, -211875579=838086000, 120074438=254408764} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,11 +11,13 @@ import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.core.file.OpenOptions;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.file.FileSystem 
+//[confirm] Type: io.vertx.core.file.FileSystem 
 public class FileSystem {
+//[INFO] ifaceSimpleName=FileSystem
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, 58921667=696283239, -1564086745=261145269, 1752645954=1183541019, -304041049=1817799937, -1807049645=898314081, -104116862=2101362482, -570085297=1795018357, 740856179=435551230, 884614247=1115754589, 1634565107=-955806548}
+  //Test variable from golo.templ - myHashMap={0=9, 718553348=2086732491, -1052076534=-1959271220, 1113851590=-864735283, -1194189146=832032856, -1569506762=1251067842, -998261383=1811022601, 1146709537=1294131282, -211875579=838086000, 120074438=254408764}
   private io.vertx.core.file.FileSystem delegate;
   public FileSystem(Object delegate) {
     this.delegate = (io.vertx.core.file.FileSystem) delegate;
@@ -803,4 +805,7 @@ return    this.delegate.existsBlocking(path);
   public FileSystemProps fsPropsBlocking(String path) {
 return    InternalHelper.safeCreate(this.delegate.fsPropsBlocking(path), io.vertx.golo.core.file.FileSystemProps.class);
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 

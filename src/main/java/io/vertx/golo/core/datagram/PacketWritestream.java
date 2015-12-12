@@ -1,7 +1,7 @@
 package io.vertx.golo.core.datagram;
 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=3, 735012279=17976863, -1723547682=-795951841, 1895594707=-998068359} 
+//myHashMap={0=9, 1777822023=-1951822771, 1159369883=759285222, -1661022657=1988280886, 1061343905=-918517439, 2120574489=-537829206, -478311088=422814837, -1546322806=-1640617327, 1844116756=-347016953, 687174698=604457935} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +9,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.core.Handler;
-// Type: io.vertx.core.datagram.PacketWritestream 
+//[confirm] Type: io.vertx.core.datagram.PacketWritestream 
 public class PacketWritestream implements WriteStream<Buffer> {
+//[INFO] ifaceSimpleName=PacketWritestream
+//[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=3, 735012279=17976863, -1723547682=-795951841, 1895594707=-998068359}
+  //Test variable from golo.templ - myHashMap={0=9, 1777822023=-1951822771, 1159369883=759285222, -1661022657=1988280886, 1061343905=-918517439, 2120574489=-537829206, -478311088=422814837, -1546322806=-1640617327, 1844116756=-347016953, 687174698=604457935}
   private io.vertx.core.datagram.PacketWritestream delegate;
   public PacketWritestream(Object delegate) {
     this.delegate = (io.vertx.core.datagram.PacketWritestream) delegate;
@@ -54,4 +56,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).drainHandler(handler);
     return this;
   }
+    //[track] control returns from classbody.templ
 }
+//[INFO] var concrete=true
+//[debug] came from concrete part 
