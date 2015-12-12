@@ -1,7 +1,7 @@
 package io.vertx.golo.core.cli;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=9, 1472515940=520808828, 1797834456=-1843844958, 2132163907=-1184913577, 553691128=802599397, -1343680109=-745196348, 1807296019=-1939963027, -1762370337=1677552729, 389289977=-346015103, -2100955590=-966275036} 
+// {0=6, 977082888=-283251062, -1394820599=1436446973, -585595405=-1165571784, -1514441984=-1036754009, 1598971489=543386418, -1376176730=16193215} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,7 +11,9 @@ import java.util.List;
 import io.vertx.core.cli.Argument;
 // Type: io.vertx.core.cli.CLI 
 public class CLI {
-      private io.vertx.core.cli.CLI delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.cli.CLI delegate;
   public CLI(Object delegate) {
     this.delegate = (io.vertx.core.cli.CLI) delegate;
   }

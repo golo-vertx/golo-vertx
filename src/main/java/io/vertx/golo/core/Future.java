@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=10, 1328581188=1790857980, 502712211=-553256065, -483440216=-1857715392, 83365122=-405245850, 385808373=463058771, -829893836=-1442576882, -828722809=1428616130, 2140951873=-1739601253, -959241187=-685506206, 410512472=1190539911} 
+// {0=2, -2026892044=-1348680945, -1107472485=601935241} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,7 +10,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.Future<T> 
 public class Future<T> {
-      private io.vertx.core.Future delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.Future delegate;
   public Future(Object delegate) {
     this.delegate = (io.vertx.core.Future) delegate;
   }

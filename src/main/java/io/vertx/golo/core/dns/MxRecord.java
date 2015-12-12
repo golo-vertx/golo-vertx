@@ -1,14 +1,16 @@
 package io.vertx.golo.core.dns;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=7, -2104796133=726953341, 793715181=-1902609674, 278541208=1349106311, -354200016=-1785633232, 1944232646=125082613, -1830394349=2089045396, 1126479516=1491428778} 
+// {0=1, 1301863558=513403825} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 // Type: io.vertx.core.dns.MxRecord 
 public class MxRecord {
-      private io.vertx.core.dns.MxRecord delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.dns.MxRecord delegate;
   public MxRecord(Object delegate) {
     this.delegate = (io.vertx.core.dns.MxRecord) delegate;
   }

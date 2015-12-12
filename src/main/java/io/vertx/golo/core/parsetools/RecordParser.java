@@ -1,7 +1,7 @@
 package io.vertx.golo.core.parsetools;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=3, -1967245970=-747682582, 1722976759=-935883592, -716233069=-2004886377} 
+// {0=8, 1465644027=1684012376, -1465176583=-503176906, 2110482649=1817801483, 1859975275=-683174647, -500242986=-1103862523, 1843186133=1603301827, 1254546924=-2093958856, -1127549402=-1501183134} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,7 +10,9 @@ import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.parsetools.RecordParser 
 public class RecordParser {
-      private io.vertx.core.parsetools.RecordParser delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.parsetools.RecordParser delegate;
   public RecordParser(Object delegate) {
     this.delegate = (io.vertx.core.parsetools.RecordParser) delegate;
   }

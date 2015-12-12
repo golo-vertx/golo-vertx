@@ -1,14 +1,16 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=6, -784852488=726293622, -641187783=-1140244583, 2088690621=-460570628, 2009803126=383162984, -939870972=417705135, -127744915=1848621391} 
+// {0=1, 1163394930=-2135240182} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 // Type: io.vertx.core.streams.Pump 
 public class Pump {
-      private io.vertx.core.streams.Pump delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.streams.Pump delegate;
   public Pump(Object delegate) {
     this.delegate = (io.vertx.core.streams.Pump) delegate;
   }

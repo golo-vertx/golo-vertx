@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=8, -1486087091=832676100, -1399428681=-1900377536, -1549579294=212493691, 1265231054=281166537, -604052535=628732758, 2141553229=672018817, 980683289=322719919, 357028040=550867165} 
+// {0=3, -681546637=-2102887915, -1790321453=-1401681401, 1127891013=-298839837} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,7 +11,9 @@ import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.http.HttpServerFileUpload 
 public class HttpServerFileUpload implements ReadStream<Buffer> {
-      private io.vertx.core.http.HttpServerFileUpload delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.http.HttpServerFileUpload delegate;
   public HttpServerFileUpload(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpServerFileUpload) delegate;
   }

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=8, -636115035=-2026809862, -230925826=-808560218, 1064882476=818930301, -416615889=-1994357033, -654992462=1918001245, 1922623153=-776205842, 1771295530=1665689094, 1918870629=419798820} 
+// {0=4, 776080593=-564506787, -256273283=-566364504, -352612541=-804850140, -998431577=-490540493} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,7 +12,9 @@ import io.vertx.core.Handler;
 import io.vertx.golo.core.net.SocketAddress;
 // Type: io.vertx.core.http.ServerWebSocket 
 public class ServerWebSocket implements WebSocketBase {
-      private io.vertx.core.http.ServerWebSocket delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.http.ServerWebSocket delegate;
   public ServerWebSocket(Object delegate) {
     this.delegate = (io.vertx.core.http.ServerWebSocket) delegate;
   }

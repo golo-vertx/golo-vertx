@@ -1,7 +1,7 @@
 package io.vertx.golo.core.net;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=7, 919385023=-1505084485, -1214346997=-865727604, 374339994=991829279, -1756107852=289925321, -1719854025=-193796192, 210974504=-290708280, -765594880=1900580896} 
+// {0=5, -1029753569=1355627788, 571958517=227914861, -1581924803=362731107, -1458285170=-1221006016, 1827925039=2060213812} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,7 +11,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.net.NetServer 
 public class NetServer implements Measured {
-      private io.vertx.core.net.NetServer delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.net.NetServer delegate;
   public NetServer(Object delegate) {
     this.delegate = (io.vertx.core.net.NetServer) delegate;
   }

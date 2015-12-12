@@ -1,14 +1,16 @@
 package io.vertx.golo.core.dns;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=3, 328577558=1179771268, -487868061=-1369124726, 2053474299=1751293779} 
+// {0=9, 1374239356=-68977859, 453715965=1800645126, -1313182221=1236957674, -1994859758=1513084381, -1272014990=1247604742, -398072823=-1212099696, 937788699=-1859217547, -1996621374=-590083832, -2114147693=-1524230420} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 // Type: io.vertx.core.dns.SrvRecord 
 public class SrvRecord {
-      private io.vertx.core.dns.SrvRecord delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.dns.SrvRecord delegate;
   public SrvRecord(Object delegate) {
     this.delegate = (io.vertx.core.dns.SrvRecord) delegate;
   }

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=4, -1681197975=-1257990798, -937163314=673435396, -1253258922=1416170766, 562728481=-1823439456} 
+// {0=4, 197335745=1889547883, -470445050=-1866322315, 1890035757=-1043770550, 1399391990=1354854924} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -14,7 +14,9 @@ import io.vertx.golo.core.MultiMap;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.http.HttpClientRequest 
 public class HttpClientRequest implements WriteStream<Buffer>,  ReadStream<HttpClientResponse> {
-      private io.vertx.core.http.HttpClientRequest delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.http.HttpClientRequest delegate;
   public HttpClientRequest(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpClientRequest) delegate;
   }

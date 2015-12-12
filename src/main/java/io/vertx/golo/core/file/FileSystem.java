@@ -1,7 +1,7 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=4, 1610000902=645480362, 649619101=1951440333, -524302088=-1034820652, -873127092=1668350158} 
+// {0=9, -651147883=1322527447, -2118890445=768155177, -244276756=1647738407, -1459240295=-717324778, 1702816386=-361059728, -2083920444=-381201169, -804712521=1251522848, -1397701218=-1602097262, -849505581=-938488099} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -13,7 +13,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.file.FileSystem 
 public class FileSystem {
-      private io.vertx.core.file.FileSystem delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.file.FileSystem delegate;
   public FileSystem(Object delegate) {
     this.delegate = (io.vertx.core.file.FileSystem) delegate;
   }

@@ -1,7 +1,7 @@
 package io.vertx.golo.core.datagram;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=3, 1921661640=1173664867, 2040580517=-1125469280, 2057110775=-1260556774} 
+// {0=10, 2086808275=1707397218, -633638321=-709774895, -1465237682=892197001, 711844939=1462051502, -924089620=1381192730, 985142226=-1390139051, 2126326599=-631513944, -360184412=1926248808, -1462215482=-1543316680, -373775017=-232672277} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -14,7 +14,9 @@ import io.vertx.core.Handler;
 import io.vertx.golo.core.net.SocketAddress;
 // Type: io.vertx.core.datagram.DatagramSocket 
 public class DatagramSocket implements ReadStream<DatagramPacket>,  Measured {
-      private io.vertx.core.datagram.DatagramSocket delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.datagram.DatagramSocket delegate;
   public DatagramSocket(Object delegate) {
     this.delegate = (io.vertx.core.datagram.DatagramSocket) delegate;
   }

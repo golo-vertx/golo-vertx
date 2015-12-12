@@ -1,7 +1,7 @@
 package io.vertx.golo.core.eventbus;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=5, -1792269220=1739876029, -1484872968=-2081224430, -1732914036=598849171, -1330158020=-1510432560, 36397782=-555572846} 
+// {0=9, 1500655315=-1683482469, -609030570=292421760, -1124861691=469472359, 918028721=-1147682070, 598738363=2109119884, 770956959=-33894533, 1761627148=-1606973383, 43850195=737007470, 1783901738=-676622914} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,7 +12,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.eventbus.Message<T> 
 public class Message<T> {
-      private io.vertx.core.eventbus.Message delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.eventbus.Message delegate;
   public Message(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.Message) delegate;
   }

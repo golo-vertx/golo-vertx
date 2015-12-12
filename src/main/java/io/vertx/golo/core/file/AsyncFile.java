@@ -1,7 +1,7 @@
 package io.vertx.golo.core.file;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=4, 936818724=-1213373879, 1681093258=192472431, 803891683=91244758, 1003237238=1681695883} 
+// {0=2, 2070106981=810636801, 1227813217=696992427} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -13,7 +13,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.file.AsyncFile 
 public class AsyncFile implements ReadStream<Buffer>,  WriteStream<Buffer> {
-      private io.vertx.core.file.AsyncFile delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.file.AsyncFile delegate;
   public AsyncFile(Object delegate) {
     this.delegate = (io.vertx.core.file.AsyncFile) delegate;
   }

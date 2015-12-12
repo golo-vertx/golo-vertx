@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=1, 691575266=1463342944} 
+// {0=2, 627038174=595281133, 1853281370=1878864778} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -12,7 +12,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.Context 
 public class Context {
-      private io.vertx.core.Context delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.Context delegate;
   public Context(Object delegate) {
     this.delegate = (io.vertx.core.Context) delegate;
   }

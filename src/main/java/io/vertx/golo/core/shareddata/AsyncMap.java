@@ -1,7 +1,7 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=10, -1753677432=-1857467126, 869131279=1423591296, -910180371=-532963952, 963119003=-1536223840, 1979772883=-706178580, 1738824321=-116162719, 135268408=1029996151, 1487814007=895212535, -1026518199=435534099, 84334986=-1368965515} 
+// {0=10, -766675683=1985352579, 104153344=-273705609, 589126635=-384185457, 834962419=2137983777, 977573676=-1591544373, 676261014=-511326220, 701904654=-1526479897, 1036530608=-1414196761, -359932745=1920110177, -43314906=-2023605986} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,7 +10,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.shareddata.AsyncMap<K,V> 
 public class AsyncMap<K,V> {
-      private io.vertx.core.shareddata.AsyncMap delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.shareddata.AsyncMap delegate;
   public AsyncMap(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.AsyncMap) delegate;
   }

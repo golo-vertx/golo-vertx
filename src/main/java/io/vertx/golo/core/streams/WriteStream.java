@@ -1,7 +1,7 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=2, -946434665=899229535, 502259283=-788928603} 
+// {0=5, 1429058943=-737093548, -215272951=744995190, -531032452=1506105771, 11195443=1814799297, -1124293008=-668783009} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -18,6 +18,8 @@ public Object getDelegate();
 }
 
 class WriteStreamImpl<T> implements WriteStream<T> {
+  //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
   private io.vertx.core.streams.WriteStream delegate;
   public WriteStreamImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.WriteStream) delegate;

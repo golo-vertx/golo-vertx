@@ -1,7 +1,7 @@
 package io.vertx.golo.core.http;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=10, -1630095114=-1479434398, 1762061478=-1254455335, -1411103823=329762864, 839248914=214588508, -376872288=-1129126939, 666537616=-616251287, -1140318269=945863370, 1222274727=-432633351, 1008081832=-1814376154, 1541017156=-2004100761} 
+// {0=5, 1588908070=1868339344, 697403106=-101894104, 1161178419=2086266974, 369666102=1893069769, 513722209=132376188} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,7 +11,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.http.HttpServer 
 public class HttpServer implements Measured {
-      private io.vertx.core.http.HttpServer delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.http.HttpServer delegate;
   public HttpServer(Object delegate) {
     this.delegate = (io.vertx.core.http.HttpServer) delegate;
   }

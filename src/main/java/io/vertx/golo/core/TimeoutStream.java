@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=9, -1037434662=1744780053, 816465866=1827769692, 102985718=1352313505, -98677813=-1838467464, 421874786=1782550532, -838162814=818826808, -2139955512=-2074754885, -1793161662=-1665801102, -209945263=-1956165004} 
+// {0=6, -727746258=1255933347, -12081722=1723343611, 1141744583=1844301287, -528811472=102886509, 67983671=1900751726, -435056500=-1529952359} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,7 +10,9 @@ import io.vertx.golo.core.streams.ReadStream;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.TimeoutStream 
 public class TimeoutStream implements ReadStream<Long> {
-      private io.vertx.core.TimeoutStream delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.TimeoutStream delegate;
   public TimeoutStream(Object delegate) {
     this.delegate = (io.vertx.core.TimeoutStream) delegate;
   }

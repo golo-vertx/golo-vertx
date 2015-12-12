@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=5, 1991490659=1599837107, -1094500982=-520177459, 1654896040=-576023735, 1637376518=-1872567886, -647856179=586244826} 
+// {0=1, -1924535656=1897891537} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,7 +11,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 // Type: io.vertx.core.MultiMap 
 public class MultiMap {
-      private io.vertx.core.MultiMap delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.MultiMap delegate;
   public MultiMap(Object delegate) {
     this.delegate = (io.vertx.core.MultiMap) delegate;
   }

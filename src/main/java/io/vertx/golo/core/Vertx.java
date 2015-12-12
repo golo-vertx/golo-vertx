@@ -1,7 +1,7 @@
 package io.vertx.golo.core;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=6, 1868040300=-521765861, -471733067=-1025329005, 1840899346=677816100, -1016993622=1259230674, -1623097094=-418521315, 1205303273=377057099} 
+// {0=4, -1920467083=-1637868592, 273873974=-1380111815, 1783718230=1965974206, -937856185=-69535153} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -28,7 +28,9 @@ import io.vertx.core.Handler;
 import io.vertx.golo.core.http.HttpClient;
 // Type: io.vertx.core.Vertx 
 public class Vertx implements Measured {
-      private io.vertx.core.Vertx delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.Vertx delegate;
   public Vertx(Object delegate) {
     this.delegate = (io.vertx.core.Vertx) delegate;
   }

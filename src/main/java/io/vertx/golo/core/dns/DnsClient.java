@@ -1,7 +1,7 @@
 package io.vertx.golo.core.dns;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=1, 1077368641=1982246213} 
+// {0=10, 981499268=437028437, -2128347007=-1743716460, -137193801=-1241856974, 192042743=-1151140042, -862666948=82231347, -1323386202=-576349844, 1977977420=964065171, -887074391=182853660, 523612990=887606267, -1117868445=1294999369} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,7 +11,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.dns.DnsClient 
 public class DnsClient {
-      private io.vertx.core.dns.DnsClient delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.dns.DnsClient delegate;
   public DnsClient(Object delegate) {
     this.delegate = (io.vertx.core.dns.DnsClient) delegate;
   }

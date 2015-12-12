@@ -1,7 +1,7 @@
 package io.vertx.golo.core.streams;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=4, 1210930425=928879565, -1331593158=-643595542, 1214644891=360369846, 2123266368=-345720282} 
+// {0=3, -222978912=1384511208, 461542937=490612441, -1109120200=-1869497354} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -14,6 +14,8 @@ public Object getDelegate();
 }
 
 class StreamBaseImpl implements StreamBase {
+  //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
   private io.vertx.core.streams.StreamBase delegate;
   public StreamBaseImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.StreamBase) delegate;

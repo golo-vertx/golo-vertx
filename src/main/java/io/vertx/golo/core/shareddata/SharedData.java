@@ -1,7 +1,7 @@
 package io.vertx.golo.core.shareddata;
 
 //[Debug] This is a debuging message to check @code{} syntax
-// {0=4, -1395174114=1905766686, -1767703320=538951766, 193143039=1732028099, -1639049968=-1359786336} 
+// {0=3, 758695392=-633693800, -688678680=1290974710, -491470295=-1959182021} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,7 +10,9 @@ import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 // Type: io.vertx.core.shareddata.SharedData 
 public class SharedData {
-      private io.vertx.core.shareddata.SharedData delegate;
+      //[test] I am inside the classbody.templ
+  //variable created inside classbody - <variable inside class body>
+  private io.vertx.core.shareddata.SharedData delegate;
   public SharedData(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.SharedData) delegate;
   }
