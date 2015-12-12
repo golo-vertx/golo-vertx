@@ -1,5 +1,7 @@
 package io.vertx.golo.core.dns;
 
+//[Debug] This is a debuging message to check @code{} syntax
+// {0=3, 328577558=1179771268, -487868061=-1369124726, 2053474299=1751293779} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;

@@ -1,5 +1,7 @@
 package io.vertx.golo.core.file;
 
+//[Debug] This is a debuging message to check @code{} syntax
+// {0=4, 1610000902=645480362, 649619101=1951440333, -524302088=-1034820652, -873127092=1668350158} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
