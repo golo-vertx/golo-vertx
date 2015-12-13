@@ -8,11 +8,11 @@ import io.vertx.core.Handler;
 // Type: io.vertx.core.streams.WriteStream<T> 
 public interface WriteStream<T> extends StreamBase {
 public Object getDelegate();
-  WriteStream<T> exceptionHandler(Handler<Throwable> handler);
-  WriteStream<T> write(T data);
-  WriteStream<T> setWriteQueueMaxSize(int maxSize);
+  WriteStream<T> exceptionHandlerHandler(Handler<Throwable> handler);
+  WriteStream<T> writeData(T data);
+  WriteStream<T> setWriteQueueMaxSizeMaxSize(int maxSize);
   boolean writeQueueFull();
-  WriteStream<T> drainHandler(Handler<Void> handler);
+  WriteStream<T> drainHandlerHandler(Handler<Void> handler);
 }
 
 class WriteStreamImpl<T> implements WriteStream<T> {

@@ -8,11 +8,11 @@ import io.vertx.core.Handler;
 // Type: io.vertx.core.streams.ReadStream<T> 
 public interface ReadStream<T> extends StreamBase {
 public Object getDelegate();
-  ReadStream<T> exceptionHandler(Handler<Throwable> handler);
-  ReadStream<T> handler(Handler<T> handler);
+  ReadStream<T> exceptionHandlerHandler(Handler<Throwable> handler);
+  ReadStream<T> handlerHandler(Handler<T> handler);
   ReadStream<T> pause();
   ReadStream<T> resume();
-  ReadStream<T> endHandler(Handler<Void> endHandler);
+  ReadStream<T> endHandlerEndHandler(Handler<Void> endHandler);
 }
 
 class ReadStreamImpl<T> implements ReadStream<T> {
