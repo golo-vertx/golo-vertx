@@ -157,6 +157,7 @@
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <configuration>
+                        <finalName>${project.name}</finalName>
                         <archive>
                             <manifest>
                                 <mainClass>io.vertx.golo.core.Main</mainClass>
