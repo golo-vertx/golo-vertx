@@ -1,9 +1,11 @@
 
 module Consumer
 
-import io.vertx.core.Verticle
+import io.vertx.core.Vertx
+import io.vertx.core.VertxOptions
 
 function main = |args| {
+    println("HEIHEI")
     var consumerStart = |verticle| {
         let vertx = verticle: getVertx()
         let eb = vertx: eventBus()
@@ -18,10 +20,10 @@ function main = |args| {
     var factory = io.vertx.lang.golo.GoloVerticleFactory()
     var consumer = factory: createGoloVerticle(consumerStart, stop)
 
-    let vertx = io.vertx.core.Vertx.vertx()
-    vertx: deployVerticle(consumer)
-
-
-    let powerOfPairs = powerOfPairs: filter(|x| -> (x % 2) == 0): map(|x| -> x * 2)
-
+    println("jou")
+    Vertx.clusteredVertx(VertxOptions(), |rep|{
+        let vertx = rep: result()
+        println(vertx)
+        vertx: deployVerticle(consumer)
+    })
 }

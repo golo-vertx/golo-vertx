@@ -20,7 +20,7 @@
         <asciidoc.dir>${project.basedir}/src/main/asciidoc</asciidoc.dir>
         <tools.jar>${java.home}/../lib/tools.jar</tools.jar>
     </properties>
-
+    
     <dependencies>
         <dependency>
             <groupId>io.netty</groupId>
