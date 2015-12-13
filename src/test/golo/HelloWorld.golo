@@ -1,5 +1,5 @@
 
-module BufferTest
+module HelloWorld
 
 import io.vertx.golo.core.Vertx
 
