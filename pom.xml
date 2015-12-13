@@ -21,13 +21,6 @@
         <tools.jar>${java.home}/../lib/tools.jar</tools.jar>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>vertx-golo</id>
-            <url>file://home/samutamm/Komentorivireeni/golo-vertx/test/java/compiledFiles</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>io.netty</groupId>
