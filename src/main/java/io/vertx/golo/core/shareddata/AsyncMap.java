@@ -22,7 +22,7 @@ public class AsyncMap<K,V> {
    * @param k the key
    * @param resultHandler - this will be called some time later with the async result.
    */
-  public void getKHandler(K k, Handler<AsyncResult<V>> resultHandler) {
+  public void getKResultHandler(K k, Handler<AsyncResult<V>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).get(InternalHelper.unwrapObject(k), new Handler<AsyncResult<Object>>() {
       public void handle(AsyncResult<Object> event) {
         AsyncResult<Object> f;
@@ -43,7 +43,7 @@ public class AsyncMap<K,V> {
    * @param v the value
    * @param completionHandler - this will be called some time later to signify the value has been put
    */
-  public void putKVHandler(K k, V v, Handler<AsyncResult<Void>> completionHandler) {
+  public void putKVCompletionHandler(K k, V v, Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).put(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), completionHandler);
   }
 //void put(K k, V v, long ttl, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
@@ -56,7 +56,7 @@ public class AsyncMap<K,V> {
    * @param ttl The time to live (in ms) for the entry
    * @param completionHandler the handler
    */
-  public void putKVLongHandler(K k, V v, long ttl, Handler<AsyncResult<Void>> completionHandler) {
+  public void putKVTtlCompletionHandler(K k, V v, long ttl, Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).put(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), ttl, completionHandler);
   }
 //void putIfAbsent(K k, V v, io.vertx.core.Handler<io.vertx.core.AsyncResult<V>> completionHandler)
@@ -68,7 +68,7 @@ public class AsyncMap<K,V> {
    * @param v the value
    * @param completionHandler the handler
    */
-  public void putIfAbsentKVHandler(K k, V v, Handler<AsyncResult<V>> completionHandler) {
+  public void putIfAbsentKVCompletionHandler(K k, V v, Handler<AsyncResult<V>> completionHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).putIfAbsent(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), new Handler<AsyncResult<Object>>() {
       public void handle(AsyncResult<Object> event) {
         AsyncResult<Object> f;
@@ -91,7 +91,7 @@ public class AsyncMap<K,V> {
    * @param ttl The time to live (in ms) for the entry
    * @param completionHandler the handler
    */
-  public void putIfAbsentKVLongHandler(K k, V v, long ttl, Handler<AsyncResult<V>> completionHandler) {
+  public void putIfAbsentKVTtlCompletionHandler(K k, V v, long ttl, Handler<AsyncResult<V>> completionHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).putIfAbsent(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), ttl, new Handler<AsyncResult<Object>>() {
       public void handle(AsyncResult<Object> event) {
         AsyncResult<Object> f;
@@ -111,7 +111,7 @@ public class AsyncMap<K,V> {
    * @param k the key
    * @param resultHandler - this will be called some time later to signify the value has been removed
    */
-  public void removeKHandler(K k, Handler<AsyncResult<V>> resultHandler) {
+  public void removeKResultHandler(K k, Handler<AsyncResult<V>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).remove(InternalHelper.unwrapObject(k), new Handler<AsyncResult<Object>>() {
       public void handle(AsyncResult<Object> event) {
         AsyncResult<Object> f;
@@ -132,7 +132,7 @@ public class AsyncMap<K,V> {
    * @param v the value
    * @param resultHandler - this will be called some time later to signify the value has been removed
    */
-  public void removeIfPresentKVHandler(K k, V v, Handler<AsyncResult<Boolean>> resultHandler) {
+  public void removeIfPresentKVResultHandler(K k, V v, Handler<AsyncResult<Boolean>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).removeIfPresent(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), resultHandler);
   }
 //void replace(K k, V v, io.vertx.core.Handler<io.vertx.core.AsyncResult<V>> resultHandler)
@@ -143,7 +143,7 @@ public class AsyncMap<K,V> {
    * @param v the new value
    * @param resultHandler the result handler will be passed the previous value
    */
-  public void replaceKVHandler(K k, V v, Handler<AsyncResult<V>> resultHandler) {
+  public void replaceKVResultHandler(K k, V v, Handler<AsyncResult<V>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).replace(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(v), new Handler<AsyncResult<Object>>() {
       public void handle(AsyncResult<Object> event) {
         AsyncResult<Object> f;
@@ -165,7 +165,7 @@ public class AsyncMap<K,V> {
    * @param newValue the new value
    * @param resultHandler the result handler
    */
-  public void replaceIfPresentKVVHandler(K k, V oldValue, V newValue, Handler<AsyncResult<Boolean>> resultHandler) {
+  public void replaceIfPresentKOldValueNewValueResultHandler(K k, V oldValue, V newValue, Handler<AsyncResult<Boolean>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).replaceIfPresent(InternalHelper.unwrapObject(k), InternalHelper.unwrapObject(oldValue), InternalHelper.unwrapObject(newValue), resultHandler);
   }
 //void clear(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> resultHandler)
@@ -174,7 +174,7 @@ public class AsyncMap<K,V> {
    * Clear all entries in the map
    * @param resultHandler called on completion
    */
-  public void clearHandler(Handler<AsyncResult<Void>> resultHandler) {
+  public void clearResultHandler(Handler<AsyncResult<Void>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).clear(resultHandler);
   }
 //void size(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Integer>> resultHandler)
@@ -183,7 +183,7 @@ public class AsyncMap<K,V> {
    * Provide the number of entries in the map
    * @param resultHandler handler which will receive the number of entries
    */
-  public void sizeHandler(Handler<AsyncResult<Integer>> resultHandler) {
+  public void sizeResultHandler(Handler<AsyncResult<Integer>> resultHandler) {
     ((io.vertx.core.shareddata.AsyncMap) this.delegate).size(resultHandler);
   }
 }

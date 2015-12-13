@@ -33,13 +33,13 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream writeBuffer(Buffer data) {
+  public PacketWritestream writeData(Buffer data) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream setWriteQueueMaxSizeInt(int maxSize) {
+  public PacketWritestream setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }

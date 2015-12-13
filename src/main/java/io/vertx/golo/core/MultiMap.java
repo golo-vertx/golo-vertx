@@ -33,7 +33,7 @@ return    InternalHelper.safeCreate(io.vertx.core.MultiMap.caseInsensitiveMultiM
    * @param name The name of the header to search
    * @return The first header value or <code>null</code> if there is no such entry
    */
-  public String getString(String name) {
+  public String getName(String name) {
 return    this.delegate.get(name);
   }
 //java.util.List<java.lang.String> getAll(java.lang.String name)
@@ -43,7 +43,7 @@ return    this.delegate.get(name);
    * @param name The name to search
    * @return A immutable {@link java.util.List} of values which will be empty if no values are found
    */
-  public List<String> getAllString(String name) {
+  public List<String> getAllName(String name) {
 return    this.delegate.getAll(name);
   }
 //boolean contains(java.lang.String name)
@@ -53,7 +53,7 @@ return    this.delegate.getAll(name);
    * @param name The name to search for
    * @return true if at least one entry is found
    */
-  public boolean containsString(String name) {
+  public boolean containsName(String name) {
 return    this.delegate.contains(name);
   }
 //boolean isEmpty()
@@ -82,7 +82,7 @@ return    this.delegate.names();
    * @param value The value being added
    * @return a reference to this, so the API can be used fluently
    */
-  public MultiMap addStringString(String name, String value) {
+  public MultiMap addNameValue(String name, String value) {
     this.delegate.add(name, value);
     return this;
   }
@@ -93,7 +93,7 @@ return    this.delegate.names();
    * @param map 
    * @return a reference to this, so the API can be used fluently
    */
-  public MultiMap addAllMultiMap(MultiMap map) {
+  public MultiMap addAllMap(MultiMap map) {
     this.delegate.addAll((io.vertx.core.MultiMap)map.getDelegate());
     return this;
   }
@@ -107,7 +107,7 @@ return    this.delegate.names();
    * @param value The value
    * @return a reference to this, so the API can be used fluently
    */
-  public MultiMap setStringString(String name, String value) {
+  public MultiMap setNameValue(String name, String value) {
     this.delegate.set(name, value);
     return this;
   }
@@ -118,7 +118,7 @@ return    this.delegate.names();
    * @param map 
    * @return a reference to this, so the API can be used fluently
    */
-  public MultiMap setAllMultiMap(MultiMap map) {
+  public MultiMap setAllMap(MultiMap map) {
     this.delegate.setAll((io.vertx.core.MultiMap)map.getDelegate());
     return this;
   }
@@ -129,7 +129,7 @@ return    this.delegate.names();
    * @param name The name of the value to remove
    * @return a reference to this, so the API can be used fluently
    */
-  public MultiMap removeString(String name) {
+  public MultiMap removeName(String name) {
     this.delegate.remove(name);
     return this;
   }

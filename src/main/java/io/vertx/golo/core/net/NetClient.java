@@ -37,7 +37,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param connectHandler 
    * @return a reference to this, so the API can be used fluently
    */
-  public NetClient connectIntStringHandler(int port, String host, Handler<AsyncResult<NetSocket>> connectHandler) {
+  public NetClient connectPortHostConnectHandler(int port, String host, Handler<AsyncResult<NetSocket>> connectHandler) {
     this.delegate.connect(port, host, new Handler<AsyncResult<io.vertx.core.net.NetSocket>>() {
       public void handle(AsyncResult<io.vertx.core.net.NetSocket> event) {
         AsyncResult<NetSocket> f;

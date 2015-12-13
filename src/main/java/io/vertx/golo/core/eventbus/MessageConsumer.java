@@ -46,7 +46,7 @@ public class MessageConsumer<T> implements ReadStream<Message<T>> {
   }
 //io.vertx.core.eventbus.MessageConsumer<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.eventbus.MessageConsumer<T>
-  public MessageConsumer<T> endHandlerHandler(Handler<Void> endHandler) {
+  public MessageConsumer<T> endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.streams.ReadStream) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -86,7 +86,7 @@ return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).address();
    * @param maxBufferedMessages the maximum number of messages that can be buffered
    * @return this registration
    */
-  public MessageConsumer<T> setMaxBufferedMessagesInt(int maxBufferedMessages) {
+  public MessageConsumer<T> setMaxBufferedMessagesMaxBufferedMessages(int maxBufferedMessages) {
 return    InternalHelper.safeCreate(((io.vertx.core.eventbus.MessageConsumer) this.delegate).setMaxBufferedMessages(maxBufferedMessages), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
 //int getMaxBufferedMessages()
@@ -104,7 +104,7 @@ return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).getMaxBuffere
    * Optional method which can be called to indicate when the registration has been propagated across the cluster.
    * @param completionHandler the completion handler
    */
-  public void completionHandlerHandler(Handler<AsyncResult<Void>> completionHandler) {
+  public void completionHandlerCompletionHandler(Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.eventbus.MessageConsumer) this.delegate).completionHandler(completionHandler);
   }
 //void unregister()
@@ -121,7 +121,7 @@ return    ((io.vertx.core.eventbus.MessageConsumer) this.delegate).getMaxBuffere
    * Unregisters the handler which created this registration
    * @param completionHandler the handler called when the unregister is done. For example in a cluster when all nodes of the event bus have been unregistered.
    */
-  public void unregisterHandler(Handler<AsyncResult<Void>> completionHandler) {
+  public void unregisterCompletionHandler(Handler<AsyncResult<Void>> completionHandler) {
     ((io.vertx.core.eventbus.MessageConsumer) this.delegate).unregister(completionHandler);
   }
 }

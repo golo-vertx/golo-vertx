@@ -12,7 +12,7 @@ public Object getDelegate();
   ReadStream<T> handlerHandler(Handler<T> handler);
   ReadStream<T> pause();
   ReadStream<T> resume();
-  ReadStream<T> endHandlerHandler(Handler<Void> endHandler);
+  ReadStream<T> endHandlerEndHandler(Handler<Void> endHandler);
 }
 
 class ReadStreamImpl<T> implements ReadStream<T> {
@@ -76,7 +76,7 @@ class ReadStreamImpl<T> implements ReadStream<T> {
    * @param endHandler 
    * @return a reference to this, so the API can be used fluently
    */
-  public ReadStream<T> endHandlerHandler(Handler<Void> endHandler) {
+  public ReadStream<T> endHandlerEndHandler(Handler<Void> endHandler) {
     ((io.vertx.core.streams.ReadStream) this.delegate).endHandler(endHandler);
     return this;
   }

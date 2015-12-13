@@ -110,19 +110,19 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.ServerWebSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket endHandlerHandler(Handler<Void> endHandler) {
+  public ServerWebSocket endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).endHandler(endHandler);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeBuffer(Buffer data) {
+  public ServerWebSocket writeData(Buffer data) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.ServerWebSocket setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket setWriteQueueMaxSizeInt(int maxSize) {
+  public ServerWebSocket setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
@@ -134,25 +134,25 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.ServerWebSocket writeFrame(io.vertx.core.http.WebSocketFrame frame)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeFrameWebSocketFrame(WebSocketFrame frame) {
+  public ServerWebSocket writeFrameFrame(WebSocketFrame frame) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeFrame((io.vertx.core.http.WebSocketFrame)frame.getDelegate());
     return this;
   }
 //io.vertx.core.http.ServerWebSocket writeFinalTextFrame(java.lang.String text)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeFinalTextFrameString(String text) {
+  public ServerWebSocket writeFinalTextFrameText(String text) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeFinalTextFrame(text);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket writeFinalBinaryFrame(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeFinalBinaryFrameBuffer(Buffer data) {
+  public ServerWebSocket writeFinalBinaryFrameData(Buffer data) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeFinalBinaryFrame((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.ServerWebSocket writeBinaryMessage(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeBinaryMessageBuffer(Buffer data) {
+  public ServerWebSocket writeBinaryMessageData(Buffer data) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeBinaryMessage((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }

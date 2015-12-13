@@ -45,7 +45,7 @@ public class ServerWebSocketStream implements ReadStream<ServerWebSocket> {
   }
 //io.vertx.core.http.ServerWebSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.ServerWebSocketStream
-  public ServerWebSocketStream endHandlerHandler(Handler<Void> endHandler) {
+  public ServerWebSocketStream endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.streams.ReadStream) this.delegate).endHandler(endHandler);
     return this;
   }

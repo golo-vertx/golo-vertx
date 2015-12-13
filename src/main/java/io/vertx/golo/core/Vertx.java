@@ -58,7 +58,7 @@ return    InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(), io.vertx.golo.c
    * @param options the options to use (see <a href="../../../../../../cheatsheet/VertxOptions.html">VertxOptions</a>)
    * @return the instance
    */
-  public static Vertx vertxVertxOptions(Map<String, Object> options) {
+  public static Vertx vertxOptions(Map<String, Object> options) {
 return    InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options != null ? new io.vertx.core.VertxOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.Vertx.class);
   }
 //void clusteredVertx(io.vertx.core.VertxOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.Vertx>> resultHandler)
@@ -70,7 +70,7 @@ return    InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options != null ? 
    * @param options the options to use (see <a href="../../../../../../cheatsheet/VertxOptions.html">VertxOptions</a>)
    * @param resultHandler the result handler that will receive the result
    */
-  public static void clusteredVertxVertxOptionsHandler(Map<String, Object> options, Handler<AsyncResult<Vertx>> resultHandler) {
+  public static void clusteredVertxOptionsResultHandler(Map<String, Object> options, Handler<AsyncResult<Vertx>> resultHandler) {
     io.vertx.core.Vertx.clusteredVertx(options != null ? new io.vertx.core.VertxOptions(new io.vertx.core.json.JsonObject(options)) : null, new Handler<AsyncResult<io.vertx.core.Vertx>>() {
       public void handle(AsyncResult<io.vertx.core.Vertx> event) {
         AsyncResult<Vertx> f;
@@ -108,7 +108,7 @@ return    InternalHelper.safeCreate(this.delegate.getOrCreateContext(), io.vertx
    * @param options the options to use (see <a href="../../../../../../cheatsheet/NetServerOptions.html">NetServerOptions</a>)
    * @return the server
    */
-  public NetServer createNetServerNetServerOptions(Map<String, Object> options) {
+  public NetServer createNetServerOptions(Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.createNetServer(options != null ? new io.vertx.core.net.NetServerOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.net.NetServer.class);
   }
 //io.vertx.core.net.NetServer createNetServer()
@@ -127,7 +127,7 @@ return    InternalHelper.safeCreate(this.delegate.createNetServer(), io.vertx.go
    * @param options the options to use (see <a href="../../../../../../cheatsheet/NetClientOptions.html">NetClientOptions</a>)
    * @return the client
    */
-  public NetClient createNetClientNetClientOptions(Map<String, Object> options) {
+  public NetClient createNetClientOptions(Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.createNetClient(options != null ? new io.vertx.core.net.NetClientOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.net.NetClient.class);
   }
 //io.vertx.core.net.NetClient createNetClient()
@@ -146,7 +146,7 @@ return    InternalHelper.safeCreate(this.delegate.createNetClient(), io.vertx.go
    * @param options the options to use (see <a href="../../../../../../cheatsheet/HttpServerOptions.html">HttpServerOptions</a>)
    * @return the server
    */
-  public HttpServer createHttpServerHttpServerOptions(Map<String, Object> options) {
+  public HttpServer createHttpServerOptions(Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.createHttpServer(options != null ? new io.vertx.core.http.HttpServerOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.http.HttpServer.class);
   }
 //io.vertx.core.http.HttpServer createHttpServer()
@@ -165,7 +165,7 @@ return    InternalHelper.safeCreate(this.delegate.createHttpServer(), io.vertx.g
    * @param options the options to use (see <a href="../../../../../../cheatsheet/HttpClientOptions.html">HttpClientOptions</a>)
    * @return the client
    */
-  public HttpClient createHttpClientHttpClientOptions(Map<String, Object> options) {
+  public HttpClient createHttpClientOptions(Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.createHttpClient(options != null ? new io.vertx.core.http.HttpClientOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.http.HttpClient.class);
   }
 //io.vertx.core.http.HttpClient createHttpClient()
@@ -184,7 +184,7 @@ return    InternalHelper.safeCreate(this.delegate.createHttpClient(), io.vertx.g
    * @param options the options to use (see <a href="../../../../../../cheatsheet/DatagramSocketOptions.html">DatagramSocketOptions</a>)
    * @return the socket
    */
-  public DatagramSocket createDatagramSocketDatagramSocketOptions(Map<String, Object> options) {
+  public DatagramSocket createDatagramSocketOptions(Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.createDatagramSocket(options != null ? new io.vertx.core.datagram.DatagramSocketOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.datagram.DatagramSocket.class);
   }
 //io.vertx.core.datagram.DatagramSocket createDatagramSocket()
@@ -222,7 +222,7 @@ return    InternalHelper.safeCreate(this.delegate.eventBus(), io.vertx.golo.core
    * @param host the host
    * @return the DNS client
    */
-  public DnsClient createDnsClientIntString(int port, String host) {
+  public DnsClient createDnsClientPortHost(int port, String host) {
 return    InternalHelper.safeCreate(this.delegate.createDnsClient(port, host), io.vertx.golo.core.dns.DnsClient.class);
   }
 //io.vertx.core.shareddata.SharedData sharedData()
@@ -243,7 +243,7 @@ return    InternalHelper.safeCreate(this.delegate.sharedData(), io.vertx.golo.co
    * @param handler the handler that will be called with the timer ID when the timer fires
    * @return the unique ID of the timer
    */
-  public long setTimerLongHandler(long delay, Handler<Long> handler) {
+  public long setTimerDelayHandler(long delay, Handler<Long> handler) {
 return    this.delegate.setTimer(delay, handler);
   }
 //io.vertx.core.TimeoutStream timerStream(long delay)
@@ -254,7 +254,7 @@ return    this.delegate.setTimer(delay, handler);
    * @param delay the delay in milliseconds, after which the timer will fire
    * @return the timer stream
    */
-  public TimeoutStream timerStreamLong(long delay) {
+  public TimeoutStream timerStreamDelay(long delay) {
 return    InternalHelper.safeCreate(this.delegate.timerStream(delay), io.vertx.golo.core.TimeoutStream.class);
   }
 //long setPeriodic(long delay, io.vertx.core.Handler<java.lang.Long> handler)
@@ -266,7 +266,7 @@ return    InternalHelper.safeCreate(this.delegate.timerStream(delay), io.vertx.g
    * @param handler the handler that will be called with the timer ID when the timer fires
    * @return the unique ID of the timer
    */
-  public long setPeriodicLongHandler(long delay, Handler<Long> handler) {
+  public long setPeriodicDelayHandler(long delay, Handler<Long> handler) {
 return    this.delegate.setPeriodic(delay, handler);
   }
 //io.vertx.core.TimeoutStream periodicStream(long delay)
@@ -277,7 +277,7 @@ return    this.delegate.setPeriodic(delay, handler);
    * @param delay the delay in milliseconds, after which the timer will fire
    * @return the periodic stream
    */
-  public TimeoutStream periodicStreamLong(long delay) {
+  public TimeoutStream periodicStreamDelay(long delay) {
 return    InternalHelper.safeCreate(this.delegate.periodicStream(delay), io.vertx.golo.core.TimeoutStream.class);
   }
 //boolean cancelTimer(long id)
@@ -287,7 +287,7 @@ return    InternalHelper.safeCreate(this.delegate.periodicStream(delay), io.vert
    * @param id The id of the timer to cancel
    * @return true if the timer was successfully cancelled, or false if the timer does not exist.
    */
-  public boolean cancelTimerLong(long id) {
+  public boolean cancelTimerId(long id) {
 return    this.delegate.cancelTimer(id);
   }
 //void runOnContext(io.vertx.core.Handler<java.lang.Void> action)
@@ -297,7 +297,7 @@ return    this.delegate.cancelTimer(id);
    * preceeding events have been handled.
    * @param action - a handler representing the action to execute
    */
-  public void runOnContextHandler(Handler<Void> action) {
+  public void runOnContextAction(Handler<Void> action) {
     this.delegate.runOnContext(action);
   }
 //void close()
@@ -318,7 +318,7 @@ return    this.delegate.cancelTimer(id);
    * Like {@link io.vertx.golo.core.Vertx#close} but the completionHandler will be called when the close is complete
    * @param completionHandler The handler will be notified when the close is complete.
    */
-  public void closeHandler(Handler<AsyncResult<Void>> completionHandler) {
+  public void closeCompletionHandler(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
 //void deployVerticle(java.lang.String name)
@@ -331,7 +331,7 @@ return    this.delegate.cancelTimer(id);
    * For the rules on how factories are selected please consult the user manual.
    * @param name the name.
    */
-  public void deployVerticleString(String name) {
+  public void deployVerticleName(String name) {
     this.delegate.deployVerticle(name);
   }
 //void deployVerticle(java.lang.String name, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler)
@@ -346,7 +346,7 @@ return    this.delegate.cancelTimer(id);
    * @param name The identifier
    * @param completionHandler a handler which will be notified when the deployment is complete
    */
-  public void deployVerticleStringHandler(String name, Handler<AsyncResult<String>> completionHandler) {
+  public void deployVerticleNameCompletionHandler(String name, Handler<AsyncResult<String>> completionHandler) {
     this.delegate.deployVerticle(name, completionHandler);
   }
 //void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options)
@@ -357,7 +357,7 @@ return    this.delegate.cancelTimer(id);
    * @param name the name
    * @param options the deployment options. (see <a href="../../../../../../cheatsheet/DeploymentOptions.html">DeploymentOptions</a>)
    */
-  public void deployVerticleStringDeploymentOptions(String name, Map<String, Object> options) {
+  public void deployVerticleNameOptions(String name, Map<String, Object> options) {
     this.delegate.deployVerticle(name, options != null ? new io.vertx.core.DeploymentOptions(new io.vertx.core.json.JsonObject(options)) : null);
   }
 //void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler)
@@ -369,7 +369,7 @@ return    this.delegate.cancelTimer(id);
    * @param options the deployment options. (see <a href="../../../../../../cheatsheet/DeploymentOptions.html">DeploymentOptions</a>)
    * @param completionHandler a handler which will be notified when the deployment is complete
    */
-  public void deployVerticleStringDeploymentOptionsHandler(String name, Map<String, Object> options, Handler<AsyncResult<String>> completionHandler) {
+  public void deployVerticleNameOptionsCompletionHandler(String name, Map<String, Object> options, Handler<AsyncResult<String>> completionHandler) {
     this.delegate.deployVerticle(name, options != null ? new io.vertx.core.DeploymentOptions(new io.vertx.core.json.JsonObject(options)) : null, completionHandler);
   }
 //void undeploy(java.lang.String deploymentID)
@@ -380,7 +380,7 @@ return    this.delegate.cancelTimer(id);
    * The actual undeployment happens asynchronously and may not complete until after the method has returned.
    * @param deploymentID the deployment ID
    */
-  public void undeployString(String deploymentID) {
+  public void undeployDeploymentID(String deploymentID) {
     this.delegate.undeploy(deploymentID);
   }
 //void undeploy(java.lang.String deploymentID, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
@@ -390,7 +390,7 @@ return    this.delegate.cancelTimer(id);
    * @param deploymentID the deployment ID
    * @param completionHandler a handler which will be notified when the undeployment is complete
    */
-  public void undeployStringHandler(String deploymentID, Handler<AsyncResult<Void>> completionHandler) {
+  public void undeployDeploymentIDCompletionHandler(String deploymentID, Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.undeploy(deploymentID, completionHandler);
   }
 //java.util.Set<java.lang.String> deploymentIDs()
@@ -428,7 +428,7 @@ return    this.delegate.isClustered();
    * @param ordered if true then if executeBlocking is called several times on the same context, the executions for that context will be executed serially, not in parallel. if false then they will be no ordering guarantees
    * @param resultHandler handler that will be called when the blocking code is complete
    */
-  public <T> void executeBlockingHandlerBooleanHandler(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingBlockingCodeHandlerOrderedResultHandler(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));
@@ -452,7 +452,7 @@ return    this.delegate.isClustered();
    * @param blockingCodeHandler 
    * @param resultHandler 
    */
-  public <T> void executeBlockingHandlerHandler(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingBlockingCodeHandlerResultHandler(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));

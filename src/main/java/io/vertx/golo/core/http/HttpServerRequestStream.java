@@ -45,7 +45,7 @@ public class HttpServerRequestStream implements ReadStream<HttpServerRequest> {
   }
 //io.vertx.core.http.HttpServerRequestStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpServerRequestStream
-  public HttpServerRequestStream endHandlerHandler(Handler<Void> endHandler) {
+  public HttpServerRequestStream endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpServerRequestStream) this.delegate).endHandler(endHandler);
     return this;
   }

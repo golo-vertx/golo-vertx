@@ -41,7 +41,7 @@ public class TimeoutStream implements ReadStream<Long> {
   }
 //io.vertx.core.TimeoutStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.TimeoutStream
-  public TimeoutStream endHandlerHandler(Handler<Void> endHandler) {
+  public TimeoutStream endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.TimeoutStream) this.delegate).endHandler(endHandler);
     return this;
   }

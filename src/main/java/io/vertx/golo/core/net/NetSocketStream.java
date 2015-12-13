@@ -45,7 +45,7 @@ public class NetSocketStream implements ReadStream<NetSocket> {
   }
 //io.vertx.core.net.NetSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.net.NetSocketStream
-  public NetSocketStream endHandlerHandler(Handler<Void> endHandler) {
+  public NetSocketStream endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.net.NetSocketStream) this.delegate).endHandler(endHandler);
     return this;
   }

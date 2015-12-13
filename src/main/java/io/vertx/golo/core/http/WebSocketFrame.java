@@ -22,7 +22,7 @@ public class WebSocketFrame {
    * @param isFinal true if it's the final frame in the WebSocket message
    * @return the frame
    */
-  public static WebSocketFrame binaryFrameBufferBoolean(Buffer data, boolean isFinal) {
+  public static WebSocketFrame binaryFrameDataIsFinal(Buffer data, boolean isFinal) {
 return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFrame((io.vertx.core.buffer.Buffer)data.getDelegate(), isFinal), io.vertx.golo.core.http.WebSocketFrame.class);
   }
 //io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal)
@@ -33,7 +33,7 @@ return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.binaryFram
    * @param isFinal true if it's the final frame in the WebSocket message
    * @return the frame
    */
-  public static WebSocketFrame textFrameStringBoolean(String str, boolean isFinal) {
+  public static WebSocketFrame textFrameStrIsFinal(String str, boolean isFinal) {
 return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(str, isFinal), io.vertx.golo.core.http.WebSocketFrame.class);
   }
 //io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)
@@ -44,7 +44,7 @@ return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.textFrame(
    * @param isFinal true if it's the final frame in the WebSocket message
    * @return the frame
    */
-  public static WebSocketFrame continuationFrameBufferBoolean(Buffer data, boolean isFinal) {
+  public static WebSocketFrame continuationFrameDataIsFinal(Buffer data, boolean isFinal) {
 return    InternalHelper.safeCreate(io.vertx.core.http.WebSocketFrame.continuationFrame((io.vertx.core.buffer.Buffer)data.getDelegate(), isFinal), io.vertx.golo.core.http.WebSocketFrame.class);
   }
 //boolean isText()

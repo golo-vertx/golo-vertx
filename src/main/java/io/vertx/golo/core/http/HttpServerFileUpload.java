@@ -34,7 +34,7 @@ public class HttpServerFileUpload implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpServerFileUpload endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpServerFileUpload
-  public HttpServerFileUpload endHandlerHandler(Handler<Void> endHandler) {
+  public HttpServerFileUpload endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpServerFileUpload) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -57,7 +57,7 @@ public class HttpServerFileUpload implements ReadStream<Buffer> {
    * @param filename the name of the file
    * @return 
    */
-  public HttpServerFileUpload streamToFileSystemString(String filename) {
+  public HttpServerFileUpload streamToFileSystemFilename(String filename) {
     this.delegate.streamToFileSystem(filename);
     return this;
   }

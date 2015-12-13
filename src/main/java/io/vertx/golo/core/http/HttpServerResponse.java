@@ -35,13 +35,13 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpServerResponse write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.HttpServerResponse
-  public HttpServerResponse writeBuffer(Buffer data) {
+  public HttpServerResponse writeData(Buffer data) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.HttpServerResponse setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.HttpServerResponse
-  public HttpServerResponse setWriteQueueMaxSizeInt(int maxSize) {
+  public HttpServerResponse setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
@@ -68,7 +68,7 @@ return    this.delegate.getStatusCode();
    * @param statusCode 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse setStatusCodeInt(int statusCode) {
+  public HttpServerResponse setStatusCodeStatusCode(int statusCode) {
     this.delegate.setStatusCode(statusCode);
     return this;
   }
@@ -89,7 +89,7 @@ return    this.delegate.getStatusMessage();
    * @param statusMessage 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse setStatusMessageString(String statusMessage) {
+  public HttpServerResponse setStatusMessageStatusMessage(String statusMessage) {
     this.delegate.setStatusMessage(statusMessage);
     return this;
   }
@@ -110,7 +110,7 @@ return    this.delegate.getStatusMessage();
    * @param chunked 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse setChunkedBoolean(boolean chunked) {
+  public HttpServerResponse setChunkedChunked(boolean chunked) {
     this.delegate.setChunked(chunked);
     return this;
   }
@@ -140,7 +140,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param value the header value.
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse putHeaderStringString(String name, String value) {
+  public HttpServerResponse putHeaderNameValue(String name, String value) {
     this.delegate.putHeader(name, value);
     return this;
   }
@@ -161,7 +161,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param value the trailer value
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse putTrailerStringString(String name, String value) {
+  public HttpServerResponse putTrailerNameValue(String name, String value) {
     this.delegate.putTrailer(name, value);
     return this;
   }
@@ -185,7 +185,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param enc the encoding to use
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse writeStringString(String chunk, String enc) {
+  public HttpServerResponse writeChunkEnc(String chunk, String enc) {
     this.delegate.write(chunk, enc);
     return this;
   }
@@ -196,7 +196,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param chunk the string to write
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse writeString(String chunk) {
+  public HttpServerResponse writeChunk(String chunk) {
     this.delegate.write(chunk);
     return this;
   }
@@ -217,7 +217,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * Same as {@link io.vertx.golo.core.http.HttpServerResponse#end} but writes a String in UTF-8 encoding before ending the response.
    * @param chunk the string to write before ending the response
    */
-  public void endString(String chunk) {
+  public void endChunk(String chunk) {
     this.delegate.end(chunk);
   }
 //void end(java.lang.String chunk, java.lang.String enc)
@@ -227,7 +227,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param chunk the string to write before ending the response
    * @param enc the encoding to use
    */
-  public void endStringString(String chunk, String enc) {
+  public void endChunkEnc(String chunk, String enc) {
     this.delegate.end(chunk, enc);
   }
 //void end(io.vertx.core.buffer.Buffer chunk)
@@ -237,7 +237,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * no other data has been written then the @code{Content-Length} header will be automatically set.
    * @param chunk the buffer to write before ending the response
    */
-  public void endBuffer(Buffer chunk) {
+  public void endChunk(Buffer chunk) {
     this.delegate.end((io.vertx.core.buffer.Buffer)chunk.getDelegate());
   }
 //void end()
@@ -258,7 +258,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param filename path to the file to serve
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileString(String filename) {
+  public HttpServerResponse sendFileFilename(String filename) {
     this.delegate.sendFile(filename);
     return this;
   }
@@ -271,7 +271,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param offset offset to start serving from
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringLong(String filename, long offset) {
+  public HttpServerResponse sendFileFilenameOffset(String filename, long offset) {
     this.delegate.sendFile(filename, offset);
     return this;
   }
@@ -288,7 +288,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param length length to serve to
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringLongLong(String filename, long offset, long length) {
+  public HttpServerResponse sendFileFilenameOffsetLength(String filename, long offset, long length) {
     this.delegate.sendFile(filename, offset, length);
     return this;
   }
@@ -301,7 +301,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param resultHandler handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringHandler(String filename, Handler<AsyncResult<Void>> resultHandler) {
+  public HttpServerResponse sendFileFilenameResultHandler(String filename, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, resultHandler);
     return this;
   }
@@ -315,7 +315,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param resultHandler handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringLongHandler(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
+  public HttpServerResponse sendFileFilenameOffsetResultHandler(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, resultHandler);
     return this;
   }
@@ -330,7 +330,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param resultHandler handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringLongLongHandler(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
+  public HttpServerResponse sendFileFilenameOffsetLengthResultHandler(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, length, resultHandler);
     return this;
   }

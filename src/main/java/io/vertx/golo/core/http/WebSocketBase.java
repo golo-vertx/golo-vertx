@@ -17,16 +17,16 @@ public Object getDelegate();
   WebSocketBase handlerHandler(Handler<Buffer> handler);
   WebSocketBase pause();
   WebSocketBase resume();
-  WebSocketBase endHandlerHandler(Handler<Void> endHandler);
-  WebSocketBase writeBuffer(Buffer data);
-  WebSocketBase setWriteQueueMaxSizeInt(int maxSize);
+  WebSocketBase endHandlerEndHandler(Handler<Void> endHandler);
+  WebSocketBase writeData(Buffer data);
+  WebSocketBase setWriteQueueMaxSizeMaxSize(int maxSize);
   WebSocketBase drainHandlerHandler(Handler<Void> handler);
   String binaryHandlerID();
   String textHandlerID();
-  WebSocketBase writeFrameWebSocketFrame(WebSocketFrame frame);
-  WebSocketBase writeFinalTextFrameString(String text);
-  WebSocketBase writeFinalBinaryFrameBuffer(Buffer data);
-  WebSocketBase writeBinaryMessageBuffer(Buffer data);
+  WebSocketBase writeFrameFrame(WebSocketFrame frame);
+  WebSocketBase writeFinalTextFrameText(String text);
+  WebSocketBase writeFinalBinaryFrameData(Buffer data);
+  WebSocketBase writeBinaryMessageData(Buffer data);
   WebSocketBase closeHandlerHandler(Handler<Void> handler);
   WebSocketBase frameHandlerHandler(Handler<WebSocketFrame> handler);
   void close();
@@ -81,19 +81,19 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.WebSocketBase endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.WebSocketBase
-  public WebSocketBase endHandlerHandler(Handler<Void> endHandler) {
+  public WebSocketBase endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).endHandler(endHandler);
     return this;
   }
 //io.vertx.core.http.WebSocketBase write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.WebSocketBase
-  public WebSocketBase writeBuffer(Buffer data) {
+  public WebSocketBase writeData(Buffer data) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.WebSocketBase setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.WebSocketBase
-  public WebSocketBase setWriteQueueMaxSizeInt(int maxSize) {
+  public WebSocketBase setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
@@ -138,7 +138,7 @@ return    ((io.vertx.core.http.WebSocketBase) this.delegate).textHandlerID();
    * @param frame the frame to write
    * @return a reference to this, so the API can be used fluently
    */
-  public WebSocketBase writeFrameWebSocketFrame(WebSocketFrame frame) {
+  public WebSocketBase writeFrameFrame(WebSocketFrame frame) {
     ((io.vertx.core.http.WebSocketBase) this.delegate).writeFrame((io.vertx.core.http.WebSocketFrame)frame.getDelegate());
     return this;
   }
@@ -149,7 +149,7 @@ return    ((io.vertx.core.http.WebSocketBase) this.delegate).textHandlerID();
    * @param text The text to write
    * @return a reference to this, so the API can be used fluently
    */
-  public WebSocketBase writeFinalTextFrameString(String text) {
+  public WebSocketBase writeFinalTextFrameText(String text) {
     ((io.vertx.core.http.WebSocketBase) this.delegate).writeFinalTextFrame(text);
     return this;
   }
@@ -160,7 +160,7 @@ return    ((io.vertx.core.http.WebSocketBase) this.delegate).textHandlerID();
    * @param data The data to write
    * @return a reference to this, so the API can be used fluently
    */
-  public WebSocketBase writeFinalBinaryFrameBuffer(Buffer data) {
+  public WebSocketBase writeFinalBinaryFrameData(Buffer data) {
     ((io.vertx.core.http.WebSocketBase) this.delegate).writeFinalBinaryFrame((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
@@ -172,7 +172,7 @@ return    ((io.vertx.core.http.WebSocketBase) this.delegate).textHandlerID();
    * @param data the data to write
    * @return a reference to this, so the API can be used fluently
    */
-  public WebSocketBase writeBinaryMessageBuffer(Buffer data) {
+  public WebSocketBase writeBinaryMessageData(Buffer data) {
     ((io.vertx.core.http.WebSocketBase) this.delegate).writeBinaryMessage((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }

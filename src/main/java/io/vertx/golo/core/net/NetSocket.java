@@ -57,19 +57,19 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.net.NetSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.net.NetSocket
-  public NetSocket endHandlerHandler(Handler<Void> endHandler) {
+  public NetSocket endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.streams.ReadStream) this.delegate).endHandler(endHandler);
     return this;
   }
 //io.vertx.core.net.NetSocket write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.net.NetSocket
-  public NetSocket writeBuffer(Buffer data) {
+  public NetSocket writeData(Buffer data) {
     (  (io.vertx.core.streams.WriteStream) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.net.NetSocket setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.net.NetSocket
-  public NetSocket setWriteQueueMaxSizeInt(int maxSize) {
+  public NetSocket setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.streams.WriteStream) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
@@ -100,7 +100,7 @@ return    this.delegate.writeHandlerID();
    * @param str the string to write
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket writeString(String str) {
+  public NetSocket writeStr(String str) {
     this.delegate.write(str);
     return this;
   }
@@ -112,7 +112,7 @@ return    this.delegate.writeHandlerID();
    * @param enc the encoding to use
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket writeStringString(String str, String enc) {
+  public NetSocket writeStrEnc(String str, String enc) {
     this.delegate.write(str, enc);
     return this;
   }
@@ -124,7 +124,7 @@ return    this.delegate.writeHandlerID();
    * @param filename file name of the file to send
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileString(String filename) {
+  public NetSocket sendFileFilename(String filename) {
     this.delegate.sendFile(filename);
     return this;
   }
@@ -137,7 +137,7 @@ return    this.delegate.writeHandlerID();
    * @param offset offset
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringLong(String filename, long offset) {
+  public NetSocket sendFileFilenameOffset(String filename, long offset) {
     this.delegate.sendFile(filename, offset);
     return this;
   }
@@ -151,7 +151,7 @@ return    this.delegate.writeHandlerID();
    * @param length length
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringLongLong(String filename, long offset, long length) {
+  public NetSocket sendFileFilenameOffsetLength(String filename, long offset, long length) {
     this.delegate.sendFile(filename, offset, length);
     return this;
   }
@@ -164,7 +164,7 @@ return    this.delegate.writeHandlerID();
    * @param resultHandler handler
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringHandler(String filename, Handler<AsyncResult<Void>> resultHandler) {
+  public NetSocket sendFileFilenameResultHandler(String filename, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, resultHandler);
     return this;
   }
@@ -178,7 +178,7 @@ return    this.delegate.writeHandlerID();
    * @param resultHandler handler
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringLongHandler(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
+  public NetSocket sendFileFilenameOffsetResultHandler(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, resultHandler);
     return this;
   }
@@ -193,7 +193,7 @@ return    this.delegate.writeHandlerID();
    * @param resultHandler handler
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringLongLongHandler(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
+  public NetSocket sendFileFilenameOffsetLengthResultHandler(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, length, resultHandler);
     return this;
   }

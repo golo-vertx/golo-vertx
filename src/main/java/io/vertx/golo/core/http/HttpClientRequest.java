@@ -41,13 +41,13 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param data 
    * @return 
    */
-  public HttpClientRequest writeBuffer(Buffer data) {
+  public HttpClientRequest writeData(Buffer data) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.HttpClientRequest setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest setWriteQueueMaxSizeInt(int maxSize) {
+  public HttpClientRequest setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
@@ -81,7 +81,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest endHandlerHandler(Handler<Void> endHandler) {
+  public HttpClientRequest endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -92,7 +92,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param chunked true if chunked encoding
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest setChunkedBoolean(boolean chunked) {
+  public HttpClientRequest setChunkedChunked(boolean chunked) {
     this.delegate.setChunked(chunked);
     return this;
   }
@@ -140,7 +140,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param value The header value
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest putHeaderStringString(String name, String value) {
+  public HttpClientRequest putHeaderNameValue(String name, String value) {
     this.delegate.putHeader(name, value);
     return this;
   }
@@ -151,7 +151,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param chunk 
    * @return @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest writeString(String chunk) {
+  public HttpClientRequest writeChunk(String chunk) {
     this.delegate.write(chunk);
     return this;
   }
@@ -163,7 +163,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param enc 
    * @return @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest writeStringString(String chunk, String enc) {
+  public HttpClientRequest writeChunkEnc(String chunk, String enc) {
     this.delegate.write(chunk, enc);
     return this;
   }
@@ -203,7 +203,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * Same as {@link io.vertx.golo.core.http.HttpClientRequest#end} but writes a String in UTF-8 encoding
    * @param chunk 
    */
-  public void endString(String chunk) {
+  public void endChunk(String chunk) {
     this.delegate.end(chunk);
   }
 //void end(java.lang.String chunk, java.lang.String enc)
@@ -213,7 +213,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param chunk 
    * @param enc 
    */
-  public void endStringString(String chunk, String enc) {
+  public void endChunkEnc(String chunk, String enc) {
     this.delegate.end(chunk, enc);
   }
 //void end(io.vertx.core.buffer.Buffer chunk)
@@ -223,7 +223,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * no other data has been written then the <code>Content-Length</code> header will be automatically set
    * @param chunk 
    */
-  public void endBuffer(Buffer chunk) {
+  public void endChunk(Buffer chunk) {
     this.delegate.end((io.vertx.core.buffer.Buffer)chunk.getDelegate());
   }
 //void end()
@@ -248,7 +248,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param timeoutMs The quantity of time in milliseconds.
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest setTimeoutLong(long timeoutMs) {
+  public HttpClientRequest setTimeoutTimeoutMs(long timeoutMs) {
     this.delegate.setTimeout(timeoutMs);
     return this;
   }

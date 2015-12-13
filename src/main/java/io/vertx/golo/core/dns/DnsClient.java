@@ -24,7 +24,7 @@ public class DnsClient {
    * @param handler the {@link io.vertx.golo.core.Handler} to notify with the {@link io.vertx.golo.core.AsyncResult}. The handler will get notified with the resolved address if a record was found. If non was found it will get notifed with <code>null</code>. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently
    */
-  public DnsClient lookupStringHandler(String name, Handler<AsyncResult<String>> handler) {
+  public DnsClient lookupNameHandler(String name, Handler<AsyncResult<String>> handler) {
     this.delegate.lookup(name, handler);
     return this;
   }
@@ -36,7 +36,7 @@ public class DnsClient {
    * @param handler the  to notify with the {@link io.vertx.golo.core.AsyncResult}. The handler will get notified with the resolved {@link java.net.Inet4Address} if a record was found. If non was found it will get notifed with <code>null</code>. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently
    */
-  public DnsClient lookup4StringHandler(String name, Handler<AsyncResult<String>> handler) {
+  public DnsClient lookup4NameHandler(String name, Handler<AsyncResult<String>> handler) {
     this.delegate.lookup4(name, handler);
     return this;
   }
@@ -48,7 +48,7 @@ public class DnsClient {
    * @param handler the  to notify with the . The handler will get notified with the resolved {@link java.net.Inet6Address} if a record was found. If non was found it will get notifed with <code>null</code>. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently
    */
-  public DnsClient lookup6StringHandler(String name, Handler<AsyncResult<String>> handler) {
+  public DnsClient lookup6NameHandler(String name, Handler<AsyncResult<String>> handler) {
     this.delegate.lookup6(name, handler);
     return this;
   }
@@ -60,7 +60,7 @@ public class DnsClient {
    * @param handler the {@link io.vertx.golo.core.Handler} to notify with the {@link io.vertx.golo.core.AsyncResult}. The handler will get notified with a {@link java.util.List} that contains all the resolved {@link java.net.Inet4Address}es. If none was found an empty {@link java.util.List} will be used. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently
    */
-  public DnsClient resolveAStringHandler(String name, Handler<AsyncResult<List<String>>> handler) {
+  public DnsClient resolveANameHandler(String name, Handler<AsyncResult<List<String>>> handler) {
     this.delegate.resolveA(name, handler);
     return this;
   }
@@ -72,7 +72,7 @@ public class DnsClient {
    * @param handler the {@link io.vertx.golo.core.Handler} to notify with the {@link io.vertx.golo.core.AsyncResult}. The handler will get notified with a {@link java.util.List} that contains all the resolved {@link java.net.Inet6Address}es. If none was found an empty {@link java.util.List} will be used. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently
    */
-  public DnsClient resolveAAAAStringHandler(String name, Handler<AsyncResult<List<String>>> handler) {
+  public DnsClient resolveAAAANameHandler(String name, Handler<AsyncResult<List<String>>> handler) {
     this.delegate.resolveAAAA(name, handler);
     return this;
   }
@@ -84,7 +84,7 @@ public class DnsClient {
    * @param handler the  to notify with the . The handler will get notified with the resolved {@link java.lang.String} if a record was found. If none was found it will get notified with <code>null</code>. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently.
    */
-  public DnsClient resolveCNAMEStringHandler(String name, Handler<AsyncResult<List<String>>> handler) {
+  public DnsClient resolveCNAMENameHandler(String name, Handler<AsyncResult<List<String>>> handler) {
     this.delegate.resolveCNAME(name, handler);
     return this;
   }
@@ -96,7 +96,7 @@ public class DnsClient {
    * @param handler the {@link io.vertx.golo.core.Handler} to notify with the {@link io.vertx.golo.core.AsyncResult}. The handler will get notified with a List that contains all resolved {@link io.vertx.golo.core.dns.MxRecord}s, sorted by their {@link io.vertx.golo.core.dns.MxRecord#priority}. If non was found it will get notified with an empty {@link java.util.List}. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently.
    */
-  public DnsClient resolveMXStringHandler(String name, Handler<AsyncResult<List<MxRecord>>> handler) {
+  public DnsClient resolveMXNameHandler(String name, Handler<AsyncResult<List<MxRecord>>> handler) {
     this.delegate.resolveMX(name, new Handler<AsyncResult<List<io.vertx.core.dns.MxRecord>>>() {
       public void handle(AsyncResult<List<io.vertx.core.dns.MxRecord>> event) {
         AsyncResult<List<MxRecord>> f;
@@ -120,7 +120,7 @@ public class DnsClient {
    * @param handler the  to notify with the . The handler will get notified with a List that contains all resolved {@link java.lang.String}s. If none was found it will get notified with an empty {@link java.util.List}. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently.
    */
-  public DnsClient resolveTXTStringHandler(String name, Handler<AsyncResult<List<String>>> handler) {
+  public DnsClient resolveTXTNameHandler(String name, Handler<AsyncResult<List<String>>> handler) {
     this.delegate.resolveTXT(name, handler);
     return this;
   }
@@ -132,7 +132,7 @@ public class DnsClient {
    * @param handler the  to notify with the . The handler will get notified with the resolved {@link java.lang.String} if a record was found. If none was found it will get notified with <code>null</code>. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently.
    */
-  public DnsClient resolvePTRStringHandler(String name, Handler<AsyncResult<String>> handler) {
+  public DnsClient resolvePTRNameHandler(String name, Handler<AsyncResult<String>> handler) {
     this.delegate.resolvePTR(name, handler);
     return this;
   }
@@ -144,7 +144,7 @@ public class DnsClient {
    * @param handler the  to notify with the . The handler will get notified with a List that contains all resolved {@link java.lang.String}s. If none was found it will get notified with an empty {@link java.util.List}. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently.
    */
-  public DnsClient resolveNSStringHandler(String name, Handler<AsyncResult<List<String>>> handler) {
+  public DnsClient resolveNSNameHandler(String name, Handler<AsyncResult<List<String>>> handler) {
     this.delegate.resolveNS(name, handler);
     return this;
   }
@@ -156,7 +156,7 @@ public class DnsClient {
    * @param handler the  to notify with the . The handler will get notified with a List that contains all resolved {@link io.vertx.golo.core.dns.SrvRecord}s. If none was found it will get notified with an empty {@link java.util.List}. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently.
    */
-  public DnsClient resolveSRVStringHandler(String name, Handler<AsyncResult<List<SrvRecord>>> handler) {
+  public DnsClient resolveSRVNameHandler(String name, Handler<AsyncResult<List<SrvRecord>>> handler) {
     this.delegate.resolveSRV(name, new Handler<AsyncResult<List<io.vertx.core.dns.SrvRecord>>>() {
       public void handle(AsyncResult<List<io.vertx.core.dns.SrvRecord>> event) {
         AsyncResult<List<SrvRecord>> f;
@@ -181,7 +181,7 @@ public class DnsClient {
    * @param handler the  to notify with the . The handler will get notified with the resolved {@link java.lang.String} if a record was found. If none was found it will get notified with <code>null</code>. If an error accours it will get failed.
    * @return a reference to this, so the API can be used fluently.
    */
-  public DnsClient reverseLookupStringHandler(String ipaddress, Handler<AsyncResult<String>> handler) {
+  public DnsClient reverseLookupIpaddressHandler(String ipaddress, Handler<AsyncResult<String>> handler) {
     this.delegate.reverseLookup(ipaddress, handler);
     return this;
   }

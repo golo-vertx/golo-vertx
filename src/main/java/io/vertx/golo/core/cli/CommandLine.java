@@ -24,7 +24,7 @@ public class CommandLine {
    * @param cli the CLI definition
    * @return the command line object
    */
-  public static CommandLine createCLI(CLI cli) {
+  public static CommandLine createCli(CLI cli) {
 return    InternalHelper.safeCreate(io.vertx.core.cli.CommandLine.create((io.vertx.core.cli.CLI)cli.getDelegate()), io.vertx.golo.core.cli.CommandLine.class);
   }
 //io.vertx.core.cli.CLI cli()
@@ -52,7 +52,7 @@ return    this.delegate.allArguments();
    * @param name the name
    * @return the value, <code>null</code> if not set
    */
-  public <T> T getOptionValueString(String name) {
+  public <T> T getOptionValueName(String name) {
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getOptionValue(name));
   }
@@ -63,7 +63,7 @@ return    // This cast is cleary flawed
    * @param name the name
    * @return the value, <code>null</code> if not set
    */
-  public <T> T getArgumentValueString(String name) {
+  public <T> T getArgumentValueName(String name) {
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getArgumentValue(name));
   }
@@ -74,7 +74,7 @@ return    // This cast is cleary flawed
    * @param index the index
    * @return the value, <code>null</code> if not set
    */
-  public <T> T getArgumentValueInt(int index) {
+  public <T> T getArgumentValueIndex(int index) {
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getArgumentValue(index));
   }
@@ -87,7 +87,7 @@ return    // This cast is cleary flawed
    * @param name the option name
    * @return <code>true</code> if the flag has been set in the command line, <code>false</code> otherwise.
    */
-  public boolean isFlagEnabledString(String name) {
+  public boolean isFlagEnabledName(String name) {
 return    this.delegate.isFlagEnabled(name);
   }
 //boolean isOptionAssigned(io.vertx.core.cli.Option option)
@@ -137,7 +137,7 @@ return    this.delegate.acceptMoreValues(option != null ? new io.vertx.core.cli.
    * @param arg the argument (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
    * @return the value, <code>null</code> if none.
    */
-  public String getRawValueForArgumentArgument(Map<String, Object> arg) {
+  public String getRawValueForArgumentArg(Map<String, Object> arg) {
 return    this.delegate.getRawValueForArgument(arg != null ? new io.vertx.core.cli.Argument(new io.vertx.core.json.JsonObject(arg)) : null);
   }
 //boolean isArgumentAssigned(io.vertx.core.cli.Argument arg)
@@ -147,7 +147,7 @@ return    this.delegate.getRawValueForArgument(arg != null ? new io.vertx.core.c
    * @param arg the argument (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
    * @return <code>true</code> if the argument has received a value,  otherwise.
    */
-  public boolean isArgumentAssignedArgument(Map<String, Object> arg) {
+  public boolean isArgumentAssignedArg(Map<String, Object> arg) {
 return    this.delegate.isArgumentAssigned(arg != null ? new io.vertx.core.cli.Argument(new io.vertx.core.json.JsonObject(arg)) : null);
   }
 //boolean isSeenInCommandLine(io.vertx.core.cli.Option option)
