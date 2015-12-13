@@ -23,7 +23,7 @@ public class CLI {
    * @param name the name of the CLI (must not be <code>null</code>)
    * @return the created instance of {@link io.vertx.golo.core.cli.CLI}
    */
-  public static CLI create(String name) {
+  public static CLI createName(String name) {
 return    InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx.golo.core.cli.CLI.class);
   }
 //io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments)
@@ -33,7 +33,7 @@ return    InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx
    * @param arguments the arguments
    * @return the creates command line
    */
-  public CommandLine parse(List<String> arguments) {
+  public CommandLine parseArguments(List<String> arguments) {
 return    InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.golo.core.cli.CommandLine.class);
   }
 //io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments, boolean validate)
@@ -44,7 +44,7 @@ return    InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.gol
    * @param validate enable / disable parsing validation
    * @return the creates command line
    */
-  public CommandLine parse(List<String> arguments, boolean validate) {
+  public CommandLine parseArgumentsValidate(List<String> arguments, boolean validate) {
 return    InternalHelper.safeCreate(this.delegate.parse(arguments, validate), io.vertx.golo.core.cli.CommandLine.class);
   }
 //java.lang.String getName()
@@ -63,7 +63,7 @@ return    this.delegate.getName();
    * @param name the name
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI setName(String name) {
+  public CLI setNameName(String name) {
     this.delegate.setName(name);
     return this;
   }
@@ -78,7 +78,7 @@ return    this.delegate.getDescription();
   }
 //io.vertx.core.cli.CLI setDescription(java.lang.String desc)
 //io.vertx.core.cli.CLI
-  public CLI setDescription(String desc) {
+  public CLI setDescriptionDesc(String desc) {
     this.delegate.setDescription(desc);
     return this;
   }
@@ -98,7 +98,7 @@ return    this.delegate.getSummary();
    * @param summary the summary
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI setSummary(String summary) {
+  public CLI setSummarySummary(String summary) {
     this.delegate.setSummary(summary);
     return this;
   }
@@ -119,7 +119,7 @@ return    this.delegate.isHidden();
    * @param hidden enables or disables the hidden aspect of the CI
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI setHidden(boolean hidden) {
+  public CLI setHiddenHidden(boolean hidden) {
     this.delegate.setHidden(hidden);
     return this;
   }
@@ -139,7 +139,7 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
    * @param option the option, must not be <code>null</code>. (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI addOption(Map<String, Object> option) {
+  public CLI addOptionOption(Map<String, Object> option) {
     this.delegate.addOption(option != null ? new io.vertx.core.cli.Option(new io.vertx.core.json.JsonObject(option)) : null);
     return this;
   }
@@ -151,7 +151,7 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
    * @param options the options, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI addOptions(List<Map<String, Object>> options) {
+  public CLI addOptionsOptions(List<Map<String, Object>> options) {
     this.delegate.addOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
@@ -162,7 +162,7 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
    * @param options the list of options, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI setOptions(List<Map<String, Object>> options) {
+  public CLI setOptionsOptions(List<Map<String, Object>> options) {
     this.delegate.setOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
@@ -182,7 +182,7 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
    * @param arg the argument, must not be <code>null</code> (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI addArgument(Map<String, Object> arg) {
+  public CLI addArgumentArg(Map<String, Object> arg) {
     this.delegate.addArgument(arg != null ? new io.vertx.core.cli.Argument(new io.vertx.core.json.JsonObject(arg)) : null);
     return this;
   }
@@ -194,7 +194,7 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
    * @param args the arguments, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI addArguments(List<Map<String, Object>> args) {
+  public CLI addArgumentsArgs(List<Map<String, Object>> args) {
     this.delegate.addArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
@@ -205,7 +205,7 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
    * @param args the list of arguments, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI setArguments(List<Map<String, Object>> args) {
+  public CLI setArgumentsArgs(List<Map<String, Object>> args) {
     this.delegate.setArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
@@ -216,7 +216,7 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
    * @param name the name, must not be <code>null</code>
    * @return the <a href="../../../../../../../cheatsheet/Option.html">Option</a>, <code>null</code> if not found (see <a href="../../../../../../../cheatsheet/Option.html">Option</a>)
    */
-  public Map<String, Object> getOption(String name) {
+  public Map<String, Object> getOptionName(String name) {
 return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getOption(name).toJson());
   }
 //io.vertx.core.cli.Argument getArgument(java.lang.String name)
@@ -246,7 +246,7 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgume
    * @param name the option name
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI removeOption(String name) {
+  public CLI removeOptionName(String name) {
     this.delegate.removeOption(name);
     return this;
   }
@@ -257,7 +257,7 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgume
    * @param index the argument index
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI removeArgument(int index) {
+  public CLI removeArgumentIndex(int index) {
     this.delegate.removeArgument(index);
     return this;
   }

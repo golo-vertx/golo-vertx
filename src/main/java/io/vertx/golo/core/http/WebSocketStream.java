@@ -17,13 +17,13 @@ public class WebSocketStream implements ReadStream<WebSocket> {
   }
 //io.vertx.core.http.WebSocketStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.WebSocketStream
-  public WebSocketStream exceptionHandler(Handler<Throwable> handler) {
+  public WebSocketStream exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.WebSocketStream) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.WebSocketStream handler(io.vertx.core.Handler<io.vertx.core.http.WebSocket> handler)
 //io.vertx.core.http.WebSocketStream
-  public WebSocketStream handler(Handler<WebSocket> handler) {
+  public WebSocketStream handlerHandler(Handler<WebSocket> handler) {
     (  (io.vertx.core.http.WebSocketStream) this.delegate).handler(new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         handler.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -45,7 +45,7 @@ public class WebSocketStream implements ReadStream<WebSocket> {
   }
 //io.vertx.core.http.WebSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.WebSocketStream
-  public WebSocketStream endHandler(Handler<Void> endHandler) {
+  public WebSocketStream endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.WebSocketStream) this.delegate).endHandler(endHandler);
     return this;
   }

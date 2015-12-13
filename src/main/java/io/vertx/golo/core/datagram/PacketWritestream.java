@@ -27,25 +27,25 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream exceptionHandler(Handler<Throwable> handler) {
+  public PacketWritestream exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream write(Buffer data) {
+  public PacketWritestream writeData(Buffer data) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream setWriteQueueMaxSize(int maxSize) {
+  public PacketWritestream setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
 //io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream drainHandler(Handler<Void> handler) {
+  public PacketWritestream drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).drainHandler(handler);
     return this;
   }

@@ -29,7 +29,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpServerResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpServerResponse
-  public HttpServerResponse exceptionHandler(Handler<Throwable> handler) {
+  public HttpServerResponse exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -41,13 +41,13 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpServerResponse setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.HttpServerResponse
-  public HttpServerResponse setWriteQueueMaxSize(int maxSize) {
+  public HttpServerResponse setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
 //io.vertx.core.http.HttpServerResponse drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.HttpServerResponse
-  public HttpServerResponse drainHandler(Handler<Void> handler) {
+  public HttpServerResponse drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).drainHandler(handler);
     return this;
   }
@@ -68,7 +68,7 @@ return    this.delegate.getStatusCode();
    * @param statusCode 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse setStatusCode(int statusCode) {
+  public HttpServerResponse setStatusCodeStatusCode(int statusCode) {
     this.delegate.setStatusCode(statusCode);
     return this;
   }
@@ -89,7 +89,7 @@ return    this.delegate.getStatusMessage();
    * @param statusMessage 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse setStatusMessage(String statusMessage) {
+  public HttpServerResponse setStatusMessageStatusMessage(String statusMessage) {
     this.delegate.setStatusMessage(statusMessage);
     return this;
   }
@@ -110,7 +110,7 @@ return    this.delegate.getStatusMessage();
    * @param chunked 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse setChunked(boolean chunked) {
+  public HttpServerResponse setChunkedChunked(boolean chunked) {
     this.delegate.setChunked(chunked);
     return this;
   }
@@ -140,7 +140,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param value the header value.
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse putHeader(String name, String value) {
+  public HttpServerResponse putHeaderNameValue(String name, String value) {
     this.delegate.putHeader(name, value);
     return this;
   }
@@ -161,7 +161,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param value the trailer value
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse putTrailer(String name, String value) {
+  public HttpServerResponse putTrailerNameValue(String name, String value) {
     this.delegate.putTrailer(name, value);
     return this;
   }
@@ -173,7 +173,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse closeHandler(Handler<Void> handler) {
+  public HttpServerResponse closeHandlerHandler(Handler<Void> handler) {
     this.delegate.closeHandler(handler);
     return this;
   }
@@ -185,7 +185,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param enc the encoding to use
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse write(String chunk, String enc) {
+  public HttpServerResponse writeChunkEnc(String chunk, String enc) {
     this.delegate.write(chunk, enc);
     return this;
   }
@@ -227,7 +227,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param chunk the string to write before ending the response
    * @param enc the encoding to use
    */
-  public void end(String chunk, String enc) {
+  public void endChunkEnc(String chunk, String enc) {
     this.delegate.end(chunk, enc);
   }
 //void end(io.vertx.core.buffer.Buffer chunk)
@@ -258,7 +258,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param filename path to the file to serve
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFile(String filename) {
+  public HttpServerResponse sendFileFilename(String filename) {
     this.delegate.sendFile(filename);
     return this;
   }
@@ -330,7 +330,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param resultHandler handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFile(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
+  public HttpServerResponse sendFileFilenameOffsetLengthResultHandler(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, length, resultHandler);
     return this;
   }
@@ -377,7 +377,7 @@ return    this.delegate.headWritten();
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse headersEndHandler(Handler<Void> handler) {
+  public HttpServerResponse headersEndHandlerHandler(Handler<Void> handler) {
     this.delegate.headersEndHandler(handler);
     return this;
   }
@@ -390,7 +390,7 @@ return    this.delegate.headWritten();
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse bodyEndHandler(Handler<Void> handler) {
+  public HttpServerResponse bodyEndHandlerHandler(Handler<Void> handler) {
     this.delegate.bodyEndHandler(handler);
     return this;
   }

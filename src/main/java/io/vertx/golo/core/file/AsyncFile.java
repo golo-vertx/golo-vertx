@@ -29,7 +29,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.file.AsyncFile handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile handler(Handler<Buffer> handler) {
+  public AsyncFile handlerHandler(Handler<Buffer> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -51,31 +51,31 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.file.AsyncFile endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile endHandler(Handler<Void> endHandler) {
+  public AsyncFile endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).endHandler(endHandler);
     return this;
   }
 //io.vertx.core.file.AsyncFile write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile write(Buffer data) {
+  public AsyncFile writeData(Buffer data) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.file.AsyncFile setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile setWriteQueueMaxSize(int maxSize) {
+  public AsyncFile setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
 //io.vertx.core.file.AsyncFile drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile drainHandler(Handler<Void> handler) {
+  public AsyncFile drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).drainHandler(handler);
     return this;
   }
 //io.vertx.core.file.AsyncFile exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile exceptionHandler(Handler<Throwable> handler) {
+  public AsyncFile exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -94,7 +94,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * The handler will be called when the close is complete, or an error occurs.
    * @param handler the handler
    */
-  public void close(Handler<AsyncResult<Void>> handler) {
+  public void closeHandler(Handler<AsyncResult<Void>> handler) {
     this.delegate.close(handler);
   }
 //io.vertx.core.file.AsyncFile write(io.vertx.core.buffer.Buffer buffer, long position, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
@@ -114,7 +114,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param handler the handler to call when the write is complete
    * @return a reference to this, so the API can be used fluently
    */
-  public AsyncFile write(Buffer buffer, long position, Handler<AsyncResult<Void>> handler) {
+  public AsyncFile writeBufferPositionHandler(Buffer buffer, long position, Handler<AsyncResult<Void>> handler) {
     this.delegate.write((io.vertx.core.buffer.Buffer)buffer.getDelegate(), position, handler);
     return this;
   }
@@ -136,7 +136,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param handler the handler to call when the write is complete
    * @return a reference to this, so the API can be used fluently
    */
-  public AsyncFile read(Buffer buffer, int offset, long position, int length, Handler<AsyncResult<Buffer>> handler) {
+  public AsyncFile readBufferOffsetPositionLengthHandler(Buffer buffer, int offset, long position, int length, Handler<AsyncResult<Buffer>> handler) {
     this.delegate.read((io.vertx.core.buffer.Buffer)buffer.getDelegate(), offset, position, length, new Handler<AsyncResult<io.vertx.core.buffer.Buffer>>() {
       public void handle(AsyncResult<io.vertx.core.buffer.Buffer> event) {
         AsyncResult<Buffer> f;
@@ -171,7 +171,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param handler 
    * @return 
    */
-  public AsyncFile flush(Handler<AsyncResult<Void>> handler) {
+  public AsyncFile flushHandler(Handler<AsyncResult<Void>> handler) {
     this.delegate.flush(handler);
     return this;
   }
@@ -182,7 +182,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param readPos the position in the file
    * @return a reference to this, so the API can be used fluently
    */
-  public AsyncFile setReadPos(long readPos) {
+  public AsyncFile setReadPosReadPos(long readPos) {
     this.delegate.setReadPos(readPos);
     return this;
   }
@@ -193,7 +193,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param writePos the position in the file
    * @return a reference to this, so the API can be used fluently
    */
-  public AsyncFile setWritePos(long writePos) {
+  public AsyncFile setWritePosWritePos(long writePos) {
     this.delegate.setWritePos(writePos);
     return this;
   }
@@ -205,7 +205,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param readBufferSize the buffer size
    * @return a reference to this, so the API can be used fluently
    */
-  public AsyncFile setReadBufferSize(int readBufferSize) {
+  public AsyncFile setReadBufferSizeReadBufferSize(int readBufferSize) {
     this.delegate.setReadBufferSize(readBufferSize);
     return this;
   }

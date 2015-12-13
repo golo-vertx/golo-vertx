@@ -56,7 +56,7 @@ return    io.vertx.core.Context.isOnVertxThread();
    * Run the specified action asynchronously on the same context, some time after the current execution has completed.
    * @param action the action to run
    */
-  public void runOnContext(Handler<Void> action) {
+  public void runOnContextAction(Handler<Void> action) {
     this.delegate.runOnContext(action);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler)
@@ -76,7 +76,7 @@ return    io.vertx.core.Context.isOnVertxThread();
    * @param ordered if true then if executeBlocking is called several times on the same context, the executions for that context will be executed serially, not in parallel. if false then they will be no ordering guarantees
    * @param resultHandler handler that will be called when the blocking code is complete
    */
-  public <T> void executeBlocking(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingBlockingCodeHandlerOrderedResultHandler(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));
@@ -100,7 +100,7 @@ return    io.vertx.core.Context.isOnVertxThread();
    * @param blockingCodeHandler handler representing the blocking code to run
    * @param resultHandler handler that will be called when the blocking code is complete
    */
-  public <T> void executeBlocking(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingBlockingCodeHandlerResultHandler(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));
@@ -187,7 +187,7 @@ return    this.delegate.isMultiThreadedWorkerContext();
    * @param key the key of the data
    * @return the data
    */
-  public <T> T get(String key) {
+  public <T> T getKey(String key) {
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.get(key));
   }
@@ -200,7 +200,7 @@ return    // This cast is cleary flawed
    * @param key the key of the data
    * @param value the data
    */
-  public void put(String key, Object value) {
+  public void putKeyValue(String key, Object value) {
     this.delegate.put(key, InternalHelper.unwrapObject(value));
   }
 //boolean remove(java.lang.String key)
@@ -210,7 +210,7 @@ return    // This cast is cleary flawed
    * @param key the key to remove
    * @return true if removed successfully, false otherwise
    */
-  public boolean remove(String key) {
+  public boolean removeKey(String key) {
 return    this.delegate.remove(key);
   }
 //io.vertx.core.Vertx owner()

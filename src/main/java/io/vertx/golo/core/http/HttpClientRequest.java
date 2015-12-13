@@ -30,7 +30,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest exceptionHandler(Handler<Throwable> handler) {
+  public HttpClientRequest exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -47,19 +47,19 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest setWriteQueueMaxSize(int maxSize) {
+  public HttpClientRequest setWriteQueueMaxSizeMaxSize(int maxSize) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
 //io.vertx.core.http.HttpClientRequest drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest drainHandler(Handler<Void> handler) {
+  public HttpClientRequest drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).drainHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpClientRequest handler(io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest handler(Handler<HttpClientResponse> handler) {
+  public HttpClientRequest handlerHandler(Handler<HttpClientResponse> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).handler(new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         handler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -81,7 +81,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest endHandler(Handler<Void> endHandler) {
+  public HttpClientRequest endHandlerEndHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -92,7 +92,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param chunked true if chunked encoding
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest setChunked(boolean chunked) {
+  public HttpClientRequest setChunkedChunked(boolean chunked) {
     this.delegate.setChunked(chunked);
     return this;
   }
@@ -140,7 +140,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param value The header value
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest putHeader(String name, String value) {
+  public HttpClientRequest putHeaderNameValue(String name, String value) {
     this.delegate.putHeader(name, value);
     return this;
   }
@@ -163,7 +163,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param enc 
    * @return @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest write(String chunk, String enc) {
+  public HttpClientRequest writeChunkEnc(String chunk, String enc) {
     this.delegate.write(chunk, enc);
     return this;
   }
@@ -179,7 +179,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param handler 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest continueHandler(Handler<Void> handler) {
+  public HttpClientRequest continueHandlerHandler(Handler<Void> handler) {
     this.delegate.continueHandler(handler);
     return this;
   }
@@ -213,7 +213,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param chunk 
    * @param enc 
    */
-  public void end(String chunk, String enc) {
+  public void endChunkEnc(String chunk, String enc) {
     this.delegate.end(chunk, enc);
   }
 //void end(io.vertx.core.buffer.Buffer chunk)
@@ -248,7 +248,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param timeoutMs The quantity of time in milliseconds.
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest setTimeout(long timeoutMs) {
+  public HttpClientRequest setTimeoutTimeoutMs(long timeoutMs) {
     this.delegate.setTimeout(timeoutMs);
     return this;
   }

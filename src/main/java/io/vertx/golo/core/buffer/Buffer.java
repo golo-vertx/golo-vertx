@@ -55,7 +55,7 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string), 
    * @param enc 
    * @return the buffer
    */
-  public static Buffer buffer(String string, String enc) {
+  public static Buffer bufferStringEnc(String string, String enc) {
 return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string, enc), io.vertx.golo.core.buffer.Buffer.class);
   }
 //java.lang.String toString(java.lang.String enc)
@@ -65,7 +65,7 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string, e
    * @param enc 
    * @return 
    */
-  public String toString(String enc) {
+  public String toStringEnc(String enc) {
 return    this.delegate.toString(enc);
   }
 //byte getByte(int pos)
@@ -75,7 +75,7 @@ return    this.delegate.toString(enc);
    * @param pos 
    * @return 
    */
-  public byte getByte(int pos) {
+  public byte getBytePos(int pos) {
 return    this.delegate.getByte(pos);
   }
 //short getUnsignedByte(int pos)
@@ -85,7 +85,7 @@ return    this.delegate.getByte(pos);
    * @param pos 
    * @return 
    */
-  public short getUnsignedByte(int pos) {
+  public short getUnsignedBytePos(int pos) {
 return    this.delegate.getUnsignedByte(pos);
   }
 //int getInt(int pos)
@@ -95,7 +95,7 @@ return    this.delegate.getUnsignedByte(pos);
    * @param pos 
    * @return 
    */
-  public int getInt(int pos) {
+  public int getIntPos(int pos) {
 return    this.delegate.getInt(pos);
   }
 //long getUnsignedInt(int pos)
@@ -105,7 +105,7 @@ return    this.delegate.getInt(pos);
    * @param pos 
    * @return 
    */
-  public long getUnsignedInt(int pos) {
+  public long getUnsignedIntPos(int pos) {
 return    this.delegate.getUnsignedInt(pos);
   }
 //long getLong(int pos)
@@ -115,7 +115,7 @@ return    this.delegate.getUnsignedInt(pos);
    * @param pos 
    * @return 
    */
-  public long getLong(int pos) {
+  public long getLongPos(int pos) {
 return    this.delegate.getLong(pos);
   }
 //double getDouble(int pos)
@@ -125,7 +125,7 @@ return    this.delegate.getLong(pos);
    * @param pos 
    * @return 
    */
-  public double getDouble(int pos) {
+  public double getDoublePos(int pos) {
 return    this.delegate.getDouble(pos);
   }
 //float getFloat(int pos)
@@ -135,7 +135,7 @@ return    this.delegate.getDouble(pos);
    * @param pos 
    * @return 
    */
-  public float getFloat(int pos) {
+  public float getFloatPos(int pos) {
 return    this.delegate.getFloat(pos);
   }
 //short getShort(int pos)
@@ -145,7 +145,7 @@ return    this.delegate.getFloat(pos);
    * @param pos 
    * @return 
    */
-  public short getShort(int pos) {
+  public short getShortPos(int pos) {
 return    this.delegate.getShort(pos);
   }
 //int getUnsignedShort(int pos)
@@ -155,7 +155,7 @@ return    this.delegate.getShort(pos);
    * @param pos 
    * @return 
    */
-  public int getUnsignedShort(int pos) {
+  public int getUnsignedShortPos(int pos) {
 return    this.delegate.getUnsignedShort(pos);
   }
 //io.vertx.core.buffer.Buffer getBuffer(int start, int end)
@@ -167,7 +167,7 @@ return    this.delegate.getUnsignedShort(pos);
    * @param end 
    * @return 
    */
-  public Buffer getBuffer(int start, int end) {
+  public Buffer getBufferStartEnd(int start, int end) {
 return    InternalHelper.safeCreate(this.delegate.getBuffer(start, end), io.vertx.golo.core.buffer.Buffer.class);
   }
 //java.lang.String getString(int start, int end, java.lang.String enc)
@@ -180,7 +180,7 @@ return    InternalHelper.safeCreate(this.delegate.getBuffer(start, end), io.vert
    * @param enc 
    * @return 
    */
-  public String getString(int start, int end, String enc) {
+  public String getStringStartEndEnc(int start, int end, String enc) {
 return    this.delegate.getString(start, end, enc);
   }
 //java.lang.String getString(int start, int end)
@@ -192,7 +192,7 @@ return    this.delegate.getString(start, end, enc);
    * @param end 
    * @return 
    */
-  public String getString(int start, int end) {
+  public String getStringStartEnd(int start, int end) {
 return    this.delegate.getString(start, end);
   }
 //io.vertx.core.buffer.Buffer appendBuffer(io.vertx.core.buffer.Buffer buff)
@@ -204,7 +204,7 @@ return    this.delegate.getString(start, end);
    * @param buff 
    * @return 
    */
-  public Buffer appendBuffer(Buffer buff) {
+  public Buffer appendBufferBuff(Buffer buff) {
     this.delegate.appendBuffer((io.vertx.core.buffer.Buffer)buff.getDelegate());
     return this;
   }
@@ -219,7 +219,7 @@ return    this.delegate.getString(start, end);
    * @param len 
    * @return 
    */
-  public Buffer appendBuffer(Buffer buff, int offset, int len) {
+  public Buffer appendBufferBuffOffsetLen(Buffer buff, int offset, int len) {
     this.delegate.appendBuffer((io.vertx.core.buffer.Buffer)buff.getDelegate(), offset, len);
     return this;
   }
@@ -231,7 +231,7 @@ return    this.delegate.getString(start, end);
    * @param b 
    * @return 
    */
-  public Buffer appendByte(byte b) {
+  public Buffer appendByteB(byte b) {
     this.delegate.appendByte(b);
     return this;
   }
@@ -243,7 +243,7 @@ return    this.delegate.getString(start, end);
    * @param b 
    * @return 
    */
-  public Buffer appendUnsignedByte(short b) {
+  public Buffer appendUnsignedByteB(short b) {
     this.delegate.appendUnsignedByte(b);
     return this;
   }
@@ -255,7 +255,7 @@ return    this.delegate.getString(start, end);
    * @param i 
    * @return 
    */
-  public Buffer appendInt(int i) {
+  public Buffer appendIntI(int i) {
     this.delegate.appendInt(i);
     return this;
   }
@@ -267,7 +267,7 @@ return    this.delegate.getString(start, end);
    * @param i 
    * @return 
    */
-  public Buffer appendUnsignedInt(long i) {
+  public Buffer appendUnsignedIntI(long i) {
     this.delegate.appendUnsignedInt(i);
     return this;
   }
@@ -279,7 +279,7 @@ return    this.delegate.getString(start, end);
    * @param l 
    * @return 
    */
-  public Buffer appendLong(long l) {
+  public Buffer appendLongL(long l) {
     this.delegate.appendLong(l);
     return this;
   }
@@ -291,7 +291,7 @@ return    this.delegate.getString(start, end);
    * @param s 
    * @return 
    */
-  public Buffer appendShort(short s) {
+  public Buffer appendShortS(short s) {
     this.delegate.appendShort(s);
     return this;
   }
@@ -303,7 +303,7 @@ return    this.delegate.getString(start, end);
    * @param s 
    * @return 
    */
-  public Buffer appendUnsignedShort(int s) {
+  public Buffer appendUnsignedShortS(int s) {
     this.delegate.appendUnsignedShort(s);
     return this;
   }
@@ -315,7 +315,7 @@ return    this.delegate.getString(start, end);
    * @param f 
    * @return 
    */
-  public Buffer appendFloat(float f) {
+  public Buffer appendFloatF(float f) {
     this.delegate.appendFloat(f);
     return this;
   }
@@ -327,7 +327,7 @@ return    this.delegate.getString(start, end);
    * @param d 
    * @return 
    */
-  public Buffer appendDouble(double d) {
+  public Buffer appendDoubleD(double d) {
     this.delegate.appendDouble(d);
     return this;
   }
@@ -341,7 +341,7 @@ return    this.delegate.getString(start, end);
    * @param enc 
    * @return 
    */
-  public Buffer appendString(String str, String enc) {
+  public Buffer appendStringStrEnc(String str, String enc) {
     this.delegate.appendString(str, enc);
     return this;
   }
@@ -354,7 +354,7 @@ return    this.delegate.getString(start, end);
    * @param str 
    * @return 
    */
-  public Buffer appendString(String str) {
+  public Buffer appendStringStr(String str) {
     this.delegate.appendString(str);
     return this;
   }
@@ -367,7 +367,7 @@ return    this.delegate.getString(start, end);
    * @param b 
    * @return 
    */
-  public Buffer setByte(int pos, byte b) {
+  public Buffer setBytePosB(int pos, byte b) {
     this.delegate.setByte(pos, b);
     return this;
   }
@@ -380,7 +380,7 @@ return    this.delegate.getString(start, end);
    * @param b 
    * @return 
    */
-  public Buffer setUnsignedByte(int pos, short b) {
+  public Buffer setUnsignedBytePosB(int pos, short b) {
 return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.vertx.golo.core.buffer.Buffer.class);
   }
 //io.vertx.core.buffer.Buffer setInt(int pos, int i)
@@ -392,7 +392,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param i 
    * @return 
    */
-  public Buffer setInt(int pos, int i) {
+  public Buffer setIntPosI(int pos, int i) {
     this.delegate.setInt(pos, i);
     return this;
   }
@@ -405,7 +405,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param i 
    * @return 
    */
-  public Buffer setUnsignedInt(int pos, long i) {
+  public Buffer setUnsignedIntPosI(int pos, long i) {
     this.delegate.setUnsignedInt(pos, i);
     return this;
   }
@@ -418,7 +418,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param l 
    * @return 
    */
-  public Buffer setLong(int pos, long l) {
+  public Buffer setLongPosL(int pos, long l) {
     this.delegate.setLong(pos, l);
     return this;
   }
@@ -431,7 +431,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param d 
    * @return 
    */
-  public Buffer setDouble(int pos, double d) {
+  public Buffer setDoublePosD(int pos, double d) {
     this.delegate.setDouble(pos, d);
     return this;
   }
@@ -444,7 +444,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param f 
    * @return 
    */
-  public Buffer setFloat(int pos, float f) {
+  public Buffer setFloatPosF(int pos, float f) {
     this.delegate.setFloat(pos, f);
     return this;
   }
@@ -457,7 +457,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param s 
    * @return 
    */
-  public Buffer setShort(int pos, short s) {
+  public Buffer setShortPosS(int pos, short s) {
     this.delegate.setShort(pos, s);
     return this;
   }
@@ -470,7 +470,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param s 
    * @return 
    */
-  public Buffer setUnsignedShort(int pos, int s) {
+  public Buffer setUnsignedShortPosS(int pos, int s) {
     this.delegate.setUnsignedShort(pos, s);
     return this;
   }
@@ -483,7 +483,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param b 
    * @return 
    */
-  public Buffer setBuffer(int pos, Buffer b) {
+  public Buffer setBufferPosB(int pos, Buffer b) {
     this.delegate.setBuffer(pos, (io.vertx.core.buffer.Buffer)b.getDelegate());
     return this;
   }
@@ -498,7 +498,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param len 
    * @return 
    */
-  public Buffer setBuffer(int pos, Buffer b, int offset, int len) {
+  public Buffer setBufferPosBOffsetLen(int pos, Buffer b, int offset, int len) {
     this.delegate.setBuffer(pos, (io.vertx.core.buffer.Buffer)b.getDelegate(), offset, len);
     return this;
   }
@@ -511,7 +511,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param str 
    * @return 
    */
-  public Buffer setString(int pos, String str) {
+  public Buffer setStringPosStr(int pos, String str) {
     this.delegate.setString(pos, str);
     return this;
   }
@@ -525,7 +525,7 @@ return    InternalHelper.safeCreate(this.delegate.setUnsignedByte(pos, b), io.ve
    * @param enc 
    * @return 
    */
-  public Buffer setString(int pos, String str, String enc) {
+  public Buffer setStringPosStrEnc(int pos, String str, String enc) {
     this.delegate.setString(pos, str, enc);
     return this;
   }
@@ -569,7 +569,7 @@ return    InternalHelper.safeCreate(this.delegate.slice(), io.vertx.golo.core.bu
    * @param end 
    * @return 
    */
-  public Buffer slice(int start, int end) {
+  public Buffer sliceStartEnd(int start, int end) {
 return    InternalHelper.safeCreate(this.delegate.slice(start, end), io.vertx.golo.core.buffer.Buffer.class);
   }
 }

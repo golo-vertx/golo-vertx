@@ -29,7 +29,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem copy(String from, String to, Handler<AsyncResult<Void>> handler) {
+  public FileSystem copyFromToHandler(String from, String to, Handler<AsyncResult<Void>> handler) {
     this.delegate.copy(from, to, handler);
     return this;
   }
@@ -41,7 +41,7 @@ public class FileSystem {
    * @param to 
    * @return 
    */
-  public FileSystem copyBlocking(String from, String to) {
+  public FileSystem copyBlockingFromTo(String from, String to) {
     this.delegate.copyBlocking(from, to);
     return this;
   }
@@ -60,7 +60,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem copyRecursive(String from, String to, boolean recursive, Handler<AsyncResult<Void>> handler) {
+  public FileSystem copyRecursiveFromToRecursiveHandler(String from, String to, boolean recursive, Handler<AsyncResult<Void>> handler) {
     this.delegate.copyRecursive(from, to, recursive, handler);
     return this;
   }
@@ -73,7 +73,7 @@ public class FileSystem {
    * @param recursive 
    * @return 
    */
-  public FileSystem copyRecursiveBlocking(String from, String to, boolean recursive) {
+  public FileSystem copyRecursiveBlockingFromToRecursive(String from, String to, boolean recursive) {
     this.delegate.copyRecursiveBlocking(from, to, recursive);
     return this;
   }
@@ -88,7 +88,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem move(String from, String to, Handler<AsyncResult<Void>> handler) {
+  public FileSystem moveFromToHandler(String from, String to, Handler<AsyncResult<Void>> handler) {
     this.delegate.move(from, to, handler);
     return this;
   }
@@ -100,7 +100,7 @@ public class FileSystem {
    * @param to 
    * @return 
    */
-  public FileSystem moveBlocking(String from, String to) {
+  public FileSystem moveBlockingFromTo(String from, String to) {
     this.delegate.moveBlocking(from, to);
     return this;
   }
@@ -115,7 +115,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem truncate(String path, long len, Handler<AsyncResult<Void>> handler) {
+  public FileSystem truncatePathLenHandler(String path, long len, Handler<AsyncResult<Void>> handler) {
     this.delegate.truncate(path, len, handler);
     return this;
   }
@@ -127,7 +127,7 @@ public class FileSystem {
    * @param len 
    * @return 
    */
-  public FileSystem truncateBlocking(String path, long len) {
+  public FileSystem truncateBlockingPathLen(String path, long len) {
     this.delegate.truncateBlocking(path, len);
     return this;
   }
@@ -143,7 +143,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem chmod(String path, String perms, Handler<AsyncResult<Void>> handler) {
+  public FileSystem chmodPathPermsHandler(String path, String perms, Handler<AsyncResult<Void>> handler) {
     this.delegate.chmod(path, perms, handler);
     return this;
   }
@@ -155,7 +155,7 @@ public class FileSystem {
    * @param perms 
    * @return 
    */
-  public FileSystem chmodBlocking(String path, String perms) {
+  public FileSystem chmodBlockingPathPerms(String path, String perms) {
     this.delegate.chmodBlocking(path, perms);
     return this;
   }
@@ -174,7 +174,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem chmodRecursive(String path, String perms, String dirPerms, Handler<AsyncResult<Void>> handler) {
+  public FileSystem chmodRecursivePathPermsDirPermsHandler(String path, String perms, String dirPerms, Handler<AsyncResult<Void>> handler) {
     this.delegate.chmodRecursive(path, perms, dirPerms, handler);
     return this;
   }
@@ -187,7 +187,7 @@ public class FileSystem {
    * @param dirPerms 
    * @return 
    */
-  public FileSystem chmodRecursiveBlocking(String path, String perms, String dirPerms) {
+  public FileSystem chmodRecursiveBlockingPathPermsDirPerms(String path, String perms, String dirPerms) {
     this.delegate.chmodRecursiveBlocking(path, perms, dirPerms);
     return this;
   }
@@ -201,7 +201,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem chown(String path, String user, String group, Handler<AsyncResult<Void>> handler) {
+  public FileSystem chownPathUserGroupHandler(String path, String user, String group, Handler<AsyncResult<Void>> handler) {
     this.delegate.chown(path, user, group, handler);
     return this;
   }
@@ -215,7 +215,7 @@ public class FileSystem {
    * @param group 
    * @return 
    */
-  public FileSystem chownBlocking(String path, String user, String group) {
+  public FileSystem chownBlockingPathUserGroup(String path, String user, String group) {
     this.delegate.chownBlocking(path, user, group);
     return this;
   }
@@ -229,7 +229,7 @@ public class FileSystem {
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem props(String path, Handler<AsyncResult<FileProps>> handler) {
+  public FileSystem propsPathHandler(String path, Handler<AsyncResult<FileProps>> handler) {
     this.delegate.props(path, new Handler<AsyncResult<io.vertx.core.file.FileProps>>() {
       public void handle(AsyncResult<io.vertx.core.file.FileProps> event) {
         AsyncResult<FileProps> f;
@@ -250,7 +250,7 @@ public class FileSystem {
    * @param path 
    * @return 
    */
-  public FileProps propsBlocking(String path) {
+  public FileProps propsBlockingPath(String path) {
 return    InternalHelper.safeCreate(this.delegate.propsBlocking(path), io.vertx.golo.core.file.FileProps.class);
   }
 //io.vertx.core.file.FileSystem lprops(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.file.FileProps>> handler)
@@ -263,7 +263,7 @@ return    InternalHelper.safeCreate(this.delegate.propsBlocking(path), io.vertx.
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem lprops(String path, Handler<AsyncResult<FileProps>> handler) {
+  public FileSystem lpropsPathHandler(String path, Handler<AsyncResult<FileProps>> handler) {
     this.delegate.lprops(path, new Handler<AsyncResult<io.vertx.core.file.FileProps>>() {
       public void handle(AsyncResult<io.vertx.core.file.FileProps> event) {
         AsyncResult<FileProps> f;
@@ -284,7 +284,7 @@ return    InternalHelper.safeCreate(this.delegate.propsBlocking(path), io.vertx.
    * @param path 
    * @return 
    */
-  public FileProps lpropsBlocking(String path) {
+  public FileProps lpropsBlockingPath(String path) {
 return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx.golo.core.file.FileProps.class);
   }
 //io.vertx.core.file.FileSystem link(java.lang.String link, java.lang.String existing, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
@@ -296,7 +296,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem link(String link, String existing, Handler<AsyncResult<Void>> handler) {
+  public FileSystem linkLinkExistingHandler(String link, String existing, Handler<AsyncResult<Void>> handler) {
     this.delegate.link(link, existing, handler);
     return this;
   }
@@ -308,7 +308,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param existing 
    * @return 
    */
-  public FileSystem linkBlocking(String link, String existing) {
+  public FileSystem linkBlockingLinkExisting(String link, String existing) {
     this.delegate.linkBlocking(link, existing);
     return this;
   }
@@ -321,7 +321,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem symlink(String link, String existing, Handler<AsyncResult<Void>> handler) {
+  public FileSystem symlinkLinkExistingHandler(String link, String existing, Handler<AsyncResult<Void>> handler) {
     this.delegate.symlink(link, existing, handler);
     return this;
   }
@@ -333,7 +333,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param existing 
    * @return 
    */
-  public FileSystem symlinkBlocking(String link, String existing) {
+  public FileSystem symlinkBlockingLinkExisting(String link, String existing) {
     this.delegate.symlinkBlocking(link, existing);
     return this;
   }
@@ -345,7 +345,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem unlink(String link, Handler<AsyncResult<Void>> handler) {
+  public FileSystem unlinkLinkHandler(String link, Handler<AsyncResult<Void>> handler) {
     this.delegate.unlink(link, handler);
     return this;
   }
@@ -356,7 +356,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param link 
    * @return 
    */
-  public FileSystem unlinkBlocking(String link) {
+  public FileSystem unlinkBlockingLink(String link) {
     this.delegate.unlinkBlocking(link);
     return this;
   }
@@ -368,7 +368,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem readSymlink(String link, Handler<AsyncResult<String>> handler) {
+  public FileSystem readSymlinkLinkHandler(String link, Handler<AsyncResult<String>> handler) {
     this.delegate.readSymlink(link, handler);
     return this;
   }
@@ -379,7 +379,7 @@ return    InternalHelper.safeCreate(this.delegate.lpropsBlocking(path), io.vertx
    * @param link 
    * @return 
    */
-  public String readSymlinkBlocking(String link) {
+  public String readSymlinkBlockingLink(String link) {
 return    this.delegate.readSymlinkBlocking(link);
   }
 //io.vertx.core.file.FileSystem delete(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
@@ -390,7 +390,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem delete(String path, Handler<AsyncResult<Void>> handler) {
+  public FileSystem deletePathHandler(String path, Handler<AsyncResult<Void>> handler) {
     this.delegate.delete(path, handler);
     return this;
   }
@@ -401,7 +401,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param path 
    * @return 
    */
-  public FileSystem deleteBlocking(String path) {
+  public FileSystem deleteBlockingPath(String path) {
     this.delegate.deleteBlocking(path);
     return this;
   }
@@ -417,7 +417,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem deleteRecursive(String path, boolean recursive, Handler<AsyncResult<Void>> handler) {
+  public FileSystem deleteRecursivePathRecursiveHandler(String path, boolean recursive, Handler<AsyncResult<Void>> handler) {
     this.delegate.deleteRecursive(path, recursive, handler);
     return this;
   }
@@ -429,7 +429,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param recursive 
    * @return 
    */
-  public FileSystem deleteRecursiveBlocking(String path, boolean recursive) {
+  public FileSystem deleteRecursiveBlockingPathRecursive(String path, boolean recursive) {
     this.delegate.deleteRecursiveBlocking(path, recursive);
     return this;
   }
@@ -443,7 +443,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem mkdir(String path, Handler<AsyncResult<Void>> handler) {
+  public FileSystem mkdirPathHandler(String path, Handler<AsyncResult<Void>> handler) {
     this.delegate.mkdir(path, handler);
     return this;
   }
@@ -454,7 +454,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param path 
    * @return 
    */
-  public FileSystem mkdirBlocking(String path) {
+  public FileSystem mkdirBlockingPath(String path) {
     this.delegate.mkdirBlocking(path);
     return this;
   }
@@ -474,7 +474,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem mkdir(String path, String perms, Handler<AsyncResult<Void>> handler) {
+  public FileSystem mkdirPathPermsHandler(String path, String perms, Handler<AsyncResult<Void>> handler) {
     this.delegate.mkdir(path, perms, handler);
     return this;
   }
@@ -486,7 +486,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param perms 
    * @return 
    */
-  public FileSystem mkdirBlocking(String path, String perms) {
+  public FileSystem mkdirBlockingPathPerms(String path, String perms) {
     this.delegate.mkdirBlocking(path, perms);
     return this;
   }
@@ -500,7 +500,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem mkdirs(String path, Handler<AsyncResult<Void>> handler) {
+  public FileSystem mkdirsPathHandler(String path, Handler<AsyncResult<Void>> handler) {
     this.delegate.mkdirs(path, handler);
     return this;
   }
@@ -511,7 +511,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param path 
    * @return 
    */
-  public FileSystem mkdirsBlocking(String path) {
+  public FileSystem mkdirsBlockingPath(String path) {
     this.delegate.mkdirsBlocking(path);
     return this;
   }
@@ -531,7 +531,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem mkdirs(String path, String perms, Handler<AsyncResult<Void>> handler) {
+  public FileSystem mkdirsPathPermsHandler(String path, String perms, Handler<AsyncResult<Void>> handler) {
     this.delegate.mkdirs(path, perms, handler);
     return this;
   }
@@ -543,7 +543,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param perms 
    * @return 
    */
-  public FileSystem mkdirsBlocking(String path, String perms) {
+  public FileSystem mkdirsBlockingPathPerms(String path, String perms) {
     this.delegate.mkdirsBlocking(path, perms);
     return this;
   }
@@ -557,7 +557,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem readDir(String path, Handler<AsyncResult<List<String>>> handler) {
+  public FileSystem readDirPathHandler(String path, Handler<AsyncResult<List<String>>> handler) {
     this.delegate.readDir(path, handler);
     return this;
   }
@@ -568,7 +568,7 @@ return    this.delegate.readSymlinkBlocking(link);
    * @param path 
    * @return 
    */
-  public List<String> readDirBlocking(String path) {
+  public List<String> readDirBlockingPath(String path) {
 return    this.delegate.readDirBlocking(path);
   }
 //io.vertx.core.file.FileSystem readDir(java.lang.String path, java.lang.String filter, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.util.List<java.lang.String>>> handler)
@@ -585,7 +585,7 @@ return    this.delegate.readDirBlocking(path);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem readDir(String path, String filter, Handler<AsyncResult<List<String>>> handler) {
+  public FileSystem readDirPathFilterHandler(String path, String filter, Handler<AsyncResult<List<String>>> handler) {
     this.delegate.readDir(path, filter, handler);
     return this;
   }
@@ -597,7 +597,7 @@ return    this.delegate.readDirBlocking(path);
    * @param filter 
    * @return 
    */
-  public List<String> readDirBlocking(String path, String filter) {
+  public List<String> readDirBlockingPathFilter(String path, String filter) {
 return    this.delegate.readDirBlocking(path, filter);
   }
 //io.vertx.core.file.FileSystem readFile(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.buffer.Buffer>> handler)
@@ -610,7 +610,7 @@ return    this.delegate.readDirBlocking(path, filter);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem readFile(String path, Handler<AsyncResult<Buffer>> handler) {
+  public FileSystem readFilePathHandler(String path, Handler<AsyncResult<Buffer>> handler) {
     this.delegate.readFile(path, new Handler<AsyncResult<io.vertx.core.buffer.Buffer>>() {
       public void handle(AsyncResult<io.vertx.core.buffer.Buffer> event) {
         AsyncResult<Buffer> f;
@@ -631,7 +631,7 @@ return    this.delegate.readDirBlocking(path, filter);
    * @param path 
    * @return 
    */
-  public Buffer readFileBlocking(String path) {
+  public Buffer readFileBlockingPath(String path) {
 return    InternalHelper.safeCreate(this.delegate.readFileBlocking(path), io.vertx.golo.core.buffer.Buffer.class);
   }
 //io.vertx.core.file.FileSystem writeFile(java.lang.String path, io.vertx.core.buffer.Buffer data, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
@@ -644,7 +644,7 @@ return    InternalHelper.safeCreate(this.delegate.readFileBlocking(path), io.ver
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem writeFile(String path, Buffer data, Handler<AsyncResult<Void>> handler) {
+  public FileSystem writeFilePathDataHandler(String path, Buffer data, Handler<AsyncResult<Void>> handler) {
     this.delegate.writeFile(path, (io.vertx.core.buffer.Buffer)data.getDelegate(), handler);
     return this;
   }
@@ -656,7 +656,7 @@ return    InternalHelper.safeCreate(this.delegate.readFileBlocking(path), io.ver
    * @param data 
    * @return 
    */
-  public FileSystem writeFileBlocking(String path, Buffer data) {
+  public FileSystem writeFileBlockingPathData(String path, Buffer data) {
     this.delegate.writeFileBlocking(path, (io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
@@ -671,7 +671,7 @@ return    InternalHelper.safeCreate(this.delegate.readFileBlocking(path), io.ver
    * @param handler 
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem open(String path, Map<String, Object> options, Handler<AsyncResult<AsyncFile>> handler) {
+  public FileSystem openPathOptionsHandler(String path, Map<String, Object> options, Handler<AsyncResult<AsyncFile>> handler) {
     this.delegate.open(path, options != null ? new io.vertx.core.file.OpenOptions(new io.vertx.core.json.JsonObject(options)) : null, new Handler<AsyncResult<io.vertx.core.file.AsyncFile>>() {
       public void handle(AsyncResult<io.vertx.core.file.AsyncFile> event) {
         AsyncResult<AsyncFile> f;
@@ -693,7 +693,7 @@ return    InternalHelper.safeCreate(this.delegate.readFileBlocking(path), io.ver
    * @param options  (see <a href="../../../../../../../cheatsheet/OpenOptions.html">OpenOptions</a>)
    * @return 
    */
-  public AsyncFile openBlocking(String path, Map<String, Object> options) {
+  public AsyncFile openBlockingPathOptions(String path, Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.openBlocking(path, options != null ? new io.vertx.core.file.OpenOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.file.AsyncFile.class);
   }
 //io.vertx.core.file.FileSystem createFile(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
@@ -704,7 +704,7 @@ return    InternalHelper.safeCreate(this.delegate.openBlocking(path, options != 
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem createFile(String path, Handler<AsyncResult<Void>> handler) {
+  public FileSystem createFilePathHandler(String path, Handler<AsyncResult<Void>> handler) {
     this.delegate.createFile(path, handler);
     return this;
   }
@@ -715,7 +715,7 @@ return    InternalHelper.safeCreate(this.delegate.openBlocking(path, options != 
    * @param path 
    * @return 
    */
-  public FileSystem createFileBlocking(String path) {
+  public FileSystem createFileBlockingPath(String path) {
     this.delegate.createFileBlocking(path);
     return this;
   }
@@ -728,7 +728,7 @@ return    InternalHelper.safeCreate(this.delegate.openBlocking(path, options != 
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem createFile(String path, String perms, Handler<AsyncResult<Void>> handler) {
+  public FileSystem createFilePathPermsHandler(String path, String perms, Handler<AsyncResult<Void>> handler) {
     this.delegate.createFile(path, perms, handler);
     return this;
   }
@@ -740,7 +740,7 @@ return    InternalHelper.safeCreate(this.delegate.openBlocking(path, options != 
    * @param perms 
    * @return 
    */
-  public FileSystem createFileBlocking(String path, String perms) {
+  public FileSystem createFileBlockingPathPerms(String path, String perms) {
     this.delegate.createFileBlocking(path, perms);
     return this;
   }
@@ -752,7 +752,7 @@ return    InternalHelper.safeCreate(this.delegate.openBlocking(path, options != 
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem exists(String path, Handler<AsyncResult<Boolean>> handler) {
+  public FileSystem existsPathHandler(String path, Handler<AsyncResult<Boolean>> handler) {
     this.delegate.exists(path, handler);
     return this;
   }
@@ -763,7 +763,7 @@ return    InternalHelper.safeCreate(this.delegate.openBlocking(path, options != 
    * @param path 
    * @return 
    */
-  public boolean existsBlocking(String path) {
+  public boolean existsBlockingPath(String path) {
 return    this.delegate.existsBlocking(path);
   }
 //io.vertx.core.file.FileSystem fsProps(java.lang.String path, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.file.FileSystemProps>> handler)
@@ -774,7 +774,7 @@ return    this.delegate.existsBlocking(path);
    * @param handler the handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public FileSystem fsProps(String path, Handler<AsyncResult<FileSystemProps>> handler) {
+  public FileSystem fsPropsPathHandler(String path, Handler<AsyncResult<FileSystemProps>> handler) {
     this.delegate.fsProps(path, new Handler<AsyncResult<io.vertx.core.file.FileSystemProps>>() {
       public void handle(AsyncResult<io.vertx.core.file.FileSystemProps> event) {
         AsyncResult<FileSystemProps> f;
@@ -795,7 +795,7 @@ return    this.delegate.existsBlocking(path);
    * @param path 
    * @return 
    */
-  public FileSystemProps fsPropsBlocking(String path) {
+  public FileSystemProps fsPropsBlockingPath(String path) {
 return    InternalHelper.safeCreate(this.delegate.fsPropsBlocking(path), io.vertx.golo.core.file.FileSystemProps.class);
   }
 }
