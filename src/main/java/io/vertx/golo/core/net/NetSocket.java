@@ -29,13 +29,13 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.net.NetSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.net.NetSocket
-  public NetSocket exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public NetSocket exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.streams.WriteStream) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.net.NetSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.net.NetSocket
-  public NetSocket handlerHandler<Buffer>(Handler<Buffer> handler) {
+  public NetSocket handlerHandler(Handler<Buffer> handler) {
     (  (io.vertx.core.streams.ReadStream) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -57,7 +57,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.net.NetSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.net.NetSocket
-  public NetSocket endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public NetSocket endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.streams.ReadStream) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -75,7 +75,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.net.NetSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.net.NetSocket
-  public NetSocket drainHandlerHandler<Void>(Handler<Void> handler) {
+  public NetSocket drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.streams.WriteStream) this.delegate).drainHandler(handler);
     return this;
   }
@@ -164,7 +164,7 @@ return    this.delegate.writeHandlerID();
    * @param resultHandler handler
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringHandler<AsyncResult<Void>>(String filename, Handler<AsyncResult<Void>> resultHandler) {
+  public NetSocket sendFileStringHandler(String filename, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, resultHandler);
     return this;
   }
@@ -178,7 +178,7 @@ return    this.delegate.writeHandlerID();
    * @param resultHandler handler
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringLongHandler<AsyncResult<Void>>(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
+  public NetSocket sendFileStringLongHandler(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, resultHandler);
     return this;
   }
@@ -193,7 +193,7 @@ return    this.delegate.writeHandlerID();
    * @param resultHandler handler
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket sendFileStringLongLongHandler<AsyncResult<Void>>(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
+  public NetSocket sendFileStringLongLongHandler(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, length, resultHandler);
     return this;
   }
@@ -230,7 +230,7 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket closeHandlerHandler<Void>(Handler<Void> handler) {
+  public NetSocket closeHandlerHandler(Handler<Void> handler) {
     this.delegate.closeHandler(handler);
     return this;
   }
@@ -241,7 +241,7 @@ return    InternalHelper.safeCreate(this.delegate.localAddress(), io.vertx.golo.
    * @param handler the handler will be notified when it's upgraded
    * @return a reference to this, so the API can be used fluently
    */
-  public NetSocket upgradeToSslHandler<Void>(Handler<Void> handler) {
+  public NetSocket upgradeToSslHandler(Handler<Void> handler) {
     this.delegate.upgradeToSsl(handler);
     return this;
   }

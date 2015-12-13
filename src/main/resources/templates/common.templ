@@ -105,4 +105,18 @@
       return copyStr.substring(0, 1).toUpperCase() + copyStr.substring(1);
     }
   }
+
+  def ignoreTemplete(str){
+    var copyStr = new String(str);
+    if(copyStr.length() == 0){
+      return copyStr;
+    }
+    int indexOfAngleBrac = copyStr.indexOf("<");
+    if(indexOfAngleBrac<0 || indexOfAngleBrac>copyStr.length()){
+      return copyStr;
+    }
+    else{
+      return copyStr.substring(0,indexOfAngleBrac);
+    }
+  }
 }

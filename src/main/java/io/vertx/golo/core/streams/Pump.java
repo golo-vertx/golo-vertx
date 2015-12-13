@@ -21,7 +21,7 @@ public class Pump {
    * @param ws the write stream
    * @return the pump
    */
-  public static <T> Pump pumpReadStream<T>WriteStream<T>(ReadStream<T> rs, WriteStream<T> ws) {
+  public static <T> Pump pumpReadStreamWriteStream(ReadStream<T> rs, WriteStream<T> ws) {
 return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.core.streams.ReadStream<T>)rs.getDelegate(), (io.vertx.core.streams.WriteStream<T>)ws.getDelegate()), io.vertx.golo.core.streams.Pump.class);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.streams.Pump,methodNamepump]> io.vertx.core.streams.Pump pump(io.vertx.core.streams.ReadStream<T> rs, io.vertx.core.streams.WriteStream<T> ws, int writeQueueMaxSize)
@@ -34,7 +34,7 @@ return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.co
    * @param writeQueueMaxSize the max size of the write queue
    * @return the pump
    */
-  public static <T> Pump pumpReadStream<T>WriteStream<T>Int(ReadStream<T> rs, WriteStream<T> ws, int writeQueueMaxSize) {
+  public static <T> Pump pumpReadStreamWriteStreamInt(ReadStream<T> rs, WriteStream<T> ws, int writeQueueMaxSize) {
 return    InternalHelper.safeCreate(io.vertx.core.streams.Pump.pump((io.vertx.core.streams.ReadStream<T>)rs.getDelegate(), (io.vertx.core.streams.WriteStream<T>)ws.getDelegate(), writeQueueMaxSize), io.vertx.golo.core.streams.Pump.class);
   }
 //io.vertx.core.streams.Pump setWriteQueueMaxSize(int maxSize)

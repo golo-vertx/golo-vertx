@@ -27,7 +27,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public PacketWritestream exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -45,7 +45,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.datagram.PacketWritestream
-  public PacketWritestream drainHandlerHandler<Void>(Handler<Void> handler) {
+  public PacketWritestream drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.datagram.PacketWritestream) this.delegate).drainHandler(handler);
     return this;
   }

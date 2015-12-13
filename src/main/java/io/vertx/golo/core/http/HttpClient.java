@@ -64,7 +64,7 @@ return    InternalHelper.safeCreate(this.delegate.request(method, host, requestU
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest requestHttpMethodIntStringStringHandler<HttpClientResponse>(HttpMethod method, int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest requestHttpMethodIntStringStringHandler(HttpMethod method, int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.request(method, port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -82,7 +82,7 @@ return    InternalHelper.safeCreate(this.delegate.request(method, port, host, re
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest requestHttpMethodStringStringHandler<HttpClientResponse>(HttpMethod method, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest requestHttpMethodStringStringHandler(HttpMethod method, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.request(method, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -110,7 +110,7 @@ return    InternalHelper.safeCreate(this.delegate.request(method, requestURI), i
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest requestHttpMethodStringHandler<HttpClientResponse>(HttpMethod method, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest requestHttpMethodStringHandler(HttpMethod method, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.request(method, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -138,7 +138,7 @@ return    InternalHelper.safeCreate(this.delegate.requestAbs(method, absoluteURI
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest requestAbsHttpMethodStringHandler<HttpClientResponse>(HttpMethod method, String absoluteURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest requestAbsHttpMethodStringHandler(HttpMethod method, String absoluteURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.requestAbs(method, absoluteURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -179,7 +179,7 @@ return    InternalHelper.safeCreate(this.delegate.get(host, requestURI), io.vert
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest getIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest getIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.get(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -196,7 +196,7 @@ return    InternalHelper.safeCreate(this.delegate.get(port, host, requestURI, ne
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest getStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest getStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.get(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -222,7 +222,7 @@ return    InternalHelper.safeCreate(this.delegate.get(requestURI), io.vertx.golo
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest getStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest getStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.get(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -248,7 +248,7 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI), io.vertx.
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest getAbsStringHandler<HttpClientResponse>(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest getAbsStringHandler(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -266,7 +266,7 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient getNowIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient getNowIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.getNow(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -284,7 +284,7 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient getNowStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient getNowStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.getNow(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -301,7 +301,7 @@ return    InternalHelper.safeCreate(this.delegate.getAbs(absoluteURI, new Handle
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient getNowStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient getNowStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.getNow(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -343,7 +343,7 @@ return    InternalHelper.safeCreate(this.delegate.post(host, requestURI), io.ver
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest postIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest postIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.post(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -360,7 +360,7 @@ return    InternalHelper.safeCreate(this.delegate.post(port, host, requestURI, n
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest postStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest postStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.post(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -386,7 +386,7 @@ return    InternalHelper.safeCreate(this.delegate.post(requestURI), io.vertx.gol
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest postStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest postStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.post(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -412,7 +412,7 @@ return    InternalHelper.safeCreate(this.delegate.postAbs(absoluteURI), io.vertx
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest postAbsStringHandler<HttpClientResponse>(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest postAbsStringHandler(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.postAbs(absoluteURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -453,7 +453,7 @@ return    InternalHelper.safeCreate(this.delegate.head(host, requestURI), io.ver
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest headIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest headIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.head(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -470,7 +470,7 @@ return    InternalHelper.safeCreate(this.delegate.head(port, host, requestURI, n
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest headStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest headStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.head(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -496,7 +496,7 @@ return    InternalHelper.safeCreate(this.delegate.head(requestURI), io.vertx.gol
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest headStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest headStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.head(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -522,7 +522,7 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI), io.vertx
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest headAbsStringHandler<HttpClientResponse>(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest headAbsStringHandler(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -540,7 +540,7 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient headNowIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient headNowIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.headNow(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -558,7 +558,7 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient headNowStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient headNowStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.headNow(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -575,7 +575,7 @@ return    InternalHelper.safeCreate(this.delegate.headAbs(absoluteURI, new Handl
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient headNowStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient headNowStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.headNow(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -617,7 +617,7 @@ return    InternalHelper.safeCreate(this.delegate.options(host, requestURI), io.
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest optionsIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest optionsIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.options(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -634,7 +634,7 @@ return    InternalHelper.safeCreate(this.delegate.options(port, host, requestURI
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest optionsStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest optionsStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.options(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -660,7 +660,7 @@ return    InternalHelper.safeCreate(this.delegate.options(requestURI), io.vertx.
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest optionsStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest optionsStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.options(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -686,7 +686,7 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI), io.ve
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest optionsAbsStringHandler<HttpClientResponse>(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest optionsAbsStringHandler(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -704,7 +704,7 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient optionsNowIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient optionsNowIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.optionsNow(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -722,7 +722,7 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient optionsNowStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient optionsNowStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.optionsNow(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -739,7 +739,7 @@ return    InternalHelper.safeCreate(this.delegate.optionsAbs(absoluteURI, new Ha
    * @param responseHandler the response handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient optionsNowStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClient optionsNowStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
     this.delegate.optionsNow(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -781,7 +781,7 @@ return    InternalHelper.safeCreate(this.delegate.put(host, requestURI), io.vert
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest putIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest putIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.put(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -798,7 +798,7 @@ return    InternalHelper.safeCreate(this.delegate.put(port, host, requestURI, ne
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest putStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest putStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.put(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -824,7 +824,7 @@ return    InternalHelper.safeCreate(this.delegate.put(requestURI), io.vertx.golo
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest putStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest putStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.put(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -850,7 +850,7 @@ return    InternalHelper.safeCreate(this.delegate.putAbs(absoluteURI), io.vertx.
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest putAbsStringHandler<HttpClientResponse>(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest putAbsStringHandler(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.putAbs(absoluteURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -891,7 +891,7 @@ return    InternalHelper.safeCreate(this.delegate.delete(host, requestURI), io.v
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest deleteIntStringStringHandler<HttpClientResponse>(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest deleteIntStringStringHandler(int port, String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.delete(port, host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -908,7 +908,7 @@ return    InternalHelper.safeCreate(this.delegate.delete(port, host, requestURI,
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest deleteStringStringHandler<HttpClientResponse>(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest deleteStringStringHandler(String host, String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.delete(host, requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -934,7 +934,7 @@ return    InternalHelper.safeCreate(this.delegate.delete(requestURI), io.vertx.g
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest deleteStringHandler<HttpClientResponse>(String requestURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest deleteStringHandler(String requestURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.delete(requestURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -960,7 +960,7 @@ return    InternalHelper.safeCreate(this.delegate.deleteAbs(absoluteURI), io.ver
    * @param responseHandler the response handler
    * @return an HTTP client request object
    */
-  public HttpClientRequest deleteAbsStringHandler<HttpClientResponse>(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
+  public HttpClientRequest deleteAbsStringHandler(String absoluteURI, Handler<HttpClientResponse> responseHandler) {
 return    InternalHelper.safeCreate(this.delegate.deleteAbs(absoluteURI, new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         responseHandler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -977,7 +977,7 @@ return    InternalHelper.safeCreate(this.delegate.deleteAbs(absoluteURI, new Han
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringHandler<WebSocket>(int port, String host, String requestURI, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketIntStringStringHandler(int port, String host, String requestURI, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(port, host, requestURI, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -996,7 +996,7 @@ return    InternalHelper.safeCreate(this.delegate.deleteAbs(absoluteURI, new Han
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringHandler<WebSocket>Handler<Throwable>(int port, String host, String requestURI, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketIntStringStringHandlerHandler(int port, String host, String requestURI, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestURI, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1012,7 +1012,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringHandler<WebSocket>(String host, String requestURI, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringStringHandler(String host, String requestURI, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(host, requestURI, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1030,7 +1030,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringHandler<WebSocket>Handler<Throwable>(String host, String requestURI, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringStringHandlerHandler(String host, String requestURI, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1048,7 +1048,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, ne
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringMultiMapHandler<WebSocket>(int port, String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketIntStringStringMultiMapHandler(int port, String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1068,7 +1068,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, ne
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringMultiMapHandler<WebSocket>Handler<Throwable>(int port, String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketIntStringStringMultiMapHandlerHandler(int port, String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1085,7 +1085,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringMultiMapHandler<WebSocket>(String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringStringMultiMapHandler(String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1104,7 +1104,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringMultiMapHandler<WebSocket>Handler<Throwable>(String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringStringMultiMapHandlerHandler(String host, String requestURI, MultiMap headers, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1124,7 +1124,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringMultiMapWebsocketVersionHandler<WebSocket>(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketIntStringStringMultiMapWebsocketVersionHandler(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1146,7 +1146,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringMultiMapWebsocketVersionHandler<WebSocket>Handler<Throwable>(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketIntStringStringMultiMapWebsocketVersionHandlerHandler(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1165,7 +1165,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringMultiMapWebsocketVersionHandler<WebSocket>(String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringStringMultiMapWebsocketVersionHandler(String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1186,7 +1186,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringMultiMapWebsocketVersionHandler<WebSocket>Handler<Throwable>(String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringStringMultiMapWebsocketVersionHandlerHandler(String host, String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1207,7 +1207,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringMultiMapWebsocketVersionStringHandler<WebSocket>(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketIntStringStringMultiMapWebsocketVersionStringHandler(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1230,7 +1230,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketIntStringStringMultiMapWebsocketVersionStringHandler<WebSocket>Handler<Throwable>(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketIntStringStringMultiMapWebsocketVersionStringHandlerHandler(int port, String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1250,7 +1250,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringMultiMapWebsocketVersionStringHandler<WebSocket>(String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringStringMultiMapWebsocketVersionStringHandler(String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1272,7 +1272,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(port, host, requestU
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringStringMultiMapWebsocketVersionStringHandler<WebSocket>Handler<Throwable>(String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringStringMultiMapWebsocketVersionStringHandlerHandler(String host, String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1287,7 +1287,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringHandler<WebSocket>(String requestURI, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringHandler(String requestURI, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(requestURI, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1304,7 +1304,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(host, requestURI, (i
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringHandler<WebSocket>Handler<Throwable>(String requestURI, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringHandlerHandler(String requestURI, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1320,7 +1320,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, new Hand
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringMultiMapHandler<WebSocket>(String requestURI, MultiMap headers, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringMultiMapHandler(String requestURI, MultiMap headers, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1338,7 +1338,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, new Hand
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringMultiMapHandler<WebSocket>Handler<Throwable>(String requestURI, MultiMap headers, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringMultiMapHandlerHandler(String requestURI, MultiMap headers, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1356,7 +1356,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringMultiMapWebsocketVersionHandler<WebSocket>(String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringMultiMapWebsocketVersionHandler(String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1376,7 +1376,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringMultiMapWebsocketVersionHandler<WebSocket>Handler<Throwable>(String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringMultiMapWebsocketVersionHandlerHandler(String requestURI, MultiMap headers, WebsocketVersion version, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1395,7 +1395,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
    * @param wsConnect handler that will be called with the websocket when connected
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringMultiMapWebsocketVersionStringHandler<WebSocket>(String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect) {
+  public HttpClient websocketStringMultiMapWebsocketVersionStringHandler(String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect) {
     this.delegate.websocket(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));
@@ -1416,7 +1416,7 @@ return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vert
    * @param failureHandler handler that will be called if websocekt connection fails
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClient websocketStringMultiMapWebsocketVersionStringHandler<WebSocket>Handler<Throwable>(String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
+  public HttpClient websocketStringMultiMapWebsocketVersionStringHandlerHandler(String requestURI, MultiMap headers, WebsocketVersion version, String subProtocols, Handler<WebSocket> wsConnect, Handler<Throwable> failureHandler) {
 return    InternalHelper.safeCreate(this.delegate.websocket(requestURI, (io.vertx.core.MultiMap)headers.getDelegate(), version, subProtocols, new Handler<io.vertx.core.http.WebSocket>() {
       public void handle(io.vertx.core.http.WebSocket event) {
         wsConnect.handle(new io.vertx.golo.core.http.WebSocket(event));

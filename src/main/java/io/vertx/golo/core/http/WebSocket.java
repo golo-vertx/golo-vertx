@@ -81,13 +81,13 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.WebSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.WebSocket
-  public WebSocket exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public WebSocket exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.WebSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.http.WebSocket
-  public WebSocket handlerHandler<Buffer>(Handler<Buffer> handler) {
+  public WebSocket handlerHandler(Handler<Buffer> handler) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -109,7 +109,7 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.WebSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.WebSocket
-  public WebSocket endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public WebSocket endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -127,7 +127,7 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.WebSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.WebSocket
-  public WebSocket drainHandlerHandler<Void>(Handler<Void> handler) {
+  public WebSocket drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).drainHandler(handler);
     return this;
   }
@@ -157,13 +157,13 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.WebSocket closeHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.WebSocket
-  public WebSocket closeHandlerHandler<Void>(Handler<Void> handler) {
+  public WebSocket closeHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).closeHandler(handler);
     return this;
   }
 //io.vertx.core.http.WebSocket frameHandler(io.vertx.core.Handler<io.vertx.core.http.WebSocketFrame> handler)
 //io.vertx.core.http.WebSocket
-  public WebSocket frameHandlerHandler<WebSocketFrame>(Handler<WebSocketFrame> handler) {
+  public WebSocket frameHandlerHandler(Handler<WebSocketFrame> handler) {
     (  (io.vertx.core.http.WebSocketBase) this.delegate).frameHandler(new Handler<io.vertx.core.http.WebSocketFrame>() {
       public void handle(io.vertx.core.http.WebSocketFrame event) {
         handler.handle(new io.vertx.golo.core.http.WebSocketFrame(event));

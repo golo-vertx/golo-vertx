@@ -23,13 +23,13 @@ public class HttpServerRequest implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpServerRequest
-  public HttpServerRequest exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public HttpServerRequest exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.http.HttpServerRequest
-  public HttpServerRequest handlerHandler<Buffer>(Handler<Buffer> handler) {
+  public HttpServerRequest handlerHandler(Handler<Buffer> handler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -51,7 +51,7 @@ public class HttpServerRequest implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpServerRequest
-  public HttpServerRequest endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public HttpServerRequest endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -185,7 +185,7 @@ return    this.delegate.absoluteURI();
    * @param bodyHandler This handler will be called after all the body has been received
    * @return 
    */
-  public HttpServerRequest bodyHandlerHandler<Buffer>(Handler<Buffer> bodyHandler) {
+  public HttpServerRequest bodyHandlerHandler(Handler<Buffer> bodyHandler) {
     this.delegate.bodyHandler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         bodyHandler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -237,7 +237,7 @@ return    this.delegate.isExpectMultipart();
    * @param uploadHandler 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerRequest uploadHandlerHandler<HttpServerFileUpload>(Handler<HttpServerFileUpload> uploadHandler) {
+  public HttpServerRequest uploadHandlerHandler(Handler<HttpServerFileUpload> uploadHandler) {
     this.delegate.uploadHandler(new Handler<io.vertx.core.http.HttpServerFileUpload>() {
       public void handle(io.vertx.core.http.HttpServerFileUpload event) {
         uploadHandler.handle(new io.vertx.golo.core.http.HttpServerFileUpload(event));

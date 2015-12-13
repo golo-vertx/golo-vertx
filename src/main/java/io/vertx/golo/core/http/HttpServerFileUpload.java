@@ -18,13 +18,13 @@ public class HttpServerFileUpload implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpServerFileUpload exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpServerFileUpload
-  public HttpServerFileUpload exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public HttpServerFileUpload exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerFileUpload) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpServerFileUpload handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.http.HttpServerFileUpload
-  public HttpServerFileUpload handlerHandler<Buffer>(Handler<Buffer> handler) {
+  public HttpServerFileUpload handlerHandler(Handler<Buffer> handler) {
     (  (io.vertx.core.http.HttpServerFileUpload) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -34,7 +34,7 @@ public class HttpServerFileUpload implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpServerFileUpload endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpServerFileUpload
-  public HttpServerFileUpload endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public HttpServerFileUpload endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpServerFileUpload) this.delegate).endHandler(endHandler);
     return this;
   }

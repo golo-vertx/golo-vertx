@@ -29,7 +29,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpServerResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpServerResponse
-  public HttpServerResponse exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public HttpServerResponse exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -47,7 +47,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpServerResponse drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.HttpServerResponse
-  public HttpServerResponse drainHandlerHandler<Void>(Handler<Void> handler) {
+  public HttpServerResponse drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.http.HttpServerResponse) this.delegate).drainHandler(handler);
     return this;
   }
@@ -173,7 +173,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse closeHandlerHandler<Void>(Handler<Void> handler) {
+  public HttpServerResponse closeHandlerHandler(Handler<Void> handler) {
     this.delegate.closeHandler(handler);
     return this;
   }
@@ -301,7 +301,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param resultHandler handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringHandler<AsyncResult<Void>>(String filename, Handler<AsyncResult<Void>> resultHandler) {
+  public HttpServerResponse sendFileStringHandler(String filename, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, resultHandler);
     return this;
   }
@@ -315,7 +315,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param resultHandler handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringLongHandler<AsyncResult<Void>>(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
+  public HttpServerResponse sendFileStringLongHandler(String filename, long offset, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, resultHandler);
     return this;
   }
@@ -330,7 +330,7 @@ return    InternalHelper.safeCreate(this.delegate.trailers(), io.vertx.golo.core
    * @param resultHandler handler that will be called on completion
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse sendFileStringLongLongHandler<AsyncResult<Void>>(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
+  public HttpServerResponse sendFileStringLongLongHandler(String filename, long offset, long length, Handler<AsyncResult<Void>> resultHandler) {
     this.delegate.sendFile(filename, offset, length, resultHandler);
     return this;
   }
@@ -377,7 +377,7 @@ return    this.delegate.headWritten();
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse headersEndHandlerHandler<Void>(Handler<Void> handler) {
+  public HttpServerResponse headersEndHandlerHandler(Handler<Void> handler) {
     this.delegate.headersEndHandler(handler);
     return this;
   }
@@ -390,7 +390,7 @@ return    this.delegate.headWritten();
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerResponse bodyEndHandlerHandler<Void>(Handler<Void> handler) {
+  public HttpServerResponse bodyEndHandlerHandler(Handler<Void> handler) {
     this.delegate.bodyEndHandler(handler);
     return this;
   }

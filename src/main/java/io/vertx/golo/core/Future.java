@@ -73,7 +73,7 @@ return    ((io.vertx.core.Future) this.delegate).isComplete();
    * future is completed.
    * @param handler the Handler that will be called with the result
    */
-  public void setHandlerHandler<AsyncResult<T>>(Handler<AsyncResult<T>> handler) {
+  public void setHandlerHandler(Handler<AsyncResult<T>> handler) {
     ((io.vertx.core.Future) this.delegate).setHandler(new Handler<AsyncResult<Object>>() {
       public void handle(AsyncResult<Object> event) {
         AsyncResult<Object> f;

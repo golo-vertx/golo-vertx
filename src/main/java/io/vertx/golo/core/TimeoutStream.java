@@ -17,13 +17,13 @@ public class TimeoutStream implements ReadStream<Long> {
   }
 //io.vertx.core.TimeoutStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.TimeoutStream
-  public TimeoutStream exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public TimeoutStream exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.TimeoutStream) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.TimeoutStream handler(io.vertx.core.Handler<java.lang.Long> handler)
 //io.vertx.core.TimeoutStream
-  public TimeoutStream handlerHandler<Long>(Handler<Long> handler) {
+  public TimeoutStream handlerHandler(Handler<Long> handler) {
     (  (io.vertx.core.TimeoutStream) this.delegate).handler(handler);
     return this;
   }
@@ -41,7 +41,7 @@ public class TimeoutStream implements ReadStream<Long> {
   }
 //io.vertx.core.TimeoutStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.TimeoutStream
-  public TimeoutStream endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public TimeoutStream endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.TimeoutStream) this.delegate).endHandler(endHandler);
     return this;
   }

@@ -27,7 +27,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.eventbus.MessageProducer<T>
-  public MessageProducer<T> exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public MessageProducer<T> exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.streams.WriteStream) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -45,7 +45,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.eventbus.MessageProducer<T>
-  public MessageProducer<T> drainHandlerHandler<Void>(Handler<Void> handler) {
+  public MessageProducer<T> drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.streams.WriteStream) this.delegate).drainHandler(handler);
     return this;
   }

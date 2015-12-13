@@ -29,7 +29,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.file.AsyncFile handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile handlerHandler<Buffer>(Handler<Buffer> handler) {
+  public AsyncFile handlerHandler(Handler<Buffer> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -51,7 +51,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.file.AsyncFile endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public AsyncFile endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -69,13 +69,13 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.file.AsyncFile drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile drainHandlerHandler<Void>(Handler<Void> handler) {
+  public AsyncFile drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).drainHandler(handler);
     return this;
   }
 //io.vertx.core.file.AsyncFile exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.file.AsyncFile
-  public AsyncFile exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public AsyncFile exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.file.AsyncFile) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -94,7 +94,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * The handler will be called when the close is complete, or an error occurs.
    * @param handler the handler
    */
-  public void closeHandler<AsyncResult<Void>>(Handler<AsyncResult<Void>> handler) {
+  public void closeHandler(Handler<AsyncResult<Void>> handler) {
     this.delegate.close(handler);
   }
 //io.vertx.core.file.AsyncFile write(io.vertx.core.buffer.Buffer buffer, long position, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> handler)
@@ -114,7 +114,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param handler the handler to call when the write is complete
    * @return a reference to this, so the API can be used fluently
    */
-  public AsyncFile writeBufferLongHandler<AsyncResult<Void>>(Buffer buffer, long position, Handler<AsyncResult<Void>> handler) {
+  public AsyncFile writeBufferLongHandler(Buffer buffer, long position, Handler<AsyncResult<Void>> handler) {
     this.delegate.write((io.vertx.core.buffer.Buffer)buffer.getDelegate(), position, handler);
     return this;
   }
@@ -136,7 +136,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param handler the handler to call when the write is complete
    * @return a reference to this, so the API can be used fluently
    */
-  public AsyncFile readBufferIntLongIntHandler<AsyncResult<Buffer>>(Buffer buffer, int offset, long position, int length, Handler<AsyncResult<Buffer>> handler) {
+  public AsyncFile readBufferIntLongIntHandler(Buffer buffer, int offset, long position, int length, Handler<AsyncResult<Buffer>> handler) {
     this.delegate.read((io.vertx.core.buffer.Buffer)buffer.getDelegate(), offset, position, length, new Handler<AsyncResult<io.vertx.core.buffer.Buffer>>() {
       public void handle(AsyncResult<io.vertx.core.buffer.Buffer> event) {
         AsyncResult<Buffer> f;
@@ -171,7 +171,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param handler 
    * @return 
    */
-  public AsyncFile flushHandler<AsyncResult<Void>>(Handler<AsyncResult<Void>> handler) {
+  public AsyncFile flushHandler(Handler<AsyncResult<Void>> handler) {
     this.delegate.flush(handler);
     return this;
   }

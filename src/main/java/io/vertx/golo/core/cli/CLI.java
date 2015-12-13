@@ -33,7 +33,7 @@ return    InternalHelper.safeCreate(io.vertx.core.cli.CLI.create(name), io.vertx
    * @param arguments the arguments
    * @return the creates command line
    */
-  public CommandLine parseList<String>(List<String> arguments) {
+  public CommandLine parseList(List<String> arguments) {
 return    InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.golo.core.cli.CommandLine.class);
   }
 //io.vertx.core.cli.CommandLine parse(java.util.List<java.lang.String> arguments, boolean validate)
@@ -44,7 +44,7 @@ return    InternalHelper.safeCreate(this.delegate.parse(arguments), io.vertx.gol
    * @param validate enable / disable parsing validation
    * @return the creates command line
    */
-  public CommandLine parseList<String>Boolean(List<String> arguments, boolean validate) {
+  public CommandLine parseListBoolean(List<String> arguments, boolean validate) {
 return    InternalHelper.safeCreate(this.delegate.parse(arguments, validate), io.vertx.golo.core.cli.CommandLine.class);
   }
 //java.lang.String getName()
@@ -151,7 +151,7 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
    * @param options the options, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI addOptionsList<Option>(List<Map<String, Object>> options) {
+  public CLI addOptionsList(List<Map<String, Object>> options) {
     this.delegate.addOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
@@ -162,7 +162,7 @@ return    this.delegate.getOptions().stream().map((underpants) -> (Map<String, O
    * @param options the list of options, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI setOptionsList<Option>(List<Map<String, Object>> options) {
+  public CLI setOptionsList(List<Map<String, Object>> options) {
     this.delegate.setOptions(options.stream().map((underpants) -> new Option(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
@@ -194,7 +194,7 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
    * @param args the arguments, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI addArgumentsList<Argument>(List<Map<String, Object>> args) {
+  public CLI addArgumentsList(List<Map<String, Object>> args) {
     this.delegate.addArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }
@@ -205,7 +205,7 @@ return    this.delegate.getArguments().stream().map((underpants) -> (Map<String,
    * @param args the list of arguments, must not be <code>null</code>
    * @return the current {@link io.vertx.golo.core.cli.CLI} instance
    */
-  public CLI setArgumentsList<Argument>(List<Map<String, Object>> args) {
+  public CLI setArgumentsList(List<Map<String, Object>> args) {
     this.delegate.setArguments(args.stream().map((underpants) -> new Argument(new JsonObject(underpants))).collect(java.util.stream.Collectors.toList()));
     return this;
   }

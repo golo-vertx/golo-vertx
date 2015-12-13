@@ -70,7 +70,7 @@ return    InternalHelper.safeCreate(io.vertx.core.Vertx.vertx(options != null ? 
    * @param options the options to use (see <a href="../../../../../../cheatsheet/VertxOptions.html">VertxOptions</a>)
    * @param resultHandler the result handler that will receive the result
    */
-  public static void clusteredVertxVertxOptionsHandler<AsyncResult<Vertx>>(Map<String, Object> options, Handler<AsyncResult<Vertx>> resultHandler) {
+  public static void clusteredVertxVertxOptionsHandler(Map<String, Object> options, Handler<AsyncResult<Vertx>> resultHandler) {
     io.vertx.core.Vertx.clusteredVertx(options != null ? new io.vertx.core.VertxOptions(new io.vertx.core.json.JsonObject(options)) : null, new Handler<AsyncResult<io.vertx.core.Vertx>>() {
       public void handle(AsyncResult<io.vertx.core.Vertx> event) {
         AsyncResult<Vertx> f;
@@ -243,7 +243,7 @@ return    InternalHelper.safeCreate(this.delegate.sharedData(), io.vertx.golo.co
    * @param handler the handler that will be called with the timer ID when the timer fires
    * @return the unique ID of the timer
    */
-  public long setTimerLongHandler<Long>(long delay, Handler<Long> handler) {
+  public long setTimerLongHandler(long delay, Handler<Long> handler) {
 return    this.delegate.setTimer(delay, handler);
   }
 //io.vertx.core.TimeoutStream timerStream(long delay)
@@ -266,7 +266,7 @@ return    InternalHelper.safeCreate(this.delegate.timerStream(delay), io.vertx.g
    * @param handler the handler that will be called with the timer ID when the timer fires
    * @return the unique ID of the timer
    */
-  public long setPeriodicLongHandler<Long>(long delay, Handler<Long> handler) {
+  public long setPeriodicLongHandler(long delay, Handler<Long> handler) {
 return    this.delegate.setPeriodic(delay, handler);
   }
 //io.vertx.core.TimeoutStream periodicStream(long delay)
@@ -297,7 +297,7 @@ return    this.delegate.cancelTimer(id);
    * preceeding events have been handled.
    * @param action - a handler representing the action to execute
    */
-  public void runOnContextHandler<Void>(Handler<Void> action) {
+  public void runOnContextHandler(Handler<Void> action) {
     this.delegate.runOnContext(action);
   }
 //void close()
@@ -318,7 +318,7 @@ return    this.delegate.cancelTimer(id);
    * Like {@link io.vertx.golo.core.Vertx#close} but the completionHandler will be called when the close is complete
    * @param completionHandler The handler will be notified when the close is complete.
    */
-  public void closeHandler<AsyncResult<Void>>(Handler<AsyncResult<Void>> completionHandler) {
+  public void closeHandler(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
 //void deployVerticle(java.lang.String name)
@@ -346,7 +346,7 @@ return    this.delegate.cancelTimer(id);
    * @param name The identifier
    * @param completionHandler a handler which will be notified when the deployment is complete
    */
-  public void deployVerticleStringHandler<AsyncResult<String>>(String name, Handler<AsyncResult<String>> completionHandler) {
+  public void deployVerticleStringHandler(String name, Handler<AsyncResult<String>> completionHandler) {
     this.delegate.deployVerticle(name, completionHandler);
   }
 //void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options)
@@ -369,7 +369,7 @@ return    this.delegate.cancelTimer(id);
    * @param options the deployment options. (see <a href="../../../../../../cheatsheet/DeploymentOptions.html">DeploymentOptions</a>)
    * @param completionHandler a handler which will be notified when the deployment is complete
    */
-  public void deployVerticleStringDeploymentOptionsHandler<AsyncResult<String>>(String name, Map<String, Object> options, Handler<AsyncResult<String>> completionHandler) {
+  public void deployVerticleStringDeploymentOptionsHandler(String name, Map<String, Object> options, Handler<AsyncResult<String>> completionHandler) {
     this.delegate.deployVerticle(name, options != null ? new io.vertx.core.DeploymentOptions(new io.vertx.core.json.JsonObject(options)) : null, completionHandler);
   }
 //void undeploy(java.lang.String deploymentID)
@@ -390,7 +390,7 @@ return    this.delegate.cancelTimer(id);
    * @param deploymentID the deployment ID
    * @param completionHandler a handler which will be notified when the undeployment is complete
    */
-  public void undeployStringHandler<AsyncResult<Void>>(String deploymentID, Handler<AsyncResult<Void>> completionHandler) {
+  public void undeployStringHandler(String deploymentID, Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.undeploy(deploymentID, completionHandler);
   }
 //java.util.Set<java.lang.String> deploymentIDs()
@@ -428,7 +428,7 @@ return    this.delegate.isClustered();
    * @param ordered if true then if executeBlocking is called several times on the same context, the executions for that context will be executed serially, not in parallel. if false then they will be no ordering guarantees
    * @param resultHandler handler that will be called when the blocking code is complete
    */
-  public <T> void executeBlockingHandler<Future<T>>BooleanHandler<AsyncResult<T>>(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingHandlerBooleanHandler(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));
@@ -452,7 +452,7 @@ return    this.delegate.isClustered();
    * @param blockingCodeHandler 
    * @param resultHandler 
    */
-  public <T> void executeBlockingHandler<Future<T>>Handler<AsyncResult<T>>(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingHandlerHandler(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));

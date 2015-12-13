@@ -17,13 +17,13 @@ public class HttpServerRequestStream implements ReadStream<HttpServerRequest> {
   }
 //io.vertx.core.http.HttpServerRequestStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpServerRequestStream
-  public HttpServerRequestStream exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public HttpServerRequestStream exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerRequestStream) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpServerRequestStream handler(io.vertx.core.Handler<io.vertx.core.http.HttpServerRequest> handler)
 //io.vertx.core.http.HttpServerRequestStream
-  public HttpServerRequestStream handlerHandler<HttpServerRequest>(Handler<HttpServerRequest> handler) {
+  public HttpServerRequestStream handlerHandler(Handler<HttpServerRequest> handler) {
     (  (io.vertx.core.http.HttpServerRequestStream) this.delegate).handler(new Handler<io.vertx.core.http.HttpServerRequest>() {
       public void handle(io.vertx.core.http.HttpServerRequest event) {
         handler.handle(new io.vertx.golo.core.http.HttpServerRequest(event));
@@ -45,7 +45,7 @@ public class HttpServerRequestStream implements ReadStream<HttpServerRequest> {
   }
 //io.vertx.core.http.HttpServerRequestStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpServerRequestStream
-  public HttpServerRequestStream endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public HttpServerRequestStream endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpServerRequestStream) this.delegate).endHandler(endHandler);
     return this;
   }

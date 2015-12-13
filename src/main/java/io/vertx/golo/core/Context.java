@@ -56,7 +56,7 @@ return    io.vertx.core.Context.isOnVertxThread();
    * Run the specified action asynchronously on the same context, some time after the current execution has completed.
    * @param action the action to run
    */
-  public void runOnContextHandler<Void>(Handler<Void> action) {
+  public void runOnContextHandler(Handler<Void> action) {
     this.delegate.runOnContext(action);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Context,methodNameexecuteBlocking]> void executeBlocking(io.vertx.core.Handler<io.vertx.core.Future<T>> blockingCodeHandler, boolean ordered, io.vertx.core.Handler<io.vertx.core.AsyncResult<T>> resultHandler)
@@ -76,7 +76,7 @@ return    io.vertx.core.Context.isOnVertxThread();
    * @param ordered if true then if executeBlocking is called several times on the same context, the executions for that context will be executed serially, not in parallel. if false then they will be no ordering guarantees
    * @param resultHandler handler that will be called when the blocking code is complete
    */
-  public <T> void executeBlockingHandler<Future<T>>BooleanHandler<AsyncResult<T>>(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingHandlerBooleanHandler(Handler<Future<T>> blockingCodeHandler, boolean ordered, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));
@@ -100,7 +100,7 @@ return    io.vertx.core.Context.isOnVertxThread();
    * @param blockingCodeHandler handler representing the blocking code to run
    * @param resultHandler handler that will be called when the blocking code is complete
    */
-  public <T> void executeBlockingHandler<Future<T>>Handler<AsyncResult<T>>(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
+  public <T> void executeBlockingHandlerHandler(Handler<Future<T>> blockingCodeHandler, Handler<AsyncResult<T>> resultHandler) {
     this.delegate.executeBlocking(new Handler<io.vertx.core.Future<java.lang.Object>>() {
       public void handle(io.vertx.core.Future<java.lang.Object> event) {
         blockingCodeHandler.handle(new io.vertx.golo.core.Future(event));

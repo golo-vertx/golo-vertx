@@ -30,7 +30,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
+  public HttpClientRequest exceptionHandlerHandler(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -53,13 +53,13 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest drainHandlerHandler<Void>(Handler<Void> handler) {
+  public HttpClientRequest drainHandlerHandler(Handler<Void> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).drainHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpClientRequest handler(io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest handlerHandler<HttpClientResponse>(Handler<HttpClientResponse> handler) {
+  public HttpClientRequest handlerHandler(Handler<HttpClientResponse> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).handler(new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         handler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -81,7 +81,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest endHandlerHandler<Void>(Handler<Void> endHandler) {
+  public HttpClientRequest endHandlerHandler(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -179,7 +179,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param handler 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest continueHandlerHandler<Void>(Handler<Void> handler) {
+  public HttpClientRequest continueHandlerHandler(Handler<Void> handler) {
     this.delegate.continueHandler(handler);
     return this;
   }

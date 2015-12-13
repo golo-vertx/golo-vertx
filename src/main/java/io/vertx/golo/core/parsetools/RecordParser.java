@@ -17,7 +17,7 @@ public class RecordParser {
   }
 //void setOutput(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> output)
 //void
-  public void setOutputHandler<Buffer>(Handler<Buffer> output) {
+  public void setOutputHandler(Handler<Buffer> output) {
     this.delegate.setOutput(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         output.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -35,7 +35,7 @@ public class RecordParser {
    * @param output handler that will receive the output
    * @return 
    */
-  public static RecordParser newDelimitedStringHandler<Buffer>(String delim, Handler<Buffer> output) {
+  public static RecordParser newDelimitedStringHandler(String delim, Handler<Buffer> output) {
 return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited(delim, new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         output.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -53,7 +53,7 @@ return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDel
    * @param output handler that will receive the output
    * @return 
    */
-  public static RecordParser newDelimitedBufferHandler<Buffer>(Buffer delim, Handler<Buffer> output) {
+  public static RecordParser newDelimitedBufferHandler(Buffer delim, Handler<Buffer> output) {
 return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited((io.vertx.core.buffer.Buffer)delim.getDelegate(), new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         output.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -71,7 +71,7 @@ return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDel
    * @param output handler that will receive the output
    * @return 
    */
-  public static RecordParser newFixedIntHandler<Buffer>(int size, Handler<Buffer> output) {
+  public static RecordParser newFixedIntHandler(int size, Handler<Buffer> output) {
 return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newFixed(size, new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         output.handle(new io.vertx.golo.core.buffer.Buffer(event));

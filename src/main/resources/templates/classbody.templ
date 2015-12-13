@@ -14,7 +14,7 @@
 		@code{newName=method.name}
 		@if{true}
 			@foreach{param:method.params}
-				@code{newName=newName+captilizeFirstChar(param.type.simpleName)}
+				@code{newName=newName+captilizeFirstChar(ignoreTemplete(param.type.simpleName))}
 			@end{}
 		@end{}
 	//@{method}\n

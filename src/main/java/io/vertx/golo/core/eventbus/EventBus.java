@@ -50,7 +50,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param replyHandler reply handler will be called when any reply from the recipient is received, may be <code>null</code>
    * @return a reference to this, so the API can be used fluently
    */
-  public <T> EventBus sendStringObjectHandler<AsyncResult<Message<T>>>(String address, Object message, Handler<AsyncResult<Message<T>>> replyHandler) {
+  public <T> EventBus sendStringObjectHandler(String address, Object message, Handler<AsyncResult<Message<T>>> replyHandler) {
     this.delegate.send(address, InternalHelper.unwrapObject(message), new Handler<AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>>>() {
       public void handle(AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>> event) {
         AsyncResult<Message<Object>> f;
@@ -88,7 +88,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param replyHandler reply handler will be called when any reply from the recipient is received, may be <code>null</code>
    * @return a reference to this, so the API can be used fluently
    */
-  public <T> EventBus sendStringObjectDeliveryOptionsHandler<AsyncResult<Message<T>>>(String address, Object message, Map<String, Object> options, Handler<AsyncResult<Message<T>>> replyHandler) {
+  public <T> EventBus sendStringObjectDeliveryOptionsHandler(String address, Object message, Map<String, Object> options, Handler<AsyncResult<Message<T>>> replyHandler) {
     this.delegate.send(address, InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null, new Handler<AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>>>() {
       public void handle(AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>> event) {
         AsyncResult<Message<Object>> f;
@@ -150,7 +150,7 @@ return    InternalHelper.safeCreate(this.delegate.consumer(address), io.vertx.go
    * @param handler the handler that will process the received messages
    * @return the event bus message consumer
    */
-  public <T> MessageConsumer<T> consumerStringHandler<Message<T>>(String address, Handler<Message<T>> handler) {
+  public <T> MessageConsumer<T> consumerStringHandler(String address, Handler<Message<T>> handler) {
 return    InternalHelper.safeCreate(this.delegate.consumer(address, new Handler<io.vertx.core.eventbus.Message<java.lang.Object>>() {
       public void handle(io.vertx.core.eventbus.Message<java.lang.Object> event) {
         handler.handle(new io.vertx.golo.core.eventbus.Message(event));
@@ -175,7 +175,7 @@ return    InternalHelper.safeCreate(this.delegate.localConsumer(address), io.ver
    * @param handler the handler that will process the received messages
    * @return the event bus message consumer
    */
-  public <T> MessageConsumer<T> localConsumerStringHandler<Message<T>>(String address, Handler<Message<T>> handler) {
+  public <T> MessageConsumer<T> localConsumerStringHandler(String address, Handler<Message<T>> handler) {
 return    InternalHelper.safeCreate(this.delegate.localConsumer(address, new Handler<io.vertx.core.eventbus.Message<java.lang.Object>>() {
       public void handle(io.vertx.core.eventbus.Message<java.lang.Object> event) {
         handler.handle(new io.vertx.golo.core.eventbus.Message(event));
@@ -240,7 +240,7 @@ return    InternalHelper.safeCreate(this.delegate.publisher(address, options != 
    * Close the event bus and release any resources held
    * @param completionHandler may be <code>null</code>
    */
-  public void closeHandler<AsyncResult<Void>>(Handler<AsyncResult<Void>> completionHandler) {
+  public void closeHandler(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
 }
