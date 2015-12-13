@@ -41,7 +41,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param data 
    * @return 
    */
-  public HttpClientRequest write(Buffer data) {
+  public HttpClientRequest writedata(Buffer data) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
@@ -151,7 +151,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param chunk 
    * @return @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest write(String chunk) {
+  public HttpClientRequest writechunk(String chunk) {
     this.delegate.write(chunk);
     return this;
   }
@@ -203,7 +203,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * Same as {@link io.vertx.golo.core.http.HttpClientRequest#end} but writes a String in UTF-8 encoding
    * @param chunk 
    */
-  public void end(String chunk) {
+  public void endchunk(String chunk) {
     this.delegate.end(chunk);
   }
 //void end(java.lang.String chunk, java.lang.String enc)
@@ -223,7 +223,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * no other data has been written then the <code>Content-Length</code> header will be automatically set
    * @param chunk 
    */
-  public void end(Buffer chunk) {
+  public void endchunk(Buffer chunk) {
     this.delegate.end((io.vertx.core.buffer.Buffer)chunk.getDelegate());
   }
 //void end()

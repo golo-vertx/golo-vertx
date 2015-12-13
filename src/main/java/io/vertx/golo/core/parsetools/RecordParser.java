@@ -35,7 +35,7 @@ public class RecordParser {
    * @param output handler that will receive the output
    * @return 
    */
-  public static RecordParser newDelimited(String delim, Handler<Buffer> output) {
+  public static RecordParser newDelimiteddelimoutput(String delim, Handler<Buffer> output) {
 return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited(delim, new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         output.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -53,7 +53,7 @@ return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDel
    * @param output handler that will receive the output
    * @return 
    */
-  public static RecordParser newDelimited(Buffer delim, Handler<Buffer> output) {
+  public static RecordParser newDelimiteddelimoutput(Buffer delim, Handler<Buffer> output) {
 return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newDelimited((io.vertx.core.buffer.Buffer)delim.getDelegate(), new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         output.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -87,7 +87,7 @@ return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newFix
    * This method can be called multiple times with different values of delim while data is being parsed.
    * @param delim the new delimeter
    */
-  public void delimitedMode(String delim) {
+  public void delimitedModedelim(String delim) {
     this.delegate.delimitedMode(delim);
   }
 //void delimitedMode(io.vertx.core.buffer.Buffer delim)
@@ -99,7 +99,7 @@ return    InternalHelper.safeCreate(io.vertx.core.parsetools.RecordParser.newFix
    * This method can be called multiple times with different values of delim while data is being parsed.
    * @param delim the new delimiter
    */
-  public void delimitedMode(Buffer delim) {
+  public void delimitedModedelim(Buffer delim) {
     this.delegate.delimitedMode((io.vertx.core.buffer.Buffer)delim.getDelegate());
   }
 //void fixedSizeMode(int size)

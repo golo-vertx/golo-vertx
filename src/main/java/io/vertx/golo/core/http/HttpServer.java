@@ -99,7 +99,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param host the host to listen on
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServer listen(int port, String host) {
+  public HttpServer listenporthost(int port, String host) {
     this.delegate.listen(port, host);
     return this;
   }
@@ -135,7 +135,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param port the port to listen on
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServer listen(int port) {
+  public HttpServer listenport(int port) {
     this.delegate.listen(port);
     return this;
   }
@@ -147,7 +147,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param listenHandler the listen handler
    * @return 
    */
-  public HttpServer listen(int port, Handler<AsyncResult<HttpServer>> listenHandler) {
+  public HttpServer listenportlistenHandler(int port, Handler<AsyncResult<HttpServer>> listenHandler) {
     this.delegate.listen(port, new Handler<AsyncResult<io.vertx.core.http.HttpServer>>() {
       public void handle(AsyncResult<io.vertx.core.http.HttpServer> event) {
         AsyncResult<HttpServer> f;
@@ -168,7 +168,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param listenHandler the listen handler
    * @return 
    */
-  public HttpServer listen(Handler<AsyncResult<HttpServer>> listenHandler) {
+  public HttpServer listenlistenHandler(Handler<AsyncResult<HttpServer>> listenHandler) {
     this.delegate.listen(new Handler<AsyncResult<io.vertx.core.http.HttpServer>>() {
       public void handle(AsyncResult<io.vertx.core.http.HttpServer> event) {
         AsyncResult<HttpServer> f;

@@ -75,7 +75,7 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
    * @param message the message to reply with.
    * @param replyHandler the reply handler for the reply.
    */
-  public <R> void reply(Object message, Handler<AsyncResult<Message<R>>> replyHandler) {
+  public <R> void replymessagereplyHandler(Object message, Handler<AsyncResult<Message<R>>> replyHandler) {
     ((io.vertx.core.eventbus.Message) this.delegate).reply(InternalHelper.unwrapObject(message), new Handler<AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>>>() {
       public void handle(AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>> event) {
         AsyncResult<Message<Object>> f;
@@ -95,7 +95,7 @@ return    ((io.vertx.core.eventbus.Message) this.delegate).replyAddress();
    * @param message the reply message
    * @param options the delivery options (see <a href="../../../../../../../cheatsheet/DeliveryOptions.html">DeliveryOptions</a>)
    */
-  public void reply(Object message, Map<String, Object> options) {
+  public void replymessageoptions(Object message, Map<String, Object> options) {
     ((io.vertx.core.eventbus.Message) this.delegate).reply(InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null);
   }
 //<TypeParamInfo.Method[name=R,typeName=io.vertx.core.eventbus.Message,methodNamereply]> void reply(java.lang.Object message, io.vertx.core.eventbus.DeliveryOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<io.vertx.core.eventbus.Message<R>>> replyHandler)

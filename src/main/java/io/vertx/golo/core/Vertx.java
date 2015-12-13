@@ -346,7 +346,7 @@ return    this.delegate.cancelTimer(id);
    * @param name The identifier
    * @param completionHandler a handler which will be notified when the deployment is complete
    */
-  public void deployVerticle(String name, Handler<AsyncResult<String>> completionHandler) {
+  public void deployVerticlenamecompletionHandler(String name, Handler<AsyncResult<String>> completionHandler) {
     this.delegate.deployVerticle(name, completionHandler);
   }
 //void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options)
@@ -357,7 +357,7 @@ return    this.delegate.cancelTimer(id);
    * @param name the name
    * @param options the deployment options. (see <a href="../../../../../../cheatsheet/DeploymentOptions.html">DeploymentOptions</a>)
    */
-  public void deployVerticle(String name, Map<String, Object> options) {
+  public void deployVerticlenameoptions(String name, Map<String, Object> options) {
     this.delegate.deployVerticle(name, options != null ? new io.vertx.core.DeploymentOptions(new io.vertx.core.json.JsonObject(options)) : null);
   }
 //void deployVerticle(java.lang.String name, io.vertx.core.DeploymentOptions options, io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.String>> completionHandler)

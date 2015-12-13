@@ -63,7 +63,7 @@ return    // This cast is cleary flawed
    * @param name the name
    * @return the value, <code>null</code> if not set
    */
-  public <T> T getArgumentValue(String name) {
+  public <T> T getArgumentValuename(String name) {
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getArgumentValue(name));
   }
@@ -74,7 +74,7 @@ return    // This cast is cleary flawed
    * @param index the index
    * @return the value, <code>null</code> if not set
    */
-  public <T> T getArgumentValue(int index) {
+  public <T> T getArgumentValueindex(int index) {
 return    // This cast is cleary flawed
     (T) InternalHelper.wrapObject(this.delegate.getArgumentValue(index));
   }
