@@ -1,7 +1,9 @@
 package io.vertx.golo.core.datagram;
 
+//[Debug] classMethodData = {io.vertx.core.datagram.PacketWritestream=5} 
+//[Debug] arr = [boolean writeQueueFull(), io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data), io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize), io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, 1777822023=-1951822771, 1159369883=759285222, -1661022657=1988280886, 1061343905=-918517439, 2120574489=-537829206, -478311088=422814837, -1546322806=-1640617327, 1844116756=-347016953, 687174698=604457935} 
+//myHashMap={0=8, 1975036296=-1924169198, 154095775=-1270185387, 833797555=114633908, 34409596=578361319, 566502743=87410594, -341382493=864303842, -2125957138=-247114613, 984798382=-803229641} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,11 +13,16 @@ import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.core.Handler;
 //[confirm] Type: io.vertx.core.datagram.PacketWritestream 
 public class PacketWritestream implements WriteStream<Buffer> {
+//[Debug] toChangeName = {io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data)=false, io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=false, io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false, io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize)=false, boolean writeQueueFull()=false}
+//[Debug] dbgMethodName = {io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data)=write, io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=drainHandler, io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=exceptionHandler, io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize)=setWriteQueueMaxSize, boolean writeQueueFull()=writeQueueFull} 
+//[Debug] dbgMethodParams = {io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data)=1, io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=1, io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=1, io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize)=1, boolean writeQueueFull()=0} 
+//[INFO]  methods=[boolean writeQueueFull(), io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data), io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize), io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)] 
+//[INFO]  defaultDataObjectMap={boolean writeQueueFull()=false, io.vertx.core.datagram.PacketWritestream drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=false, io.vertx.core.datagram.PacketWritestream setWriteQueueMaxSize(int maxSize)=false, io.vertx.core.datagram.PacketWritestream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false, io.vertx.core.datagram.PacketWritestream write(io.vertx.core.buffer.Buffer data)=false} 
 //[INFO] ifaceSimpleName=PacketWritestream
 //[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, 1777822023=-1951822771, 1159369883=759285222, -1661022657=1988280886, 1061343905=-918517439, 2120574489=-537829206, -478311088=422814837, -1546322806=-1640617327, 1844116756=-347016953, 687174698=604457935}
+  //Test variable from golo.templ - myHashMap={0=8, 1975036296=-1924169198, 154095775=-1270185387, 833797555=114633908, 34409596=578361319, 566502743=87410594, -341382493=864303842, -2125957138=-247114613, 984798382=-803229641}
   private io.vertx.core.datagram.PacketWritestream delegate;
   public PacketWritestream(Object delegate) {
     this.delegate = (io.vertx.core.datagram.PacketWritestream) delegate;

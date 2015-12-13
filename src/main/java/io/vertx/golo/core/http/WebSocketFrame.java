@@ -1,7 +1,9 @@
 package io.vertx.golo.core.http;
 
+//[Debug] classMethodData = {io.vertx.core.http.WebSocketFrame=9} 
+//[Debug] arr = [io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal), io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal), io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal), boolean isText(), boolean isBinary(), boolean isContinuation(), java.lang.String textData(), io.vertx.core.buffer.Buffer binaryData(), boolean isFinal()] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=6, -576854453=-1206553899, 1620020260=-1315271760, 2030738289=1208839531, -209270550=-760416365, 1506464580=-757733564, -2143933975=-906014199} 
+//myHashMap={0=10, -672966687=2018281257, -1946937977=1463864695, -1391209376=174731946, 1159977707=1211984051, -1478389464=38320071, -1576009718=-403563081, -1052195245=-164753833, -17155082=1236872681, 453035420=-224335113, 1646488142=619826330} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,11 +11,16 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.golo.core.buffer.Buffer;
 //[confirm] Type: io.vertx.core.http.WebSocketFrame 
 public class WebSocketFrame {
+//[Debug] toChangeName = {boolean isFinal()=false, io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal)=false, java.lang.String textData()=false, io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=false, io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=false, io.vertx.core.buffer.Buffer binaryData()=false, boolean isBinary()=false, boolean isText()=false, boolean isContinuation()=false}
+//[Debug] dbgMethodName = {boolean isFinal()=isFinal, io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal)=textFrame, java.lang.String textData()=textData, io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=continuationFrame, io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=binaryFrame, io.vertx.core.buffer.Buffer binaryData()=binaryData, boolean isBinary()=isBinary, boolean isText()=isText, boolean isContinuation()=isContinuation} 
+//[Debug] dbgMethodParams = {boolean isFinal()=0, io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal)=2, java.lang.String textData()=0, io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=2, io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=2, io.vertx.core.buffer.Buffer binaryData()=0, boolean isBinary()=0, boolean isText()=0, boolean isContinuation()=0} 
+//[INFO]  methods=[io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal), io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal), io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal), boolean isText(), boolean isBinary(), boolean isContinuation(), java.lang.String textData(), io.vertx.core.buffer.Buffer binaryData(), boolean isFinal()] 
+//[INFO]  defaultDataObjectMap={io.vertx.core.http.WebSocketFrame continuationFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=false, boolean isFinal()=false, boolean isContinuation()=false, io.vertx.core.http.WebSocketFrame binaryFrame(io.vertx.core.buffer.Buffer data, boolean isFinal)=false, io.vertx.core.buffer.Buffer binaryData()=false, boolean isText()=false, boolean isBinary()=false, io.vertx.core.http.WebSocketFrame textFrame(java.lang.String str, boolean isFinal)=false, java.lang.String textData()=false} 
 //[INFO] ifaceSimpleName=WebSocketFrame
 //[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=6, -576854453=-1206553899, 1620020260=-1315271760, 2030738289=1208839531, -209270550=-760416365, 1506464580=-757733564, -2143933975=-906014199}
+  //Test variable from golo.templ - myHashMap={0=10, -672966687=2018281257, -1946937977=1463864695, -1391209376=174731946, 1159977707=1211984051, -1478389464=38320071, -1576009718=-403563081, -1052195245=-164753833, -17155082=1236872681, 453035420=-224335113, 1646488142=619826330}
   private io.vertx.core.http.WebSocketFrame delegate;
   public WebSocketFrame(Object delegate) {
     this.delegate = (io.vertx.core.http.WebSocketFrame) delegate;

@@ -1,7 +1,9 @@
 package io.vertx.golo.core.datagram;
 
+//[Debug] classMethodData = {io.vertx.core.datagram.DatagramPacket=2} 
+//[Debug] arr = [io.vertx.core.net.SocketAddress sender(), io.vertx.core.buffer.Buffer data()] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=7, -17613791=-2141168084, 202494658=1301965770, -337777913=-2122897512, 1583788666=623676254, -949450619=1271146057, -1937095836=-262728630, -802437468=722127852} 
+//myHashMap={0=6, -948183295=-182955979, 269974349=307798289, 31345794=1051933783, -712765095=539233513, 763582398=-1952483501, 460258115=-916156108} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -10,11 +12,16 @@ import io.vertx.golo.core.buffer.Buffer;
 import io.vertx.golo.core.net.SocketAddress;
 //[confirm] Type: io.vertx.core.datagram.DatagramPacket 
 public class DatagramPacket {
+//[Debug] toChangeName = {io.vertx.core.net.SocketAddress sender()=false, io.vertx.core.buffer.Buffer data()=false}
+//[Debug] dbgMethodName = {io.vertx.core.net.SocketAddress sender()=sender, io.vertx.core.buffer.Buffer data()=data} 
+//[Debug] dbgMethodParams = {io.vertx.core.net.SocketAddress sender()=0, io.vertx.core.buffer.Buffer data()=0} 
+//[INFO]  methods=[io.vertx.core.net.SocketAddress sender(), io.vertx.core.buffer.Buffer data()] 
+//[INFO]  defaultDataObjectMap={io.vertx.core.net.SocketAddress sender()=false, io.vertx.core.buffer.Buffer data()=false} 
 //[INFO] ifaceSimpleName=DatagramPacket
 //[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=7, -17613791=-2141168084, 202494658=1301965770, -337777913=-2122897512, 1583788666=623676254, -949450619=1271146057, -1937095836=-262728630, -802437468=722127852}
+  //Test variable from golo.templ - myHashMap={0=6, -948183295=-182955979, 269974349=307798289, 31345794=1051933783, -712765095=539233513, 763582398=-1952483501, 460258115=-916156108}
   private io.vertx.core.datagram.DatagramPacket delegate;
   public DatagramPacket(Object delegate) {
     this.delegate = (io.vertx.core.datagram.DatagramPacket) delegate;

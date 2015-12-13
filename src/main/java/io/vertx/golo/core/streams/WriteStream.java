@@ -1,7 +1,9 @@
 package io.vertx.golo.core.streams;
 
+//[Debug] classMethodData = {io.vertx.core.streams.WriteStream<T>=5} 
+//[Debug] arr = [io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.streams.WriteStream<T> write(T data), io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize), boolean writeQueueFull(), io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=7, 1274671535=1478050682, -1273451906=-949861573, 1125828290=-1626919756, -1295660244=-1866138650, -380543=-1183287564, -1473619308=1094567674, 758889493=1895146904} 
+//myHashMap={0=2, -512288861=776081699, -449316774=235871137} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,6 +11,11 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.Handler;
 //[confirm] Type: io.vertx.core.streams.WriteStream<T> 
 public interface WriteStream<T> extends StreamBase {
+//[Debug] toChangeName = {io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false, boolean writeQueueFull()=false, io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=false, io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize)=false, io.vertx.core.streams.WriteStream<T> write(T data)=false}
+//[Debug] dbgMethodName = {io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=exceptionHandler, boolean writeQueueFull()=writeQueueFull, io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=drainHandler, io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize)=setWriteQueueMaxSize, io.vertx.core.streams.WriteStream<T> write(T data)=write} 
+//[Debug] dbgMethodParams = {io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=1, boolean writeQueueFull()=0, io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=1, io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize)=1, io.vertx.core.streams.WriteStream<T> write(T data)=1} 
+//[INFO]  methods=[io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.streams.WriteStream<T> write(T data), io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize), boolean writeQueueFull(), io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)] 
+//[INFO]  defaultDataObjectMap={io.vertx.core.streams.WriteStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false, io.vertx.core.streams.WriteStream<T> setWriteQueueMaxSize(int maxSize)=false, io.vertx.core.streams.WriteStream<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=false, io.vertx.core.streams.WriteStream<T> write(T data)=false, boolean writeQueueFull()=false} 
 public Object getDelegate();
   WriteStream<T> exceptionHandler(Handler<Throwable> handler);
   WriteStream<T> write(T data);
@@ -22,7 +29,7 @@ public Object getDelegate();
 class WriteStreamImpl<T> implements WriteStream<T> {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=7, 1274671535=1478050682, -1273451906=-949861573, 1125828290=-1626919756, -1295660244=-1866138650, -380543=-1183287564, -1473619308=1094567674, 758889493=1895146904}
+  //Test variable from golo.templ - myHashMap={0=2, -512288861=776081699, -449316774=235871137}
   private io.vertx.core.streams.WriteStream delegate;
   public WriteStreamImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.WriteStream) delegate;

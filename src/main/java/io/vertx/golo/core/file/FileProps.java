@@ -1,18 +1,25 @@
 package io.vertx.golo.core.file;
 
+//[Debug] classMethodData = {io.vertx.core.file.FileProps=8} 
+//[Debug] arr = [long creationTime(), long lastAccessTime(), long lastModifiedTime(), boolean isDirectory(), boolean isOther(), boolean isRegularFile(), boolean isSymbolicLink(), long size()] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=2, -1038517074=-147586284, -194896699=-1541836769} 
+//myHashMap={0=8, -490486463=-2033400708, 1120918442=1466698748, 1666275574=-1491273037, -1171949299=-1748139538, 90070455=306462574, -1410441596=-1234405115, 428998364=608067054, 591369745=2112199346} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 //[confirm] Type: io.vertx.core.file.FileProps 
 public class FileProps {
+//[Debug] toChangeName = {boolean isDirectory()=false, long lastModifiedTime()=false, boolean isRegularFile()=false, long size()=false, boolean isSymbolicLink()=false, long creationTime()=false, long lastAccessTime()=false, boolean isOther()=false}
+//[Debug] dbgMethodName = {boolean isDirectory()=isDirectory, long lastModifiedTime()=lastModifiedTime, boolean isRegularFile()=isRegularFile, long size()=size, boolean isSymbolicLink()=isSymbolicLink, long creationTime()=creationTime, long lastAccessTime()=lastAccessTime, boolean isOther()=isOther} 
+//[Debug] dbgMethodParams = {boolean isDirectory()=0, long lastModifiedTime()=0, boolean isRegularFile()=0, long size()=0, boolean isSymbolicLink()=0, long creationTime()=0, long lastAccessTime()=0, boolean isOther()=0} 
+//[INFO]  methods=[long creationTime(), long lastAccessTime(), long lastModifiedTime(), boolean isDirectory(), boolean isOther(), boolean isRegularFile(), boolean isSymbolicLink(), long size()] 
+//[INFO]  defaultDataObjectMap={long lastModifiedTime()=false, long lastAccessTime()=false, boolean isOther()=false, long creationTime()=false, boolean isSymbolicLink()=false, boolean isDirectory()=false, long size()=false, boolean isRegularFile()=false} 
 //[INFO] ifaceSimpleName=FileProps
 //[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=2, -1038517074=-147586284, -194896699=-1541836769}
+  //Test variable from golo.templ - myHashMap={0=8, -490486463=-2033400708, 1120918442=1466698748, 1666275574=-1491273037, -1171949299=-1748139538, 90070455=306462574, -1410441596=-1234405115, 428998364=608067054, 591369745=2112199346}
   private io.vertx.core.file.FileProps delegate;
   public FileProps(Object delegate) {
     this.delegate = (io.vertx.core.file.FileProps) delegate;

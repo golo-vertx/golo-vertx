@@ -7,6 +7,7 @@
 @comment{"Testing how to define and use variables inside template"}
 @code{debugVar='//[Debug] This is a debuging message to check @code{} syntax\n'}
 @code{myHashMap=new java.util.HashMap()}
+@code{classMethodData=new java.util.HashMap()}
 @code{
 	def insertRandomValues(map){
 		var rndGen = new java.util.Random();
@@ -288,7 +289,21 @@ this.delegate
 @end{}
 
 package @{genGoloModuleName(type)};\n\n
+@code{
+	def genClassMethodData(dat,type,methods){
+		var datArr = new java.util.ArrayList();
+		dat.put(type,methods.size());
+		for(int i=0; i<methods.size();i++){
+			datArr.add(methods[i]);
+		}
+		return datArr;
+	}
+}
 
+@code{arr=genClassMethodData(classMethodData,type,methods)}
+//[Debug] classMethodData = @{classMethodData} \n
+//[Debug] arr = @{arr} \n
+@code{}
 @{debugVar}
 //myHashMap=@{myHashMap} \n
 import io.vertx.lang.golo.InternalHelper;\n
@@ -326,6 +341,30 @@ public @if{concrete}class@else{}interface@end{} @{helper.getSimpleName(ifaceFQCN
 
  {\n
 
+@comment{"TODO: handle overloaded methods with same name"}
+@code{toChangeName=new java.util.HashMap()}
+@foreach{method:methods}
+	@code{toChange=false}
+	@foreach{m:methods}
+		@if{method!=m && method.name == m.name && method.params.size()==m.params.size()}
+			@code{toChange=true}
+		@end{}
+	@end{}
+	@code{toChangeName.put(method,toChange)}
+@end{}
+//[Debug] toChangeName = @{toChangeName}\n
+
+@code{dbgMethodName=new java.util.HashMap()}
+@foreach{method:methods}
+	@code{dbgMethodName.put(method,method.name)}
+@end{}
+//[Debug] dbgMethodName = @{dbgMethodName} \n
+@code{dbgMethodParams=new java.util.HashMap()}
+@foreach{method:methods}
+	@code{dbgMethodParams.put(method,method.params.size())}
+@end{}
+//[Debug] dbgMethodParams = @{dbgMethodParams} \n
+
 @comment{'Compute the defaultDataObject map that store if we need a default data object value or not per method'}
 @code{defaultDataObjectMap=new java.util.IdentityHashMap()}
 @foreach{method:methods}
@@ -340,6 +379,8 @@ public @if{concrete}class@else{}interface@end{} @{helper.getSimpleName(ifaceFQCN
 	@end{}
 	@code{defaultDataObjectMap.put(method, defaultDataObject)}
 @end{}
+//[INFO]  methods=@{methods} \n
+//[INFO]  defaultDataObjectMap=@{defaultDataObjectMap} \n
 
 @if{concrete}
 	//[INFO] ifaceSimpleName=@{ifaceSimpleName}\n

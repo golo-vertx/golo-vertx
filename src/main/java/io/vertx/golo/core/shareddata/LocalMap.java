@@ -1,18 +1,25 @@
 package io.vertx.golo.core.shareddata;
 
+//[Debug] classMethodData = {io.vertx.core.shareddata.LocalMap<K,V>=11} 
+//[Debug] arr = [V get(K key), V put(K key, V value), V remove(K key), void clear(), int size(), boolean isEmpty(), V putIfAbsent(K key, V value), boolean removeIfPresent(K key, V value), boolean replaceIfPresent(K key, V oldValue, V newValue), V replace(K key, V value), void close()] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=7, 426850993=-777756990, -1702200211=-61997596, 733303119=-1771862943, -1847200882=1201906866, -492476295=67417924, 2024357095=1843347320, 138657677=1219946208} 
+//myHashMap={0=8, 1982996753=-665886430, -454530531=-508919936, -662663098=-2099861780, -1101991018=-133099654, -2059016003=1429151125, -234053913=-1343539521, -165933456=-253662983, -1026498433=-1171839425} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 //[confirm] Type: io.vertx.core.shareddata.LocalMap<K,V> 
 public class LocalMap<K,V> {
+//[Debug] toChangeName = {boolean removeIfPresent(K key, V value)=false, V put(K key, V value)=false, V putIfAbsent(K key, V value)=false, int size()=false, void close()=false, V get(K key)=false, V remove(K key)=false, boolean isEmpty()=false, V replace(K key, V value)=false, void clear()=false, boolean replaceIfPresent(K key, V oldValue, V newValue)=false}
+//[Debug] dbgMethodName = {boolean removeIfPresent(K key, V value)=removeIfPresent, V put(K key, V value)=put, V putIfAbsent(K key, V value)=putIfAbsent, int size()=size, void close()=close, V get(K key)=get, V remove(K key)=remove, boolean isEmpty()=isEmpty, V replace(K key, V value)=replace, void clear()=clear, boolean replaceIfPresent(K key, V oldValue, V newValue)=replaceIfPresent} 
+//[Debug] dbgMethodParams = {boolean removeIfPresent(K key, V value)=2, V put(K key, V value)=2, V putIfAbsent(K key, V value)=2, int size()=0, void close()=0, V get(K key)=1, V remove(K key)=1, boolean isEmpty()=0, V replace(K key, V value)=2, void clear()=0, boolean replaceIfPresent(K key, V oldValue, V newValue)=3} 
+//[INFO]  methods=[V get(K key), V put(K key, V value), V remove(K key), void clear(), int size(), boolean isEmpty(), V putIfAbsent(K key, V value), boolean removeIfPresent(K key, V value), boolean replaceIfPresent(K key, V oldValue, V newValue), V replace(K key, V value), void close()] 
+//[INFO]  defaultDataObjectMap={V put(K key, V value)=false, V replace(K key, V value)=false, void close()=false, V putIfAbsent(K key, V value)=false, V remove(K key)=false, void clear()=false, boolean removeIfPresent(K key, V value)=false, boolean replaceIfPresent(K key, V oldValue, V newValue)=false, boolean isEmpty()=false, V get(K key)=false, int size()=false} 
 //[INFO] ifaceSimpleName=LocalMap
 //[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=7, 426850993=-777756990, -1702200211=-61997596, 733303119=-1771862943, -1847200882=1201906866, -492476295=67417924, 2024357095=1843347320, 138657677=1219946208}
+  //Test variable from golo.templ - myHashMap={0=8, 1982996753=-665886430, -454530531=-508919936, -662663098=-2099861780, -1101991018=-133099654, -2059016003=1429151125, -234053913=-1343539521, -165933456=-253662983, -1026498433=-1171839425}
   private io.vertx.core.shareddata.LocalMap delegate;
   public LocalMap(Object delegate) {
     this.delegate = (io.vertx.core.shareddata.LocalMap) delegate;

@@ -1,7 +1,9 @@
 package io.vertx.golo.core.eventbus;
 
+//[Debug] classMethodData = {io.vertx.core.eventbus.MessageProducer<T>=7} 
+//[Debug] arr = [boolean writeQueueFull(), io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.eventbus.MessageProducer<T> write(T data), io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize), io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler), io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options), java.lang.String address()] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, -976880332=-779567405, 2057918111=-583496732, 2129318173=1582347369, -611374984=1882762169, -1132363639=-1721604261, -1041199752=1082134958, 2087296624=-1633343236, -999446941=-1580544843, 1630367523=-2021847910, -772491685=1998113201} 
+//myHashMap={0=10, -1766844096=-1142360327, -518809406=5997934, -691800383=-1842918739, -730018261=-873801328, -1608514137=-179154783, -1393462968=-1564421473, -225404887=710763811, -1696120467=1072026251, 1382666965=10285284, -596790096=-221646573} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -11,11 +13,16 @@ import io.vertx.golo.core.streams.WriteStream;
 import io.vertx.core.Handler;
 //[confirm] Type: io.vertx.core.eventbus.MessageProducer<T> 
 public class MessageProducer<T> implements WriteStream<T> {
+//[Debug] toChangeName = {boolean writeQueueFull()=false, java.lang.String address()=false, io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=false, io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false, io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize)=false, io.vertx.core.eventbus.MessageProducer<T> write(T data)=false, io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options)=false}
+//[Debug] dbgMethodName = {boolean writeQueueFull()=writeQueueFull, java.lang.String address()=address, io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=drainHandler, io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=exceptionHandler, io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize)=setWriteQueueMaxSize, io.vertx.core.eventbus.MessageProducer<T> write(T data)=write, io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options)=deliveryOptions} 
+//[Debug] dbgMethodParams = {boolean writeQueueFull()=0, java.lang.String address()=0, io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=1, io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=1, io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize)=1, io.vertx.core.eventbus.MessageProducer<T> write(T data)=1, io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options)=1} 
+//[INFO]  methods=[boolean writeQueueFull(), io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.eventbus.MessageProducer<T> write(T data), io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize), io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler), io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options), java.lang.String address()] 
+//[INFO]  defaultDataObjectMap={io.vertx.core.eventbus.MessageProducer<T> drainHandler(io.vertx.core.Handler<java.lang.Void> handler)=false, io.vertx.core.eventbus.MessageProducer<T> deliveryOptions(io.vertx.core.eventbus.DeliveryOptions options)=true, io.vertx.core.eventbus.MessageProducer<T> write(T data)=false, boolean writeQueueFull()=false, java.lang.String address()=false, io.vertx.core.eventbus.MessageProducer<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false, io.vertx.core.eventbus.MessageProducer<T> setWriteQueueMaxSize(int maxSize)=false} 
 //[INFO] ifaceSimpleName=MessageProducer
 //[track] control goes into classbody.templ
       //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, -976880332=-779567405, 2057918111=-583496732, 2129318173=1582347369, -611374984=1882762169, -1132363639=-1721604261, -1041199752=1082134958, 2087296624=-1633343236, -999446941=-1580544843, 1630367523=-2021847910, -772491685=1998113201}
+  //Test variable from golo.templ - myHashMap={0=10, -1766844096=-1142360327, -518809406=5997934, -691800383=-1842918739, -730018261=-873801328, -1608514137=-179154783, -1393462968=-1564421473, -225404887=710763811, -1696120467=1072026251, 1382666965=10285284, -596790096=-221646573}
   private io.vertx.core.eventbus.MessageProducer delegate;
   public MessageProducer(Object delegate) {
     this.delegate = (io.vertx.core.eventbus.MessageProducer) delegate;

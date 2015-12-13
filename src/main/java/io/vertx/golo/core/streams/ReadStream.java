@@ -1,7 +1,9 @@
 package io.vertx.golo.core.streams;
 
+//[Debug] classMethodData = {io.vertx.core.streams.ReadStream<T>=5} 
+//[Debug] arr = [io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler), io.vertx.core.streams.ReadStream<T> pause(), io.vertx.core.streams.ReadStream<T> resume(), io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=9, -1781409584=70505195, 1003235901=554619405, -789985221=-361122085, -368835802=-232880076, -1106760453=1045814432, 1395134603=1867320533, 1078355269=43244366, 856890455=1567472959, -1946209975=1007011650} 
+//myHashMap={0=8, 1352847874=1457785424, -1673616691=44697394, -188037975=-1447710911, -1127625316=1375093317, -2060057840=-769688465, 1529345054=-208953519, -1331437912=301803320, 1942172174=-1759121176} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
@@ -9,6 +11,11 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.Handler;
 //[confirm] Type: io.vertx.core.streams.ReadStream<T> 
 public interface ReadStream<T> extends StreamBase {
+//[Debug] toChangeName = {io.vertx.core.streams.ReadStream<T> pause()=false, io.vertx.core.streams.ReadStream<T> resume()=false, io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)=false, io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler)=false, io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false}
+//[Debug] dbgMethodName = {io.vertx.core.streams.ReadStream<T> pause()=pause, io.vertx.core.streams.ReadStream<T> resume()=resume, io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)=endHandler, io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler)=handler, io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=exceptionHandler} 
+//[Debug] dbgMethodParams = {io.vertx.core.streams.ReadStream<T> pause()=0, io.vertx.core.streams.ReadStream<T> resume()=0, io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)=1, io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler)=1, io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=1} 
+//[INFO]  methods=[io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler), io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler), io.vertx.core.streams.ReadStream<T> pause(), io.vertx.core.streams.ReadStream<T> resume(), io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)] 
+//[INFO]  defaultDataObjectMap={io.vertx.core.streams.ReadStream<T> resume()=false, io.vertx.core.streams.ReadStream<T> exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)=false, io.vertx.core.streams.ReadStream<T> pause()=false, io.vertx.core.streams.ReadStream<T> handler(io.vertx.core.Handler<T> handler)=false, io.vertx.core.streams.ReadStream<T> endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)=false} 
 public Object getDelegate();
   ReadStream<T> exceptionHandler(Handler<Throwable> handler);
   ReadStream<T> handler(Handler<T> handler);
@@ -22,7 +29,7 @@ public Object getDelegate();
 class ReadStreamImpl<T> implements ReadStream<T> {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=9, -1781409584=70505195, 1003235901=554619405, -789985221=-361122085, -368835802=-232880076, -1106760453=1045814432, 1395134603=1867320533, 1078355269=43244366, 856890455=1567472959, -1946209975=1007011650}
+  //Test variable from golo.templ - myHashMap={0=8, 1352847874=1457785424, -1673616691=44697394, -188037975=-1447710911, -1127625316=1375093317, -2060057840=-769688465, 1529345054=-208953519, -1331437912=301803320, 1942172174=-1759121176}
   private io.vertx.core.streams.ReadStream delegate;
   public ReadStreamImpl(Object delegate) {
     this.delegate = (io.vertx.core.streams.ReadStream) delegate;

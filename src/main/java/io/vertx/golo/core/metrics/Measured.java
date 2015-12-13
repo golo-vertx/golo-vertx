@@ -1,13 +1,20 @@
 package io.vertx.golo.core.metrics;
 
+//[Debug] classMethodData = {io.vertx.core.metrics.Measured=1} 
+//[Debug] arr = [boolean isMetricsEnabled()] 
 //[Debug] This is a debuging message to check @code{} syntax
-//myHashMap={0=10, 2060991288=1498482545, -96508658=100327479, -753796142=-345435548, -562927226=-1253014531, 1500141055=-324694211, 775977174=-1319262724, 878084668=-835010890, -255566402=-459390598, 59748179=1713186862, 596072043=1698679210} 
+//myHashMap={0=10, -1826406078=-1252447847, 1425939850=-570680476, -1923880937=307724037, -863582989=-1668258484, -202675363=1826697906, 1564493334=2109579339, 140677210=406209169, -347616129=1098575770, -1834983365=501249661, 29659513=983569851} 
 import io.vertx.lang.golo.InternalHelper;
 import io.vertx.golo.core.metrics.Measured;
 import java.util.Map;
 import io.vertx.core.json.JsonObject;
 //[confirm] Type: io.vertx.core.metrics.Measured 
 public interface Measured {
+//[Debug] toChangeName = {boolean isMetricsEnabled()=false}
+//[Debug] dbgMethodName = {boolean isMetricsEnabled()=isMetricsEnabled} 
+//[Debug] dbgMethodParams = {boolean isMetricsEnabled()=0} 
+//[INFO]  methods=[boolean isMetricsEnabled()] 
+//[INFO]  defaultDataObjectMap={boolean isMetricsEnabled()=false} 
 public Object getDelegate();
   boolean isMetricsEnabled();
 }
@@ -17,7 +24,7 @@ public Object getDelegate();
 class MeasuredImpl implements Measured {
   //[test] I am inside the classbody.templ
   //variable created inside classbody - <variable inside class body>
-  //Test variable from golo.templ - myHashMap={0=10, 2060991288=1498482545, -96508658=100327479, -753796142=-345435548, -562927226=-1253014531, 1500141055=-324694211, 775977174=-1319262724, 878084668=-835010890, -255566402=-459390598, 59748179=1713186862, 596072043=1698679210}
+  //Test variable from golo.templ - myHashMap={0=10, -1826406078=-1252447847, 1425939850=-570680476, -1923880937=307724037, -863582989=-1668258484, -202675363=1826697906, 1564493334=2109579339, 140677210=406209169, -347616129=1098575770, -1834983365=501249661, 29659513=983569851}
   private io.vertx.core.metrics.Measured delegate;
   public MeasuredImpl(Object delegate) {
     this.delegate = (io.vertx.core.metrics.Measured) delegate;
