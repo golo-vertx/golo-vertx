@@ -33,7 +33,7 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(), io.ver
    * @param initialSizeHint the hint, in bytes
    * @return the buffer
    */
-  public static Buffer bufferinitialSizeHint(int initialSizeHint) {
+  public static Buffer bufferInitialSizeHint(int initialSizeHint) {
 return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(initialSizeHint), io.vertx.golo.core.buffer.Buffer.class);
   }
 //io.vertx.core.buffer.Buffer buffer(java.lang.String string)
@@ -43,7 +43,7 @@ return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(initialSi
    * @param string the string
    * @return the buffer
    */
-  public static Buffer bufferstring(String string) {
+  public static Buffer bufferString(String string) {
 return    InternalHelper.safeCreate(io.vertx.core.buffer.Buffer.buffer(string), io.vertx.golo.core.buffer.Buffer.class);
   }
 //io.vertx.core.buffer.Buffer buffer(java.lang.String string, java.lang.String enc)

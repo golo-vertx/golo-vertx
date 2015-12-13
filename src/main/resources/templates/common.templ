@@ -95,4 +95,14 @@
       return type.simpleName;
     }
   }
+
+  def captilizeFirstChar(str){
+    var copyStr = new String(str);
+    if(copyStr.length()==0){
+      return copyStr;
+    }
+    else{
+      return copyStr.substring(0, 1).toUpperCase() + copyStr.substring(1);
+    }
+  }
 }

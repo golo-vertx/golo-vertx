@@ -39,7 +39,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param handler the {@link io.vertx.golo.core.Handler} to notify once the write completes.
    * @return a reference to this, so the API can be used fluently
    */
-  public DatagramSocket sendpacketporthosthandler(Buffer packet, int port, String host, Handler<AsyncResult<DatagramSocket>> handler) {
+  public DatagramSocket sendPacketPortHostHandler(Buffer packet, int port, String host, Handler<AsyncResult<DatagramSocket>> handler) {
     this.delegate.send((io.vertx.core.buffer.Buffer)packet.getDelegate(), port, host, new Handler<AsyncResult<io.vertx.core.datagram.DatagramSocket>>() {
       public void handle(AsyncResult<io.vertx.core.datagram.DatagramSocket> event) {
         AsyncResult<DatagramSocket> f;
@@ -76,7 +76,7 @@ return    InternalHelper.safeCreate(this.delegate.sender(port, host), io.vertx.g
    * @param handler the {@link io.vertx.golo.core.Handler} to notify once the write completes.
    * @return a reference to this, so the API can be used fluently
    */
-  public DatagramSocket sendstrporthosthandler(String str, int port, String host, Handler<AsyncResult<DatagramSocket>> handler) {
+  public DatagramSocket sendStrPortHostHandler(String str, int port, String host, Handler<AsyncResult<DatagramSocket>> handler) {
     this.delegate.send(str, port, host, new Handler<AsyncResult<io.vertx.core.datagram.DatagramSocket>>() {
       public void handle(AsyncResult<io.vertx.core.datagram.DatagramSocket> event) {
         AsyncResult<DatagramSocket> f;

@@ -14,7 +14,7 @@
 		@code{newName=method.name}
 		@if{toChangeName.get(method)}
 			@foreach{param:method.params}
-				@code{newName=newName+param.name}
+				@code{newName=newName+captilizeFirstChar(param.name)}
 			@end{}
 		@end{}
 	//@{method}\n

@@ -226,7 +226,7 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getOption
    * @param name the name of the argument, must not be <code>null</code>
    * @return the <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>, <code>null</code> if not found. (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
    */
-  public Map<String, Object> getArgumentname(String name) {
+  public Map<String, Object> getArgumentName(String name) {
 return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgument(name).toJson());
   }
 //io.vertx.core.cli.Argument getArgument(int index)
@@ -236,7 +236,7 @@ return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgume
    * @param index the index, must be positive or zero.
    * @return the <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>, <code>null</code> if not found. (see <a href="../../../../../../../cheatsheet/Argument.html">Argument</a>)
    */
-  public Map<String, Object> getArgumentindex(int index) {
+  public Map<String, Object> getArgumentIndex(int index) {
 return    (Map<String, Object>)InternalHelper.wrapObject(this.delegate.getArgument(index).toJson());
   }
 //io.vertx.core.cli.CLI removeOption(java.lang.String name)

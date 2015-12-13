@@ -72,7 +72,7 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
    * @param listenHandler handler that will be notified when listening or failed
    * @return a reference to this, so the API can be used fluently
    */
-  public NetServer listenlistenHandler(Handler<AsyncResult<NetServer>> listenHandler) {
+  public NetServer listenListenHandler(Handler<AsyncResult<NetServer>> listenHandler) {
     this.delegate.listen(new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
       public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
         AsyncResult<NetServer> f;
@@ -101,7 +101,7 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
    * @param host 
    * @return a reference to this, so the API can be used fluently
    */
-  public NetServer listenporthost(int port, String host) {
+  public NetServer listenPortHost(int port, String host) {
     this.delegate.listen(port, host);
     return this;
   }
@@ -140,7 +140,7 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
    * @param port 
    * @return a reference to this, so the API can be used fluently
    */
-  public NetServer listenport(int port) {
+  public NetServer listenPort(int port) {
     this.delegate.listen(port);
     return this;
   }
@@ -152,7 +152,7 @@ return    InternalHelper.safeCreate(this.delegate.connectHandler(new Handler<io.
    * @param listenHandler handler that will be notified when listening or failed
    * @return a reference to this, so the API can be used fluently
    */
-  public NetServer listenportlistenHandler(int port, Handler<AsyncResult<NetServer>> listenHandler) {
+  public NetServer listenPortListenHandler(int port, Handler<AsyncResult<NetServer>> listenHandler) {
     this.delegate.listen(port, new Handler<AsyncResult<io.vertx.core.net.NetServer>>() {
       public void handle(AsyncResult<io.vertx.core.net.NetServer> event) {
         AsyncResult<NetServer> f;
