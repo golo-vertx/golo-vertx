@@ -40,7 +40,7 @@ return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(), io.v
    * @param result the result
    * @return the future
    */
-  public static <T> Future<T> succeededFutureResult(T result) {
+  public static <T> Future<T> succeededFutureT(T result) {
 return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(InternalHelper.unwrapObject(result)), io.vertx.golo.core.Future.class);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.Future,methodNamefailedFuture]> io.vertx.core.Future<T> failedFuture(java.lang.String failureMessage)
@@ -50,7 +50,7 @@ return    InternalHelper.safeCreate(io.vertx.core.Future.succeededFuture(Interna
    * @param failureMessage the failure message
    * @return the future
    */
-  public static <T> Future<T> failedFutureFailureMessage(String failureMessage) {
+  public static <T> Future<T> failedFutureString(String failureMessage) {
 return    InternalHelper.safeCreate(io.vertx.core.Future.failedFuture(failureMessage), io.vertx.golo.core.Future.class);
   }
 //boolean isComplete()
@@ -73,7 +73,7 @@ return    ((io.vertx.core.Future) this.delegate).isComplete();
    * future is completed.
    * @param handler the Handler that will be called with the result
    */
-  public void setHandlerHandler(Handler<AsyncResult<T>> handler) {
+  public void setHandlerHandler<AsyncResult<T>>(Handler<AsyncResult<T>> handler) {
     ((io.vertx.core.Future) this.delegate).setHandler(new Handler<AsyncResult<Object>>() {
       public void handle(AsyncResult<Object> event) {
         AsyncResult<Object> f;
@@ -92,7 +92,7 @@ return    ((io.vertx.core.Future) this.delegate).isComplete();
    * Set the result. Any handler will be called, if there is one, and the future will be marked as completed.
    * @param result the result
    */
-  public void completeResult(T result) {
+  public void completeT(T result) {
     ((io.vertx.core.Future) this.delegate).complete(InternalHelper.unwrapObject(result));
   }
 //void complete()
@@ -109,7 +109,7 @@ return    ((io.vertx.core.Future) this.delegate).isComplete();
    * Set the failure. Any handler will be called, if there is one, and the future will be marked as completed.
    * @param failureMessage the failure message
    */
-  public void failFailureMessage(String failureMessage) {
+  public void failString(String failureMessage) {
     ((io.vertx.core.Future) this.delegate).fail(failureMessage);
   }
 }

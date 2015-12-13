@@ -27,13 +27,13 @@ public class HttpClientResponse implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpClientResponse exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpClientResponse
-  public HttpClientResponse exceptionHandlerHandler(Handler<Throwable> handler) {
+  public HttpClientResponse exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpClientResponse handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.http.HttpClientResponse
-  public HttpClientResponse handlerHandler(Handler<Buffer> handler) {
+  public HttpClientResponse handlerHandler<Buffer>(Handler<Buffer> handler) {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -49,7 +49,7 @@ public class HttpClientResponse implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpClientResponse endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpClientResponse
-  public HttpClientResponse endHandlerEndHandler(Handler<Void> endHandler) {
+  public HttpClientResponse endHandlerHandler<Void>(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpClientResponse) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -87,7 +87,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param headerName the header name
    * @return the header value
    */
-  public String getHeaderHeaderName(String headerName) {
+  public String getHeaderString(String headerName) {
 return    this.delegate.getHeader(headerName);
   }
 //java.lang.String getTrailer(java.lang.String trailerName)
@@ -97,7 +97,7 @@ return    this.delegate.getHeader(headerName);
    * @param trailerName the trailer name
    * @return the trailer value
    */
-  public String getTrailerTrailerName(String trailerName) {
+  public String getTrailerString(String trailerName) {
 return    this.delegate.getTrailer(trailerName);
   }
 //io.vertx.core.MultiMap trailers()
@@ -128,7 +128,7 @@ return    this.delegate.cookies();
    * @param bodyHandler This handler will be called after all the body has been received
    * @return 
    */
-  public HttpClientResponse bodyHandlerBodyHandler(Handler<Buffer> bodyHandler) {
+  public HttpClientResponse bodyHandlerHandler<Buffer>(Handler<Buffer> bodyHandler) {
     this.delegate.bodyHandler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         bodyHandler.handle(new io.vertx.golo.core.buffer.Buffer(event));

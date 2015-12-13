@@ -30,7 +30,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest exceptionHandlerHandler(Handler<Throwable> handler) {
+  public HttpClientRequest exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -41,25 +41,25 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param data 
    * @return 
    */
-  public HttpClientRequest writeData(Buffer data) {
+  public HttpClientRequest writeBuffer(Buffer data) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.HttpClientRequest setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest setWriteQueueMaxSizeMaxSize(int maxSize) {
+  public HttpClientRequest setWriteQueueMaxSizeInt(int maxSize) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
 //io.vertx.core.http.HttpClientRequest drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest drainHandlerHandler(Handler<Void> handler) {
+  public HttpClientRequest drainHandlerHandler<Void>(Handler<Void> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).drainHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpClientRequest handler(io.vertx.core.Handler<io.vertx.core.http.HttpClientResponse> handler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest handlerHandler(Handler<HttpClientResponse> handler) {
+  public HttpClientRequest handlerHandler<HttpClientResponse>(Handler<HttpClientResponse> handler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).handler(new Handler<io.vertx.core.http.HttpClientResponse>() {
       public void handle(io.vertx.core.http.HttpClientResponse event) {
         handler.handle(new io.vertx.golo.core.http.HttpClientResponse(event));
@@ -81,7 +81,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
   }
 //io.vertx.core.http.HttpClientRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpClientRequest
-  public HttpClientRequest endHandlerEndHandler(Handler<Void> endHandler) {
+  public HttpClientRequest endHandlerHandler<Void>(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpClientRequest) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -92,7 +92,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param chunked true if chunked encoding
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest setChunkedChunked(boolean chunked) {
+  public HttpClientRequest setChunkedBoolean(boolean chunked) {
     this.delegate.setChunked(chunked);
     return this;
   }
@@ -140,7 +140,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param value The header value
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest putHeaderNameValue(String name, String value) {
+  public HttpClientRequest putHeaderStringString(String name, String value) {
     this.delegate.putHeader(name, value);
     return this;
   }
@@ -151,7 +151,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param chunk 
    * @return @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest writeChunk(String chunk) {
+  public HttpClientRequest writeString(String chunk) {
     this.delegate.write(chunk);
     return this;
   }
@@ -163,7 +163,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param enc 
    * @return @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest writeChunkEnc(String chunk, String enc) {
+  public HttpClientRequest writeStringString(String chunk, String enc) {
     this.delegate.write(chunk, enc);
     return this;
   }
@@ -179,7 +179,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param handler 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest continueHandlerHandler(Handler<Void> handler) {
+  public HttpClientRequest continueHandlerHandler<Void>(Handler<Void> handler) {
     this.delegate.continueHandler(handler);
     return this;
   }
@@ -203,7 +203,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * Same as {@link io.vertx.golo.core.http.HttpClientRequest#end} but writes a String in UTF-8 encoding
    * @param chunk 
    */
-  public void endChunk(String chunk) {
+  public void endString(String chunk) {
     this.delegate.end(chunk);
   }
 //void end(java.lang.String chunk, java.lang.String enc)
@@ -213,7 +213,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param chunk 
    * @param enc 
    */
-  public void endChunkEnc(String chunk, String enc) {
+  public void endStringString(String chunk, String enc) {
     this.delegate.end(chunk, enc);
   }
 //void end(io.vertx.core.buffer.Buffer chunk)
@@ -223,7 +223,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * no other data has been written then the <code>Content-Length</code> header will be automatically set
    * @param chunk 
    */
-  public void endChunk(Buffer chunk) {
+  public void endBuffer(Buffer chunk) {
     this.delegate.end((io.vertx.core.buffer.Buffer)chunk.getDelegate());
   }
 //void end()
@@ -248,7 +248,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param timeoutMs The quantity of time in milliseconds.
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpClientRequest setTimeoutTimeoutMs(long timeoutMs) {
+  public HttpClientRequest setTimeoutLong(long timeoutMs) {
     this.delegate.setTimeout(timeoutMs);
     return this;
   }

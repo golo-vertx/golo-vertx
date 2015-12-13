@@ -8,11 +8,11 @@ import io.vertx.core.Handler;
 // Type: io.vertx.core.streams.WriteStream<T> 
 public interface WriteStream<T> extends StreamBase {
 public Object getDelegate();
-  WriteStream<T> exceptionHandlerHandler(Handler<Throwable> handler);
-  WriteStream<T> writeData(T data);
-  WriteStream<T> setWriteQueueMaxSizeMaxSize(int maxSize);
+  WriteStream<T> exceptionHandlerHandler<Throwable>(Handler<Throwable> handler);
+  WriteStream<T> writeT(T data);
+  WriteStream<T> setWriteQueueMaxSizeInt(int maxSize);
   boolean writeQueueFull();
-  WriteStream<T> drainHandlerHandler(Handler<Void> handler);
+  WriteStream<T> drainHandlerHandler<Void>(Handler<Void> handler);
 }
 
 class WriteStreamImpl<T> implements WriteStream<T> {
@@ -30,7 +30,7 @@ class WriteStreamImpl<T> implements WriteStream<T> {
    * @param handler the exception handler
    * @return a reference to this, so the API can be used fluently
    */
-  public WriteStream<T> exceptionHandlerHandler(Handler<Throwable> handler) {
+  public WriteStream<T> exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     (  (io.vertx.core.streams.WriteStream) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -43,7 +43,7 @@ class WriteStreamImpl<T> implements WriteStream<T> {
    * @param data the data to write
    * @return a reference to this, so the API can be used fluently
    */
-  public WriteStream<T> writeData(T data) {
+  public WriteStream<T> writeT(T data) {
     ((io.vertx.core.streams.WriteStream) this.delegate).write(InternalHelper.unwrapObject(data));
     return this;
   }
@@ -56,7 +56,7 @@ class WriteStreamImpl<T> implements WriteStream<T> {
    * @param maxSize the max size of the write stream
    * @return a reference to this, so the API can be used fluently
    */
-  public WriteStream<T> setWriteQueueMaxSizeMaxSize(int maxSize) {
+  public WriteStream<T> setWriteQueueMaxSizeInt(int maxSize) {
     ((io.vertx.core.streams.WriteStream) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
@@ -77,7 +77,7 @@ return    ((io.vertx.core.streams.WriteStream) this.delegate).writeQueueFull();
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public WriteStream<T> drainHandlerHandler(Handler<Void> handler) {
+  public WriteStream<T> drainHandlerHandler<Void>(Handler<Void> handler) {
     ((io.vertx.core.streams.WriteStream) this.delegate).drainHandler(handler);
     return this;
   }

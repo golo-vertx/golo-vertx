@@ -8,11 +8,11 @@ import io.vertx.core.Handler;
 // Type: io.vertx.core.streams.ReadStream<T> 
 public interface ReadStream<T> extends StreamBase {
 public Object getDelegate();
-  ReadStream<T> exceptionHandlerHandler(Handler<Throwable> handler);
-  ReadStream<T> handlerHandler(Handler<T> handler);
+  ReadStream<T> exceptionHandlerHandler<Throwable>(Handler<Throwable> handler);
+  ReadStream<T> handlerHandler<T>(Handler<T> handler);
   ReadStream<T> pause();
   ReadStream<T> resume();
-  ReadStream<T> endHandlerEndHandler(Handler<Void> endHandler);
+  ReadStream<T> endHandlerHandler<Void>(Handler<Void> endHandler);
 }
 
 class ReadStreamImpl<T> implements ReadStream<T> {
@@ -30,7 +30,7 @@ class ReadStreamImpl<T> implements ReadStream<T> {
    * @param handler the exception handler
    * @return a reference to this, so the API can be used fluently
    */
-  public ReadStream<T> exceptionHandlerHandler(Handler<Throwable> handler) {
+  public ReadStream<T> exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     (  (io.vertx.core.streams.StreamBase) this.delegate).exceptionHandler(handler);
     return this;
   }
@@ -41,7 +41,7 @@ class ReadStreamImpl<T> implements ReadStream<T> {
    * @param handler 
    * @return a reference to this, so the API can be used fluently
    */
-  public ReadStream<T> handlerHandler(Handler<T> handler) {
+  public ReadStream<T> handlerHandler<T>(Handler<T> handler) {
     ((io.vertx.core.streams.ReadStream) this.delegate).handler(new Handler<Object>() {
       public void handle(Object event) {
         handler.handle((T)InternalHelper.wrapObject(event));
@@ -76,7 +76,7 @@ class ReadStreamImpl<T> implements ReadStream<T> {
    * @param endHandler 
    * @return a reference to this, so the API can be used fluently
    */
-  public ReadStream<T> endHandlerEndHandler(Handler<Void> endHandler) {
+  public ReadStream<T> endHandlerHandler<Void>(Handler<Void> endHandler) {
     ((io.vertx.core.streams.ReadStream) this.delegate).endHandler(endHandler);
     return this;
   }

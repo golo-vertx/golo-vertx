@@ -82,13 +82,13 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.ServerWebSocket exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket exceptionHandlerHandler(Handler<Throwable> handler) {
+  public ServerWebSocket exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket handlerHandler(Handler<Buffer> handler) {
+  public ServerWebSocket handlerHandler<Buffer>(Handler<Buffer> handler) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -110,61 +110,61 @@ return    InternalHelper.safeCreate(((io.vertx.core.http.WebSocketBase) this.del
   }
 //io.vertx.core.http.ServerWebSocket endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket endHandlerEndHandler(Handler<Void> endHandler) {
+  public ServerWebSocket endHandlerHandler<Void>(Handler<Void> endHandler) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).endHandler(endHandler);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket write(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeData(Buffer data) {
+  public ServerWebSocket writeBuffer(Buffer data) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).write((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.ServerWebSocket setWriteQueueMaxSize(int maxSize)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket setWriteQueueMaxSizeMaxSize(int maxSize) {
+  public ServerWebSocket setWriteQueueMaxSizeInt(int maxSize) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).setWriteQueueMaxSize(maxSize);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket drainHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket drainHandlerHandler(Handler<Void> handler) {
+  public ServerWebSocket drainHandlerHandler<Void>(Handler<Void> handler) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).drainHandler(handler);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket writeFrame(io.vertx.core.http.WebSocketFrame frame)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeFrameFrame(WebSocketFrame frame) {
+  public ServerWebSocket writeFrameWebSocketFrame(WebSocketFrame frame) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeFrame((io.vertx.core.http.WebSocketFrame)frame.getDelegate());
     return this;
   }
 //io.vertx.core.http.ServerWebSocket writeFinalTextFrame(java.lang.String text)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeFinalTextFrameText(String text) {
+  public ServerWebSocket writeFinalTextFrameString(String text) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeFinalTextFrame(text);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket writeFinalBinaryFrame(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeFinalBinaryFrameData(Buffer data) {
+  public ServerWebSocket writeFinalBinaryFrameBuffer(Buffer data) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeFinalBinaryFrame((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.ServerWebSocket writeBinaryMessage(io.vertx.core.buffer.Buffer data)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket writeBinaryMessageData(Buffer data) {
+  public ServerWebSocket writeBinaryMessageBuffer(Buffer data) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).writeBinaryMessage((io.vertx.core.buffer.Buffer)data.getDelegate());
     return this;
   }
 //io.vertx.core.http.ServerWebSocket closeHandler(io.vertx.core.Handler<java.lang.Void> handler)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket closeHandlerHandler(Handler<Void> handler) {
+  public ServerWebSocket closeHandlerHandler<Void>(Handler<Void> handler) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).closeHandler(handler);
     return this;
   }
 //io.vertx.core.http.ServerWebSocket frameHandler(io.vertx.core.Handler<io.vertx.core.http.WebSocketFrame> handler)
 //io.vertx.core.http.ServerWebSocket
-  public ServerWebSocket frameHandlerHandler(Handler<WebSocketFrame> handler) {
+  public ServerWebSocket frameHandlerHandler<WebSocketFrame>(Handler<WebSocketFrame> handler) {
     (  (io.vertx.core.http.ServerWebSocket) this.delegate).frameHandler(new Handler<io.vertx.core.http.WebSocketFrame>() {
       public void handle(io.vertx.core.http.WebSocketFrame event) {
         handler.handle(new io.vertx.golo.core.http.WebSocketFrame(event));

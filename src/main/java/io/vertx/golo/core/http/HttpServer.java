@@ -43,7 +43,7 @@ return    InternalHelper.safeCreate(this.delegate.requestStream(), io.vertx.golo
    * @param handler 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServer requestHandlerHandler(Handler<HttpServerRequest> handler) {
+  public HttpServer requestHandlerHandler<HttpServerRequest>(Handler<HttpServerRequest> handler) {
 return    InternalHelper.safeCreate(this.delegate.requestHandler(new Handler<io.vertx.core.http.HttpServerRequest>() {
       public void handle(io.vertx.core.http.HttpServerRequest event) {
         handler.handle(new io.vertx.golo.core.http.HttpServerRequest(event));
@@ -68,7 +68,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketStream(), io.vertx.go
    * @param handler 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServer websocketHandlerHandler(Handler<ServerWebSocket> handler) {
+  public HttpServer websocketHandlerHandler<ServerWebSocket>(Handler<ServerWebSocket> handler) {
 return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<io.vertx.core.http.ServerWebSocket>() {
       public void handle(io.vertx.core.http.ServerWebSocket event) {
         handler.handle(new io.vertx.golo.core.http.ServerWebSocket(event));
@@ -99,7 +99,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param host the host to listen on
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServer listenPortHost(int port, String host) {
+  public HttpServer listenIntString(int port, String host) {
     this.delegate.listen(port, host);
     return this;
   }
@@ -113,7 +113,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param listenHandler the listen handler
    * @return 
    */
-  public HttpServer listenPortHostListenHandler(int port, String host, Handler<AsyncResult<HttpServer>> listenHandler) {
+  public HttpServer listenIntStringHandler<AsyncResult<HttpServer>>(int port, String host, Handler<AsyncResult<HttpServer>> listenHandler) {
     this.delegate.listen(port, host, new Handler<AsyncResult<io.vertx.core.http.HttpServer>>() {
       public void handle(AsyncResult<io.vertx.core.http.HttpServer> event) {
         AsyncResult<HttpServer> f;
@@ -135,7 +135,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param port the port to listen on
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServer listenPort(int port) {
+  public HttpServer listenInt(int port) {
     this.delegate.listen(port);
     return this;
   }
@@ -147,7 +147,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param listenHandler the listen handler
    * @return 
    */
-  public HttpServer listenPortListenHandler(int port, Handler<AsyncResult<HttpServer>> listenHandler) {
+  public HttpServer listenIntHandler<AsyncResult<HttpServer>>(int port, Handler<AsyncResult<HttpServer>> listenHandler) {
     this.delegate.listen(port, new Handler<AsyncResult<io.vertx.core.http.HttpServer>>() {
       public void handle(AsyncResult<io.vertx.core.http.HttpServer> event) {
         AsyncResult<HttpServer> f;
@@ -168,7 +168,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * @param listenHandler the listen handler
    * @return 
    */
-  public HttpServer listenListenHandler(Handler<AsyncResult<HttpServer>> listenHandler) {
+  public HttpServer listenHandler<AsyncResult<HttpServer>>(Handler<AsyncResult<HttpServer>> listenHandler) {
     this.delegate.listen(new Handler<AsyncResult<io.vertx.core.http.HttpServer>>() {
       public void handle(AsyncResult<io.vertx.core.http.HttpServer> event) {
         AsyncResult<HttpServer> f;
@@ -198,7 +198,7 @@ return    InternalHelper.safeCreate(this.delegate.websocketHandler(new Handler<i
    * Like {@link io.vertx.golo.core.http.HttpServer#close} but supplying a handler that will be called when the server is actually closed (or has failed).
    * @param completionHandler the handler
    */
-  public void closeCompletionHandler(Handler<AsyncResult<Void>> completionHandler) {
+  public void closeHandler<AsyncResult<Void>>(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
 }

@@ -23,13 +23,13 @@ public class HttpServerRequest implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpServerRequest exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.http.HttpServerRequest
-  public HttpServerRequest exceptionHandlerHandler(Handler<Throwable> handler) {
+  public HttpServerRequest exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.http.HttpServerRequest handler(io.vertx.core.Handler<io.vertx.core.buffer.Buffer> handler)
 //io.vertx.core.http.HttpServerRequest
-  public HttpServerRequest handlerHandler(Handler<Buffer> handler) {
+  public HttpServerRequest handlerHandler<Buffer>(Handler<Buffer> handler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).handler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         handler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -51,7 +51,7 @@ public class HttpServerRequest implements ReadStream<Buffer> {
   }
 //io.vertx.core.http.HttpServerRequest endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.http.HttpServerRequest
-  public HttpServerRequest endHandlerEndHandler(Handler<Void> endHandler) {
+  public HttpServerRequest endHandlerHandler<Void>(Handler<Void> endHandler) {
     (  (io.vertx.core.http.HttpServerRequest) this.delegate).endHandler(endHandler);
     return this;
   }
@@ -126,7 +126,7 @@ return    InternalHelper.safeCreate(this.delegate.headers(), io.vertx.golo.core.
    * @param headerName the header name
    * @return the header value
    */
-  public String getHeaderHeaderName(String headerName) {
+  public String getHeaderString(String headerName) {
 return    this.delegate.getHeader(headerName);
   }
 //io.vertx.core.MultiMap params()
@@ -145,7 +145,7 @@ return    InternalHelper.safeCreate(this.delegate.params(), io.vertx.golo.core.M
    * @param paramName the param name
    * @return the param value
    */
-  public String getParamParamName(String paramName) {
+  public String getParamString(String paramName) {
 return    this.delegate.getParam(paramName);
   }
 //io.vertx.core.net.SocketAddress remoteAddress()
@@ -185,7 +185,7 @@ return    this.delegate.absoluteURI();
    * @param bodyHandler This handler will be called after all the body has been received
    * @return 
    */
-  public HttpServerRequest bodyHandlerBodyHandler(Handler<Buffer> bodyHandler) {
+  public HttpServerRequest bodyHandlerHandler<Buffer>(Handler<Buffer> bodyHandler) {
     this.delegate.bodyHandler(new Handler<io.vertx.core.buffer.Buffer>() {
       public void handle(io.vertx.core.buffer.Buffer event) {
         bodyHandler.handle(new io.vertx.golo.core.buffer.Buffer(event));
@@ -216,7 +216,7 @@ return    InternalHelper.safeCreate(this.delegate.netSocket(), io.vertx.golo.cor
    * @param expect true - if you are expecting a multi-part body
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerRequest setExpectMultipartExpect(boolean expect) {
+  public HttpServerRequest setExpectMultipartBoolean(boolean expect) {
     this.delegate.setExpectMultipart(expect);
     return this;
   }
@@ -237,7 +237,7 @@ return    this.delegate.isExpectMultipart();
    * @param uploadHandler 
    * @return a reference to this, so the API can be used fluently
    */
-  public HttpServerRequest uploadHandlerUploadHandler(Handler<HttpServerFileUpload> uploadHandler) {
+  public HttpServerRequest uploadHandlerHandler<HttpServerFileUpload>(Handler<HttpServerFileUpload> uploadHandler) {
     this.delegate.uploadHandler(new Handler<io.vertx.core.http.HttpServerFileUpload>() {
       public void handle(io.vertx.core.http.HttpServerFileUpload event) {
         uploadHandler.handle(new io.vertx.golo.core.http.HttpServerFileUpload(event));
@@ -266,7 +266,7 @@ return    InternalHelper.safeCreate(this.delegate.formAttributes(), io.vertx.gol
    * @param attributeName the attribute name
    * @return the attribute value
    */
-  public String getFormAttributeAttributeName(String attributeName) {
+  public String getFormAttributeString(String attributeName) {
 return    this.delegate.getFormAttribute(attributeName);
   }
 //io.vertx.core.http.ServerWebSocket upgrade()

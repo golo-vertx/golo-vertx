@@ -36,7 +36,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param message the message, may be <code>null</code>
    * @return a reference to this, so the API can be used fluently
    */
-  public EventBus sendAddressMessage(String address, Object message) {
+  public EventBus sendStringObject(String address, Object message) {
     this.delegate.send(address, InternalHelper.unwrapObject(message));
     return this;
   }
@@ -50,7 +50,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param replyHandler reply handler will be called when any reply from the recipient is received, may be <code>null</code>
    * @return a reference to this, so the API can be used fluently
    */
-  public <T> EventBus sendAddressMessageReplyHandler(String address, Object message, Handler<AsyncResult<Message<T>>> replyHandler) {
+  public <T> EventBus sendStringObjectHandler<AsyncResult<Message<T>>>(String address, Object message, Handler<AsyncResult<Message<T>>> replyHandler) {
     this.delegate.send(address, InternalHelper.unwrapObject(message), new Handler<AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>>>() {
       public void handle(AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>> event) {
         AsyncResult<Message<Object>> f;
@@ -73,7 +73,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param options delivery options (see <a href="../../../../../../../cheatsheet/DeliveryOptions.html">DeliveryOptions</a>)
    * @return a reference to this, so the API can be used fluently
    */
-  public EventBus sendAddressMessageOptions(String address, Object message, Map<String, Object> options) {
+  public EventBus sendStringObjectDeliveryOptions(String address, Object message, Map<String, Object> options) {
     this.delegate.send(address, InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null);
     return this;
   }
@@ -88,7 +88,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param replyHandler reply handler will be called when any reply from the recipient is received, may be <code>null</code>
    * @return a reference to this, so the API can be used fluently
    */
-  public <T> EventBus sendAddressMessageOptionsReplyHandler(String address, Object message, Map<String, Object> options, Handler<AsyncResult<Message<T>>> replyHandler) {
+  public <T> EventBus sendStringObjectDeliveryOptionsHandler<AsyncResult<Message<T>>>(String address, Object message, Map<String, Object> options, Handler<AsyncResult<Message<T>>> replyHandler) {
     this.delegate.send(address, InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null, new Handler<AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>>>() {
       public void handle(AsyncResult<io.vertx.core.eventbus.Message<java.lang.Object>> event) {
         AsyncResult<Message<Object>> f;
@@ -111,7 +111,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param message the message, may be <code>null</code>
    * @return a reference to this, so the API can be used fluently
    */
-  public EventBus publishAddressMessage(String address, Object message) {
+  public EventBus publishStringObject(String address, Object message) {
     this.delegate.publish(address, InternalHelper.unwrapObject(message));
     return this;
   }
@@ -124,7 +124,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param options the delivery options (see <a href="../../../../../../../cheatsheet/DeliveryOptions.html">DeliveryOptions</a>)
    * @return a reference to this, so the API can be used fluently
    */
-  public EventBus publishAddressMessageOptions(String address, Object message, Map<String, Object> options) {
+  public EventBus publishStringObjectDeliveryOptions(String address, Object message, Map<String, Object> options) {
     this.delegate.publish(address, InternalHelper.unwrapObject(message), options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null);
     return this;
   }
@@ -139,7 +139,7 @@ return    ((io.vertx.core.metrics.Measured) this.delegate).isMetricsEnabled();
    * @param address the address that it will register it at
    * @return the event bus message consumer
    */
-  public <T> MessageConsumer<T> consumerAddress(String address) {
+  public <T> MessageConsumer<T> consumerString(String address) {
 return    InternalHelper.safeCreate(this.delegate.consumer(address), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNameconsumer]> io.vertx.core.eventbus.MessageConsumer<T> consumer(java.lang.String address, io.vertx.core.Handler<io.vertx.core.eventbus.Message<T>> handler)
@@ -150,7 +150,7 @@ return    InternalHelper.safeCreate(this.delegate.consumer(address), io.vertx.go
    * @param handler the handler that will process the received messages
    * @return the event bus message consumer
    */
-  public <T> MessageConsumer<T> consumerAddressHandler(String address, Handler<Message<T>> handler) {
+  public <T> MessageConsumer<T> consumerStringHandler<Message<T>>(String address, Handler<Message<T>> handler) {
 return    InternalHelper.safeCreate(this.delegate.consumer(address, new Handler<io.vertx.core.eventbus.Message<java.lang.Object>>() {
       public void handle(io.vertx.core.eventbus.Message<java.lang.Object> event) {
         handler.handle(new io.vertx.golo.core.eventbus.Message(event));
@@ -164,7 +164,7 @@ return    InternalHelper.safeCreate(this.delegate.consumer(address, new Handler<
    * @param address the address to register it at
    * @return the event bus message consumer
    */
-  public <T> MessageConsumer<T> localConsumerAddress(String address) {
+  public <T> MessageConsumer<T> localConsumerString(String address) {
 return    InternalHelper.safeCreate(this.delegate.localConsumer(address), io.vertx.golo.core.eventbus.MessageConsumer.class);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamelocalConsumer]> io.vertx.core.eventbus.MessageConsumer<T> localConsumer(java.lang.String address, io.vertx.core.Handler<io.vertx.core.eventbus.Message<T>> handler)
@@ -175,7 +175,7 @@ return    InternalHelper.safeCreate(this.delegate.localConsumer(address), io.ver
    * @param handler the handler that will process the received messages
    * @return the event bus message consumer
    */
-  public <T> MessageConsumer<T> localConsumerAddressHandler(String address, Handler<Message<T>> handler) {
+  public <T> MessageConsumer<T> localConsumerStringHandler<Message<T>>(String address, Handler<Message<T>> handler) {
 return    InternalHelper.safeCreate(this.delegate.localConsumer(address, new Handler<io.vertx.core.eventbus.Message<java.lang.Object>>() {
       public void handle(io.vertx.core.eventbus.Message<java.lang.Object> event) {
         handler.handle(new io.vertx.golo.core.eventbus.Message(event));
@@ -193,7 +193,7 @@ return    InternalHelper.safeCreate(this.delegate.localConsumer(address, new Han
    * @param address the address to send it to
    * @return The sender
    */
-  public <T> MessageProducer<T> senderAddress(String address) {
+  public <T> MessageProducer<T> senderString(String address) {
 return    InternalHelper.safeCreate(this.delegate.sender(address), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamesender]> io.vertx.core.eventbus.MessageProducer<T> sender(java.lang.String address, io.vertx.core.eventbus.DeliveryOptions options)
@@ -205,7 +205,7 @@ return    InternalHelper.safeCreate(this.delegate.sender(address), io.vertx.golo
    * @param options the delivery options (see <a href="../../../../../../../cheatsheet/DeliveryOptions.html">DeliveryOptions</a>)
    * @return The sender
    */
-  public <T> MessageProducer<T> senderAddressOptions(String address, Map<String, Object> options) {
+  public <T> MessageProducer<T> senderStringDeliveryOptions(String address, Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.sender(address, options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamepublisher]> io.vertx.core.eventbus.MessageProducer<T> publisher(java.lang.String address)
@@ -219,7 +219,7 @@ return    InternalHelper.safeCreate(this.delegate.sender(address, options != nul
    * @param address The address to publish it to
    * @return The publisher
    */
-  public <T> MessageProducer<T> publisherAddress(String address) {
+  public <T> MessageProducer<T> publisherString(String address) {
 return    InternalHelper.safeCreate(this.delegate.publisher(address), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
 //<TypeParamInfo.Method[name=T,typeName=io.vertx.core.eventbus.EventBus,methodNamepublisher]> io.vertx.core.eventbus.MessageProducer<T> publisher(java.lang.String address, io.vertx.core.eventbus.DeliveryOptions options)
@@ -231,7 +231,7 @@ return    InternalHelper.safeCreate(this.delegate.publisher(address), io.vertx.g
    * @param options the delivery options (see <a href="../../../../../../../cheatsheet/DeliveryOptions.html">DeliveryOptions</a>)
    * @return The publisher
    */
-  public <T> MessageProducer<T> publisherAddressOptions(String address, Map<String, Object> options) {
+  public <T> MessageProducer<T> publisherStringDeliveryOptions(String address, Map<String, Object> options) {
 return    InternalHelper.safeCreate(this.delegate.publisher(address, options != null ? new io.vertx.core.eventbus.DeliveryOptions(new io.vertx.core.json.JsonObject(options)) : null), io.vertx.golo.core.eventbus.MessageProducer.class);
   }
 //void close(io.vertx.core.Handler<io.vertx.core.AsyncResult<java.lang.Void>> completionHandler)
@@ -240,7 +240,7 @@ return    InternalHelper.safeCreate(this.delegate.publisher(address, options != 
    * Close the event bus and release any resources held
    * @param completionHandler may be <code>null</code>
    */
-  public void closeCompletionHandler(Handler<AsyncResult<Void>> completionHandler) {
+  public void closeHandler<AsyncResult<Void>>(Handler<AsyncResult<Void>> completionHandler) {
     this.delegate.close(completionHandler);
   }
 }

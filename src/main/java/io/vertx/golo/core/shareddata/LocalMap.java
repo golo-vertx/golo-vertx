@@ -20,7 +20,7 @@ public class LocalMap<K,V> {
    * @param key the key
    * @return the value, or null if none
    */
-  public V getKey(K key) {
+  public V getK(K key) {
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).get(InternalHelper.unwrapObject(key)));
   }
@@ -32,7 +32,7 @@ return    // This cast is cleary flawed
    * @param value the value
    * @return return the old value, or null if none
    */
-  public V putKeyValue(K key, V value) {
+  public V putKV(K key, V value) {
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).put(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value)));
   }
@@ -43,7 +43,7 @@ return    // This cast is cleary flawed
    * @param key the key
    * @return the old value
    */
-  public V removeKey(K key) {
+  public V removeK(K key) {
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).remove(InternalHelper.unwrapObject(key)));
   }
@@ -81,7 +81,7 @@ return    ((io.vertx.core.shareddata.LocalMap) this.delegate).isEmpty();
    * @param value the value
    * @return the old value or null, if none
    */
-  public V putIfAbsentKeyValue(K key, V value) {
+  public V putIfAbsentKV(K key, V value) {
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).putIfAbsent(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value)));
   }
@@ -93,7 +93,7 @@ return    // This cast is cleary flawed
    * @param value the value
    * @return true if removed
    */
-  public boolean removeIfPresentKeyValue(K key, V value) {
+  public boolean removeIfPresentKV(K key, V value) {
 return    ((io.vertx.core.shareddata.LocalMap) this.delegate).removeIfPresent(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value));
   }
 //boolean replaceIfPresent(K key, V oldValue, V newValue)
@@ -105,7 +105,7 @@ return    ((io.vertx.core.shareddata.LocalMap) this.delegate).removeIfPresent(In
    * @param newValue the new value
    * @return true if removed
    */
-  public boolean replaceIfPresentKeyOldValueNewValue(K key, V oldValue, V newValue) {
+  public boolean replaceIfPresentKVV(K key, V oldValue, V newValue) {
 return    ((io.vertx.core.shareddata.LocalMap) this.delegate).replaceIfPresent(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(oldValue), InternalHelper.unwrapObject(newValue));
   }
 //V replace(K key, V value)
@@ -116,7 +116,7 @@ return    ((io.vertx.core.shareddata.LocalMap) this.delegate).replaceIfPresent(I
    * @param value the new value
    * @return the old value
    */
-  public V replaceKeyValue(K key, V value) {
+  public V replaceKV(K key, V value) {
 return    // This cast is cleary flawed
     (V) InternalHelper.wrapObject(((io.vertx.core.shareddata.LocalMap) this.delegate).replace(InternalHelper.unwrapObject(key), InternalHelper.unwrapObject(value)));
   }

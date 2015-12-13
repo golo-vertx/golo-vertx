@@ -23,7 +23,7 @@ public class SharedData {
    * @param name the name of the map
    * @param resultHandler the map will be returned asynchronously in this handler
    */
-  public <K, V> void getClusterWideMapNameResultHandler(String name, Handler<AsyncResult<AsyncMap<K,V>>> resultHandler) {
+  public <K, V> void getClusterWideMapStringHandler<AsyncResult<AsyncMap<K,V>>>(String name, Handler<AsyncResult<AsyncMap<K,V>>> resultHandler) {
     this.delegate.getClusterWideMap(name, new Handler<AsyncResult<io.vertx.core.shareddata.AsyncMap<java.lang.Object,java.lang.Object>>>() {
       public void handle(AsyncResult<io.vertx.core.shareddata.AsyncMap<java.lang.Object,java.lang.Object>> event) {
         AsyncResult<AsyncMap<Object,Object>> f;
@@ -43,7 +43,7 @@ public class SharedData {
    * @param name the name of the lock
    * @param resultHandler the handler
    */
-  public void getLockNameResultHandler(String name, Handler<AsyncResult<Lock>> resultHandler) {
+  public void getLockStringHandler<AsyncResult<Lock>>(String name, Handler<AsyncResult<Lock>> resultHandler) {
     this.delegate.getLock(name, new Handler<AsyncResult<io.vertx.core.shareddata.Lock>>() {
       public void handle(AsyncResult<io.vertx.core.shareddata.Lock> event) {
         AsyncResult<Lock> f;
@@ -65,7 +65,7 @@ public class SharedData {
    * @param timeout the timeout in ms
    * @param resultHandler the handler
    */
-  public void getLockWithTimeoutNameTimeoutResultHandler(String name, long timeout, Handler<AsyncResult<Lock>> resultHandler) {
+  public void getLockWithTimeoutStringLongHandler<AsyncResult<Lock>>(String name, long timeout, Handler<AsyncResult<Lock>> resultHandler) {
     this.delegate.getLockWithTimeout(name, timeout, new Handler<AsyncResult<io.vertx.core.shareddata.Lock>>() {
       public void handle(AsyncResult<io.vertx.core.shareddata.Lock> event) {
         AsyncResult<Lock> f;
@@ -85,7 +85,7 @@ public class SharedData {
    * @param name the name of the counter.
    * @param resultHandler the handler
    */
-  public void getCounterNameResultHandler(String name, Handler<AsyncResult<Counter>> resultHandler) {
+  public void getCounterStringHandler<AsyncResult<Counter>>(String name, Handler<AsyncResult<Counter>> resultHandler) {
     this.delegate.getCounter(name, new Handler<AsyncResult<io.vertx.core.shareddata.Counter>>() {
       public void handle(AsyncResult<io.vertx.core.shareddata.Counter> event) {
         AsyncResult<Counter> f;
@@ -105,7 +105,7 @@ public class SharedData {
    * @param name the name of the map
    * @return the msp
    */
-  public <K, V> LocalMap<K,V> getLocalMapName(String name) {
+  public <K, V> LocalMap<K,V> getLocalMapString(String name) {
 return    InternalHelper.safeCreate(this.delegate.getLocalMap(name), io.vertx.golo.core.shareddata.LocalMap.class);
   }
 }

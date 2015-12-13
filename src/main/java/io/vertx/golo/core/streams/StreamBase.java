@@ -8,7 +8,7 @@ import io.vertx.core.Handler;
 // Type: io.vertx.core.streams.StreamBase 
 public interface StreamBase {
 public Object getDelegate();
-  StreamBase exceptionHandlerHandler(Handler<Throwable> handler);
+  StreamBase exceptionHandlerHandler<Throwable>(Handler<Throwable> handler);
 }
 
 class StreamBaseImpl implements StreamBase {
@@ -26,7 +26,7 @@ class StreamBaseImpl implements StreamBase {
    * @param handler the handler
    * @return a reference to this, so the API can be used fluently
    */
-  public StreamBase exceptionHandlerHandler(Handler<Throwable> handler) {
+  public StreamBase exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     ((io.vertx.core.streams.StreamBase) this.delegate).exceptionHandler(handler);
     return this;
   }

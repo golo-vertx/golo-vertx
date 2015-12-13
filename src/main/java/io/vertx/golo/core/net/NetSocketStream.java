@@ -17,13 +17,13 @@ public class NetSocketStream implements ReadStream<NetSocket> {
   }
 //io.vertx.core.net.NetSocketStream exceptionHandler(io.vertx.core.Handler<java.lang.Throwable> handler)
 //io.vertx.core.net.NetSocketStream
-  public NetSocketStream exceptionHandlerHandler(Handler<Throwable> handler) {
+  public NetSocketStream exceptionHandlerHandler<Throwable>(Handler<Throwable> handler) {
     (  (io.vertx.core.net.NetSocketStream) this.delegate).exceptionHandler(handler);
     return this;
   }
 //io.vertx.core.net.NetSocketStream handler(io.vertx.core.Handler<io.vertx.core.net.NetSocket> handler)
 //io.vertx.core.net.NetSocketStream
-  public NetSocketStream handlerHandler(Handler<NetSocket> handler) {
+  public NetSocketStream handlerHandler<NetSocket>(Handler<NetSocket> handler) {
     (  (io.vertx.core.net.NetSocketStream) this.delegate).handler(new Handler<io.vertx.core.net.NetSocket>() {
       public void handle(io.vertx.core.net.NetSocket event) {
         handler.handle(new io.vertx.golo.core.net.NetSocket(event));
@@ -45,7 +45,7 @@ public class NetSocketStream implements ReadStream<NetSocket> {
   }
 //io.vertx.core.net.NetSocketStream endHandler(io.vertx.core.Handler<java.lang.Void> endHandler)
 //io.vertx.core.net.NetSocketStream
-  public NetSocketStream endHandlerEndHandler(Handler<Void> endHandler) {
+  public NetSocketStream endHandlerHandler<Void>(Handler<Void> endHandler) {
     (  (io.vertx.core.net.NetSocketStream) this.delegate).endHandler(endHandler);
     return this;
   }
