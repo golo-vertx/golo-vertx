@@ -21,7 +21,6 @@
         <tools.jar>${java.home}/../lib/tools.jar</tools.jar>
     </properties>
     
-
     <dependencies>
         <dependency>
             <groupId>io.netty</groupId>
